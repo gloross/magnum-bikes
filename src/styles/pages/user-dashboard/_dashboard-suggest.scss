@@ -1,0 +1,50 @@
+.dashboard-suggest {
+  padding: rem(98) 0 rem(58);
+  background-color: $off-white;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @include media-breakpoint-down(sm) {
+    padding: rem(116) 0 rem(75);
+  }
+
+  &__inner {
+    max-width: rem(556);
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+
+    h2 {
+      margin-bottom: rem(21);
+      font-size: rem(72);
+      line-height: line-height(72, 92);
+      font-weight: 700;
+      color: $machine-grey;
+
+      @include media-breakpoint-down(sm) {
+        font-size: rem(48);
+        line-height: line-height(48, 60);
+      }
+    }
+
+    p {
+      max-width: rem(460);
+      width: 100%;
+      margin: 0 auto;
+      color: $machine-grey;
+      font-size: rem(16);
+      line-height: line-height(16, 24);
+
+      @include media-breakpoint-down(sm) {
+        max-width: rem(246);
+      }
+    }
+
+    .btn {
+      margin-top: rem(58);
+      min-width: rem(286);
+      border-color: $cyan;
+    }
+  }
+}

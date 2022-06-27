@@ -1,0 +1,40 @@
+.remove-btn {
+  padding: rem(15);
+  position: absolute;
+  top: 0;
+  right: rem(10);
+  width: rem(10);
+  height: rem(11);
+  z-index: 3;
+  cursor: pointer;
+
+  &::after,
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: rem(1);
+    height: rem(10);
+    background-color: $black;
+
+    @include media-breakpoint-up(md) {
+      height: rem(15);
+    }
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  @include hover() {
+    &::after,
+    &::before {
+      background-color: $grey-1;
+    }
+  }
+}

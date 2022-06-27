@@ -1,0 +1,158 @@
+{
+  "sections": {
+    "support-hero": {
+      "type": "support-hero",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/support_girl.png",
+        "section_title": "How Can We Help?",
+        "description": "Use the super powerful search bar you see below."
+      }
+    },
+    "support-grid": {
+      "type": "support-grid",
+      "blocks": {
+        "90992a8a-9ca4-45d6-9f59-3616eb014343": {
+          "type": "block",
+          "settings": {
+            "icon_picker": "warranty",
+            "item_title": "Warranty",
+            "item_content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "item_url": ""
+          }
+        },
+        "a3d99610-5e68-4d0d-9146-0aab4998d0b4": {
+          "type": "block",
+          "settings": {
+            "icon_picker": "troubleshoot",
+            "item_title": "Troubleshoot",
+            "item_content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "item_url": ""
+          }
+        },
+        "cacda701-0af3-4e71-9f9f-1ab97ad644c4": {
+          "type": "block",
+          "settings": {
+            "icon_picker": "shipping",
+            "item_title": "Shipping",
+            "item_content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "item_url": ""
+          }
+        },
+        "2d9898e8-bc5b-4e42-8d79-ed0460100b94": {
+          "type": "block",
+          "settings": {
+            "icon_picker": "manuals",
+            "item_title": "Manuals",
+            "item_content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "item_url": ""
+          }
+        },
+        "4b70198b-de22-4057-b628-f03aa9edbc1d": {
+          "type": "block",
+          "settings": {
+            "icon_picker": "faq",
+            "item_title": "Faq",
+            "item_content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "item_url": ""
+          }
+        },
+        "e1df680a-f868-4015-b866-101cdc32cd74": {
+          "type": "block",
+          "settings": {
+            "icon_picker": "help-me-choose",
+            "item_title": "Help me choose",
+            "item_content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "item_url": ""
+          }
+        },
+        "ed271707-abee-486e-a4b7-a03731e24767": {
+          "type": "block",
+          "settings": {
+            "icon_picker": "financing",
+            "item_title": "Financing",
+            "item_content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "item_url": ""
+          }
+        },
+        "ee77cf89-7f44-4d85-9550-76afa5280cd6": {
+          "type": "block",
+          "settings": {
+            "icon_picker": "store-locator",
+            "item_title": "Store locator",
+            "item_content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "item_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "90992a8a-9ca4-45d6-9f59-3616eb014343",
+        "a3d99610-5e68-4d0d-9146-0aab4998d0b4",
+        "cacda701-0af3-4e71-9f9f-1ab97ad644c4",
+        "2d9898e8-bc5b-4e42-8d79-ed0460100b94",
+        "4b70198b-de22-4057-b628-f03aa9edbc1d",
+        "e1df680a-f868-4015-b866-101cdc32cd74",
+        "ed271707-abee-486e-a4b7-a03731e24767",
+        "ee77cf89-7f44-4d85-9550-76afa5280cd6"
+      ],
+      "settings": {
+      }
+    },
+    "still-have-questions": {
+      "type": "still-have-questions",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/still-have.jpg",
+        "section_title": "Still have questions?",
+        "icon_1": "",
+        "call_us_phone": "111 - 555 - 678",
+        "call_us_text": "Call Us",
+        "icon_2": "",
+        "chat_text": "Chat With Us",
+        "chat_url": "",
+        "chat_text_label": "Live Chat",
+        "icon_3": "",
+        "contact_text": "Chat With Us",
+        "contact_url": "",
+        "contact_text_label": "Contact form"
+      }
+    },
+    "knowledge": {
+      "type": "knowledge",
+      "blocks": {
+        "d93294b3-2ea6-4c28-a458-69df939eb61d": {
+          "type": "block",
+          "settings": {
+            "article": "news\/test1"
+          }
+        },
+        "17f151a0-fd31-421a-8c46-ee658ffccfbf": {
+          "type": "block",
+          "settings": {
+            "article": "news\/test1"
+          }
+        },
+        "761507fd-8fc2-42eb-8023-07121d16d07f": {
+          "type": "block",
+          "settings": {
+            "article": "news\/test1"
+          }
+        }
+      },
+      "block_order": [
+        "d93294b3-2ea6-4c28-a458-69df939eb61d",
+        "17f151a0-fd31-421a-8c46-ee658ffccfbf",
+        "761507fd-8fc2-42eb-8023-07121d16d07f"
+      ],
+      "settings": {
+        "section_title": "Want to up your E-bike knowledge?",
+        "cta_label": "Go To Magnum Academy",
+        "cta_url": ""
+      }
+    }
+  },
+  "order": [
+    "support-hero",
+    "support-grid",
+    "still-have-questions",
+    "knowledge"
+  ]
+}

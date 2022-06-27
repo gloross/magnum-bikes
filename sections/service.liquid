@@ -1,0 +1,59 @@
+{% liquid
+assign object = section.settings
+assign blocks = section.blocks 
+%}
+<section class="service">
+    <div class="container">
+        <div class="service__inner">
+            {% for block in blocks %}
+            {% assign b = block.settings %}
+            <div class="service__col">
+                {% comment %} <a href="{{b.item_url}}"> {% endcomment %}
+                    {% if b.svg_icon == blank%}
+                    {% render 'icon', icon: 'box' %}
+                    {% else %}
+                    {{b.svg_icon}}
+                    {%endif%}
+                    <p>{{b.description}}</p>
+                {% comment %} </a> {% endcomment %}
+            </div>
+            {%endfor%}
+        </div>
+    </div>
+</section>
+{% schema %}
+  {
+  "name": "Service",
+  "settings": [
+  ],
+  "blocks": [
+  {
+    "name": "Item",
+    "type": "block",
+    "settings": [
+    {
+        "type": "html",
+        "id": "svg_icon",
+        "label": "SVG Icon"
+      },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Ride Now, Pay Later"
+        },
+        {
+            "type": "url",
+            "id": "item_url",
+            "label": "URL"
+        }
+    ]
+  }
+],
+  "presets": [
+    {
+      "name": "Service"
+    }
+  ]
+}  
+{% endschema %}

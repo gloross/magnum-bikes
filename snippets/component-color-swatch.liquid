@@ -1,0 +1,30 @@
+
+{% for variant in product.variants %}
+{% assign colors = shop.metafields.globals.json_color.Colors | parse_json %}
+{% assign hex = variant.metafields.hex.color %}
+{% assign color_url = variant.metafields.url.color_swatch %}
+{% endfor %}
+
+{% liquid
+  assign img  = ''
+  assign color = ''
+  assign n    = name | downcase | replace: ' ',''
+  for i in colors
+    assign color_name = i['color name'] | downcase | replace: ' ',''
+    if color_name  == n
+      assign img = i['url']
+      assign color = i['hex']
+    endif
+  endfor
+%}
+
+<li {% if selected %} class="active" {% endif %} data-value="{{ name }}">
+  {% if color != '' %}
+  <svg class="icon icon--color-swatch" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0.23 0.19 26 26"><circle cx="13.229" cy="13.188" r="13" fill="{{color}}"/></svg>
+  {% else %}
+    <span class="color-swatch-span">
+      <img src="{{ img }}" alt="{{ name }}" width="" height="">
+    </span>
+  {% endif %}
+</li>
+

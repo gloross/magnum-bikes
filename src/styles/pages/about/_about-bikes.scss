@@ -1,0 +1,115 @@
+.about-bikes {
+  padding: rem(117) 0;
+
+  @include media-breakpoint-down(lg) {
+    padding: rem(67) 0;
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding: rem(40) 0;
+  }
+
+  &__title {
+    max-width: rem(1064);
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0 rem(20) rem(114) rem(20);
+    @include media-breakpoint-down(lg) {
+      padding: 0 12.372vw rem(67) 12.372vw;
+      max-width: 100%;
+    }
+
+    @include media-breakpoint-down(sm) {
+      padding: 0 rem(20) rem(40) rem(20);
+      flex-direction: column;
+    }
+
+    h2 {
+      font-size: rem(72);
+      line-height: rem(72);
+      display: block;
+      font-weight: 500;
+      color: $machine-grey;
+
+      @include media-breakpoint-down(lg) {
+        font-size: rem(52);
+        line-height: rem(52);
+      }
+
+      @include media-breakpoint-down(md) {
+        padding-right: rem(30);
+      }
+
+      @include media-breakpoint-down(sm) {
+        font-size: rem(28);
+        line-height: rem(36);
+        flex-direction: column;
+        padding-bottom: rem(8);
+      }
+    }
+
+    p {
+      font-size: rem(16);
+      line-height: rem(34);
+      display: block;
+      max-width: rem(500);
+
+      @include media-breakpoint-down(sm) {
+        font-size: rem(14);
+        line-height: rem(24);
+        max-width: 100%;
+      }
+    }
+  }
+
+  &__image {
+    margin-bottom: rem(140);
+
+    @include media-breakpoint-down(lg) {
+      margin-bottom: rem(70);
+    }
+
+    @include media-breakpoint-down(sm) {
+      margin-bottom: rem(40);
+    }
+
+    .media-wrapper {
+      padding-bottom: 33.48%;
+
+      @include media-breakpoint-down(sm) {
+        padding-bottom: 66.66%;
+      }
+    }
+  }
+
+  &__text {
+    max-width: rem(680);
+
+    @include media-breakpoint-down(sm) {
+      max-width: 100%;
+      padding: 0 rem(20);
+    }
+
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+
+    p {
+      font-size: rem(32);
+      line-height: rem(50);
+      color: $magnum-black;
+      @include media-breakpoint-down(lg) {
+        font-size: rem(28);
+        line-height: rem(45);
+      }
+
+      @include media-breakpoint-down(sm) {
+        font-size: rem(24);
+        line-height: rem(36);
+      }
+    }
+  }
+}

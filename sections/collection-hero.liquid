@@ -1,0 +1,29 @@
+<section class="collection-hero" style="{% if collection.metafields.my_fields.background_overlay %}position:relative;{% endif %}background: url('{{ collection.image | img_url: '1920x' }}') no-repeat; background-size:cover;background-position:center center;">
+  {% if collection.metafields.my_fields.background_overlay %}
+    <div style="background-color: {{ collection.metafields.my_fields.background_overlay }};position: absolute;top: 0;bottom: 0;left: 0;right: 0;opacity: .6;"></div>
+  {% endif %}
+  <div class="container container--middle">
+    <div class="collection-hero__inner">
+      <div class="collection-hero__col-left" {% if collection.metafields.my_fields.background_overlay %} style="z-index: 1" {% endif %}>
+        {% render 'icon', icon: 'logo-white' %}
+        <h1>{{ collection.title }}</h1>
+        {% if collection.description %}
+          <p>{{ collection.description }}</p>
+        {% endif %}
+      </div>
+      {% if collection.metafields.my_fields.bullets %}
+        <div class="collection-hero__col-right">
+          {% assign bullets = collection.metafields.my_fields.bullets | split: '|' %}
+          <ul class="collection-hero__star-list">
+            {% for bullet in bullets %}
+              <li>
+                {% render 'icon', icon: '4star' %}
+                {{ bullet }}
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>

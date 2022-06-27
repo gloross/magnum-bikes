@@ -1,0 +1,96 @@
+{% assign object = section.settings %}
+<section class="cta">
+    <div class="cta__inner">
+        <div class="cta__col-left">
+            <div class="cta__item">
+                <img class="cta__image" src="{{ object.image | img_url: '50x' }}" alt="" loading="lazy" width="" height="">
+                <a href="tel:{{ object.call_us_phone }}"> {{ object.call_us_text }}</a>
+                <a href="{{ object.chat_url }}"> {{ object.chat_text }}</a>
+
+            </div>
+            <div class="cta__item">
+                {%comment%}TO DO Check this part. This should be printed from metafields{%endcomment%}
+               <p>{{product.metafields.highlights.product_title}}<span>{{product.metafields.edetails.battery_ah}} </span> <span>Black </span> </p>
+            </div>
+        </div>
+        <div class="cta__col-right">
+            <div class="cta__item">
+            <ul>
+                <li>
+                    <a href="{{ object.size_cta_url }}">{{ object.size_cta_text }} {% render 'icon', icon: 'arrow-up-right' %} </a>
+                </li>
+                <li>
+                    <a href="{{ object.compare_cta_url }}">{{ object.compare_cta_text }} {% render 'icon', icon: 'arrow-up-right' %} </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col__item">
+
+            <a href="#" class="btn btn--blue-fill">ADD TO CART</a>
+        </div>
+    </ul>
+    </div>
+</section>
+
+{% schema %}
+  {
+  "name": "CTA",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "label": "Call Us Phone number",
+      "id": "call_us_phone",
+      "default": "111 - 555 - 678"
+    },
+    {
+      "type": "text",
+      "label": "Call Us TEXT",
+      "id": "call_us_text",
+      "default": "Call Us"
+    },
+    {
+      "type": "url",
+      "label": "Chat URL",
+      "id": "chat_url"
+    },
+    {
+      "type": "text",
+      "label": "Live Chat TEXT",
+      "id": "chat_text",
+      "default": "Live Chat"
+    },
+    {
+      "type": "url",
+      "label": "Is this size right... URL",
+      "id": "size_cta_url"
+    },
+    {
+      "type": "text",
+      "label": "Is this size ... TEXT",
+      "id": "size_cta_text",
+      "default": "Is the size right for me?"
+    },
+    {
+        "type": "url",
+        "label": "Compare URL",
+        "id": "compare_cta_url"
+      },
+      {
+        "type": "text",
+        "label": "Compare TEXT",
+        "id": "compare_cta_text",
+        "default": "Compare"
+      }
+  ],
+  "presets": [
+    {
+      "name": "CTA"
+    }
+  ]
+}  
+{% endschema %}

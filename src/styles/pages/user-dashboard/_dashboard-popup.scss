@@ -1,0 +1,42 @@
+.dashboard-popup {
+  &__pop-up-bar {
+    display: none;
+    position: relative;
+    padding: rem(22) 0;
+    background-color: $cyan;
+    margin-bottom: rem(-23);
+
+    @include media-breakpoint-down(sm) {
+      padding: rem(16) 0;
+      margin-bottom: 0;
+    }
+
+    &.active {
+      display: block;
+    }
+  }
+
+  &__pop-up-bar-inner {
+    position: relative;
+    padding-right: rem(32);
+    p {
+      font-size: rem(17);
+      line-height: line-height(17, 26);
+      font-weight: 700;
+      color: $white;
+    }
+
+    .icon--close {
+      path {
+        stroke: $white;
+      }
+    }
+
+    .close {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+    }
+  }
+}

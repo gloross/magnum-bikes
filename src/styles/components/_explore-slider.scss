@@ -1,0 +1,269 @@
+.explore {
+  &__thumbs {
+    width: 33.4%;
+    background-color: $machine-grey;
+    padding: rem(115) rem(44) rem(46);
+    position: relative;
+
+    @include media-breakpoint-down(md) {
+      padding: rem(115) rem(20) rem(46);
+    }
+
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+    }
+
+    @include media-breakpoint-down(xs) {
+      padding: rem(176) rem(20) rem(122);
+    }
+
+    .swiper-container {
+      padding: 0 rem(44);
+      overflow: visible;
+      margin: 0 rem(-44);
+    }
+  }
+
+  &__title {
+    padding-bottom: rem(58);
+
+    @include media-breakpoint-down(sm) {
+      padding-bottom: rem(26);
+    }
+
+    .h3 {
+      font-size: rem(24);
+      line-height: rem(26);
+      color: $white;
+    }
+  }
+
+  &__text {
+    margin-top: rem(67);
+
+    @include media-breakpoint-down(sm) {
+      margin-top: rem(20);
+    }
+
+    .h5 {
+      font-size: rem(17);
+      line-height: rem(26);
+      color: $white;
+      padding-bottom: rem(10);
+    }
+
+    p {
+      font-size: rem(15);
+      line-height: rem(25);
+      color: $white;
+      max-width: rem(305);
+    }
+  }
+
+  &__slider {
+    width: 66.6%;
+    position: relative;
+
+    @include media-breakpoint-down(sm) {
+      overflow: hidden;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .swiper-container {
+      height: 100%;
+
+      img {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &__arrows {
+    max-width: rem(112);
+    display: flex;
+    justify-content: space-between;
+    margin-top: rem(22);
+
+    @include media-breakpoint-down(sm) {
+      margin-top: rem(13);
+    }
+
+    .icon {
+      transition: $t-hover;
+
+      path {
+        fill: $white;
+      }
+    }
+  }
+
+  .btn__nav {
+    width: rem(50);
+    height: rem(50);
+    border-radius: 50%;
+    border: 1px solid $grey-light-2;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: $t-hover;
+
+    &--close-preview {
+      background-color: rgba($grey-light-2, 0.15);
+      border: none;
+      position: absolute;
+      right: rem(40);
+      top: rem(40);
+      z-index: 1;
+
+      svg {
+        pointer-events: none;
+      }
+    }
+
+    &--close-thumb {
+      display: none;
+      left: rem(20);
+      top: rem(20);
+      right: unset;
+
+      @include media-breakpoint-down(sm) {
+        display: flex;
+      }
+
+      svg {
+        path {
+          stroke: $white;
+        }
+      }
+    }
+
+    &--prev {
+      &:hover {
+        .icon {
+          margin-left: rem(-6);
+        }
+      }
+    }
+
+    &--next {
+      &:hover {
+        .icon {
+          margin-right: rem(-6);
+        }
+      }
+    }
+  }
+
+  .swiper-container {
+    overflow: hidden;
+  }
+
+  .btn-close-preview {
+    width: rem(50);
+    height: rem(50);
+    border-radius: 50%;
+    border: 1px solid $grey-light-2;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: $t-hover;
+  }
+}
+
+.explore-popup {
+  opacity: 0;
+  height: 0;
+  transition: opacity $t-hover;
+  width: 100%;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  pointer-events: none;
+
+  &.active {
+    opacity: 1;
+    height: auto;
+    pointer-events: auto;
+    z-index: 101;
+  }
+
+  &__box {
+    display: none;
+
+    &.active {
+      display: flex;
+    }
+  }
+}
+
+.explore-product {
+  @include media-breakpoint-down(sm) {
+    max-height: rem(730);
+  }
+  &__inner {
+    
+    @include media-breakpoint-down(sm) {
+      
+    }
+
+    .cte-wrapper {
+      max-width: rem(900);
+      width: 100%;
+      margin: auto;
+      position: relative;
+      &-mob {
+        display: none;
+        @include media-breakpoint-down(sm) {
+          display: block;
+        }
+      }
+
+      &-des {
+        display: block;
+        @include media-breakpoint-down(sm) {
+          display: none;
+        }
+      }
+
+      .svg {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        z-index: 5;
+      }
+    }
+
+    .cte-image {
+      max-width: 100%;
+      z-index: 1;
+    }
+    .click-to-explore-btn {
+      cursor: pointer;
+    }
+    .click-to-explore-btn:hover {
+      fill: #26bbee;
+      opacity: 1;
+    }
+  }
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .circle-slide-open {
+    cursor: pointer;
+  }
+
+  .circle-slide-small {
+    pointer-events: none;
+  }
+}

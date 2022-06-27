@@ -1,0 +1,94 @@
+{% liquid
+  assign object = section.settings
+  assign blocks = section.blocks
+%}
+
+<section class="testimonial">
+  <div class="testimonial__inner">
+    <h2>{{object.section_title}}</h2>
+    <div class="testimonial__arrows u-d-flex">
+      <div class="js-arrow-prev-testimonial btn__nav btn__nav--prev">{% render 'icon', icon: 'arrow-left' %} </div>
+      <div class="js-arrow-next-testimonial btn__nav btn__nav--next">{% render 'icon', icon: 'arrow-right' %} </div>
+    </div>
+    <div class="swiper-container js-testimonial">
+      <div class="swiper-wrapper">
+        {% for block in blocks %}
+        {% assign b = block.settings %}
+        <div class="swiper-slide">
+            <div class="testimonial__item">
+              <div class="testimonial__item-text">
+                <span>{{forloop.index}} of  {{ forloop.length }}</span>
+                <p>{{b.testimoanial}}</p>
+              </div>
+              <div class="testimonial__item-writer">
+                {%- render 'img',
+                img: b.author_image,
+                img_sm: '',
+                img_md: '',
+                img_lg: '',
+                m_width: '50'
+              -%}
+                <div class="u-d-flex">
+                  <p>{{b.author_name}}</p>
+                  <p><span>{{b.author_occupation}}</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{% schema %}
+{
+"name": "Testimonials",
+"settings": [
+{
+  "type": "text",
+  "id": "section_title",
+  "label": "Section title",
+  "default": "Feel The Love."
+}
+],
+"blocks": [
+{
+  "name": "Item",
+  "type": "block",
+  "settings": [
+  {
+    "type": "image_picker",
+    "id": "author_image",
+    "label": "Author image"
+  },
+  {
+    "type": "textarea",
+    "id": "testimoanial",
+    "label": "Testimonial",
+    "default": "\“We believe electric bicycles are changing the concept of travel providing a clean, efficient and exciting new mode of transportation that is affordable to all.\”"
+  },
+  {
+    "type": "text",
+    "id": "author_name",
+    "label": "Author name",
+    "default": "Nathalie Franco"
+  },
+  {
+    "type": "text",
+    "id": "author_occupation",
+    "label": "Author Location",
+    "default": "CEO Formula E"
+  }
+  ]
+}
+],
+"presets": [
+  {
+    "name": "Testimonials"
+  }
+]
+}
+{% endschema %}
+

@@ -1,0 +1,243 @@
+<!-- <link rel="stylesheet" href="{{ 'section-main-register.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'section-main-register.css' | asset_url | stylesheet_tag }}</noscript>
+
+<div class="register o-container --medium"></div>
+ -->
+
+<!-- {% schema %}
+{
+  "name": "t:sections.register.name",
+  "tag": "section",
+  "settings": []
+}
+{% endschema %} -->
+
+
+
+<section class="dashboard">
+  <div class="container container--small">
+    <div class="dashboard__inner js-tabs-user-dashboard">
+      <ul class="dashboard__list">
+        <li>
+          <a class="dashboard__links " href="">My Bike
+          </a>
+        </li>
+        <li>
+          <a class="dashboard__links" href="">Personal Information
+          </a>
+        </li>
+        <li>
+          <a class="dashboard__links active" href="">My Orders
+          </a>
+        </li>
+        <li>
+          <a class="dashboard__links" href="">Loyalty
+          </a>
+        </li>
+      </ul>
+      <div class="dashboard__tabs active">
+        <div class="dashbord-orders ">
+
+          <div class="row">
+            <div class="col-md-12">
+              <table class="js-dashbord-orders-table">
+                <thead>
+                  <tr>
+                    <th data-type="date" data-format="YYYY/MM/DD">DATE</th>
+                    <th>ORDER NUMBER</th>
+                    <th>TOTAL</th>
+                    <th>STATUS</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>10/10/2020</td>
+                    <td><span class="number">#7694421</span></td>
+                    <td>$30,720</td>
+                    <td><strong>Completed</strong></td>
+                    <td><strong><a href="" class="js-dataTable-poput-custom-open">SEE DETAILS{% render 'icon', icon: 'arrow-up-right' %}</a></strong></td>
+                  </tr>
+                  <tr>
+                    <td>10/10/2020</td>
+                    <td><strong>12x Magnum Navigator White</td>
+                    <td>$30720</td>
+                    <td><strong>Completed</strong></td>
+                    <td><strong><a href="" class="js-dataTable-poput-custom-open">SEE DETAILS{% render 'icon', icon: 'arrow-up-right' %}</a></strong></td>
+                  </tr>
+                  <tr>
+                    <td>10/10/2020</td>
+                    <td><strong>12x Magnum Navigator White</td>
+                    <td>$30720</td>
+                    <td><strong>Completed</strong></td>
+                    <td><strong><a href="" class="js-dataTable-poput-custom-open">SEE DETAILS{% render 'icon', icon: 'arrow-up-right' %}</a></strong></td>
+                  </tr>
+                  <tr>
+                    <td>10/10/2020</td>
+                    <td><strong>12x Magnum Navigator White</td>
+                    <td>$30720</td>
+                    <td><strong>Completed</strong></td>
+                    <td><strong><a href="" class="js-dataTable-poput-custom-open">SEE DETAILS{% render 'icon', icon: 'arrow-up-right' %}</a></strong></td>
+                  </tr>
+                  <tr>
+                    <td>10/10/2020</td>
+                    <td><strong>12x Magnum Navigator White</td>
+                    <td>$30720</td>
+                    <td><strong>Completed</strong></td>
+                    <td><strong><a href="" class="js-dataTable-poput-custom-open">SEE DETAILS{% render 'icon', icon: 'arrow-up-right' %}</a></strong></td>
+                  </tr>
+                  <tr>
+                    <td>10/10/2020</td>
+                    <td><strong>12x Magnum Navigator White</td>
+                    <td>$30720</td>
+                    <td><strong>Completed</strong></td>
+                    <td><strong><a href="" class="js-dataTable-poput-custom-open">SEE DETAILS{% render 'icon', icon: 'arrow-up-right' %}</a></strong></td>
+                  </tr>
+                  <tr>
+                    <td>10/10/2020</td>
+                    <td><strong>12x Magnum Navigator White</td>
+                    <td>$30720</td>
+                    <td><strong>Completed</strong></td>
+                    <td><strong><a href="" class="js-dataTable-poput-custom-open">SEE DETAILS{% render 'icon', icon: 'arrow-up-right' %}</a></strong></td>
+                  </tr>
+                  <tr>
+                    <td>10/10/2020</td>
+                    <td><strong>12x Magnum Navigator White</td>
+                    <td>$30720</td>
+                    <td><strong>Completed</strong></td>
+                    <td><strong><a href="" class="js-dataTable-poput-custom-open">SEE DETAILS{% render 'icon', icon: 'arrow-up-right' %}</a></strong></td>
+                  </tr>
+                  <tr>
+                    <td>10/10/2020</td>
+                    <td><strong>12x Magnum Navigator White</td>
+                    <td>$30720</td>
+                    <td><strong>Completed</strong></td>
+                    <td><strong><a href="" class="js-dataTable-poput-custom-open">SEE DETAILS{% render 'icon', icon: 'arrow-up-right' %}</a></strong></td>
+                  </tr>
+                  <tr>
+                    <td>10/10/2020</td>
+                    <td><strong>12x Magnum Navigator White</td>
+                    <td>$30720</td>
+                    <td><strong>Completed</strong></td>
+                    <td><strong><a href="" class="js-dataTable-poput-custom-open">SEE DETAILS{% render 'icon', icon: 'arrow-up-right' %}</a></strong></td>
+                  </tr>
+                  <tr>
+                    <td>10/10/2020</td>
+                    <td><strong>12x Magnum Navigator White</td>
+                    <td>$30720</td>
+                    <td><strong>Completed</strong></td>
+                    <td><strong><a href="" class="js-dataTable-poput-custom-open">SEE DETAILS{% render 'icon', icon: 'arrow-up-right' %}</a></strong></td>
+                  </tr>
+                  <tr>
+                    <td>10/10/2020</td>
+                    <td><strong>12x Magnum Navigator White</td>
+                    <td>$30720</td>
+                    <td><strong>Completed</strong></td>
+                    <td><strong><a href="" class="js-dataTable-poput-custom-open">SEE DETAILS{% render 'icon', icon: 'arrow-up-right' %}</a></strong></td>
+                  </tr>
+                  <tr>
+                    <td>10/10/2020</td>
+                    <td><strong>12x Magnum Navigator White</td>
+                    <td>$30720</td>
+                    <td><strong>Completed</strong></td>
+                    <td><strong><a href="" class="js-dataTable-poput-custom-open">SEE DETAILS{% render 'icon', icon: 'arrow-up-right' %}</a></strong></td>
+                  </tr>
+                  <tr>
+                    <td>10/10/2020</td>
+                    <td><strong>12x Magnum Navigator White</td>
+                    <td>$30720</td>
+                    <td><strong>Completed</strong></td>
+                    <td><strong><a href="" class="js-dataTable-poput-custom-open">SEE DETAILS{% render 'icon', icon: 'arrow-up-right' %}</a></strong></td>
+                  </tr>
+                  <tr>
+                    <td>10/10/2020</td>
+                    <td><strong>12x Magnum Navigator White</td>
+                    <td>$30720</td>
+                    <td><strong>Completed</strong></td>
+                    <td><strong><a href="" class="js-dataTable-poput-custom-open">SEE DETAILS{% render 'icon', icon: 'arrow-up-right' %}</a></strong></td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="dataTable-poput-custom-overlay js-dataTable-poput-custom-overlay"></div>
+          <div class="dataTable-poput-custom js-dataTable-poput-custom">
+             <div class="dataTable-poput-custom__inner">
+               <a href="" class="dataTable-poput-custom__close js-dataTable-poput-custom-close">
+                       {% render 'icon', icon: 'close' %}
+               </a>
+               <div class="dataTable-poput-custom__item">
+                   <h3>Order #7694421</h3>
+                   <span>STATUS: <strong>Completed</strong></span>
+                   <span>date purchased:<strong>10/10/2020</strong></span>
+               </div>
+                <div class="dataTable-poput-custom__item">
+                   <h4>Order Details</h4>
+                   <div class="u-d-flex ">
+                          <div class="dataTable-poput-custom__item-inner">
+                            <div class="media-wrapper">
+                              <img src="https://via.placeholder.com/102x59.jpg?text=Pleaceholder" loading="lazy" width="" height=""/>
+                            </div>
+                          </div>
+                        <div class="dataTable-poput-custom__item-inner">
+                            <span><strong>Magnum Navigator White</strong></span>
+                            <p>Lorem ipsum dolor sit amet, consectetur.</p>
+                        </div>
+                           <div class="dataTable-poput-custom__item-inner">
+                            <span>$2560</span>
+                        </div>
+                   </div>
+                   <div class="u-d-flex u-justify-between">
+                     <span>Subtotal</span>
+                     <span>$2,860</span>
+                   </div>
+                   <div class="u-d-flex u-justify-between">
+                      <span>Shipping - Home Delivery</span>
+                     <span>$12.00</span>
+                   </div>
+                   <div class="u-d-flex u-justify-between">
+                      <span>Tax</span>
+                     <span>$2,872</span>
+                   </div>
+                   <div class="u-d-flex u-justify-between">
+                      <span><strong>Total</strong></span>
+                     <span><strong>$2,872</strong></span>
+                   </div>
+
+                </div>
+                <div class="dataTable-poput-custom__item">
+                  <h4>Payment Method</h4>
+                  <span>Credit Card</span>
+                </div>
+                  <div class="dataTable-poput-custom__item">
+                    <h4>Customer Details</h4>
+                    <div class="dataTable-poput-custom__item-info">
+                      <div class="dataTable-poput-custom__item-info-col">
+                          <span>Name:</span>
+                          <span><strong>Natalie Franco</strong></span>
+                      </div>
+                      <div class="dataTable-poput-custom__item-info-col">
+                        <span>Email:</span>
+                        <a href="mailto:natalie.franco@gmail.com">natalie.franco@gmail.com</a>
+                      </div>
+                      <div class="dataTable-poput-custom__item-info-col">
+                         <span>Phone:</span>
+                        <a href="tel:093276 432674329">093276 432674329</a>
+                      </div>
+                      <div class="dataTable-poput-custom__item-info-col">
+                         <span>Billing Address:</span>
+                        <span><strong>91495 Dunbar Dr, Carson City, NV 89704</strong></span>
+                      </div>
+                    </div>
+                </div>
+             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+

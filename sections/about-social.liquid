@@ -1,0 +1,60 @@
+{% liquid
+  assign object = section.settings
+  assign blocks = section.blocks
+   assign b = block.settings 
+%}
+
+<section class="about-social"
+  style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), linear-gradient(360deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%), url({{object.image | img_url: 'master'}}); background-size: cover; background-position: center center; position: relative;">
+  <p class="heading_social_section">{{object.heading_social}}</p>
+  <div class="contianer">
+    <ul class="about-social__list">
+      {% for block in blocks%}
+      {% assign b = block.settings %}
+      <li><a href="{{b.social_url}}">{{b.social_label}}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+{% schema %}
+{
+"name": "About Social links",
+"settings": [
+{
+  "type": "image_picker",
+  "id": "image",
+  "label": "Image"
+},
+{
+  "type": "text",
+  "id": "heading_social",
+  "label": "Social heading ",
+  "default": "Stay Connected"
+}
+],
+"blocks": [
+{
+  "name": "Item",
+  "type": "block",
+  "settings": [
+  {
+      "type": "text",
+      "id": "social_label",
+      "label": "Social link label",
+      "default": "Facebook"
+  },
+  {
+      "type": "url",
+      "id": "social_url",
+      "label": "Soocial URL"
+  }
+  ]
+}
+],
+"presets": [
+  {
+    "name": "About Social links"
+  }
+]
+}  
+{% endschema %}

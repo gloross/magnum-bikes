@@ -1,0 +1,181 @@
+{% liquid
+  assign image_1 = product.metafields.main_gallery.url_image_1
+  assign alt_1 = product.metafields.main_gallery.image_1_alt_text
+  assign image_2 = product.metafields.main_gallery.url_image_2
+  assign alt_2 = product.metafields.main_gallery.image_2_alt_text
+  assign image_3 = product.metafields.main_gallery.url_image_3
+  assign alt_3 = product.metafields.main_gallery.image_3_alt_text
+  assign image_4 = product.metafields.main_gallery.url_image_4
+  assign alt_4 = product.metafields.main_gallery.image_4_alt_text
+  assign image_5 = product.metafields.main_gallery.url_image_5
+  assign alt_5 = product.metafields.main_gallery.image_5_alt_text
+  assign image_6 = product.metafields.main_gallery.url_image_6
+  assign alt_6 = product.metafields.main_gallery.image_6_alt_text
+  %}
+<section class="product-details">
+  <div class="product-details__inner">
+    {%comment%}TO DO breadcrumbs!!!{%endcomment%}
+    <div class="breadcrumbs">
+      <a href="#">E-Bikes</a>/<span>Trail</span>/<span>Magnum Scout</span>
+    </div>
+      <div class="product-details__gallery">
+        <div class="product-details__resize js-product-resize">
+          {% render 'icon', icon: 'resize' %}
+        </div>
+        <div class="product-slider swiper-container js-product-slider">
+          <ul class="swiper-wrapper js-gallery">
+            {% for image in product.images %}
+            <li class="swiper-slide">
+              <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                <a href="{{image_1}}" itemprop="contentUrl" data-size="1024x768">
+                     <div class="media-wrapper">
+                          <img height="" loading="lazy" src="{{ image | image_url }}" width="" alt="{{alt_1}}"/>
+                     </div>
+                </a>
+              </figure>
+              <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                <a href="{{image_1}}" itemprop="contentUrl" data-size="1024x768">
+                 <div class="media-wrapper">
+                          <img height="" loading="lazy" src="{{image_1}}" width="" alt="{{alt_1}}"/>
+                     </div>
+                </a>
+              </figure>
+              <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                <a href="{{image_1}}" itemprop="contentUrl" data-size="1024x768">
+                  <div class="media-wrapper">
+                          <img height="" loading="lazy" src="{{image_1}}" width="" alt="{{alt_1}}"/>
+                     </div>
+                </a>
+              </figure>
+            </li>
+            {%endfor%}
+          </ul>
+          <div class="product-slider__btn-wrapper">
+            <div class="swiper-button-prev js-swiper-button-prev">
+              {% render 'icon', icon: 'arrow-left' %}
+            </div>
+            <div class="swiper-button-next js-swiper-button-next">
+              {% render 'icon', icon: 'arrow-right' %}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="product-details__col-right">
+        <div class="pswp" role="dialog" aria-hidden="true">
+          <!-- Background of PhotoSwipe.
+                It's a separate element, as animating opacity is faster than rgba(). -->
+          <div class="pswp__bg"></div>
+          <!-- Slides wrapper with overflow:hidden. -->
+          <div class="pswp__scroll-wrap">
+            <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
+            <!-- don't modify these 3 pswp__item elements, data is added later on. -->
+            <div class="pswp__container">
+              <div class="pswp__item"></div>
+              <div class="pswp__item"></div>
+              <div class="pswp__item"></div>
+            </div>
+            <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+            <div class="pswp__ui pswp__ui--fit pswp__ui--over-close">
+              <div class="pswp__top-bar">
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <div class="pswp__preloader">
+                  <div class="pswp__preloader__icn">
+                    <div class="pswp__preloader__cut">
+                      <div class="pswp__preloader__donut"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="pswp__bottom-bar">
+                <div class="pswp__counter"></div>
+                <button class="js-zoom-in pswp__button pswp__button--zoom-in dd" title="Zoom in">
+                  in
+                </button>
+                <button class="js-zoom-out pswp__button pswp__button--zoom-out" title="Zoom out">
+                  out
+                </button>
+              </div>
+              <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+              </div>
+              <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+              <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+              <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="product-details__tags">
+          <span>Sale</span>
+          <span>New</span>
+        </div>
+        <h1>Magnum Premium II High Step</h1>
+        <div class="product-details__color-variations">
+          <span>Urban Camo</span>
+          <ul class="js-color-variation">
+            <li class="active">
+              {% render 'icon', icon: 'black' %}
+            </li>
+            <li>
+              {% render 'icon', icon: 'antiquewhite' %}
+            </li>
+            <li>
+              {% render 'icon', icon: 'black' %}
+            </li>
+            <li>
+              {% render 'icon', icon: 'antiquewhite' %}
+            </li>
+            <li>
+              {% render 'icon', icon: 'black' %}
+            </li>
+            <li>
+              {% render 'icon', icon: 'antiquewhite' %}
+            </li>
+            <li>
+              {% render 'icon', icon: 'black' %}
+            </li>
+            <li>
+              {% render 'icon', icon: 'antiquewhite' %}
+            </li>
+          </ul>
+        </div>
+        <div class="product-details__battery">
+          <p>
+            {% render 'icon', icon: 'thunder' %}
+            <span>Select Battery</span>
+          </p>
+          <a href="#">How does this affect my ride?
+            {% render 'icon', icon: 'arrow-up-right' %}
+          </a>
+        </div>
+        <div class="product-details__options">
+          {% render 'product-radio-checkbox',
+                  text: ' ',
+                  name: 'price',
+                  id: 'first-price',
+                  textAh: '17.5 Ah',
+                  price: '$2,500',
+                  checked: 'checked'
+
+                %}
+          {% render 'product-radio-checkbox',
+                  text: ' ',
+                  name: 'price',
+                  id: 'second-price',
+                  textAh: '17.5 Ah',
+                  price: '$2,500',
+                  oldPrice: '$2,500'
+
+                %}
+        </div>
+        <div class="product-details__btn-wrapper">
+          <button class="btn btn--blue-fill u-uppercase">ADD TO CART</button>
+          <button class="btn btn--outline">Where to Try</button>
+        </div>
+        <a class="product-details__link js-select-class" href="#">Or as low as $119.90 / month</a>
+      </div>
+    </div>
+</section>

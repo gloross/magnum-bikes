@@ -1,0 +1,163 @@
+.learning-filter {
+  padding-top: rem(45);
+
+  @include media-breakpoint-down(sm) {
+    padding-top: rem(9);
+  }
+
+  &__inner {
+    position: relative;
+  }
+
+  &__options {
+    display: flex;
+    align-items: center;
+    flex-flow: row wrap;
+    padding-bottom: rem(30);
+    border-bottom: 2px solid $divider-grey;
+
+    @include media-breakpoint-down(sm) {
+      padding-bottom: rem(19);
+    }
+
+    h4,
+    a {
+      font-size: rem(14);
+      line-height: line-height(14, 24);
+      white-space: nowrap;
+    }
+
+    h4 {
+      color: $machine-grey;
+      padding-right: rem(17);
+      border-right: 1px solid $gainsboro;
+      margin-right: rem(12);
+
+      @include media-breakpoint-down(sm) {
+        border: none;
+        padding-right: 0;
+        margin-right: rem(10);
+      }
+    }
+
+    a {
+      margin-left: auto;
+      cursor: pointer;
+      font-weight: 700;
+      text-decoration: underline;
+      color: #0d0d0d;
+
+      &.hide-sm {
+        @include media-breakpoint-down(sm) {
+          display: none;
+        }
+      }
+
+      &.hide-lg {
+        display: none;
+
+        @include media-breakpoint-down(sm) {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &__options-select {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(auto, 1fr));
+
+    @include media-breakpoint-down(sm) {
+      display: flex;
+    }
+
+    .select-field {
+      margin-right: rem(16);
+
+      &:last-child {
+        min-width: unset;
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__tags {
+    position: relative;
+
+    @include media-breakpoint-down(sm) {
+      margin-right: rem(-20);
+
+      &::after {
+        background: linear-gradient(270deg, #ffffff 0%, transparent 100%);
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: rem(50);
+        height: 100%;
+        z-index: 101;
+        pointer-events: none;
+      }
+    }
+  }
+
+  &__tags-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    padding: rem(28) 0;
+
+    @include media-breakpoint-down(sm) {
+      position: relative;
+      padding: rem(16) 0;
+      flex-wrap: nowrap;
+      overflow: hidden;
+      overflow-x: scroll;
+      white-space: nowrap;
+    }
+  }
+
+  &__tag {
+    display: flex;
+    align-items: center;
+    margin-right: rem(12);
+    padding: rem(5) rem(19);
+    border: 1px solid $machine-grey;
+    border-radius: rem(46);
+
+    @include media-breakpoint-down(sm) {
+      &:last-of-type {
+        margin-right: rem(20);
+      }
+    }
+
+    span {
+      font-size: rem(14);
+      line-height: line-height(14, 24);
+      font-weight: 700;
+      color: $machine-grey;
+    }
+
+    svg {
+      cursor: pointer;
+      margin-left: rem(11);
+
+      @include media-breakpoint-down(sm) {
+        width: rem(10);
+        height: rem(11);
+      }
+    }
+  }
+
+  &__clear {
+    display: inline-flex;
+    align-items: center;
+    font-size: rem(14);
+    line-height: line-height(14, 24);
+    font-weight: 700;
+    padding: rem(7) rem(20);
+    cursor: pointer;
+    color: #fff;
+    background-color: $machine-grey;
+    border-radius: rem(46);
+  }
+}

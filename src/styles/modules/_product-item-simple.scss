@@ -1,0 +1,46 @@
+/* ------------------------------------------------------------ *\
+  Product Item Simple
+\* ------------------------------------------------------------ */
+
+.product-item-simple {
+  padding: rem(17);
+  background: $white;
+  text-align: center;
+
+  &__link {
+    display: block;
+    margin-bottom: rem(17);
+    transition: opacity 0.4s;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__image .media-wrapper {
+    padding-bottom: 70%;
+
+    img {
+      height: 100%;
+    }
+  }
+
+  &__title {
+    font-size: rem(18);
+    line-height: line-height(18, 26);
+    font-weight: bold;
+
+    @include media-breakpoint-down(sm) {
+      font-size: rem(16);
+    }
+
+    > * {
+      font-size: inherit;
+      line-height: inherit;
+    }
+  }
+}

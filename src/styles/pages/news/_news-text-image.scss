@@ -1,0 +1,141 @@
+.news-text-image {
+  padding-bottom: rem(20);
+
+  @include media-breakpoint-down(sm) {
+    overflow-x: hidden;
+    padding-bottom: 0;
+  }
+
+  .container {
+    @include media-breakpoint-down(sm) {
+      padding: 0;
+    }
+  }
+
+  &__title {
+    padding-bottom: rem(50);
+
+    @include media-breakpoint-down(sm) {
+      padding: 0 rem(16) rem(40);
+    }
+
+    h2 {
+      font-size: rem(30);
+      line-height: rem(44);
+      color: $machine-grey;
+
+      @include media-breakpoint-down(sm) {
+        font-size: rem(24);
+        line-height: rem(32);
+      }
+    }
+  }
+
+  &__inner {
+    display: flex;
+
+    @include media-breakpoint-down(sm) {
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    margin-bottom: rem(90);
+
+    @include media-breakpoint-down(md) {
+      margin-bottom: rem(45);
+    }
+
+    @include media-breakpoint-down(sm) {
+      margin: 0;
+
+      &:not(:last-child) {
+        margin-bottom: rem(16);
+      }
+    }
+  }
+
+  &__image {
+    width: 49%;
+
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+    }
+
+    .media-wrapper {
+      padding-bottom: 67.13%;
+
+      @include media-breakpoint-down(sm) {
+        padding-bottom: 93.5%;
+      }
+    }
+  }
+
+  &__text {
+    width: 51%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+    }
+  }
+
+  &__content {
+    max-width: rem(335);
+    margin-left: rem(10);
+
+    @include media-breakpoint-down(sm) {
+      margin-left: 0;
+      max-width: 100%;
+      padding: rem(24) rem(16);
+    }
+
+    h3 {
+      font-size: rem(26);
+      line-height: rem(32);
+      padding-bottom: rem(22);
+      color: $machine-grey;
+      font-weight: 500;
+
+      @include media-breakpoint-down(sm) {
+        font-size: rem(24);
+        padding-bottom: rem(16);
+      }
+    }
+
+    p {
+      font-size: rem(16);
+      line-height: rem(24);
+      color: $grey-light;
+    }
+  }
+
+  &__date {
+    font-size: rem(16);
+    line-height: rem(24);
+    color: $grey-light;
+    padding-bottom: rem(16);
+    font-weight: 700;
+    display: block;
+
+    @include media-breakpoint-down(sm) {
+      padding-bottom: rem(8);
+    }
+  }
+
+  .news-text-image__item--reverse {
+    .news-text-image__inner {
+      flex-direction: row-reverse;
+
+      @include media-breakpoint-down(sm) {
+        flex-direction: column;
+      }
+    }
+
+    .news-text-image__text {
+      justify-content: flex-start;
+    }
+  }
+}

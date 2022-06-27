@@ -1,0 +1,15 @@
+{
+  "sections": {
+    "warranty": {
+      "type": "warranty",
+      "settings": {
+        "page_title": "Warranty Activation",
+        "page_paragraph": "<p>Fill out the following agreement to register your warranty. For the best service and support please complete all fields as accurately as possible.<\/p>",
+        "page_form": "<!-- ---------------------------------------------------------------------- --> <!-- NOTE: Please add the following <FORM> element to your page. --> <!-- ---------------------------------------------------------------------- --><form action=\"https:\/\/webto.salesforce.com\/servlet\/servlet.WebToCase?encoding=UTF-8\" method=\"POST\" class=\"akeo-form\">\n<input type=\"hidden\" name=\"orgid\" value=\"00D4x0000069epE\"> <input type=\"hidden\" name=\"retURL\" value=\"http:\/\/\"> <!-- ---------------------------------------------------------------------- --> <!-- NOTE: These fields are optional debugging elements. Please uncomment --> <!-- these lines if you wish to test in debug mode. --> <!-- <input type=\"hidden\" name=\"debug\" value=1> --> <!-- <input type=\"hidden\" name=\"debugEmail\" --> <!-- value=\"support@magnumbikes.com\"> --> <!-- ---------------------------------------------------------------------- --> <label for=\"name\">Contact Name<\/label><input id=\"name\" maxlength=\"80\" name=\"name\" size=\"20\" type=\"text\" placeholder=\"Contact Name\"><br> <label for=\"email\">Email<\/label><input id=\"email\" maxlength=\"80\" name=\"email\" size=\"20\" type=\"text\" placeholder=\"Email\"><br> <label for=\"phone\">Phone<\/label><input id=\"phone\" maxlength=\"40\" name=\"phone\" size=\"20\" type=\"text\" placeholder=\"Phone\"><br> <label for=\"subject\">Subject<\/label><input id=\"subject\" maxlength=\"80\" name=\"subject\" size=\"20\" type=\"text\" placeholder=\"Subject\"><br> <label for=\"description\">Description<\/label><textarea name=\"description\" placeholder=\"Description\"><\/textarea><br> <input type=\"submit\" name=\"submit\">\n<\/form>"
+      }
+    }
+  },
+  "order": [
+    "warranty"
+  ]
+}

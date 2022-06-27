@@ -1,0 +1,101 @@
+{% liquid
+  assign object = section.settings
+  assign featured_article = object.featured_article
+  if object.image_desktop == blank
+  assign image_desktop = featured_article.image
+  else
+  assign image_desktop = object.image_desktop
+  endif
+  if object.image_mobile == blank
+  assign image_mobile = featured_article.image
+  else
+  assign image_mobile = object.image_mobile
+  endif
+  %}
+
+{%- if featured_article != blank -%}
+  {%- for tag in featured_article.tags -%}
+    {%- if tag contains 'category:' -%}
+      {%- assign tag_category = tag -%}
+    {%- endif -%}
+  {%- endfor -%}
+
+  <section class="learning-category">
+    <div class="container container--small">
+      {%- if object.title != blank -%}
+        <h2 class="learning-category__title">
+          {{- object.title -}}
+        </h2><!-- /.learning-category__title -->
+      {%- endif -%}
+
+      <div class="learning-category__inner">
+        <div class="learning-category__image">
+          <a href="{{ featured_article.url }}">
+          <div class="media-wrapper">
+            {% render 'img',
+              img: image_desktop,
+              img_sm: image_mobile,
+              img_md: image_mobile
+            %}
+          </div>
+        </a>
+        </div>
+        <div class="learning-category__info">
+          {%- if tag_category -%}
+            <div class="learning-category__meta">
+              <span>{{- tag_category | remove: 'category:' -}}</span>
+            </div>
+          {%- endif -%}
+
+          <h3>
+            <a href="{{- featured_article.url -}}">{{ featured_article.title }}</a>
+          </h3>
+
+          <div class="learning-category__entry">
+            {{ featured_article.excerpt_or_content }}
+          </div><!-- /.learning-category__entry -->
+
+          {%- render 'article-tags' with
+            mod_article: featured_article,
+            mod_class: 'learning-category__tags' -%}
+        </div>
+      </div>
+    </div>
+  </section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Learning featured article",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Magnum Stories"
+    },
+    {
+        "type": "article",
+        "id": "featured_article",
+        "label": "Select featured article"
+    },
+    {
+        "type": "image_picker",
+        "id": "image_desktop",
+        "label": "Image desktop",
+        "info": "If blank default article image will be displayed"
+    },
+    {
+        "type": "image_picker",
+        "id": "image_mobile",
+        "label": "Image mobile",
+        "info": "If blank default article image will be displayed"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Learning featured article"
+    }
+  ]
+}
+{% endschema %}

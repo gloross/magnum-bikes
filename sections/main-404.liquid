@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="{{ 'section-main-404.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'section-main-404.css' | asset_url | stylesheet_tag }}</noscript>
+
+<div class="404 o-container --medium"></div>
+
+
+{% schema %}
+{
+  "name": "t:sections.404.name",
+  "tag": "section",
+  "settings": [
+  ],
+  "presets": [
+  {
+    "name": "Not found page"
+  }
+]
+}
+{% endschema %}

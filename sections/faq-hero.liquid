@@ -1,0 +1,62 @@
+{% assign object = section.settings %}
+{%comment%}TO DO search functionality{%endcomment%}
+<section class="faq-hero"
+  style="background:linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(.jpg), url({{object.image | img_url: 'master'}}); background-position: center; background-size: cover;">
+  <div class="container container--small">
+    <div class="faq-hero__inner">
+      <h1 class="h1">
+        {{object.section_title}}
+      </h1>
+      {%comment%}
+      <div class="search">
+        <form action="" method="get" role="search">
+            <input name="options[prefix]" type="hidden" value="last">
+            <input name="type" type="hidden" value="product"/>
+            <input autocomplete="off" class="search__input-field-bottom" id="searchField" name="q" placeholder=" " type="text" value="">
+            <button class="search__btn btn btn--blue-fill" type="">Search</button>
+            <label for="searchField">
+              {% render 'icon', icon: 'search' %}
+              Type to search....
+            </label>
+        </form>
+        <ul class="search__list">
+          <li>
+            <a href="">
+              <h4>Example search FAQ</h4>
+              <span>Example search FAQ item</span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <h4>Example search FAQ</h4>
+              <span>Example search FAQ item</span>
+            </a>
+          </li>
+        </ul>
+      </div>{%endcomment%}
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+  "name": "Faq Hero",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Hero Image"
+    },
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Title",
+      "default": "Frequently Asked Questions"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Faq Hero"
+    }
+  ]
+}  
+{% endschema %}

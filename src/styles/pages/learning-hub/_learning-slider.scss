@@ -1,0 +1,70 @@
+.learning-slider {
+  padding: rem(71) 0 rem(108);
+
+  @include media-breakpoint-down(sm) {
+    padding: rem(50) 0 rem(57);
+  }
+
+  &__wrapper {
+    padding-bottom: rem(68);
+
+    @include media-breakpoint-down(sm) {
+      padding-bottom: rem(48);
+      margin-right: 0;
+    }
+  }
+
+  h2 {
+    padding-bottom: rem(49);
+    font-size: rem(30);
+    line-height: rem(44);
+    color: $machine-grey;
+
+    @include media-breakpoint-down(sm) {
+      padding-bottom: rem(24);
+      font-size: rem(24);
+      line-height: rem(32);
+    }
+  }
+
+  .swiper-container {
+    padding: 0 12.372vw;
+    margin: 0 -12.372vw;
+
+    @include media-breakpoint-down(xl) {
+      padding: 0 6.5vw;
+      margin: 0 -6.5vw;
+    }
+
+    @include media-breakpoint-down(md) {
+      padding: 0 rem(20);
+      margin: 0 rem(-20);
+    }
+  }
+
+  .swiper-slide {
+    width: rem(320);
+
+    @include media-breakpoint-down(sm) {
+      width: auto;
+    }
+
+    @include media-breakpoint-down(xs) {
+      max-width: rem(320);
+      width: calc(100vw - 40px);
+    }
+  }
+
+  &__scrollbar {
+    width: 100% !important;
+    overflow: hidden;
+    border-radius: rem(12);
+    height: rem(3) !important;
+    background-color: #e8e8e8;
+    bottom: 0 !important;
+
+    .swiper-scrollbar-drag {
+      background: $cyan !important;
+    }
+  }
+}

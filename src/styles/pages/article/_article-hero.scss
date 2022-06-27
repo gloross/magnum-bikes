@@ -1,0 +1,9 @@
+.article-hero {
+  .media-wrapper {
+    padding-bottom: 34.55%;
+
+    @include media-breakpoint-down(sm) {
+      padding-bottom: 111%;
+    }
+  }
+}

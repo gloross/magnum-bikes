@@ -1,0 +1,10 @@
+{
+  "sections": {
+    "compare-e-bikes": {
+      "type": "compare-e-bikes"
+    }
+  },
+  "order": [
+    "compare-e-bikes"
+  ]
+}

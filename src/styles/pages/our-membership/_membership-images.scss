@@ -1,0 +1,55 @@
+.our-membership-images {
+  padding: rem(50) 0;
+
+  @include media-breakpoint-up(md) {
+    padding: rem(115) 0;
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-row-gap: rem(30);
+
+    @include media-breakpoint-up(md) {
+      grid-template-columns: repeat(3, minmax(auto, 1fr));
+      grid-column-gap: rem(30);
+      grid-row-gap: 0;
+    }
+
+    & > div {
+      p {
+        font-size: rem(19);
+        font-family: $font-light;
+        letter-spacing: rem(2);
+        line-height: line-height(19, 29);
+
+        &:first-of-type {
+          font-size: rem(23);
+          font-family: $font-bold;
+          line-height: line-height(23, 29);
+        }
+      }
+    }
+  }
+
+  img {
+    max-width: rem(250);
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  span {
+    display: inline-block;
+    margin-bottom: rem(25);
+    width: rem(45);
+    height: rem(45);
+    font-size: rem(24);
+    line-height: line-height(24, 45);
+    color: $black;
+    border: 1px solid $black;
+    border-radius: 100%;
+
+    @include media-breakpoint-up(md) {
+      margin: rem(45) 0 rem(35);
+    }
+  }
+}

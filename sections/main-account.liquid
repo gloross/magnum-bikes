@@ -1,0 +1,92 @@
+<!-- <link rel="stylesheet" href="{{ 'section-main-account.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'section-main-account.css' | asset_url | stylesheet_tag }}</noscript>
+
+<div class="account o-container --medium" data-section-id="{{- section.id -}}"></div>
+
+
+
+{% schema %}
+{
+  "name": "t:sections.account.name",
+  "tag": "section",
+  "settings": []
+}
+{% endschema %} -->
+<section class="dashboard">
+    <div class="container container--small">
+        <div class="dashboard__inner js-tabs-user-dashboard">
+            <ul class="dashboard__list">
+                <li>
+                    <a class="dashboard__links " href="">My Bike
+                    </a>
+                </li>
+                <li>
+                    <a class="dashboard__links active" href="">Personal Information
+                    </a>
+                </li>
+                <li>
+                    <a class="dashboard__links" href="">My Orders
+                    </a>
+                </li>
+                <li>
+                    <a class="dashboard__links" href="">Loyalty
+                    </a>
+                </li>
+            </ul>
+            <div class="dashboard__tabs active">
+                     <div class="dashboard-personal">
+                          <div class="dashboard-personal__inner">
+                                <div class="dashboard-personal__item js-personal-form">
+                                    <h3>Contact</h3>
+                                    <span>natalie.franco@gmail.com</span>
+                                    {% render 'input-field',
+                                        label: "",
+                                        inputType: '',
+                                        text: 'Enter your email',
+                                        inputId: '',
+                                        inputName: 'properties[]',
+                                        classes: ""
+                                      %}
+                                      <div class="dashboard-personal__cta">
+                                        <a href="" class="change active js-personal-btn-change">Change</a>
+                                        <a href="" class="save js-personal-btn-save">Save</a>
+                                      </div>
+                                </div>
+                                  <div class="dashboard-personal__item js-personal-form">
+                                    <h3>Contact</h3>
+                                    <span>natalie.franco@gmail.com</span>
+                                    {% render 'input-field',
+                                        label: "",
+                                        inputType: '',
+                                        text: 'Enter your email',
+                                        inputId: '',
+                                        inputName: 'properties[]',
+                                        classes: ""
+                                      %}
+                                      <div class="dashboard-personal__cta">
+                                        <a href="" class="change active js-personal-btn-change">Change</a>
+                                        <a href="" class="save js-personal-btn-save">Save</a>
+                                      </div>
+                                </div>
+                                  <div class="dashboard-personal__item js-personal-form">
+                                    <h3>Contact</h3>
+                                    <span>natalie.franco@gmail.com</span>
+                                    {% render 'input-field',
+                                        label: "",
+                                        inputType: '',
+                                        text: 'Enter your email',
+                                        inputId: '',
+                                        inputName: 'properties[]',
+                                        classes: ""
+                                      %}
+                                      <div class="dashboard-personal__cta">
+                                        <a href="" class="change active js-personal-btn-change">Change</a>
+                                        <a href="" class="save js-personal-btn-save">Save</a>
+                                      </div>
+                                </div>
+                          </div>
+                     </div>
+            </div>
+        </div>
+    </div>
+</section>

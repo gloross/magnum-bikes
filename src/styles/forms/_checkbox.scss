@@ -1,0 +1,109 @@
+.checkbox {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+
+  .check-text {
+    font-size: rem(14);
+    line-height: line-height(14, 21);
+    margin-left: rem(10);
+    font-family: $headline-font;
+
+    a {
+      font-size: inherit;
+      text-decoration: underline;
+    }
+  }
+
+  label {
+    display: inline-flex;
+    width: 100%;
+    align-items: center;
+    cursor: pointer;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+
+    h3 {
+      margin-right: auto;
+    }
+  }
+
+  input[type='checkbox'] {
+    position: absolute;
+    opacity: 0;
+    z-index: -2;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    width: rem(20);
+    height: rem(20);
+  }
+
+  input[type='checkbox'] + label .check-wrapper {
+    position: relative;
+    display: block;
+    width: rem(21);
+    height: rem(21);
+    margin-right: rem(10);
+    flex: 0 0 rem(21);
+    cursor: pointer;
+    transition: $t-hover;
+    background-color: transparent;
+    border: rem(1) solid $divider-grey;
+  }
+
+  input[type='checkbox'] + label .check-wrapper .icon {
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: $t-hover;
+
+    path {
+      fill: none;
+      stroke: $white;
+      stroke-width: 3px;
+      // stroke-dasharray: 100;
+      // stroke-dashoffset: 101;
+    }
+  }
+
+  input[type='checkbox']:checked + label {
+    .check-wrapper {
+      background-color: $cyan;
+      border-color: $cyan;
+
+      .icon {
+        opacity: 1;
+      }
+    }
+  }
+
+  &.has-error {
+    .check-wrapper {
+      border-color: $red !important;
+    }
+  }
+
+  &--account {
+    .check-wrapper {
+      border-color: #a7a7a7;
+      border-radius: rem(3);
+    }
+  }
+
+  &--quiz {
+    label {
+      font-size: rem(14);
+      line-height: rem(15);
+      color: $black;
+      justify-content: space-between;
+      @include media-breakpoint-down(sm) {
+        align-items: flex-start;
+      }
+    }
+  }
+}

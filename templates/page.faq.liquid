@@ -1,0 +1,54 @@
+
+{% section 'faq-hero' %}
+{% capture right_content %}
+{% section 'faq-item-1' %}
+[section_brake]
+{% section 'faq-item-2' %}
+[section_brake]
+{% section 'faq-item-3' %}
+[section_brake]
+{% section 'faq-item-4' %}
+[section_brake]
+{% section 'faq-item-5' %}
+[section_brake]
+{% section 'faq-item-6' %}
+[section_brake]
+{% section 'faq-item-7' %}
+[section_brake]
+{% section 'faq-item-8' %}
+{% endcapture %}
+
+{% assign accordions = right_content | split: '[section_brake]'%}
+{% assign titles = settings.faq_left_links | split: ',' %}
+ 
+
+<section class="faq-info">
+    <div class="container container--small">
+      <div class="top-question top-question--faq">
+        <div class="top-question__tabs js-tabs-question">
+          <div class="select-tabs">
+            <select name="" id="" class="js-select-option-mob">
+            {% for title in titles%}
+              <option class="js-tab-btn {%if forloop.index == 1 %}active {%endif%}" value="" data-name="{{forloop.index}}">{{ title | upcase}}</option>
+            {% endfor %}
+            </select>
+          </div>
+          <ul>
+            {% for title in titles%}
+            <li class="js-tab-btn u-uppercase {%if forloop.index == 1 %}active {%endif%}" data-name="{{forloop.index}}">{{ title | upcase}}</li>
+            {% endfor %}
+          </ul>
+          <div class="top-question__tabs-content">
+            {% for item in accordions limit: titles.size %}
+            <div class="top-question__tabs-item-content js-tab-content  {%if forloop.index == 1 %}active{%endif%}" data-name="{{forloop.index}}">
+            {{item}}
+            </div>
+            {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {% section 'still-have-questions' %}

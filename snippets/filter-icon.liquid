@@ -1,0 +1,71 @@
+{% comment %}
+    Renders a specific icon for a given name.
+
+    Accepts:
+    - icon: {string} Icon name (required)
+
+    Usage:
+    {%- render 'filter-icon' icon: 'arrow' -%}
+{% endcomment %}
+
+{% capture icon_class %}filter-icon filter-icon__{{ icon | downcase | split: ' ' | join: '-' }}{% endcapture %}
+
+{% case icon %}
+
+    {% when 'High-step' %}
+
+        <i class="{{ icon_class }}"></i>
+
+    {% when 'Low-step' %}
+
+        <i class="{{ icon_class }}"></i>
+
+    {% when 'Mid-step' %}
+
+        <i class="{{ icon_class }}"></i>
+
+    {% when 'Active' %}
+
+        <i class="{{ icon_class }}"></i>
+
+    {% when 'Cruise' %}
+
+        <i class="{{ icon_class }}"></i>
+
+    {% when 'Relaxed' %}
+
+        <i class="{{ icon_class }}"></i>
+
+    {% when 'Adventurous Off-Road' %}
+
+        <i class="{{ icon_class }}"></i>
+
+    {% when 'Light Off-Road' %}
+
+        <i class="{{ icon_class }}"></i>
+
+    {% when 'Rugged Off-Road' %}
+
+        <i class="{{ icon_class }}"></i>
+
+    {% when 'Urban' %}
+
+        <i class="{{ icon_class }}"></i>
+
+    {% when 'Light Hills' %}
+
+        <i class="{{ icon_class }}"></i>
+
+    {% when 'Moderate Hills' %}
+
+        <i class="{{ icon_class }}"></i>
+
+    {% when 'Steep Hills' %}
+
+        <i class="{{ icon_class }}"></i>
+
+    {% else %}
+
+        <i class="filter-icon filter-icon__default {{ icon }}"></i>
+
+{% endcase %}

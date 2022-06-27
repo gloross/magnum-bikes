@@ -1,0 +1,84 @@
+
+  {% liquid
+    assign object = section.settings
+    assign blocks = section.blocks
+    %}
+  <section class="mm-search">
+    <div class="container container--small">
+      {%comment%} <div class="mm-search__inner">
+        <div class="mm-search__content">
+          <div class="mm-search__search-field">
+            <input type="text" placeholder="Type to search...">
+            {% render 'icon', icon: 'search-line' %}
+          </div>
+          <div class="mm-search__search-results">
+            <p>Showing 247 Bikes</p>
+          </div>
+        </div>
+      </div> {%endcomment%}
+      <div class="mm-search__grid">
+        {% for block in blocks %}
+        {% render 'mm-item-card', block: block %}
+        {% endfor %}
+      </div>
+      {%comment%}
+      {% render 'pagination' %}
+      {%endcomment%}
+    </div>
+  </section>
+  
+  
+  {% schema %}
+    {
+    "name": "Manuals grid",
+    "class": "manuals-grid",
+    "settings": [
+    ],
+    "blocks":[
+    {
+    "name": "Manuals item",
+    "type": "block",
+    "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Item image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Item title",
+      "default": "Premium II High Step"
+    },
+    {
+      "type": "text",
+      "id": "m_cta_text",
+      "label": "Download manual TEXT",
+      "default": "DOWNLOAD MANUAL"
+    },
+    {
+      "type": "url",
+      "id": "m_cta_url",
+      "label": "Download manual URL"
+    },
+    {
+      "type": "text",
+      "id": "v_cta_text",
+      "label": "Views assembly video TEXT",
+      "default": "View Assembly Video"
+    },
+    {
+      "type": "url",
+      "id": "v_cta_url",
+      "label": "Video URL"
+    }
+    ]
+    }
+    ],
+    "presets": [
+      {
+        "name": "Manuals grid"
+      }
+    ]
+  }  
+  {% endschema %}

@@ -1,0 +1,148 @@
+.tabs {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  &__list {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: rem(50);
+    align-items: center;
+    border-radius: 5px;
+    padding: 0 20px;
+    justify-content: space-between;
+    @include media-breakpoint-up(md) {
+      height: rem(60);
+    }
+  }
+
+  &__btn {
+    font-size: rem(14);
+    line-height: rem(28);
+    font-weight: 700;
+    width: 100%;
+    cursor: pointer;
+    color: $grey-light;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+
+    &:last-child {
+      padding-left: rem(16);
+    }
+
+    @include media-breakpoint-up(md) {
+      padding-right: 0;
+      font-size: rem(18);
+      line-height: rem(28);
+      padding-left: rem(16);
+
+      &:last-child {
+        padding: 0;
+      }
+    }
+
+    &::after {
+      content: '';
+      width: calc(100% + 8px);
+      left: 0;
+      height: 1px;
+      background-color: $grey-light;
+      position: absolute;
+      bottom: rem(-17);
+    }
+
+    .icon {
+      margin-right: rem(11);
+      display: none;
+    }
+
+    &.active {
+      color: #fff;
+
+      &:last-child {
+        padding-left: 0;
+      }
+
+      .icon {
+        display: block;
+      }
+
+      &::after {
+        height: 3px;
+        background-color: $cyan;
+        z-index: 1;
+      }
+    }
+  }
+
+  &__content {
+    padding-top: 0;
+
+    @include media-breakpoint-up(md) {
+      padding-top: rem(74);
+    }
+  }
+
+  &__item-content {
+    color: #262626;
+    transition: opacity 0.7s ease;
+    opacity: 0;
+    height: 0;
+    visibility: hidden;
+    overflow: hidden;
+
+    &.active {
+      opacity: 1;
+      height: auto;
+      visibility: visible;
+
+      @include media-breakpoint-up(md) {
+        display: flex;
+      }
+    }
+  }
+
+  &__item-col {
+    width: 100%;
+    padding-top: rem(32);
+    @include media-breakpoint-up(md) {
+      padding: 0;
+      width: 50%;
+    }
+
+    iframe {
+      width: 100%;
+    }
+  }
+
+  &__item-col-content {
+    @include media-breakpoint-up(md) {
+      padding-left: rem(42);
+    }
+    @include media-breakpoint-up(lgxl) {
+      padding-left: rem(54);
+    }
+    @include media-breakpoint-up(xsm) {
+      padding-left: rem(138);
+    }
+
+    .h3 {
+      font-size: rem(24);
+      line-height: rem(34);
+      padding-bottom: rem(12);
+      color: $white;
+      max-width: rem(287);
+      width: 100%;
+      margin-top: rem(-7);
+    }
+
+    p {
+      font-size: rem(15);
+      line-height: rem(25);
+      color: $white;
+      max-width: rem(328);
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "name": "workflow",
+  "version": "1.0.0",
+  "description": "Modern Shopify development workflow, with Online Store 2.0 features and built with performance and accessibility in mind..",
+  "repository": "https://github.com/shopycode",
+  "author": "Shopycode",
+  "license": "MIT",
+  "keywords": [
+    "workflow",
+    "webpack",
+    "babel",
+    "shopify",
+    "sass",
+    "postcss"
+  ],
+  "browserslist": [
+    "defaults"
+  ],
+  "scripts": {
+    "init": "shx rm -rf .git && git init -b main",
+    "clean": "shx rm -rf assets/* && touch assets/.gitkeep",
+    "start": "run-p serve watch",
+    "serve": "shopify theme serve",
+    "build": "webpack --config .config/webpack/webpack.config.prod.js",
+    "watch": "webpack watch --config .config/webpack/webpack.config.dev.js",
+    "zip": "run-s build && shopify theme package .",
+    "lint": "shopify theme check --config .config/.theme-check.yml",
+    "format": "prettier --config .config/prettier.config.js --ignore-path .config/.prettierignore --write .",
+    "pull": "shopify theme pull -n",
+    "push": "shopify theme push --ignore \"config/*.json\"",
+    "deploy": "run-s format build push",
+    "prepare": "husky install .config/.husky"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "babel-loader": "^8.2.2",
+    "copy-webpack-plugin": "^9.0.1",
+    "css-loader": "^6.4.0",
+    "husky": "^7.0.2",
+    "mini-css-extract-plugin": "^2.4.2",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.3.9",
+    "postcss-loader": "^6.2.0",
+    "postcss-preset-env": "^6.7.0",
+    "prettier": "^2.4.1",
+    "sass": "^1.42.1",
+    "sass-loader": "^12.2.0",
+    "shx": "^0.3.3",
+    "size-plugin": "2.0.2",
+    "webpack": "^5.58.2",
+    "webpack-cli": "^4.8.0",
+    "webpack-merge": "^5.8.0",
+    "webpack-remove-empty-scripts": "^0.7.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {
+    "@bornfight/gocart": "^1.0.9",
+    "@shopify/theme-images": "^4.1.1",
+    "lazysizes": "^5.3.2",
+    "modal-video": "^2.4.6",
+    "nouislider": "^15.5.0",
+    "photoswipe": "^4.1.3",
+    "picoapp": "^3.6.2",
+    "swiper": "^7.2.0",
+    "tippy.js": "^6.3.7",
+    "vanilla-datatables": "^1.6.16"
+  }
+}

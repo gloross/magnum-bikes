@@ -1,0 +1,92 @@
+
+<div class="collection-card">
+  <div class="collection-card__inner">
+    <div class="collection-card__content">
+      <ul class="collection-card__tags">
+        {% for tag in product.tags %}
+          {% assign tagD = tag | downcase %}
+          {% if 'new' == tagD %}
+            <li>{{ tagD }}</li>
+          {% endif %}
+          {% if 'sale' == tagD %}
+            <li>{{ tagD }}</li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+
+      <a href="{{ product.url }}" class="h3"><h3>{{ product.title }}</h3></a>
+
+      {% for product_option in product.options_with_values %}
+        {% if product_option.name == 'Color' %}
+          <ul class="js-color-variation" data-option="option{{ product.options_by_name['Color'].position }}">
+            {% liquid
+              for color_option in product.options_by_name['Color'].values
+                assign active = false
+                if forloop.index == 1
+                  assign active = true
+                endif
+                render "component-color-swatch", name: color_option, product: product, selected: active
+              endfor
+            %}
+          </ul>
+        {% endif %}
+      {% endfor %}
+
+       <div class="collection-card__cta">
+         <a href="{{ product.url }}" class="btn btn--fill-grey">
+           VIEW DETAILS
+         </a>
+         {% comment %} <a href="" class="u-uppercase">
+           Compare
+           {% render 'icon', icon: 'arrow-up-right' %}
+          </a> {% endcomment %}
+       </div>
+    </div>
+    <div class="collection-card__image">
+      <div class="media-wrapper">
+
+
+        {% if product.type == 'Bike' %}
+            
+          
+          {% liquid 
+            for variant in product.variants 
+              if forloop.index == 1
+                assign firstVariant = variant
+              endif
+            endfor
+          %}
+
+          <a href="{{product.url}}" class="link_wrapper">
+
+          {% if firstVariant.metafields.variant.image_1 %} 
+
+            <img src="{{ firstVariant.metafields.variant.image_1 }}" alt="{{ product.title }}" loading="lazy" height="" width="">
+
+          {% elsif product.images[0] %} 
+
+            {{ product.images[0] | image_url: width: 700 | image_tag }} 
+
+            {% else %}
+
+            <img src="https://via.placeholder.com/604x423.jpg?text=Pleaceholder" loading="lazy" height="" width="">
+
+          {% endif %}
+
+          </a>
+
+          {% else %}
+          <a href="{{ product.url }}" class="link_wrapper">
+            <img src="{{ product.metafields.nb_product.feature_image }}" alt="{{ product.title }}" loading="lazy" height="" width="">
+          </a>
+           {% endif %}
+          
+          <div class="collection-card__grid-cta">
+            <a href="{{ product.url }}" class="btn btn--black-fill">VIEW DETAILS</a>
+            {% comment %} <a href="" class="btn btn--blue-fill">Compare</a> {% endcomment %}
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+

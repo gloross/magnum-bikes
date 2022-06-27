@@ -1,0 +1,44 @@
+.salesforce-form {
+    width: 100%;
+
+    label {
+        display: none;
+    }
+
+    input,
+    textarea {
+        border: 1px solid #D7E0E3;
+        box-sizing: border-box;
+        border-radius: 7px;
+        font-size: 14px;
+        line-height: 22px;
+        font-family: 'Roboto';
+        color: #151515;
+        padding: 13px 16px;
+
+        &::placeholder {
+            color: #8A9093;
+        }
+    }
+
+    textarea {
+        height: 8em;
+    }
+
+    input[type=submit] {
+        border: none;
+        box-sizing: border-box;
+        border-radius: unset;
+        background: #26BBEE;
+        border-radius: 40px;
+        color: #fff;
+        max-width: max-content;
+        margin-left: auto;
+        text-transform: uppercase;
+        font-size: 13px;
+        line-height: 14px;
+        font-weight: 700;
+        padding: 18px 54px;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,154 @@
+{% liquid
+  assign object = section.settings
+  assign tab_1_name = product.metafields.video_1.tab_name
+  assign link_1 = product.metafields.video_1.link
+  assign tab_1_header = product.metafields.video_1.header
+  assign tab_1_description = product.metafields.video_1.description
+  assign tab_2_name = product.metafields.video_2.tab_name
+  assign link_2 = product.metafields.video_2.link
+  assign tab_2_header = product.metafields.video_2.header
+  assign tab_2_description = product.metafields.video_2.description
+  assign tab_3_name = product.metafields.video_3.tab_name
+  assign link_3 = product.metafields.video_3.link
+  assign tab_3_header = product.metafields.video_3.header
+  assign tab_3_description = product.metafields.video_3.description
+  assign tab_4_name = product.metafields.video_4.tab_name
+  assign link_4 = product.metafields.video_4.link
+  assign tab_4_header = product.metafields.video_4.header
+  assign tab_4_description = product.metafields.video_4.description
+%}
+<div class="videos-tab">
+  <div class="container">
+    <div class="videos-tab__title">
+      <h2 class="h2">{{product.title | append: ' videos'}} </h2>
+    </div>
+    <div class="videos-tab__inner">
+      <div class="tabs js-tabs-videos">
+  <ul class="tabs__list">
+    {% unless tab_1_name == blank%}
+    <li class="js-tab-btn  u-d-flex u-align-center tabs__btn active" data-name="tab_1">
+      {% render 'icon', icon: 'triangle' %} {{tab_1_name}}</li>
+      {%endunless%}
+      {% unless tab_2_name == blank%}
+      <li class="js-tab-btn  u-d-flex u-align-center tabs__btn" data-name="tab_2">
+        {% render 'icon', icon: 'triangle' %} {{tab_2_name}}</li>
+        {%endunless%}
+      {% unless tab_3_name == blank%}
+        <li class="js-tab-btn  u-d-flex u-align-center tabs__btn" data-name="tab_3">
+          {% render 'icon', icon: 'triangle' %} {{tab_3_name}}</li>
+      {%endunless%}
+      {% unless tab_4_name == blank%}
+          <li class="js-tab-btn  u-d-flex u-align-center tabs__btn" data-name="tab_4">
+            {% render 'icon', icon: 'triangle' %} {{tab_4_name}}</li>
+       {%endunless%}
+  </ul>
+  <div class="tabs__content">
+    {% unless tab_1_name == blank%}
+    <div class="tabs__item-content js-tab-content active" data-name="tab_1"> 
+       {%if link_1 contains '?v=' %}
+        {% assign video_id = link_1 | split: '?v=' | last %}
+        {% elsif link_1 contains 'youtu.be/' %}
+        {% assign video_id = link_1 | split: 'youtu.be/' | last %}
+        {%else%}
+        {% assign video_id = link_1 %}
+        {%endif%}
+      <div class="tabs__item-col">
+        <iframe width="498" height="315"
+src="https://www.youtube.com/embed/{{video_id}}">
+
+</iframe>
+      </div>
+      <div class="tabs__item-col">
+        <div class="tabs__item-col-content">
+          <h3 class="h3">{{tab_1_header}}</h3>
+          <p>{{tab_1_description}}</p>
+        </div>
+      </div>
+    </div>
+    {%endunless%}
+    {% unless tab_2_name == blank%}
+    <div class="tabs__item-content js-tab-content" data-name="tab_2">
+      {%if link_2 contains '?v=' %}
+      {% assign video_id = link_2 | split: '?v=' | last %}
+      {% elsif link_2 contains 'youtu.be/' %}
+      {% assign video_id = link_2 | split: 'youtu.be/' | last %}
+      {%else%}
+      {% assign video_id = link_2 %}
+      {%endif%}
+      <div class="tabs__item-col">
+        <iframe width="498" height="315"
+src="https://www.youtube.com/embed/{{video_id}}">
+</iframe>
+      </div>
+      <div class="tabs__item-col">
+        <div class="tabs__item-col-content">
+          <h3 class="h3">{{tab_2_header}}</h3>
+          <p>{{tab_2_description}}</p>
+        </div>
+      </div>
+    </div>
+    {%endunless%}
+    {% unless tab_3_name == blank%}
+    <div class="tabs__item-content js-tab-content" data-name="tab_3">
+      {%if link_3 contains '?v=' %}
+      {% assign video_id = link_3 | split: '?v=' | last %}
+      {% elsif link_3 contains 'youtu.be/' %}
+      {% assign video_id = link_3 | split: 'youtu.be/' | last %}
+      {%else%}
+      {% assign video_id = link_3 %}
+      {%endif%}
+      <div class="tabs__item-col">
+        <iframe width="498" height="315"
+src="https://www.youtube.com/embed/{{video_id}}">
+</iframe>
+      </div>
+      <div class="tabs__item-col">
+        <div class="tabs__item-col-content">
+          <h3 class="h3">{{tab_3_header}}</h3>
+          <p>{{tab_3_description}}</p>
+        </div>
+      </div>
+    </div>
+    {%endunless%}
+    {% unless tab_4_name == blank%}
+    <div class="tabs__item-content js-tab-content" data-name="tab_4">
+      {%if link_4 contains '?v=' %}
+      {% assign video_id = link_4 | split: '?v=' | last %}
+      {% elsif link_4 contains 'youtu.be/' %}
+      {% assign video_id = link_4 | split: 'youtu.be/' | last %}
+      {%else%}
+      {% assign video_id = link_4 %}
+      {%endif%}
+      <div class="tabs__item-col">
+        <iframe width="498" height="315"
+src="https://www.youtube.com/embed/{{video_id}}">
+</iframe>
+      </div>
+      <div class="tabs__item-col">
+        <div class="tabs__item-col-content">
+          <h3 class="h3">{{tab_4_header}}</h3>
+          <p>{{tab_4_description}}</p>
+        </div>
+      </div>
+    </div>
+    {%endunless%}
+  </div>
+</div>
+      </div>
+  </div>
+</div>
+
+
+{% schema %}
+  {
+  "name": "Video tabs",
+  "settings": [
+  ],
+  "presets": [
+    {
+      "name": "Video tabs"
+    }
+  ]
+}  
+{% endschema %}
+

@@ -1,0 +1,31 @@
+{% assign placeholderText = text %}
+{% assign errorMessage = errorText%}
+{% assign labelText = label %}
+
+<div class="input-field">
+  <div class="input-wrapper {% if classes != ''%}{{classes}}{%endif%}">
+    <label for="">{{ label }}</label>
+    <input type="{% if inputType != ''%}{{inputType}}{%else%}text{%endif%}" {% if inputId != ''%}id="{{inputId}}"{%endif%} placeholder="{{ text }}" name="{{inputName}}" value="{{inputValue}}">
+    {% if icon != ''%} {% render 'icon', icon: icon %}{%endif%}
+  </div>
+  <span class="input-field__error-message" for="">
+    {{ errorText }}
+  </span>
+  <!-- <button class="input-field__btn">
+    {% render 'icon', icon: 'long-arrow-right' %}
+  </button> -->
+</div>
+
+{%- comment -%}
+
+{% render 'input-field',
+           label: "",
+           inputType: '',
+           text: '',
+           inputId: '',
+           inputName: 'properties[]',
+           classes: "",
+           icon: '',
+         %}
+
+{%- endcomment -%}

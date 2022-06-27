@@ -1,0 +1,11 @@
+{% assign spanText = text %}
+<div class="product-radio">
+    <input type="radio" id="{{ id }}" name="{{name}}" {%if checked == 'checked'%}checked=checked{%endif%}">
+    <label  for="{{ id }}">
+        <span class="battery-value">{{ textAh }}</span>
+        <div>
+           <span class="old-price">{{ oldPrice }}</span>
+            <span>{{ price }}</span>
+        </div>
+    </label>
+</div>

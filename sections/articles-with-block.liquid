@@ -1,0 +1,115 @@
+{%- assign object = section.settings -%}
+{%- assign paginate_by = object.paginate_by -%}
+
+{%- paginate blog.articles by paginate_by -%}
+  <section class="articles-with-block">
+    <div class="container container--small">
+      <header class="articles-with-block__head">
+        <h2 class="articles-with-block__title">
+          {{- object.title -}}
+        </h2><!-- /.articles-with-block__title -->
+      </header><!-- /.articles-with-block__head -->
+
+      <div class="articles-with-block__inner">
+        {%- for article in blog.articles -%}
+          {%- if forloop.index == 5 -%}
+            {%- assign _block = section.blocks[0].settings -%}
+
+            {%- render 'featured-block' with
+              mod_class: 'articles-with-block__item',
+              mod_image: _block.image,
+              mod_image_file_url: _block.image_file_url,
+              mod_color_background: _block.color_background,
+              mod_title: _block.title,
+              mod_text: _block.text,
+              mod_button_text: _block.button_text,
+              mod_button_url: _block.button_url -%}
+          {%- endif -%}
+
+          {%- render 'news-item' with
+            article: article,
+            mod_class: 'news-item--mobile-wide articles-with-block__item',
+            mod_hide_text: true -%}
+        {%- endfor -%}
+      </div>
+
+      <footer class="articles-with-block__foot">
+        {%- render 'pagination' with paginate: paginate -%}
+      </footer><!-- /.articles-with-block__foot -->
+    </div>
+  </section>
+{%- endpaginate -%}
+
+{% schema %}
+{
+  "name": "Articles with block",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section title",
+      "default": "Featured lessons"
+    },
+    {
+      "type": "range",
+      "id": "paginate_by",
+      "min": 1,
+      "max": 24,
+      "step": 1,
+      "label": "Paginate by",
+      "default": 5
+    }
+  ],
+  "max_blocks": 1,
+  "blocks": [
+    {
+      "type": "block",
+      "name": "Featured block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "image_file_url",
+          "label": "Image file URL",
+          "info": "Higher priority over the image picker."
+        },
+        {
+          "type": "color",
+          "id": "color_background",
+          "label": "Background",
+          "default": "#151515"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button text"
+        },
+        {
+          "type": "url",
+          "id": "button_url",
+          "label": "Button URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Articles with block"
+    }
+  ]
+}
+{% endschema %}

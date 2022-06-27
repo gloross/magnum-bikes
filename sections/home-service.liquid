@@ -1,0 +1,87 @@
+{% liquid
+  assign object = section.settings
+  assign blocks = section.blocks
+%}
+<section class="home-service">
+  <div class="container container--small">
+    <ul class="home-service__list">
+      {% for block in blocks%}
+      {% assign b = block.settings %}
+      <li class="home-service__item">
+        {% render 'icon', icon: b.icon_picker %}
+        <div class="home-service__item-text">
+          <h4>{{ b.item_title }}</h4>
+          <p>{{ b.item_content }}</p>
+        </div>
+      </li>
+      {%endfor%}
+    </ul>
+  </div>
+</section>
+
+{% schema %}
+{
+"name": "Home Service",
+"max_blocks": 3,
+"settings": [
+{
+  "type": "text",
+  "id": "section_title",
+  "label": "Section title",
+  "default": "We got your entire journey covered."
+},
+{
+  "type": "textarea",
+  "id": "description",
+  "label": "Section description",
+  "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+}
+],
+"blocks": [
+{
+  "name": "Item",
+  "type": "block",
+  "settings": [
+  {
+    "type": "select",
+    "id": "icon_picker",
+    "label": "Select icon",
+    "options": [
+      {
+        "value": "time-icon",
+        "label": "Time Icon"
+      },
+      {
+        "value": "user-talk",
+        "label": "User talk"
+      },
+      {
+        "value": "users",
+        "label": "Users"
+      }
+    ],
+    "default": "time-icon"
+  },
+  {
+    "type": "text",
+    "id": "item_title",
+    "label": "Item title",
+    "default": "Ride Now, Pay Later"
+  },
+  {
+    "type": "textarea",
+    "id": "item_content",
+    "label": "Item text content",
+    "default": "We offer payment in monthly installments.  Get and enjoy your ride now and pay later."
+  }
+  ]
+}
+],
+"presets": [
+  {
+    "name": "Home Service"
+  }
+]
+}  
+{% endschema %}
+

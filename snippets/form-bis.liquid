@@ -1,0 +1,70 @@
+<form class="form-bis js-form-bis" novalidate>
+  <div class="form-bis__inner">
+    <header class="form-bis__head">
+      {%- render 'icon' with 'bike-message' -%}
+
+      <h3 class="form-bis__title">
+        {{- 'forms.back_in_stock.title' | t -}}
+      </h3><!-- /.form-bis__title -->
+    </header><!-- /.form-bis__head -->
+
+    <div class="form-bis__body">
+      <div class="form-bis__row">
+        <input
+          class="field"
+          type="email"
+          id="emailAddress"
+          placeholder="{{- 'forms.back_in_stock.email_placeholder' | t -}}"
+          required>
+
+        <p class="form-bis__error">
+          {{- 'forms.back_in_stock.email_error' | t -}}
+        </p>
+      </div><!-- /.form-bis__row -->
+    </div><!-- /.form-bis__body -->
+
+    <footer class="form-bis__foot">
+      <button
+        type="submit"
+        class="btn btn--fill-grey form-bis__btn">
+        <span>
+          {{- 'forms.back_in_stock.submit' | t -}}
+        </span>
+      </button>
+
+      <div class="checkbox-alt form-bis__checkbox">
+        <input
+          type="checkbox"
+          id="form-bis-subscribe" />
+
+        <label for="form-bis-subscribe">
+          <span class="checkbox-alt__icon"></span>
+
+          <span>
+            {{- 'forms.back_in_stock.subscribe_text' | t -}}
+          </span>
+        </label>
+      </div><!-- /.checkbox-alt -->
+    </footer><!-- /.form-bis__foot -->
+  </div><!-- /.form-bis__inner -->
+
+  <div class="form-bis__thankyou">
+    <header class="form-bis__head">
+      {%- render 'icon' with 'bike-message' -%}
+
+      <h3 class="form-bis__title">
+        {{- 'forms.back_in_stock.thank_you_title' | t -}}
+      </h3><!-- /.form-bis__title -->
+    </header><!-- /.form-bis__head -->
+
+    {%- if settings.bis_continue_shopping_url != blank -%}
+      <footer class="form-bis__foot">
+        <a
+          href="{{- settings.bis_continue_shopping_url -}}"
+          class="btn btn--fill-grey form-bis__btn">
+          {{- 'forms.back_in_stock.shop_link' | t -}}
+        </a>
+      </footer><!-- /.form-bis__foot -->
+    {%- endif -%}
+  </div><!-- /.form-bis__thankyou -->
+</form><!-- /.form-bis -->

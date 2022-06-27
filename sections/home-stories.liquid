@@ -1,0 +1,240 @@
+{% liquid
+  assign object = section.settings
+  assign blocks = section.blocks
+%}
+
+{%- if blocks.size > 0 -%}
+  <section class="home-stories {% if template contains 'stories' %} home-stories--page{% endif%}">
+    <div class="container container--small">
+      {%- if object.section_title != blank -%}
+        <div class="home-stories__title">
+          <h2>{{object.section_title}} </h2>
+
+          {%- if object.cta_url != blank and object.cta_url != blank -%}
+            <a href="{{object.cta_url}}" class="btn btn--solid">{{object.cta_label}}</a>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+
+      <div class="home-stories__inner">
+        <div class="home-stories__col-left">
+          {% for block in blocks %}
+            {% assign _block = block.settings %}
+            {%- assign _article = articles[_block.article] -%}
+
+            {%- assign category_tag = '' -%}
+
+            {%- for tag in _article.tags -%}
+              {%- if tag contains 'category:' -%}
+                {%- assign category_tag = tag -%}
+                {%- break -%}
+              {%- endif -%}
+            {%- endfor -%}
+
+            {% if forloop.index == 1 %}
+              {%- if _article == blank -%}
+                {%- continue -%}
+              {%- endif -%}
+
+              <div class="home-stories__item home-stories__item--big">
+                <a href="{{_article.url}}" class="home-stories__link">
+                  <div class="media-wrapper">
+                    {% if _block.story_image != blank %}
+                      {%- render 'img',
+                        img: _block.story_image,
+                        img_sm: '',
+                        img_md: '',
+                        img_lg: '',
+                        m_width: '500'
+                      -%}
+                    {% else %}
+                      {%- render 'img',
+                        img: _article.image,
+                        img_sm: '',
+                        img_md: '',
+                        img_lg: '',
+                        m_width: '500'
+                      -%}
+                    {% endif %}
+                  </div>
+                </a>
+
+                <div class="home-stories__content">
+                  <div class="home-stories__meta">
+                    {%- if category_tag != blank -%}
+                      <p>{{- category_tag | remove: 'category:' -}}</p>
+                    {%- endif -%}
+
+                    <span>{{ _article.published_at | date: "%d.%m.%Y" }}</span>
+                  </div>
+
+                  <h4>
+                    <a href="{{- _article.url -}}">{{ _article.title }}</a>
+                  </h4>
+                </div>
+              </div>
+            {% endif %}
+
+            {% break %}
+          {% endfor %}
+        </div>
+        <div class="home-stories__col-right">
+          <div class="home-stories__wrapper">
+            <div class="home-stories__col">
+              {% for block in blocks %}
+                {% assign _block = block.settings %}
+                {%- assign _article = articles[_block.article] -%}
+
+                {% if forloop.index == 2 or forloop.index == 3 %}
+                  {%- if _article == blank -%}
+                    {%- continue -%}
+                  {%- endif -%}
+
+                  <div class="home-stories__item{% if forloop.index == 2 %} home-stories__item--med{% elsif forloop.index == 3%} home-stories__item--small{% endif %}">
+                    <a href="{{_article.url}}" class="home-stories__link">
+                      <div class="media-wrapper">
+                        {% if _block.story_image != blank %}
+                          {%- render 'img',
+                            img: _block.story_image,
+                            img_sm: '',
+                            img_md: '',
+                            img_lg: '',
+                            m_width: '500'
+                          -%}
+                        {% else %}
+                          {%- render 'img',
+                            img:_article.image,
+                            img_sm: '',
+                            img_md: '',
+                            img_lg: '',
+                            m_width: '500'
+                          -%}
+                        {% endif %}
+                      </div>
+                    </a>
+
+                    <div class="home-stories__content">
+                      <div class="home-stories__meta">
+                        {%- if category_tag != blank -%}
+                          <p>{{- category_tag | remove: 'category:' -}}</p>
+                        {%- endif -%}
+
+                        <span>{{_article.published_at | date: "%d.%m.%Y" }}</span>
+                      </div>
+
+                      <h4>
+                        <a href="{{-_article.url -}}">{{_article.title }}</a>
+                      </h4>
+                    </div>
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+
+            <div class="home-stories__col home-stories__col--reverse">
+              {% for block in blocks %}
+                {% assign _block = block.settings %}
+                {%- assign _article = articles[_block.article] -%}
+
+                {% if forloop.index == 4 or forloop.index == 5 %}
+                  {%- if _article == blank -%}
+                    {%- continue -%}
+                  {%- endif -%}
+
+                  <div href="{{ _article.url }}" class="home-stories__item{% if forloop.index == 4 %} home-stories__item--med{% elsif forloop.index == 5 %} home-stories__item--small{% endif %}">
+                    <a href="{{_article.url}}" class="home-stories__link">
+                      <div class="media-wrapper">
+                        {% if _block.story_image != blank %}
+                          {%- render 'img',
+                            img: _block.story_image,
+                            img_sm: '',
+                            img_md: '',
+                            img_lg: '',
+                            m_width: '500'
+                          -%}
+                        {% else %}
+                          {%- render 'img',
+                            img: _article.image,
+                            img_sm: '',
+                            img_md: '',
+                            img_lg: '',
+                            m_width: '500'
+                          -%}
+                        {% endif %}
+                      </div>
+                    </a>
+
+                    <div class="home-stories__content">
+                      <div class="home-stories__meta">
+                        {%- if category_tag != blank -%}
+                          <p>{{- category_tag | remove: 'category:' -}}</p>
+                        {%- endif -%}
+
+                        <span>{{ _article.published_at | date: "%d.%m.%Y" }}</span>
+                      </div>
+
+                      <h4>
+                        <a href="{{- _article.url -}}">{{ _article.title }}</a>
+                      </h4>
+                    </div>
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{%- endif -%}
+
+{% schema %}
+{
+"name": "Home Stories",
+"max_blocks": 5,
+"settings": [
+{
+  "type": "text",
+  "id": "section_title",
+  "label": "Section title",
+  "default": "Rider Stories"
+},
+{
+  "type": "text",
+  "id": "cta_label",
+  "label": "CTA button label",
+  "default": "View All Rider Stories"
+},
+{
+  "type": "url",
+  "id": "cta_url",
+  "label": "CTA URL"
+}
+],
+"blocks": [
+{
+  "name": "Item",
+  "type": "block",
+  "settings": [
+  {
+    "type": "image_picker",
+    "id": "story_image",
+    "label": "Article image",
+    "info": "If blank featured article image will be used"
+  },
+  {
+    "type": "article",
+    "id": "article",
+    "label": "Article"
+  }
+  ]
+}
+],
+"presets": [
+  {
+    "name": "Home stories"
+  }
+]
+}
+{% endschema %}
+

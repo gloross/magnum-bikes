@@ -1,0 +1,57 @@
+{% liquid
+       assign object = section.settings
+       assign compatible_bikes = product.metafields.nb_ebike.compatibility | split: ','
+  %}
+<section class="no-bikes-grid">
+   <div class="container container--small">
+     <div class="no-bikes-grid__title">
+       <h2>{{object.section_title}}</h2>
+     </div>
+      <div class="no-bikes-grid__inner">
+             {% for product in compatible_bikes%}
+          <div class="no-bikes-grid__item">
+            <a href="{{ all_products[product].url}}"><div class="media-wrapper">
+              {% liquid 
+                for variant in all_products[product].variants
+                  if forloop.index == 1
+                    assign firstVariant = variant
+                  endif
+                endfor
+              %}
+              <script>console.log('logg')</script>
+                {% if firstVariant.metafields.variant.image_1 %} 
+                  <img src="{{ firstVariant.metafields.variant.image_1 }}" alt="{{ all_products[product].title }}" loading="lazy" height="" width="">
+                    {% elsif product.images[0]  %} 
+                    <script>console.log('{{product.images[0] }} ')</script>
+                    {{ product.images[0]  | image_url: width: 700 | image_tag }} 
+                    {% else %}
+                     <img src="https://via.placeholder.com/604x423.jpg?text=Pleaceholder" loading="lazy" height="" width="">
+                {% endif %}
+            </div>
+            <h3>{{ all_products[product].title}}</h3></a>
+          </div>
+          {%endfor%}
+        
+      </div>
+   </div>
+</section>
+
+{% schema %}
+  {
+  "name": "No bike Compatible",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section title",
+      "default": "Compatible bikes"
+    }
+  ],
+  "presets": [
+    {
+      "name": "No bike Compatible"
+    }
+  ]
+}  
+{% endschema %}
+

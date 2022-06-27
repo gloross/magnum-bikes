@@ -1,0 +1,84 @@
+.input-increment {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &.disable-decrease {
+    .input-increment__cta--disable {
+      opacity: 1;
+      pointer-events: none;
+    }
+  }
+
+  &__cta {
+    width: rem(50);
+    height: rem(50);
+    background-color: $black;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: $t-hover;
+    background-color: rgba($grey-light-2, 0.15);
+    border-radius: 50%;
+    .icon {
+      pointer-events: none;
+    }
+    @include hover() {
+      opacity: 0.5;
+    }
+  }
+
+  &__number {
+    width: rem(40);
+    height: rem(40);
+    text-align: center;
+    border: none;
+    font-size: rem(15);
+    font-weight: 700;
+    padding: 0;
+    pointer-events: none;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+  .u-d-flex {
+    justify-content: space-between;
+    align-self: start;
+    flex-direction: column;
+    margin-left: rem(8);
+    height: 100%;
+  }
+
+  &--accessories {
+    .input-increment__number {
+      width: rem(36);
+      height: rem(36);
+      border: 1px solid $black;
+      border-radius: rem(5);
+      line-height: line-height(14, 22);
+    }
+    .input-increment__cta {
+      width: rem(34);
+      height: rem(34);
+      border-radius: 0;
+      background-color: transparent;
+      .icon {
+        width: rem(12);
+        height: rem(12);
+        path {
+          stroke: $magnum-black;
+        }
+      }
+    }
+  }
+}

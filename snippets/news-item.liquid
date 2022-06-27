@@ -1,0 +1,54 @@
+{%- assign mod_class = mod_class | default: false -%}
+{%- assign mod_hide_date = mod_hide_date | default: false -%}
+{%- assign mod_hide_text = mod_hide_text | default: false -%}
+{%- assign mod_hide_tags = mod_hide_tags | default: false -%}
+{%- assign category_tag = '' -%}
+
+{%- for tag in article.tags -%}
+  {%- if tag contains 'category:' -%}
+    {%- assign category_tag = tag -%}
+    {%- break -%}
+  {%- endif -%}
+{%- endfor -%}
+
+<div class="news-item{% if template contains 'stories' %} news-item--stories{% endif%}{% if mod_class %} {{ mod_class }}{% endif %}">
+  <a href="{{ article.url }}" class="news-item__link">
+    <div class="media-wrapper">
+      {% render 'img',
+        img: article.image,
+        img_sm: article.image,
+        img_md: article.image,
+      %}
+    </div>
+  </a>
+
+  <div class="news-item__text">
+    {%- if category_tag != blank or mod_hide_date == false -%}
+      <div class="news-item__meta">
+        {%- if category_tag != blank -%}
+          <p>{{- category_tag | remove: 'category:' -}}</p>
+        {%- endif -%}
+
+        {%- unless mod_hide_date -%}
+          <span>{{ article.published_at | date: "%d.%m.%Y" }}</span>
+        {%- endunless -%}
+      </div>
+    {%- endif -%}
+
+    <h3 class="news-item__title">
+      <a href="{{- article.url -}}">{{ article.title }}</a>
+    </h3>
+
+    {%- unless mod_hide_text -%}
+      <div class="news-item__entry">
+        {{- article.excerpt_or_content | trim: 100 -}}
+      </div><!-- /.news-item__entry -->
+    {%- endunless -%}
+
+    {%- unless mod_hide_tags -%}
+      {%- render 'article-tags' with
+        mod_article: article,
+        mod_class: 'news-item__tags' -%}
+    {%- endunless -%}
+  </div>
+</div>

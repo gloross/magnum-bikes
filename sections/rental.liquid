@@ -1,0 +1,220 @@
+{% liquid
+  assign object = section.settings 
+  assign blocks = section.blocks
+  
+%}
+{%comment%}TO DO check about form submission and field names, need to be tested{%endcomment%}
+<section class="rental frame-builder-formular">
+  <div class="container container--small">
+    <div class="js-rental-form rental__inner frame-builder-formular__form" id="frame-builder-formular-form">
+      <div class="rental__col-left">
+        <h1>{{ object.title }}</h1>
+        <p>{{ object.description }}</p>
+      </div>
+      {% form 'contact', id: 'rental-form-id' %}
+
+        <div>
+          {% if form.posted_successfully? %}
+
+          {% else %}
+          <div class="rental__col-right rental__col-right--step-one step js-step">
+            <div class="rental__breadcrumbs">
+              <span>Ride Agreement  /</span><span>Personal Information  /</span>
+              {% render 'icon', icon: 'checkmark' %}
+            </div>
+            {% for block in blocks %}
+            {% assign b = block.settings %}
+            <div class="rental__initial-box {%if forloop.last%}rental__initial-box--last{%endif%}">
+              <h3>{{ b.item_heading }}</h3>
+              <p>{{ b.item_details }}</p>
+                <div class="input-field">
+                  <div class="input-wrapper">
+                    <input name="contact[initial_box_{{forloop.index}}]" type="hidden" value="last">
+                    <input name="type" type="hidden" value="product"/>
+                    <input autocomplete="off" placeholder="Initials*" type="text" value="">
+                  </div>
+                </div>
+            </div>
+            {% endfor %}
+          </div>
+          <div class="rental__col-right rental__col-right--step-two step js-step">
+            <div class="rental__breadcrumbs rental__breadcrumbs--step-two">
+              <span>Ride Agreement  /</span><span>Personal Information  /</span>
+              {% render 'icon', icon: 'checkmark' %}
+            </div>
+              <div class="rental__form-input">
+                <div class="input-field">
+                  <div class="input-wrapper">
+                    <input name="contact[first_name]" type="hidden" value="first-name">
+                    <input name="type" type="hidden" value="first-name"/>
+                    <input placeholder="First Name*" type="text" value="">
+                  </div>
+                  <div class="input-wrapper">
+                    <input name="contact[last_name]" type="hidden" value="last-name">
+                    <input name="type" type="hidden" value="last-name"/>
+                    <input placeholder="Last Name*" type="text" value="">
+                  </div>
+                  <div class="input-wrapper">
+                    <input name="contact[signature]" type="hidden" value="signature">
+                    <input name="type" type="hidden" value="signature"/>
+                    <input placeholder="Signature of Rider*" type="text" value="">
+                  </div>
+                  <div class="input-wrapper">
+                    <input name="contact[signature_parent]" type="hidden" value="signature-parent">
+                    <input name="type" type="hidden" value="signature-parent"/>
+                    <input placeholder="Signature of Rider’s Parent or Guardian*" type="text" value="">
+                  </div>
+                  <div class="input-wrapper">
+                    <input name="contact[email]" type="hidden" value="email">
+                    <input name="type" type="hidden" value="email"/>
+                    <input placeholder="Email Address" type="email" value="">
+                  </div>
+                  <div class="checkbox">
+                    <input name="contact[marketing]" type="hidden" value="offer">
+                    <input type="checkbox" id="offer" name="offer" value="offer">
+                    <label for="offer">
+                      <div class="check-wrapper">
+                        {% render 'icon', icon: 'checkbox' %}
+                      </div>
+                      {{ object.offers_text }}
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="rental__form-more-info">
+                <div class="select-field">
+                  <label for="magnum-bikes">{{ object.where_did_text }}</label>
+                  <select name="contact[where]" id="magnum-bikes">
+                    {% assign options = object.select_options | split: '||'%}
+                    {%for option in options %}
+                  <option value="{{option}}">{{option}}</option>
+                  {%endfor%}
+                  </select>
+                </div>
+                <div class="input-field">
+                  <div class="input-wrapper">
+                    <input name="options[prefix]" type="hidden" value="ridding">
+                    <input name="type" type="hidden" value="ridding"/>
+                    <label for="ridding">
+                      {{ object.ridding_place }}
+                    </label>
+                    <input id="ridding" placeholder="Where are you riding?" type="text" value="">
+                  </div>
+                </div>
+              </div>
+          </div>
+          {% endif %}
+
+          {% if form.posted_successfully? %}
+            <div class="rental__col-right rental__col-right--step-three">
+
+              <div class="rental__breadcrumbs rental__breadcrumbs--step-three">
+                <span>Ride Agreement  /</span><span>Personal Information  /</span>
+                {% render 'icon', icon: 'checkmark' %}
+              </div>
+              <div class="rental__agreement">
+                <div class="rental__agreement-image-text">
+                  {% render 'icon', icon: 'agreement' %}
+                  <h2>{{ object.success_heading }}</h2>
+                </div>
+                <p>
+                  {{ object.success_details}}
+                </p>
+              </div>
+              <div class="rental__btn-wrapper rental__btn-wrapper--step-three">
+                <a href="/" class="btn btn--blue-fill u-uppercase back-to-home">{{ 'templates.form.thank_you_cta' | t }}</a>
+              </div>
+            </div>
+          {% endif %}
+
+          <div class="frame-builder-formular__input-group--cta rental__btn-wrapper">
+            <button type="button" class="btn btn--blue-fill u-uppercase btn-prev js-btn-prev cta">{{ 'templates.form.submit' | t }}</button>
+            <button type="button" class="btn btn--blue-fill u-uppercase js-btn-next" data-step-text="Next" data-final-step-text="Send">{{ 'templates.form.next' | t }}</button>
+          </div>
+        </div>
+      {% endform %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+  "name": "Rental",
+  "settings": [
+  {
+    "type": "text",
+    "id": "title",
+    "label": "Section title",
+    "default": "Ride Agreement"
+  },
+  {
+    "type": "textarea",
+    "id": "description",
+    "label": "Section description",
+    "default": "In order to get Magnum Bike Test Ride Agreement, you’ll need to fill the Waiver & your Personal Contact Information."
+  },
+  {
+    "type": "text",
+    "id": "where_did_text",
+    "label": "Where did you hear TEXT label",
+    "default": "Where did you hear about Magnum Bikes?"
+  },
+  {
+    "type": "textarea",
+    "id": "select_options",
+    "label": "Where did you hear about us OPTIONS",
+    "default": "Internet Search||News||Other",
+    "info": "Please enter options for the select in the folowing format: option 1||option 2. Each option shouuld be separated by double pipe symbol '||'"
+  },
+  {
+    "type": "text",
+    "id": "offers_text",
+    "label": "Marketing and offers text",
+    "default": "Email me with news and offers."
+  },
+  {
+    "type": "text",
+    "id": "ridding_place",
+    "label": "Ridding place TEXT label",
+    "default": "Where is your ride taking place?"
+  },
+  {
+    "type": "text",
+    "id": "success_heading",
+    "label": "Success message heading",
+    "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,"
+  },
+  {
+    "type": "text",
+    "id": "success_details",
+    "label": "Success message details",
+    "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  }
+  ],
+  "blocks":[
+  {
+  "name": "Item",
+  "type": "block",
+  "settings": [
+  {
+    "type": "text",
+    "id": "item_heading",
+    "label": "Item heading",
+    "default": "Initial 1"
+  },
+  {
+    "type": "textarea",
+    "id": "item_details",
+    "label": "Item details",
+    "default": "I the undersigned for myself, my successors, heirs, assigns, executors, and administrators agree that riding a bicycle is a hazardous activity and participating in this type of event can be dangerous and that inherent risks exist. Prior to participating in any bicycling activity, I carefully inspected the test bicycle and related equipment to be used, and I believe they are safe. I will immediately advise a supervisory person at Magnum Bikes and will not ride any bicycle that appears unsafe. I know how to safely ride the test bicycle. By taking the bike for a test ride, I release and forever discharge Magnum Bikes for any and all liability claims, actions, or causes of actions of any nature whatsoever, arising out of any damage, loss, or injury to the undersigned while participating in this test ride.The undersigned further releases Magnum Bikes from all liability for any other activity which may be contemplated at the time of the test ride. This release applies whether such loss, injury, or damage results from negligence of the released party, or from some other cause."
+  }
+  ]
+  }
+  ],
+  "presets": [
+    {
+      "name": "Rental"
+    }
+  ]
+}  
+{% endschema %}

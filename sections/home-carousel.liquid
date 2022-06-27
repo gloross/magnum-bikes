@@ -1,0 +1,93 @@
+<script type="module" src="{{- 'component-custom.js'| asset_url -}}"></script>
+
+{% liquid
+  assign object = section.settings
+  assign blocks = section.blocks
+%}
+<section class="home-carousel js-carousel-slider-mouse-follow">
+  
+  <div class="home-carousel__slider">
+    <div class="swiper-container js-home-carousel">
+      <div class="swiper-wrapper">
+        {% for block in blocks %}
+        {% assign product = block.settings.product %}
+        <div class="swiper-slide">
+          <div class="home-carousel__title">
+            <a class="link-carousel" href="{{ product.url }}">
+              <span class="home-carousel__subtitle">meet the {{ product.title }}  
+                 {% render 'icon', icon: 'arrow-up-right' %}
+                </span> 
+              </a>
+            <a class="link-carousel" href="{{ product.url }}">
+            <h2>{{ product.title }}</h2>
+             </a>
+          </div>
+          <div class="home-carousel__item">
+              {% liquid 
+                for variant in product.variants 
+                  if forloop.index == 1
+                    assign firstVariant = variant
+                  endif
+                endfor
+              %}   
+                {% if firstVariant.metafields.variant.image_1 %} 
+                  <img src="{{ firstVariant.metafields.variant.image_1 }}" alt="{{ product.title }}" loading="lazy" height="" width="">
+                    {% elsif product.images[0] %} 
+                    {{ product.images[0] | image_url: width: 700 | image_tag }}
+                    {% else %}
+                     <img src="https://via.placeholder.com/604x423.jpg?text=Pleaceholder" loading="lazy" height="" width="">
+                {% endif %}
+            <div class="home-carousel__text">
+              <div class="home-carousel__text-item">
+                <h5> Power </h5>
+                <p> {{ product.metafields.edetails.motor_nominal_output }} </p>
+              </div>
+              <div class="home-carousel__text-item">
+                <h5> Battery </h5>
+                <p> {{product.metafields.battery.battery_capacity_}}</p>
+              </div>
+              <div class="home-carousel__text-item">
+                <h5> Price </h5>
+                <p>${{ product.price | divided_by: 100 }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="cursor cursor--home js-cursor">
+      {% render 'icon', icon: 'cursor-home' %}
+    </div>
+  </div>
+</section>
+
+
+{% schema %}
+{
+"name": "Home Carousel",
+"max_blocks": 5,
+"settings": [
+],
+"blocks": [
+{
+  "name": "Item",
+  "type": "block",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product"
+    }
+  ]
+}
+],
+"presets": [
+  {
+    "name": "Home Carousel"
+  }
+]
+}
+{% endschema %}
+
+

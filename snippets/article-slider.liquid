@@ -1,0 +1,31 @@
+{%- assign mod_class = mod_class | default: false -%}
+{%- assign mod_images = mod_images | default: false -%}
+
+{%- if mod_images.size > 0 -%}
+  <div class="article-slider{% if mod_class %} {{ mod_class }}{% endif %}">
+    <div class="swiper-container js-article-slider">
+      <div class="swiper-wrapper">
+        {%- for _image in mod_images -%}
+          {%- assign image_alt = _image.alt | escape | split: '@@' | first | trim -%}
+          {%- assign description = _image.alt | escape | split: '@@' | last | trim -%}
+
+          <div class="swiper-slide article-slider__item">
+            <div class="media-wrapper">
+              <img src="{{- _image.cloudinary_src | append: 'w_485' -}}" alt="{{- image_alt -}}" loading="lazy" />
+            </div><!-- /.media-wrapper -->
+
+            {%- if description != blank -%}
+              <p>{{- description -}}</p>
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+      </div>
+
+      <div class="article-slider__arrows u-d-flex">
+        <div class="js-arrow-prev-article btn__nav btn__nav--prev">{%- render 'icon', icon: 'arrow-left' -%}</div>
+
+        <div class="js-arrow-next-article btn__nav btn__nav--next">{%- render 'icon', icon: 'arrow-right' -%}</div>
+      </div>
+    </div>
+  </div>
+{%- endif -%}

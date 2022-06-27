@@ -1,0 +1,102 @@
+{% liquid
+    assign object = section.settings
+    assign featured_article = object.featured_article
+    if object.image_desktop == blank
+    assign image_desktop = featured_article.image
+    else
+    assign image_desktop = object.image_desktop
+    endif
+    if object.image_mobile == blank
+    assign image_mobile = featured_article.image
+    else
+    assign image_mobile = object.image_mobile
+    endif
+    %}
+
+{%- assign category_tag = '' -%}
+
+{%- for tag in featured_article.tags -%}
+  {%- if tag contains 'category:' -%}
+    {%- assign category_tag = tag -%}
+    {%- break -%}
+  {%- endif -%}
+{%- endfor -%}
+
+<section class="stories-info {% if template contains 'login' %} {% endif%}">
+  <div class="container container--small">
+    <header class="stories-info__head">
+      <h2 class="stories-info__title">{{ object.title }}</h2>
+    </header>
+
+    <div class="stories-info__body">
+      <a href="{{ article.url }}" class="news-item__link">
+        <div class="media-wrapper">
+          {% render 'img',
+            img: image_desktop,
+            img_sm: image_mobile,
+            img_md: image_mobile %}
+        </div>
+      </a>
+
+      <div class="stories-info__content">
+        <div class="stories-info__content-inner">
+          {%- if category_tag != blank -%}
+            <div class="stories-info__meta">
+              {%- if category_tag != blank -%}
+                <p>{{- category_tag | remove: 'category:' -}}</p>
+              {%- endif -%}
+
+              <span>{{ featured_article.published_at | date: "%d.%m.%Y" }}</span>
+            </div>
+          {%- endif -%}
+
+          <h3>
+            <a href="{{- featured_article.url -}}">{{ featured_article.title }}</a>
+          </h3>
+
+          <div class="stories-info__entry">
+            {{ featured_article.excerpt_or_content }}
+          </div><!-- /.stories-info__entry -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+  "name": "Stories info",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section title",
+      "default": "Magnum Stories"
+    },
+    {
+        "type": "article",
+        "id": "featured_article",
+        "label": "Select featured article"
+    },
+    {
+        "type": "image_picker",
+        "id": "image_desktop",
+        "label": "Image desktop",
+        "info": "If blank default article image will be displayed"
+    },
+    {
+        "type": "image_picker",
+        "id": "image_mobile",
+        "label": "Image mobile",
+        "info": "If blank default article image will be displayed"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Stories info"
+    }
+  ]
+}
+{% endschema %}
+
+

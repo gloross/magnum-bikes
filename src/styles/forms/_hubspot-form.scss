@@ -1,0 +1,103 @@
+.hubspot {
+  .hs {
+    &-form {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &_firstname,
+    &_lastname,
+    &_company,
+    &_email,
+    &_phone,
+    &_objective {
+      flex: 0 0 50%;
+      width: 50%;
+      border: rem(2) solid #d4d4d4;
+      padding: rem(7) rem(15);
+      height: rem(95);
+      border-bottom: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+
+      label {
+        color: #4b4b4c !important;
+      }
+
+      input {
+        &::placeholder {
+          color: #e0e0e0;
+        }
+      }
+
+      .hs-error-msgs {
+        position: absolute;
+        right: rem(15);
+      }
+
+      .hs-error-msg {
+        color: $primary-color !important;
+        font-size: rem(12.8);
+      }
+    }
+
+    &_lastname,
+    &_objective,
+    &_email {
+      border-left: none;
+    }
+
+    &_message {
+      flex: 0 0 100%;
+      width: 100%;
+      border: rem(2) solid #d4d4d4;
+      padding: rem(7) rem(15);
+      height: rem(95);
+      margin-bottom: rem(20);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      label {
+        color: #4b4b4c !important;
+      }
+    }
+
+    &_recaptcha {
+      margin-bottom: rem(50);
+    }
+
+    &_submit {
+      flex: 0 0 100%;
+      width: 100%;
+      background-color: $primary-color;
+      color: $white;
+
+      .actions {
+        input {
+          height: rem(92);
+          font-size: rem(25);
+          line-height: rem(31);
+          content: 'Send application';
+        }
+      }
+    }
+
+    &-error-msgs {
+      color: $primary-color !important;
+      font-size: rem(12.8);
+      margin-left: rem(20);
+    }
+
+    &-form-required {
+      margin-left: rem(3);
+    }
+  }
+
+  .input {
+    height: rem(30);
+    font-size: rem(25);
+  }
+}

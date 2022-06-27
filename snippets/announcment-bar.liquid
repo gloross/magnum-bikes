@@ -1,0 +1,18 @@
+<div class="announcment-bar js-announcment">
+    <ul>
+        <li>
+            <a href="{{object.link_1_url}}"> <span class="line-link line-link--grow">{{object.link_1_text}}</span></a>
+        </li>
+         <li>
+            <a href="{{object.link_2_url}}"> <span class="line-link line-link--grow">{{object.link_2_text}}</span></a>
+        </li>
+         <li>
+            <a href="{{object.link_3_url}}"> <span class="line-link line-link--grow">{{object.link_3_text}}</span></a>
+        </li>
+         <li>
+             <a href="{{object.link_4_url}}">
+                {% render 'icon', icon: 'location' %}
+                 <span class="line-link line-link--grow">{{object.link_4_text}}</span></a>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,60 @@
+{% liquid
+  assign object = section.settings
+  assign blocks = section.blocks
+  %}
+<section class="learning-slider">
+  <div class="container container--small">
+    <div class="learning-slider__title">
+      <h2>{{object.title}}</h2>
+    </div>
+    <div class="learning-slider__wrapper">
+      <div class="swiper-container js-learning-slider">
+        <div class="swiper-wrapper">
+          {% for block in blocks %}
+          {% assign b = block.settings %}
+          <div class="swiper-slide">
+            {% render 'news-item' with
+              article: b.slide_article,
+              mod_hide_tags: true,
+              mod_hide_date: true,
+              mod_class: 'news-item--secondary' %}
+          </div>
+          {%endfor%}
+        </div>
+      </div>
+    </div>
+    <div class="swiper-scrollbar learning-slider__scrollbar js-carousel-scrollbar"></div>
+  </div>
+</section>
+
+{% schema %}
+{
+"name": "Learning slider",
+"settings": [
+{
+  "type": "text",
+  "id": "title",
+  "label": "Section title",
+  "default": "Our Picks for Reading"
+}
+],
+"blocks":[
+{
+"name": "Article",
+"type": "block",
+"settings": [
+{
+  "type": "article",
+  "id": "slide_article",
+  "label": "Select article"
+}
+]
+}
+],
+"presets": [
+  {
+    "name": "Learning slider"
+  }
+]
+}
+{% endschema %}

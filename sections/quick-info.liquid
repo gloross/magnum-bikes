@@ -1,0 +1,80 @@
+{% liquid
+  assign object = section.settings
+  assign blocks = section.blocks
+%}
+
+{% for block in blocks %}
+{% assign b = block.settings %}
+<section class="quick-info {% if b.reverse == true%}quick-info--reverse{%endif%}">
+    <div class="container container--small">
+      <div class="quick-info__inner">
+        <div class="quick-info__image">
+          <div class="media-wrapper">
+            {%- render 'img',
+            img: b.image,
+            img_sm: b.image_mobile,
+            img_md: '',
+            img_lg: '',
+            m_width: '500'
+          -%}
+          </div>
+        </div>
+        <div class="quick-info__text">
+          <div class="quick-info__text-content">
+            <h2 class="h2"> {{b.section_title}}</h2>
+          <p>{{b.description}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endfor %}
+
+  {% schema %}
+  {
+  "name": "Quick info",
+  "settings": [
+  ],
+  "blocks": [
+  {
+    "name": "Item",
+    "type": "block",
+    "settings": [
+    {
+      "type": "checkbox",
+      "id": "reverse",
+      "label": "Reverse img/text position",
+      "default": false
+  },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "image mobile"
+    },
+    {
+        "type": "text",
+        "id": "section_title",
+        "label": "Section title",
+        "default": "All Magnum Bikes..."
+    },
+    {
+        "type": "textarea",
+        "id": "description",
+        "label": "Description TEXT",
+        "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    }
+    ]
+  }
+],
+  "presets": [
+    {
+      "name": "Quick info"
+    }
+  ]
+}  
+{% endschema %}

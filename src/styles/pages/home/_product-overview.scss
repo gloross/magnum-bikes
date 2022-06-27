@@ -1,0 +1,89 @@
+.product-overview {
+  padding: rem(90) 0 rem(90);
+
+  @include media-breakpoint-down(sm) {
+    padding: rem(8) 0 rem(48);
+  }
+
+  &__title {
+    padding-bottom: rem(21);
+    border-bottom: 1px solid $grey-light;
+
+    @include media-breakpoint-down(sm) {
+      padding-bottom: rem(16);
+    }
+    h2 {
+      font-size: rem(30);
+      line-height: line-height(30, 44);
+      font-weight: 700;
+      color: $machine-grey;
+    }
+  }
+
+  &__inner {
+    padding-top: rem(30);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    @include media-breakpoint-down(sm) {
+      flex-wrap: wrap;
+      padding-top: rem(16);
+    }
+  }
+
+  &__col {
+    //max-width: rem(406);
+    width: 45%;
+
+    @include media-breakpoint-down(sm) {
+      max-width: 100%;
+      width: 100%;
+      &:not(:last-child) {
+        margin-bottom: rem(16);
+      }
+    }
+    h3 {
+      text-transform: uppercase;
+      color: $cyan;
+      font-size: rem(14);
+      line-height: line-height(14, 24);
+      margin-bottom: rem(9);
+    }
+    p {
+      font-size: rem(14);
+      line-height: line-height(14, 22);
+      color: $grey-light;
+
+      @include media-breakpoint-down(sm) {
+        max-width: rem(293);
+      }
+    }
+  }
+  &__list {
+    padding-top: rem(6);
+
+    li {
+      &:not(:last-child) {
+        margin-bottom: rem(8);
+      }
+    }
+
+    span {
+      display: inline-block;
+      min-width: rem(112);
+      font-size: rem(14);
+      line-height: line-height(14, 22);
+      color: $grey-light;
+
+      &:not(:last-child) {
+        margin-right: rem(14);
+      }
+
+      strong {
+        line-height: line-height(14, 24);
+        color: $magnum-black;
+      }
+    }
+  }
+}

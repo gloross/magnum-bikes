@@ -1,0 +1,141 @@
+.sign-up {
+  @include media-breakpoint-down(md) {
+    padding: rem(90) 0 0;
+  }
+  &__header {
+    text-align: center;
+    .h1 {
+      font-family: MaisonNeue-Bold;
+      font-style: normal;
+      font-weight: 400;
+      font-size: rem(56);
+      text-transform: uppercase;
+      letter-spacing: 0.88px;
+      line-height: rem(56);
+      margin: 0 0 17.5px;
+
+      @include media-breakpoint-down(md) {
+        font-size: rem(35);
+        line-height: rem(42);
+        letter-spacing: 0.88px;
+        max-width: rem(300);
+        margin: 0 auto 17.5px;
+      }
+    }
+  }
+
+  .sign-up-content {
+    display: flex;
+    max-width: 1150px;
+    margin: 0 auto;
+    align-items: center;
+    margin-bottom: 230px;
+    padding-top: rem(100);
+
+    @media (max-width: 991px) {
+      margin-bottom: 100px;
+      justify-content: center;
+      padding-top: rem(70);
+    }
+
+    &__image {
+      width: 450px;
+      margin-right: 50px;
+      @media (max-width: 991px) {
+        display: none;
+      }
+    }
+
+    &__form {
+      width: calc(100% - 500px);
+      margin-left: 50px;
+      text-align: left;
+      max-width: 550px;
+
+      @media (max-width: 991px) {
+        width: 100%;
+        text-align: center;
+        margin-left: 0;
+      }
+
+      .form-single-field {
+        max-width: 100%;
+      }
+
+      .global-section__subtitle {
+        font-family: MaisonNeue-Light;
+        font-size: 20px;
+        line-height: 1.5;
+        letter-spacing: 1px;
+        margin-bottom: 40px !important;
+        @media (max-width: 991px) {
+          margin-bottom: 20px !important;
+        }
+
+        p {
+          @include media-breakpoint-down(md) {
+            font-size: rem(20);
+            line-height: rem(30);
+            font-family: $font-light;
+          }
+        }
+      }
+
+      .input-group {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+        &__btn {
+          flex-grow: 1;
+
+          @include media-breakpoint-down(sm) {
+            width: 100%;
+          }
+          .btn {
+            display: inline-block;
+            width: auto;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            cursor: pointer;
+            border: 1px solid #f8f7f3;
+            border-radius: 3px;
+            padding: 12px 18px;
+            line-height: 1.42;
+            background-color: #000;
+            color: #fff;
+            font-family: MaisonNeue-Book, san-serif;
+            font-style: normal;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            white-space: normal;
+            font-size: 12px;
+            min-width: 190px;
+            transition: all 0.3s ease-in-out;
+
+            @include media-breakpoint-down(sm) {
+              max-width: 100%;
+              width: 100%;
+            }
+          }
+        }
+
+        &__field {
+          min-height: rem(46);
+          padding: rem(10) rem(18);
+          flex-basis: 15rem;
+          flex-grow: 9999;
+          margin-bottom: 1rem;
+          border-radius: 3px 0 0 3px;
+          text-align: left;
+          background-color: #fff;
+          color: #000;
+          max-width: 100%;
+          line-height: 1.5;
+        }
+      }
+    }
+  }
+}

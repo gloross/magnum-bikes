@@ -1,0 +1,139 @@
+{
+  "sections": {
+    "hero-landing": {
+      "type": "hero-landing",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Hero_Academy.png",
+        "enable_dark_overlay": true
+      }
+    },
+    "news-navigation": {
+      "type": "news-navigation",
+      "settings": {
+        "menu": "blog-navigation"
+      }
+    },
+    "learning-filter": {
+      "type": "learning-filter",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "learning-category": {
+      "type": "learning-category",
+      "settings": {
+        "title": "",
+        "featured_article": "learning-hub\/get-to-know-your-e-bike-battery",
+        "image_desktop": "shopify:\/\/shop_images\/Battery_2.jpg"
+      }
+    },
+    "articles-with-block": {
+      "type": "articles-with-block",
+      "blocks": {
+        "409a84bb-6145-4f68-ab0c-c88ef7a12925": {
+          "type": "block",
+          "disabled": true,
+          "settings": {
+            "image_file_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0608\/6072\/7509\/files\/bike-skeleton.svg?v=1649366680",
+            "color_background": "#151515",
+            "title": "Everyone has a perfect Magnum match.",
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<\/p>",
+            "button_text": "Help Me Choose",
+            "button_url": "#"
+          }
+        }
+      },
+      "block_order": [
+        "409a84bb-6145-4f68-ab0c-c88ef7a12925"
+      ],
+      "settings": {
+        "title": "Featured Lessons",
+        "paginate_by": 3
+      }
+    },
+    "perfect-match": {
+      "type": "perfect-match",
+      "disabled": true,
+      "settings": {
+        "title": "Everyone has a perfect Magnum match.",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "left_image": "shopify:\/\/shop_images\/bike-white.png",
+        "cta_text": "Help Me Choose",
+        "cta_url": "",
+        "article": "news\/news-article"
+      }
+    },
+    "learning-slider": {
+      "type": "learning-slider",
+      "disabled": true,
+      "blocks": {
+        "70549d8a-81b1-49be-86b9-21921218c976": {
+          "type": "block",
+          "settings": {
+            "slide_article": "news\/news-article"
+          }
+        },
+        "8f3b6d89-9018-4d64-893c-7544d7ea9c55": {
+          "type": "block",
+          "settings": {
+            "slide_article": "stories\/stories-3"
+          }
+        },
+        "c403d385-b139-4200-9fd1-dcae6c921410": {
+          "type": "block",
+          "disabled": true,
+          "settings": {
+            "slide_article": "news\/news-2"
+          }
+        },
+        "9e377b8d-4a92-4acb-bb3c-a623868e1a20": {
+          "type": "block",
+          "settings": {
+            "slide_article": "stories\/stories-2"
+          }
+        }
+      },
+      "block_order": [
+        "70549d8a-81b1-49be-86b9-21921218c976",
+        "8f3b6d89-9018-4d64-893c-7544d7ea9c55",
+        "c403d385-b139-4200-9fd1-dcae6c921410",
+        "9e377b8d-4a92-4acb-bb3c-a623868e1a20"
+      ],
+      "settings": {
+        "title": "Our Picks for Reading"
+      }
+    },
+    "another-cta": {
+      "type": "another-cta",
+      "disabled": true,
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Magnum-Ranger-Electric-Bike-Black-1.jpg",
+        "section_title": "Another CTA",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "cta_text": "Check Out Fat Tire Bikes",
+        "cta_url": "https:\/\/magnumbikes.com"
+      }
+    },
+    "article-gallery": {
+      "type": "article-gallery",
+      "disabled": true,
+      "settings": {
+        "section_title": "Featured in this Article",
+        "top_cta_text": "View the magnum lineup",
+        "top_cta_url": "",
+        "bottom_cta_text": "VIEW BUYING OPTIONS"
+      }
+    }
+  },
+  "order": [
+    "hero-landing",
+    "news-navigation",
+    "learning-filter",
+    "learning-category",
+    "articles-with-block",
+    "perfect-match",
+    "learning-slider",
+    "another-cta",
+    "article-gallery"
+  ]
+}

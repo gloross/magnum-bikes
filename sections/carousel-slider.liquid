@@ -1,0 +1,113 @@
+{% liquid
+  assign object = section.settings
+  assign sf1_image = product.metafields.scroll_features.sf1_image
+  assign sf1_heading = product.metafields.scroll_features.sf1_heading
+  assign sf1_detail = product.metafields.scroll_features.sf1_detail
+  assign sf2_image = product.metafields.scroll_features.sf2_image
+  assign sf2_heading = product.metafields.scroll_features.sf2_heading
+  assign sf2_detail = product.metafields.scroll_features.sf2_detail
+  assign sf3_image = product.metafields.scroll_features.sf3_image
+  assign sf3_heading = product.metafields.scroll_features.sf3_heading
+  assign sf3_detail = product.metafields.scroll_features.sf3_detail
+  assign sf4_image = product.metafields.scroll_features.sf4_image
+  assign sf4_heading = product.metafields.scroll_features.sf4_heading
+  assign sf4_detail = product.metafields.scroll_features.sf4_detail
+  assign sf5_image = product.metafields.scroll_features.sf5_image
+  assign sf5_heading = product.metafields.scroll_features.sf5_heading
+  assign sf5_detail = product.metafields.scroll_features.sf5_detail
+  assign sf6_image = product.metafields.scroll_features.sf6_image
+  assign sf6_heading = product.metafields.scroll_features.sf6_heading
+  assign sf6_detail = product.metafields.scroll_features.sf6_detail
+%}
+
+<section class="carousel-slider js-carousel-slider-mouse-follow">
+  <div class="carousel-slider__inner">
+    <div class="swiper-container js-carousel-slider">
+      <div class="swiper-wrapper">
+        {% if sf1_image !=blank%}
+        <div class="swiper-slide">
+          <div class="carousel-slider__item">
+            <img src="{{ sf1_image }}" loading="lazy" width="" height="" alt="" />
+            <div class="carousel-slider__text">
+              <strong>{{ sf1_heading }} </strong>
+              <p>{{sf1_detail}}</p>
+            </div>
+          </div>
+        </div>
+        {%endif%}
+        {% if sf2_image !=blank %}
+        <div class="swiper-slide">
+          <div class="carousel-slider__item">
+            <img src="{{ sf2_image }}" loading="lazy" width="" height="" alt="">
+            <div class="carousel-slider__text">
+              <strong>{{ sf2_heading }} </strong>
+              <p>{{ sf2_detail }}</p>
+            </div>
+          </div>
+        </div>
+        {%endif%}
+        {% if sf3_image !=blank %}
+        <div class="swiper-slide">
+          <div class="carousel-slider__item">
+            <img src="{{ sf3_image }}" loading="lazy" width="" height="" alt="">
+            <div class="carousel-slider__text">
+              <strong>{{ sf3_heading }} </strong>
+              <p>{{ sf3_detail }}</p>
+            </div>
+          </div>
+        </div>
+        {%endif%}
+        {% if sf4_image !=blank %}
+        <div class="swiper-slide">
+          <div class="carousel-slider__item">
+            <img src="{{ sf4_image }}" loading="lazy" width="" height="" alt="">
+            <div class="carousel-slider__text">
+              <strong>{{ sf4_heading }} </strong>
+              <p>{{ sf4_detail }}</p>
+            </div>
+          </div>
+        </div>
+        {%endif%}
+        {% if sf5_image !=blank %}
+        <div class="swiper-slide">
+          <div class="carousel-slider__item">
+            <img src="{{ sf5_image }}" loading="lazy" width="" height="" alt="">
+            <div class="carousel-slider__text">
+              <strong>{{ sf5_heading }} </strong>
+              <p>{{ sf5_detail }}</p>
+            </div>
+          </div>
+        </div>
+        {%endif%}
+        {% if sf6_image !=blank %}
+        <div class="swiper-slide">
+          <div class="carousel-slider__item">
+            <img src="{{ sf6_image }}" loading="lazy" width="" height="" alt="">
+            <div class="carousel-slider__text">
+              <strong>{{ sf6_heading }} </strong>
+              <p>{{ sf6_detail }}</p>
+            </div>
+          </div>
+        </div>
+        {%endif%}
+      </div>
+      <div class="swiper-scrollbar carousel-slider__scrollbar js-carousel-scrollbar"></div>
+    </div>
+    <div class="cursor js-cursor">
+        {% render 'icon', icon: 'icon-cursor' %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+  "name": "Carousel Slider",
+  "settings": [
+  ],
+  "presets": [
+    {
+      "name": "Carousel Slider"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,180 @@
+.color-swatch-span > img {
+    border-radius: 50%;
+    width: 25px;
+  }
+
+.financing-icon {
+  padding: 30px 20px 5px 10px;
+  display: flex;
+  align-items: center;
+}
+
+.financing-icon > a {
+  padding-left: 10px;
+}
+
+.blue_icon > a {
+  color: #26BBEE;
+  text-decoration: underline;
+}
+
+.financing-left {
+  max-width: 40% !important;
+
+  .product-details__link {
+    display: inline-block;
+    padding-top: 1rem;
+    color: #fff;
+  }
+}
+
+.financing-list > li > svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.financing-list {
+  margin-bottom: 40px;
+}
+
+.financing-right {
+
+  margin: 60px;
+  padding-bottom: 50px;
+  padding-left: 0px !important;
+}
+
+.br-line {
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.description-under-line {
+  margin-top: 30px;
+}
+
+//! Searck page
+
+.grid-search {
+    display: grid;
+    grid-template-columns: repeat(3,minmax(auto,1fr));
+    grid-column-gap: 2.0625rem;
+    border-bottom: 2px solid #d7e0e3;
+    padding-bottom: 1.5625rem;
+    padding: 20px;
+    text-align: center;
+    padding: 25px !important;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 650px)  {
+  .grid-search {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(auto, 1fr));
+    grid-column-gap: 1.5rem;
+    padding-bottom: 1.5625rem;
+    text-align: center;
+    padding: 25px !important;
+    margin-bottom: 20px;
+  }
+
+  .card__heading > h3, h3 *, .h3, .h3 * {
+    font-size: 1.2rem;
+  }
+
+}
+
+.field-search {
+  display: flex;
+  padding: 20px;
+  font-size: 1.9rem !important;
+  align-items: center;
+}
+
+.card__badge {
+  display: none;
+}
+
+.media-wrapper-article {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  width: 100%;
+}
+
+.about-store-main__map > iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.careers-h1{
+  padding:10px;
+}
+
+.heading_social_section {
+  color: white;
+  position: absolute;
+  top: 39px;
+  text-transform: uppercase;
+}
+
+.careers_heading {
+  padding-left: 3.5rem !important;
+}
+
+.stories-img {
+  position: relative !important;
+}
+
+.stories-h3 {
+  color:$magnum-black;
+  padding-top: 10px;
+  font-size: 1.8rem;
+}
+
+.swiper-wrapper
+ .swiper-slide:nth-of-type(odd) 
+  .stories-wrapper {
+    padding-top: 70px;
+  }
+
+  .swiper-wrapper
+ .swiper-slide:nth-of-type(even) 
+  .stories-wrapper {
+    padding-top: 20px;
+  }
+
+  .careers-left {
+    max-width: 30%;
+  }
+
+.sold_out {
+  color:#C4CED2 !important;
+}
+
+.bold_sold_out {
+  color:#151515;
+  display: inline-block;
+  padding-left: 7px;
+}
+
+.color_sold_out {
+  color: #C4CED2 !important;
+}
+
+.sub_for_updates {
+  background-color: #312f30 !important;
+  border: 1px solid #312f30 !important;
+
+  &:hover {
+    background-color: rgba($cyan, 0.8) !important;
+    border: 1px solid rgba($cyan, 0.8) !important;
+  }
+}
+
+.link_wrapper {
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}

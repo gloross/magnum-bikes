@@ -1,0 +1,27 @@
+{
+  "sections": {
+    "product-gallery-rental-booking": {
+      "type": "product-rental-booking",
+      "settings": {
+      }
+    },
+    "product-overview": {
+      "type": "product-overview",
+      "settings": {
+        "section_title": "Overview",
+        "left_col_title": "Description",
+        "right_col_title": "Details"
+      }
+    },
+    "featured-products-metafields": {
+      "type": "featured-products-metafields",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "product-gallery-rental-booking",
+    "product-overview",
+    "featured-products-metafields"
+  ]
+}

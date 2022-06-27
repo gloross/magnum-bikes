@@ -1,0 +1,101 @@
+{
+  "sections": {
+    "hero-landing": {
+      "type": "hero-landing",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/RiderStoriesWeb.jpg",
+        "enable_dark_overlay": true
+      }
+    },
+    "news-navigation": {
+      "type": "news-navigation",
+      "settings": {
+        "menu": "blog-navigation"
+      }
+    },
+    "stories-info": {
+      "type": "stories-info",
+      "settings": {
+        "title": "Magnum Stories",
+        "featured_article": "stories\/stories-4",
+        "image_desktop": "shopify:\/\/shop_images\/ARunnerWeb_e5e79b10-0ce0-4192-a4d9-9039979eefb6.jpg",
+        "image_mobile": "shopify:\/\/shop_images\/ARunnerWeb_e5e79b10-0ce0-4192-a4d9-9039979eefb6.jpg"
+      }
+    },
+    "home-stories": {
+      "type": "home-stories",
+      "disabled": true,
+      "blocks": {
+        "1da484a8-36d3-404c-8568-004a1f74e400": {
+          "type": "block",
+          "settings": {
+            "story_image": "shopify:\/\/shop_images\/275a125a370ac097d0302fa2574da1af.jpg",
+            "article": "learning-hub\/learning-hub"
+          }
+        },
+        "7290b74e-94d1-45ed-866b-f0e24808a59f": {
+          "type": "block",
+          "settings": {
+            "story_image": "shopify:\/\/shop_images\/Magnum-Ranger-Electric-Bike-Black-1.jpg",
+            "article": "stories\/stories-test-article"
+          }
+        },
+        "f78a7ccf-4369-4de8-b4dd-d06a912e7e9c": {
+          "type": "block",
+          "settings": {
+            "story_image": "shopify:\/\/shop_images\/275a125a370ac097d0302fa2574da1af.jpg",
+            "article": "news\/test"
+          }
+        },
+        "3950a354-0c44-4930-ba3e-9cf0be5ec738": {
+          "type": "block",
+          "settings": {
+            "story_image": "shopify:\/\/shop_images\/95748a0c5bddb0bcd99516158013c0bb.jpg",
+            "article": "learning-hub\/learning-hub"
+          }
+        },
+        "0cbf5e3d-7785-4761-a260-9c64c51e6380": {
+          "type": "block",
+          "settings": {
+            "story_image": "shopify:\/\/shop_images\/Rectangle_1354.jpg",
+            "article": "stories\/stories-test-article"
+          }
+        }
+      },
+      "block_order": [
+        "1da484a8-36d3-404c-8568-004a1f74e400",
+        "7290b74e-94d1-45ed-866b-f0e24808a59f",
+        "f78a7ccf-4369-4de8-b4dd-d06a912e7e9c",
+        "3950a354-0c44-4930-ba3e-9cf0be5ec738",
+        "0cbf5e3d-7785-4761-a260-9c64c51e6380"
+      ],
+      "settings": {
+        "section_title": "Rider Stories",
+        "cta_label": "View All Rider Stories",
+        "cta_url": ""
+      }
+    },
+    "stories-magnum": {
+      "type": "stories-magnum",
+      "disabled": true,
+      "settings": {
+        "image": "shopify:\/\/shop_images\/magnum.png",
+        "description": "“We can have a nice motivational quote here claiming how great it is to be an e-bike rider and how humans are magic, amazing, great... ”"
+      }
+    },
+    "stories-blog": {
+      "type": "stories-blog",
+      "settings": {
+        "title": "Rider Stories"
+      }
+    }
+  },
+  "order": [
+    "hero-landing",
+    "news-navigation",
+    "stories-info",
+    "home-stories",
+    "stories-magnum",
+    "stories-blog"
+  ]
+}

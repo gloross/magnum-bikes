@@ -1,0 +1,17 @@
+.choose-color {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  @include media-breakpoint-down(md) {
+    flex-wrap: nowrap;
+  }
+
+  li {
+    margin-right: rem(3);
+    margin-bottom: rem(5);
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

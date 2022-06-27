@@ -1,0 +1,92 @@
+.our-designers {
+  &__wrapper {
+    max-width: rem(1160);
+    margin: 0 auto;
+  }
+
+  &__title {
+    margin-bottom: rem(60);
+    text-align: center;
+
+    h1 {
+      font-size: rem(24);
+      line-height: line-height(24, 21);
+      letter-spacing: 1px;
+      margin-bottom: rem(70);
+    }
+
+    p {
+      max-width: rem(600);
+      font-size: rem(14);
+      line-height: line-height(14, 24);
+      letter-spacing: 1px;
+      font-family: $headline-font;
+      margin: 0 auto;
+      padding-bottom: rem(20);
+    }
+  }
+
+  &__content {
+    padding-bottom: rem(160);
+    text-align: center;
+
+    span {
+      padding: rem(9) rem(8);
+      display: contents;
+
+      @include media-breakpoint-up(md) {
+        padding: 0;
+        margin: 0 rem(30);
+        display: inline;
+      }
+
+      a {
+        font-size: rem(14);
+        line-height: line-height(14, 18);
+        letter-spacing: 1px;
+        font-family: $font-light;
+        text-transform: uppercase;
+
+        @include media-breakpoint-up(md) {
+          font-size: rem(24);
+          line-height: line-height(24, 32);
+        }
+      }
+    }
+
+    .mobile-br {
+      display: inline-block;
+
+      @include media-breakpoint-up(md) {
+        display: none;
+      }
+    }
+
+    .desktop-br {
+      display: none;
+      height: rem(21);
+
+      @include media-breakpoint-up(md) {
+        display: inline-block;
+      }
+    }
+  }
+
+  &__email {
+    padding-top: rem(120);
+
+    p {
+      max-width: rem(320);
+      margin: 0 auto;
+      font-size: rem(14);
+      line-height: line-height(14, 24);
+      letter-spacing: 1px;
+      font-family: $headline-font;
+      text-align: center;
+
+      @include media-breakpoint-up(md) {
+        max-width: rem(600);
+      }
+    }
+  }
+}

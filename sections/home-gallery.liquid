@@ -1,0 +1,78 @@
+{% liquid
+  assign object = section.settings
+  assign blocks = section.blocks
+%}
+<section class="home-gallery">
+  <div class="home-gallery__inner">
+    <div class="home-gallery__title">
+      <h4>{{object.section_title}}</h4>
+      <div class="home-gallery__arrows u-d-flex">
+        <div class="js-arrow-prev-home-gallery btn__nav btn__nav--prev">{% render 'icon', icon: 'arrow-left' %} </div>
+        <div class="js-arrow-next-home-gallery btn__nav btn__nav--next">{% render 'icon', icon: 'arrow-right' %} </div>
+      </div>
+    </div>
+    <div class="home-gallery__slider">
+      <div class="swiper-container js-home-gallery">
+        <div class="swiper-wrapper">
+
+          {% for block in blocks %}
+          {%assign b = block.settings %}
+          <div class="swiper-slide">
+            <div class="home-gallery__item">
+              {%- render 'img_new',
+              img: b.image,
+              m_width: '500',
+                show_attribute: false
+            -%}
+            <a href="{{b.item_url}}"> <span class="home-gallery__item-title">{{b.slide_title}} {% render 'icon', icon: 'arrow-up-right' %}</span></a>
+            </div>
+          </div>
+          {%endfor%}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+  "name": "Home gallery",
+  "settings": [
+  {
+    "type": "text",
+    "id": "section_title",
+    "label": "Section title",
+    "default": "EXPLORE BIKE CATEGORIES"
+  }
+  ],
+  "blocks": [
+  {
+    "name": "Gallery Item",
+    "type": "block",
+    "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Slide image"
+        },
+        {
+          "type": "text",
+          "id": "slide_title",
+          "label": "Slide title",
+          "default": "Cruiser"
+        },
+        {
+          "type": "url",
+          "id": "item_url",
+          "label": "Slide URL"
+        }
+    ]
+  }
+],
+  "presets": [
+    {
+      "name": "Home gallery"
+    }
+  ]
+}
+{% endschema %}

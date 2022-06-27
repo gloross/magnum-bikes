@@ -1,0 +1,30 @@
+.container {
+  width: 100%;
+  padding: 0 rem(64);
+  margin: 0 auto;
+  .second-step & {
+    @include media-breakpoint-down(sm) {
+      padding: 0;
+    }
+  }
+  @include media-breakpoint-down(md) {
+    padding: 0 rem(20);
+  }
+  &--middle {
+    padding: 0 11.127vw;
+    @include media-breakpoint-down(md) {
+      padding: 0 rem(20);
+    }
+  }
+  &--small {
+    padding: 0 12.372vw;
+
+    @include media-breakpoint-down(xl) {
+      padding: 0 6.5vw;
+    }
+
+    @include media-breakpoint-down(md) {
+      padding: 0 rem(20);
+    }
+  }
+}

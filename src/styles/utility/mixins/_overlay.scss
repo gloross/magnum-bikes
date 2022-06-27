@@ -1,0 +1,16 @@
+@mixin overlayed($bg, $opacity: 1, $width: 100%) {
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $width;
+    height: 100%;
+    background: $bg;
+    pointer-events: none;
+    opacity: $opacity;
+    transition: opacity $t-basic;
+    z-index: 1;
+  }
+}

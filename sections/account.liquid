@@ -1,0 +1,91 @@
+<section class="account">
+  <div class="contianer container--middle">
+    <div class="account__inner">
+      <div class="account__col">
+        <h2>Create An Account</h2>
+        <div class="account__create">
+          <form action="#" class="form">
+            {% render 'input-field',
+        label: "",
+        inputType: 'text',
+        text: 'First Name*',
+        inputId: '',
+        inputName: 'properties[]',
+        classes: ""
+     %}
+            {% render 'input-field',
+        label: "",
+        inputType: 'email',
+        text: 'Email*',
+        inputId: '',
+        inputName: 'properties[]',
+        classes: ""
+    %}
+            {% render 'input-field',
+        label: "",
+        inputType: 'password',
+        text: 'Password',
+        inputId: '',
+        inputName: 'properties[]',
+        classes: "",
+        icon: 'eye'
+        %}
+            {% render 'input-field',
+        label: "",
+        inputType: 'password',
+        text: 'Confirm Password',
+        inputId: '',
+        inputName: 'properties[]',
+        classes: "",
+        icon: 'eye'
+        %}
+            <div class="select-field select-field--account">
+                <span class="label"> State* </span>
+              <select name="magnum-bikes" id="magnum-bikes">
+                <option value="internet-1">Nebraska</option>
+                <option value="internet-2">Select Model2</option>
+                <option value="internet-3">Select Model3</option>
+              </select>
+            </div>
+            <div class="checkbox checkbox--account">
+                <input name="contact[offer]" type="hidden" value="offer">
+                <input type="checkbox" id="offer" name="offer" value="offer">
+                <label for="offer">
+                  <div class="check-wrapper">
+                    {% render 'icon', icon: 'checkbox' %}
+                  </div>
+                  I Agree with The <a href="#">Terms & Conditions</a>.
+                </label>
+              </div>
+            <button class="btn btn--blue-fill">Create an account</button>
+          </form>
+        </div>
+      </div>
+      <div class="account__col">
+        <h2>Log in</h2>
+        <div class="account__login">
+          <form action="#" class="form">
+            {% render 'input-field',
+              label: "",
+              inputType: 'email',
+              text: 'Email*',
+              inputId: '',
+              inputName: 'properties[]',
+              classes: "",
+           %}
+            {% render 'input-field',
+              label: "",
+              inputType: 'password',
+              text: 'Password*',
+              inputId: '',
+              inputName: 'properties[]',
+              classes: "",
+              icon: 'eye'
+          %}
+            <a class="account__forgot-pw"href="#">Forgot Password?</a>
+            <button class="btn btn--machine-fill">Login</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

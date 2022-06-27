@@ -1,0 +1,56 @@
+{
+  "sections": {
+    "hero-landing": {
+      "type": "hero-landing",
+      "settings": {}
+    },
+    "news-navigation": {
+      "type": "news-navigation",
+      "settings": {
+      }
+    },
+    "news-text-image": {
+      "type": "news-text-image",
+      "blocks": {
+        "e0b990cf-06a4-4a68-8665-8cdec810837c": {
+          "type": "block",
+          "settings": {
+            "featured_article": "news\/news-2"
+          }
+        },
+        "c7ba3f67-43f5-46ca-a502-eebc0955d21b": {
+          "type": "block",
+          "settings": {
+            "featured_article": "news\/news-article"
+          }
+        },
+        "397bc87f-3ba2-402f-ae17-4aba275bd108": {
+          "type": "block",
+          "settings": {
+            "featured_article": "news\/news-1"
+          }
+        }
+      },
+      "block_order": [
+        "e0b990cf-06a4-4a68-8665-8cdec810837c",
+        "c7ba3f67-43f5-46ca-a502-eebc0955d21b",
+        "397bc87f-3ba2-402f-ae17-4aba275bd108"
+      ],
+      "settings": {
+        "title": "Magnum News"
+      }
+    },
+    "news-blog": {
+      "type": "news-blog",
+      "settings": {
+        "title": "Magnum News"
+      }
+    }
+  },
+  "order": [
+    "hero-landing",
+    "news-navigation",
+    "news-text-image",
+    "news-blog"
+  ]
+}

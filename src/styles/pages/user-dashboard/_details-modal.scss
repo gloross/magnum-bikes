@@ -1,0 +1,52 @@
+.details-modal {
+  display: none;
+  position: fixed;
+  top: rem(80);
+  left: 0;
+  z-index: 111;
+  width: 100vw;
+  min-height: calc(100vh - #{rem(160)});
+
+  &.active {
+    display: block;
+  }
+
+  &__close {
+    position: absolute;
+    top: rem(45);
+    right: rem(45);
+    width: rem(60);
+    height: rem(60);
+
+    @include media-breakpoint-down(sm) {
+      top: rem(36);
+      right: rem(16);
+      width: rem(46);
+      height: rem(42);
+    }
+  }
+
+  &__inner {
+    position: relative;
+    background-color: $white;
+    border-radius: rem(8);
+    width: 100%;
+    min-height: calc(100vh - #{rem(160)});
+    padding: rem(50) rem(105);
+  }
+}
+
+.details-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 110;
+  display: none;
+  background: rgba(105, 105, 105, 0.7);
+
+  &.active {
+    display: block;
+  }
+}

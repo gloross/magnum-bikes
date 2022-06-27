@@ -1,0 +1,11 @@
+@mixin firefox {
+  @-moz-document url-prefix() {
+    @content;
+  }
+}
+
+@mixin ie {
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    @content;
+  }
+}

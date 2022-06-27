@@ -1,0 +1,116 @@
+<script type="module" src="{{- 'component-custom.js'| asset_url -}}"></script>
+
+
+{% liquid
+    assign object = section.settings
+  %}
+<div class="component-overview">
+    <div class="container container--small">
+        <div class="component-overview__title">
+            <h2 class="h2">{{ object.title }} </h2>
+        </div>
+        <div class="accordion js-accordion">
+          <div class="accordion__item">
+            <button type="button" class="accordion__item-button js-accordion-trigger" id="triger">Electronic Details</button>
+            <div class="accordion__item-info">
+              <div class="accordion__item-info-content js-accordion-content">
+                  <div class="u-d-flex"><p>Motor Brand</p><strong>{{product.metafields.edetails.motor_brand}}</strong></div>
+                  <div class="u-d-flex"><p> Motor Type</p><strong>{{product.metafields.edetails.motor_type}}</strong></div>
+                  <div class="u-d-flex"><p>Motor Nominal Output</p>  <strong>{{product.metafields.edetails.motor_nominal_output}}</strong></div>
+                  <div class="u-d-flex"><p>Motor Peak Output</p>  <strong>{{product.metafields.edetails.motor_peak_output}}</strong></div>
+                  <div class="u-d-flex"><p>Battery Brand</p><strong>{{product.metafields.edetails.battery_brand}}</strong></div>
+                  <div class="u-d-flex"><p>Battery Voltage</p><strong>{{product.metafields.edetails.battery_voltage}}</strong></div>
+                  <div class="u-d-flex"><p>Battery Ah</p><strong>{{product.metafields.edetails.battery_ah}}</strong></div>
+                  <div class="u-d-flex"><p>Battery Wh</p><strong>{{product.metafields.edetails.battery_wh}}</strong></div>
+                  <div class="u-d-flex"><p>Battery Chemistry</p><strong>{{product.metafields.edetails.battery_chemistry}}</strong></div>
+                  <div class="u-d-flex"><p>Battery Charge Time (from empty)</p><strong>{{product.metafields.edetails.battery_charge_time}}</strong></div>
+                  <div class="u-d-flex"><p>Minimum Range</p><strong>{{product.metafields.edetails.minimum_range}}</strong></div>
+                  <div class="u-d-flex"><p>Maximum Range</p><strong>{{product.metafields.edetails.maximum_range}}</strong></div>
+                  <div class="u-d-flex"><p>Display Type</p><strong>{{product.metafields.edetails.display_type}}</strong></div>
+                  <div class="u-d-flex"><p>Display Readouts</p><strong>{{product.metafields.edetails.display_readouts}}</strong></div>
+                  <div class="u-d-flex"><p>Display Accessories</p><strong>{{product.metafields.edetails.display_accessories}}</strong></div>
+                  <div class="u-d-flex"><p>Drive Mode</p><strong>{{product.metafields.edetails.drive_mode}}</strong></div>
+                  <div class="u-d-flex"><p>Top Speed</p><strong>{{product.metafields.edetails.top_speed}}</strong></div>
+                  <div class="u-d-flex"><p>Lights</p><strong>{{product.metafields.edetails.lights}}</strong></div>
+              </div>
+          </div>
+          </div>
+          <div class="accordion__item">
+            <button type="button" class="accordion__item-button js-accordion-trigger">Mechanical Details</button>
+            <div class="accordion__item-info">
+              <div class="accordion__item-info-content js-accordion-content">
+                  <div class="u-d-flex"><p>Frame material</p><strong>{{product.metafields.mdetails.frame_material}}</strong></div>
+                  <div class="u-d-flex"><p>Frame size</p><strong>{{product.metafields.mdetails.frame_size}}</strong></div>
+                <div class="u-d-flex"><p> Frame Type</p>  <strong> {{product.metafields.mdetails.frame_type}}</strong></div>
+                  <div class="u-d-flex"><p> Fork Details</p><strong>{{product.metafields.mdetails.fork}}</strong></div>
+                  <div class="u-d-flex"><p>Gearing details</p>  <strong>{{product.metafields.mdetails.gearing_details}}</strong></div>
+                  <div class="u-d-flex"><p>Shifter Details</p><strong>{{product.metafields.mdetails.shifter_details}}</strong></div>
+                  <div class="u-d-flex"><p>Crank</p><strong>{{product.metafields.mdetails.crank}}</strong></div>
+                  <div class="u-d-flex"><p>Pedals</p><strong>{{product.metafields.mdetails.pedals}}</strong></div>
+                  <div class="u-d-flex"><p>Stem</p><strong>{{product.metafields.mdetails.stem}}</strong></div>
+                  <div class="u-d-flex"><p>Brakes</p><strong>{{product.metafields.mdetails.brakes}}</strong></div>
+                  <div class="u-d-flex"><p>Grips</p><strong>{{product.metafields.mdetails.grips}}</strong></div>
+                  <div class="u-d-flex"><p>Saddle</p><strong>{{product.metafields.mdetails.saddle}}</strong></div>
+                  <div class="u-d-flex"><p>Tire Brand</p><strong>{{product.metafields.mdetails.tire_brand}}</strong></div>
+                  <div class="u-d-flex"><p>Wheel size</p><strong>{{product.metafields.mdetails.wheel_size}}</strong></div>
+                  <div class="u-d-flex"><p>Fenders</p><strong>{{product.metafields.mdetails.fenders}}</strong></div>
+                  <div class="u-d-flex"><p>Chain</p><strong>{{product.metafields.mdetails.chain}}</strong></div>
+              </div>
+          </div>
+          </div>
+          <div class="accordion__item">
+            <button type="button" class="accordion__item-button js-accordion-trigger">Measurements</button>
+            <div class="accordion__item-info">
+              <div class="accordion__item-info-content js-accordion-content">
+                  <div class="u-d-flex"><p>Seat Tube</p><strong>{{product.metafields.measurements.seat_tube}}</strong></div>
+                  <div class="u-d-flex"><p>Reach</p><strong>{{product.metafields.measurements.reach}}</strong></div>
+                <div class="u-d-flex"><p> Stand Over Height</p>  <strong> {{product.metafields.measurements.stand_over_height}}</strong></div>
+                  <div class="u-d-flex"><p>Virtual Top Tube Length</p><strong>{{product.metafields.measurements.virtual_top_tube_length}}</strong></div>
+                  <div class="u-d-flex"><p>Min Saddle Height</p>  <strong>{{product.metafields.measurements.min_saddle_height}}</strong></div>
+                  <div class="u-d-flex"><p>Max Saddle Height</p>  <strong>{{product.metafields.measurements.max_saddle_height}}</strong></div>
+                  <div class="u-d-flex"><p>Width</p>  <strong>{{product.metafields.measurements.width}}</strong></div>
+                  <div class="u-d-flex"><p>Wheelbase</p><strong>{{product.metafields.measurements.wheelbase}}</strong></div>
+                  <div class="u-d-flex"><p>Length</p><strong>{{product.metafields.measurements.length}}</strong></div>
+                  <div class="u-d-flex"><p>Total Weight</p><strong>{{product.metafields.measurements.total_weight}}</strong></div>
+                  <div class="u-d-flex"><p>Battery Weight</p><strong>{{product.metafields.measurements.battery_weight}}</strong></div>
+                  <div class="u-d-flex"><p>Rider minimum height</p><strong>{{product.metafields.measurements.recommended_minimum_rider}}</strong></div>
+              </div>
+          </div>
+          </div>
+          <div class="accordion__item">
+            <button type="button" class="accordion__item-button js-accordion-trigger">What’s Included</button>
+            <div class="accordion__item-info">
+              <div class="accordion__item-info-content js-accordion-content">
+                  <div class="u-d-flex"><p>Kickstand</p><strong>{{product.metafields.whats_included.kickstand}}</strong></div>
+                  <div class="u-d-flex"><p>Bell</p><strong>{{product.metafields.whats_included.bell}}</strong></div>
+                <div class="u-d-flex"><p> Charger</p>  <strong> {{product.metafields.whats_included.charger}}</strong></div>
+                  <div class="u-d-flex"><p>Front Rack</p><strong>{{product.metafields.whats_included.front_rack}}</strong></div>
+                  <div class="u-d-flex"><p>Rear Rack</p>  <strong>{{product.metafields.whats_included.rear_rack}}</strong></div>
+                  <div class="u-d-flex"><p>Fenders</p><strong>{{product.metafields.whats_included.fenders}}</strong></div>
+                  <div class="u-d-flex"><p>Accessory Mounts</p><strong>{{product.metafields.whats_included.accessory_mount}}</strong></div>
+              </div>
+          </div>
+          </div>
+      </div>
+    </div>
+</div>
+
+
+{% schema %}
+  {
+  "name": "Component Overview",
+  "settings": [
+  {
+    "type": "text",
+    "id": "title",
+    "label": "Section title",
+    "default": "Component Overview"
+  }
+  ],
+  "presets": [
+    {
+      "name": "Component Overview"
+    }
+  ]
+}  
+{% endschema %}

@@ -1,0 +1,11 @@
+@mixin tall-screen {
+  @media screen and (device-aspect-ratio: 16/10) {
+    @content;
+  }
+}
+
+@mixin normal-screen {
+  @media screen and (device-aspect-ratio: 16/9) {
+    @content;
+  }
+}

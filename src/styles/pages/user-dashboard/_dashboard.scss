@@ -1,0 +1,70 @@
+.dashboard {
+  padding: rem(65) 0 rem(175);
+
+  @include media-breakpoint-down(sm) {
+    padding: rem(24) 0 rem(56);
+  }
+
+  &__list {
+    display: flex;
+    border-bottom: 1px solid #e2e2e2;
+
+    @include media-breakpoint-down(sm) {
+      width: calc(100% + #{rem(40)});
+      padding: 0 rem(20) !important;
+      margin-left: rem(-20);
+      white-space: nowrap;
+      overflow-x: auto;
+      &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+      }
+    }
+
+    li {
+      &:not(:last-child) {
+        margin-right: rem(56);
+
+        @include media-breakpoint-down(sm) {
+          margin-right: rem(40);
+        }
+      }
+    }
+  }
+
+  &__links {
+    display: block;
+    padding-bottom: rem(18);
+    margin-bottom: rem(-1);
+    border-bottom: 4px solid transparent;
+    font-size: rem(18);
+    line-height: line-height(18, 26);
+
+    @include media-breakpoint-down(sm) {
+      padding-bottom: rem(13);
+    }
+
+    &.active {
+      font-weight: 700;
+      border-color: $black;
+    }
+  }
+
+  &__tabs {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+
+    p {
+      font-size: rem(16);
+      line-height: line-height(16, 24);
+      color: $grey-light-9;
+
+      @include media-breakpoint-down(sm) {
+        max-width: rem(297);
+      }
+    }
+  }
+}

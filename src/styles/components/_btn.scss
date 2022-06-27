@@ -1,0 +1,241 @@
+.btn {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: rem(224);
+  padding: rem(16) rem(24);
+  border: 2px solid;
+  border-radius: rem(40);
+  background-color: transparent;
+  font-family: $regular-font;
+  font-size: rem(13);
+  line-height: rem(14);
+  font-weight: 500;
+  text-align: center;
+  pointer-events: auto !important;
+  transition: $t-hover;
+
+  &__bg {
+    width: 100%;
+    transform-origin: center;
+    transition: transform $t-basic;
+    border: 2px solid $body-color;
+    border-radius: inherit;
+    background: $black;
+    will-change: transform, color;
+  }
+
+  &__text {
+    color: $white;
+    display: inline-flex;
+    line-height: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    align-items: center;
+    transition: $t-hover;
+  }
+
+  &__font-book {
+    font-family: $headline-font;
+    font-size: rem(12);
+
+    span {
+      font-size: rem(12);
+      line-height: line-height(12, 17);
+    }
+  }
+
+  &__bold {
+    font-family: $font-bold;
+  }
+
+  &__icon {
+    display: none;
+    position: relative;
+    transition: transform $t-basic;
+    z-index: 1;
+    margin-left: rem(10);
+    will-change: transform;
+    transform: translateZ(0);
+
+    svg {
+      width: 1.875em;
+      height: 1em;
+      transform: translateZ(0);
+    }
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  &:active {
+    .btn--bg {
+      transform: scale(0.95);
+    }
+  }
+}
+
+// BTN TYPES
+.btn {
+  &--icon {
+    padding: 0;
+    height: auto;
+
+    .btn__icon {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &--solid {
+    .btn--bg {
+      background-color: $body-color;
+      border-color: $body-color;
+    }
+    .btn--text {
+      color: $white;
+    }
+  }
+
+  &--outline {
+    background-color: transparent;
+    border-color: $cyan;
+    color: $cyan;
+    font-weight: 600;
+    &:hover {
+      background-color: $cyan;
+      color: $white;
+    }
+    .btn__text {
+      color: $cyan;
+    }
+  }
+
+  &--outline-grey {
+    background-color: transparent;
+    border-color: $machine-grey;
+    color: $machine-grey;
+    font-weight: 600;
+
+    &:hover {
+      background-color: $machine-grey;
+      color: $white;
+    }
+    .btn__text {
+      color: $machine-grey;
+    }
+  }
+  &--outline-grey-light {
+    background-color: transparent;
+    border-color: $grey-light;
+    color: $white;
+    font-weight: 600;
+
+    @include hover() {
+      background-color: rgba($grey-light, 0.8);
+    }
+    .btn__text {
+      color: $machine-grey;
+    }
+  }
+}
+
+// BTN COLORS
+.btn {
+  &--primary {
+    color: $primary-color;
+
+    // Solid type
+    &.btn--solid {
+      .btn--bg {
+        background-color: $primary-color;
+        border-color: $primary-color;
+      }
+
+      .btn--text {
+        color: $white;
+      }
+    }
+
+    // Outline type
+    &.btn--outline {
+      color: $primary-color;
+
+      .btn--bg {
+        border-color: $primary-color;
+        background: transparent;
+      }
+    }
+  }
+
+  &--transparent {
+    .btn--bg {
+      color: transparent;
+      border-color: $body-color;
+    }
+
+    .btn--text {
+      color: $body-color;
+    }
+
+    .btn__icon {
+      svg {
+        fill: $primary-color;
+      }
+    }
+  }
+
+  &--blue-fill {
+    background-color: $cyan;
+    color: $white;
+    transition: $t-hover;
+    border: 1px solid $cyan;
+
+    @include hover() {
+      background-color: rgba($cyan, 0.8);
+    }
+  }
+
+  &--fill-grey {
+    background-color: $machine-grey;
+    border-color: $machine-grey;
+    color: $white;
+
+    @include hover() {
+      background-color: rgba($machine-grey, 0.8);
+    }
+  }
+  &--black-fill {
+    background-color: $magnum-black;
+    border-color: $magnum-black;
+    color: $white;
+    @include hover() {
+      background-color: rgba($magnum-black, 0.8);
+      border-color: $magnum-black;
+    }
+  }
+  &--machine-fill {
+    background-color: $machine-grey;
+    border-color: $machine-grey;
+    color: $white;
+    &:hover {
+      background-color: $white;
+      border: 1px solid $machine-grey;
+      color: $machine-grey;
+    }
+  }
+
+  &.disabled {
+    color: $white;
+    background-color: $grey-light-2;
+    border-color: $grey-light-2;
+    pointer-events: none;
+    cursor: auto;
+    @include hover() {
+      pointer-events: none;
+    }
+  }
+}

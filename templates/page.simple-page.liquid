@@ -1,0 +1,35 @@
+{% if page.title == "Careers" %}
+
+<div class="shipping-returns__inner careers_heading">
+  <div class="shipping-returns__col-left careers-left">
+    <h1>{{page.title}}</h1>
+    <p>{{page.metafields.simple-page.careers_description}}</p>
+  </div>
+  <div class="grid">
+    <div class="grid__item medium-ip--five-sixths medium-up--push-one-twelfth">
+      &nbsp;&nbsp;&nbsp;
+      <div class="shipping-returns__col-right" style="margin: 0 auto;max-width: 800px;padding: 2rem 2rem 1rem 5rem;">
+       <center> {{page.content}} </center> 
+        {% section 'image-with-text'%}
+      </div>
+    </div>
+  </div>
+</div>
+  {% else %}
+  
+  <div class="page-width">
+    <div class="grid">
+      <div class="grid__item medium-ip--five-sixths medium-up--push-one-twelfth">
+        <center> <h1> {{page.title}} </h1> </center>
+        &nbsp;&nbsp;&nbsp;
+        <div class="rte" style="margin: 0 auto;max-width: 960px;padding: 3.0517578125rem 1.5625rem;">
+         <center> {{page.content}} </center> 
+          {% section 'image-with-text'%}
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endif %}
+
+

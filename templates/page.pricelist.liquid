@@ -1,0 +1,105 @@
+{{ 'component-SingleItemGallery.css' | asset_url | stylesheet_tag }}
+<!-- <script type="module" src="{{- 'component-SingleItemGallery.js'| asset_url -}}"></script> -->
+
+<div class="pl-hero"
+  style="background: url('https://i.ibb.co/VS4H3Hx/Rectangle-2486.png') no-repeat; background-size:cover;background-position:center bottom;">
+  <div class="container">
+    <div class="pl-hero__title">
+      <h1 class="h1">Wholesale Pricelist </h1>
+      <p> Updated December 2021</p>
+    </div>
+  </div>
+</div>
+
+<div class="pl-tabs js-tabs-pricelist">
+  <div class="container">
+    <ul class="pl-tabs__list">
+      <li class="js-tab-btn  u-d-flex u-align-center pl-tabs__btn active" data-name="parts">Technical Overview</li>
+      <li class="js-tab-btn  u-d-flex u-align-center pl-tabs__btn" data-name="accessories">I am looking for
+        accessories </li>
+      <li class="js-tab-btn  u-d-flex u-align-center pl-tabs__btn" data-name="e-bikes">Some Video Review </li>
+    </ul>
+    <div class="pl-tabs__content">
+      <div class="pl-tabs__item-content js-tab-content active" data-name="parts">
+        <div class="pl-search">
+          <div class="pl-search__text">
+            <span class="pl-search__text-icon"> {% render 'icon', icon: 'warning-cyan' %} </span>
+            <p> Select which parts you are looking for and click "Proceed To Checkout" when finished. </p>
+          </div>
+        </div>
+        <div class="pl-filters">
+          <div class="pl-filters__inner">
+            <div class="pl-filters__col-left">
+              <div class="pl-filters__content">
+                <a href="#">all filters</a>
+                <div class="pl-filters__search">
+                  <input type="text" placeholder="Type to search...">
+                  {% render 'icon', icon: 'search-line' %}
+                </div>
+                <div class="pl-filters__search-results">
+                  <p>Showing 247 Parts</p>
+                </div>
+              </div>
+            </div>
+            <div class="pl-filters__col-right">
+              <a href="#" class="btn btn--blue-fill"> Proceed to checkout</a>
+            </div>
+          </div>
+          {%- section 'filter-tags' -%}
+        </div>
+        <div class="pl-tabs__table">
+          {% render 'pl-search-results-names' %}
+          <ul class="pl-search-results js-single-item-gallery">
+            {% render 'price-list-item-search' %}
+            {% render 'price-list-item-search' %}
+            {% render 'price-list-item-search' %}
+          </ul>
+          {% render 'single-item-gallery' %}
+        </div>
+      </div>
+
+      <div class="pl-tabs__item-content js-tab-content" data-name="accessories">
+        <div class="pl-search">
+          <div class="pl-search__text">
+            <span class="pl-search__text-icon"> {% render 'icon', icon: 'warning-cyan' %} </span>
+            <p> Select which parts you are looking for and click "Proceed To Checkout" when finished. </p>
+          </div>
+        </div>
+        <div class="pl-filters">
+          <div class="pl-filters__inner">
+            <div class="pl-filters__col-left">
+              <div class="pl-filters__content">
+                <a href="#">all filters</a>
+                <div class="pl-filters__search">
+                  <input type="text" placeholder="Type to search...">
+                  {% render 'icon', icon: 'search-line' %}
+                </div>
+                <div class="pl-filters__search-results">
+                  <p>Showing 247 Parts</p>
+                </div>
+              </div>
+            </div>
+            <div class="pl-filters__col-right">
+              <a href="#" class="btn btn--blue-fill"> Proceed to checkout</a>
+            </div>
+          </div>
+          {%- section 'filter-tags' -%}
+        </div>
+        <div class="pl-tabs__table">
+          {% render 'pl-search-results-names' %}
+          <ul class="pl-search-results js-single-item-gallery">
+            {% render 'price-list-item-search' %}
+            {% render 'price-list-item-search' %}
+            {% render 'price-list-item-search' %}
+          </ul>
+        </div>
+        {% render 'single-item-gallery' %}
+      </div>
+
+      <div class="pl-tabs__item-content js-tab-content " data-name="e-bikes">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, a?
+      </div>
+    </div>
+  </div>
+</div>
+{% render 'pagination' %}

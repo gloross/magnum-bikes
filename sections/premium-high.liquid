@@ -1,0 +1,87 @@
+{% liquid
+    assign object = section.settings 
+    assign product_title = product.metafields.highlights.product_title
+    assign product_description = product.description
+    assign category = product.metafields.bike_highlights.category
+    assign bike_class = product.metafields.highlights.bike_class
+    assign frame_type = product.metafields.highlights.bike_frame_type
+    assign sitting_position = product.metafields.highlights.bike_sitting_position
+    assign perfect_for = product.metafields.highlights.bike_perfect_for
+    assign category_tooltip = product.metafields.highlights.category_tooltip
+    assign frame_type_tooltip = product.metafields.highlights.frame_type_tooltip
+    assign sitting_position_tooltip = product.metafields.highlights.seating_tooltip
+    assign perfect_for_tooltip = product.metafields.highlights.perfect_for_tooltip
+%}
+<section class="premium-high" style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), linear-gradient(360deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%), url({{ product.metafields.highlights.background_image}}) no-repeat; background-size:cover;background-position:center center;">
+    <div class="container container--small">
+        <div class="premium-high__inner">
+            <div class="premium-high__col-left">
+                {% render 'icon', icon: 'logo-white' %}
+                <h2>{{product_title}}</h2>
+                <p>{{product_description}}</p>
+            </div>
+
+            <div class="premium-high__col-right">
+                <h3>Highlights
+                    {% render 'icon', icon: '4star' %}
+                </h3>
+                <ul>
+                    <li>
+                        Category
+                        <span>
+                            {{category}}
+                            {% if category_tooltip != blank%}
+                            <a class="js-tooltip" data-tippy-content="{{category_tooltip}}">{% render 'icon', icon: 'warning' %}</a>
+                            {% endif %}
+                        </span>
+                    </li>
+                    <li>
+                        Class
+                        <span>{{bike_class}}</span>
+                    </li>
+                    <li>
+                        Frame Type
+                        <span>
+                            {{frame_type}}
+                            {% if frame_type_tooltip != blank%}
+                            <a class="js-tooltip" data-tippy-content="{{frame_type_tooltip}}">{% render 'icon', icon: 'warning' %}</a>
+                            {% endif %}
+                        </span>
+                    </li>
+                    <li>
+                        Seating
+                        <span>
+                            {{sitting_position}}
+                            {% if sitting_position_tooltip != blank%}
+                            <a class="js-tooltip" data-tippy-content="{{sitting_position_tooltip}}">{% render 'icon', icon: 'warning' %}</a>
+                            {% endif %}
+                        </span>
+                    </li>
+                    <li>
+                        Perfect For
+                        <span>
+                            {{perfect_for}}
+                            {% if perfect_for_tooltip != blank %}
+                            <a class="js-tooltip" data-tippy-content="{{perfect_for_tooltip}}">{% render 'icon', icon: 'warning' %}</a>
+                            {%endif %}
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+  {
+  "name": "Premium High",
+  "settings": [
+  ],
+  "presets": [
+    {
+      "name": "Premium High"
+    }
+  ]
+}  
+{% endschema %}
+

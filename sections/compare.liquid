@@ -1,0 +1,86 @@
+{% assign object = section.settings %}
+<div class="compare-section">
+  <div class="container container--small">
+    <div class="compare-section__inner">
+      <div class="compare-section__text">
+        <h2 class="h2">{{ object.section_title }}</h2>
+        <h5 class="h5">{{ object.subtitle }}</h5>
+        <p>{{ object.description }}</p>
+        <a href="{{ object.cta_url_left }}" class="btn btn--outline">{{ object.left_cta_text_label }}</a>
+      </div>
+      <div class="compare-section__cta">
+      <a href="{{ object.help_url }}">{{ object.help_link_text }} {% render 'icon', icon: 'arrow-up-right' %} </a>
+      </div>
+    </div>
+  </div>
+  <div class="compare-section__image">
+    {%
+      render 'img',
+      img: object.section_image, 
+      img_sm: object.image_mobile
+      %}
+  </div>
+</div>
+
+{% schema %}
+  {
+  "name": "Compare section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section title",
+      "default": "Compare the Metros"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Metro S, Metro X & Metro 750."
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "description",
+      "default": "We suggest Nomad for riders 5’6″ and taller. However, the bike won’t be suitable for all people the same. Let’s find out if this bike fits you by following our simple calculator below."
+    },
+    {
+      "type": "url",
+      "id": "cta_url_left",
+      "label": "CTA url left"
+    },
+    {
+      "type": "text",
+      "id": "left_cta_text_label",
+      "label": "Left CTA text label",
+      "default": "Compare the Metro Series"
+    },
+    {
+      "type": "url",
+      "id": "help_url",
+      "label": "Help url"
+    },
+    {
+      "type": "text",
+      "id": "help_link_text",
+      "label": "Help link text",
+      "default": "Help me choose A BIKE"
+    },
+    {
+      "type": "image_picker",
+      "id": "section_image",
+      "label": "Section image Desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Section image Mobile"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Compare section"
+    }
+  ]
+}  
+{% endschema %}

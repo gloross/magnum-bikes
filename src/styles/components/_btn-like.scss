@@ -1,0 +1,22 @@
+.btn-like-circle {
+  width: rem(30);
+  height: rem(30);
+  background-color: $white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  transition: $t-basic;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    fill: $white;
+  }
+
+  &.active {
+    svg,
+    svg path {
+      fill: $primary-color;
+    }
+  }
+}

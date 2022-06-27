@@ -1,0 +1,252 @@
+{
+  "sections": {
+    "about-hero": {
+      "type": "about-hero",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/about_hero.png"
+      }
+    },
+    "about-info": {
+      "type": "about-info",
+      "settings": {
+        "about_info": "Our mission is to create and distribute high-quality yet affordable electric bikes giving people of all ages and fitness levels equal opportunity and access to the wonderful experience of electric biking.",
+        "image_left": "shopify:\/\/shop_images\/why_magnum_1_be37b2b3-4938-4b0c-a783-4788e5ec6b29.png",
+        "title_left": "Ride Farther",
+        "description_left": "Electric bikes are changing the way people get around. Riders in The Magnum Community use their e-bikes for a variety of purposes, from long weekend rides and epic adventures, to commuting, running errands, and even as a car replacement.",
+        "image_right": "shopify:\/\/shop_images\/why_magnum_2_7aa747ee-71ca-45dd-8791-d8d7d51195c7.png",
+        "title_right": "Ride Together",
+        "description_right": "For many riders in our community, e-bikes enhance their time with family and friends by making the outdoors more accessible. When everyone is riding an e-bike, riding together is fun and easy no matter what level of experience or fitness you are in.",
+        "image_bottom": "shopify:\/\/shop_images\/why_magnum_3_9174be58-6b54-4701-a7e5-a8119a475586.png"
+      }
+    },
+    "about-text-image": {
+      "type": "about-text-image",
+      "settings": {
+        "description": "Magnum stands out in the market by offering top quality yet affordable electric bikes, with custom-designed frames, our proprietary electrical system, and carefully-sourced premium quality mechanical and electronic components.",
+        "image": "shopify:\/\/shop_images\/why_magnum_4_404b48a4-989d-4c50-8027-630ed9b38e78.png"
+      }
+    },
+    "about-bikes": {
+      "type": "about-bikes",
+      "settings": {
+        "title": "The Magnum Difference",
+        "description": "Unlike many of our competitors, Magnum electric bikes are designed, engineered and built by us from the ground up. We conceptualize and create our own molds and carefully choose each component that best suit our products.\n\nTo meet our promise for excellence, all of our products are designed and tested for quality assurance by our staff in Salt Lake City, Utah or in our partner factories overseas.",
+        "image": "shopify:\/\/shop_images\/Frame_12506_330c8014-39b6-4208-839c-485f26b59616.png",
+        "description_bottom": "We believe customers deserve top-of-the-line performance at an affordable price. Our ongoing commitment to innovation and use of premium quality components helps Magnum stand out with some of most the advanced electric bikes on the market—at prices that won't break the bank."
+      }
+    },
+    "about-brand": {
+      "type": "about-brand",
+      "disabled": true,
+      "blocks": {
+        "82142236-4a21-49e5-96d5-d591d19bbe62": {
+          "type": "block",
+          "disabled": true,
+          "settings": {
+            "url": ""
+          }
+        },
+        "6eac7f81-40b6-4097-9d25-545e7b159107": {
+          "type": "block",
+          "disabled": true,
+          "settings": {
+            "url": "https:\/\/www.google.com"
+          }
+        },
+        "944431f4-831a-4903-a539-62c6b11e4bd7": {
+          "type": "block",
+          "disabled": true,
+          "settings": {
+            "url": ""
+          }
+        },
+        "6eb38097-f43f-45ed-ad1f-23ac7fd97381": {
+          "type": "block",
+          "disabled": true,
+          "settings": {
+            "url": ""
+          }
+        },
+        "809bb0ba-ef45-423a-8eef-1c18e0b93cf6": {
+          "type": "block",
+          "disabled": true,
+          "settings": {
+            "url": ""
+          }
+        },
+        "7b2f75d5-0a19-43a7-b3a9-0b565e94f4d5": {
+          "type": "block",
+          "disabled": true,
+          "settings": {
+            "url": ""
+          }
+        },
+        "158789fe-f6e3-4b15-a61f-0cc9cde6b2d9": {
+          "type": "block",
+          "disabled": true,
+          "settings": {
+            "url": ""
+          }
+        },
+        "7b1b10fb-a3cd-456e-8b56-ae1b75f77b31": {
+          "type": "block",
+          "disabled": true,
+          "settings": {
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "82142236-4a21-49e5-96d5-d591d19bbe62",
+        "6eac7f81-40b6-4097-9d25-545e7b159107",
+        "944431f4-831a-4903-a539-62c6b11e4bd7",
+        "6eb38097-f43f-45ed-ad1f-23ac7fd97381",
+        "809bb0ba-ef45-423a-8eef-1c18e0b93cf6",
+        "7b2f75d5-0a19-43a7-b3a9-0b565e94f4d5",
+        "158789fe-f6e3-4b15-a61f-0cc9cde6b2d9",
+        "7b1b10fb-a3cd-456e-8b56-ae1b75f77b31"
+      ],
+      "settings": {
+      }
+    },
+    "quick-info": {
+      "type": "quick-info",
+      "disabled": true,
+      "blocks": {
+        "ea5a664b-f040-4f5b-85b0-537553f33a82": {
+          "type": "block",
+          "settings": {
+            "reverse": false,
+            "section_title": "All Magnum Bikes...",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          }
+        },
+        "21cffd49-e8b5-49c8-bd9e-96b5f0067b41": {
+          "type": "block",
+          "settings": {
+            "reverse": true,
+            "section_title": "Feel the power.",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          }
+        }
+      },
+      "block_order": [
+        "ea5a664b-f040-4f5b-85b0-537553f33a82",
+        "21cffd49-e8b5-49c8-bd9e-96b5f0067b41"
+      ],
+      "settings": {
+      }
+    },
+    "about-social": {
+      "type": "about-social",
+      "blocks": {
+        "8655d9f4-f7db-4136-a6b4-bb82666278da": {
+          "type": "block",
+          "settings": {
+            "social_label": "Instagram",
+            "social_url": "https:\/\/www.instagram.com\/magnumbikes\/"
+          }
+        },
+        "e05f0d63-25b0-42f4-b430-6cad1c5428f3": {
+          "type": "block",
+          "settings": {
+            "social_label": "YouTube",
+            "social_url": "https:\/\/www.youtube.com\/c\/MagnumBikes"
+          }
+        },
+        "9802ed9d-24e1-4526-b1a0-cc8988712000": {
+          "type": "block",
+          "settings": {
+            "social_label": "Facebook",
+            "social_url": "https:\/\/www.facebook.com\/magnumbikes\/"
+          }
+        },
+        "356ca71f-d3ff-401b-811d-b40750d1efd7": {
+          "type": "block",
+          "settings": {
+            "social_label": "Twitter",
+            "social_url": "https:\/\/twitter.com\/MagnumBikes"
+          }
+        },
+        "f708013a-8e93-4ea7-8a4e-89b362a0852b": {
+          "type": "block",
+          "disabled": true,
+          "settings": {
+            "social_label": "Facebook",
+            "social_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "8655d9f4-f7db-4136-a6b4-bb82666278da",
+        "e05f0d63-25b0-42f4-b430-6cad1c5428f3",
+        "9802ed9d-24e1-4526-b1a0-cc8988712000",
+        "356ca71f-d3ff-401b-811d-b40750d1efd7",
+        "f708013a-8e93-4ea7-8a4e-89b362a0852b"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Frame_11184_324a9293-3df2-4150-b7ce-0f55d42187df.png",
+        "heading_social": "Stay Connected"
+      }
+    },
+    "about-journey": {
+      "type": "about-journey",
+      "blocks": {
+        "133ee542-3a66-426d-b94b-7a3cc8b78e08": {
+          "type": "block",
+          "settings": {
+            "icon_picker": "time-icon",
+            "item_title": "Ride Now, Pay Later",
+            "item_content": "<p>Pay for your order over 6, 12, or 24 months at interest rates as low as 0% APR. Get a real-time decision without it affecting your credit score, no prepayment penalties, and no deferred interest.<\/p>"
+          }
+        },
+        "e652213d-cee6-487a-ad66-2cf5344956ed": {
+          "type": "block",
+          "settings": {
+            "icon_picker": "user-talk",
+            "item_title": "Expert Service & Support",
+            "item_content": "<p>Our highly-trained staff are here for you, at every turn. We're always ready to assist, remotely from Magnum HQ or at one of hundreds of locations across the U.S.<\/p>"
+          }
+        },
+        "d6528e78-87dc-4728-a08d-ec59442c0b1a": {
+          "type": "block",
+          "settings": {
+            "icon_picker": "users",
+            "item_title": "Easy Assembly by You or Us",
+            "item_content": "<p>You’ll get simple video instructions on how to assemble your new ride, or choose at-home assembly and a professional bike mechanic will come help (available in 150+ geographies across the U.S.).<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "133ee542-3a66-426d-b94b-7a3cc8b78e08",
+        "e652213d-cee6-487a-ad66-2cf5344956ed",
+        "d6528e78-87dc-4728-a08d-ec59442c0b1a"
+      ],
+      "settings": {
+        "section_title": "We got your entire journey covered.",
+        "description": "Between our nationwide network of local independent bike shops, company-owned stores, and our expert customer support team, Magnum's educated and experienced staff and partners are ALWAYS THERE."
+      }
+    },
+    "introducing": {
+      "type": "introducing",
+      "settings": {
+        "title": "E-Bikes 101",
+        "description": "Whether you’re just discovering Magnum E-Bikes or counting your 10,000th mile, the Magnum Academy is here to help... discover our e-bike tips, tricks, and guides and tools.",
+        "cta_label": "Visit The Magnum Academy",
+        "cta_url": "shopify:\/\/blogs\/learning-hub",
+        "image": "shopify:\/\/shop_images\/academy_cta.png"
+      }
+    }
+  },
+  "order": [
+    "about-hero",
+    "about-info",
+    "about-text-image",
+    "about-bikes",
+    "about-brand",
+    "quick-info",
+    "about-social",
+    "about-journey",
+    "introducing"
+  ]
+}

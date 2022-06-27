@@ -1,0 +1,18 @@
+{% assign spanText = text %}
+
+<div class="radio-field">
+  <input type="radio" id="{{ id }}" name="{{name}}" {%if checked == 'checked'%}checked=checked{%endif%}">
+  <span class="radio-field__circle"></span>
+  <label for="{{ id }}">{{ text }}</label>
+</div>
+
+
+{%- comment -%}
+
+{% render 'radio-checkbox',
+           id: '',
+           name: '',
+           text: '',
+         %}
+
+{%- endcomment -%}

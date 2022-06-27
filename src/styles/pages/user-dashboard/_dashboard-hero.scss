@@ -1,0 +1,169 @@
+.dashboard-hero {
+  &__tabs-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(100% + 12.372vw);
+
+    @include media-breakpoint-down(sm) {
+      padding-top: rem(40);
+      flex-wrap: wrap;
+    }
+  }
+
+  &__tabs-text {
+    max-width: rem(375);
+    width: 100%;
+
+    @include media-breakpoint-down(sm) {
+      margin-bottom: rem(16);
+    }
+    h2 {
+      font-size: rem(40);
+      line-height: line-height(40, 54);
+      margin-bottom: rem(17);
+      color: $machine-grey-1;
+
+      @include media-breakpoint-down(sm) {
+        font-size: rem(28);
+        line-height: line-height(28, 36);
+      }
+      @include media-breakpoint-down(xs) {
+        max-width: rem(235);
+      }
+    }
+  }
+  &__tabs-image {
+    max-width: rem(692);
+    width: 100%;
+
+    @include media-breakpoint-down(sm) {
+      max-width: calc(100% + #{rem(40)});
+      margin-left: rem(-20);
+    }
+
+    .media-wrapper {
+      padding-bottom: 54.19%;
+    }
+  }
+
+  &__add-bike-card {
+    max-width: rem(318);
+    padding: rem(36) rem(31);
+
+    .icon--add-e-bikes {
+      margin-bottom: rem(23);
+    }
+    h3 {
+      margin-bottom: rem(10);
+      font-size: rem(24);
+      line-height: line-height(24, 34);
+      font-weight: 500;
+      color: $machine-grey;
+    }
+    p {
+      max-width: rem(200);
+      font-size: rem(14);
+      line-height: line-height(14, 22);
+      font-weight: 500;
+      color: $machine-grey;
+    }
+
+    a {
+      margin-top: rem(58);
+      width: rem(63);
+      height: rem(63);
+      background-color: $cyan;
+      border-radius: 50%;
+
+      .icon--arrow-right {
+        path {
+          fill: $white;
+        }
+      }
+    }
+  }
+
+  &__form {
+    max-width: rem(497);
+    width: 100%;
+    padding-top: rem(78);
+
+    @include media-breakpoint-down(sm) {
+      padding-top: rem(40);
+    }
+
+    h2 {
+      font-size: rem(40);
+      line-height: line-height(40, 54);
+      margin-bottom: rem(18);
+      color: $machine-grey-1;
+
+      @include media-breakpoint-down(sm) {
+        margin-bottom: rem(16);
+        font-size: rem(28);
+        line-height: line-height(28, 36);
+      }
+    }
+    p {
+      max-width: rem(366);
+      margin-bottom: rem(40);
+      @include media-breakpoint-down(sm) {
+        margin-bottom: rem(25);
+      }
+    }
+    .select-field,
+    .input-field {
+      height: rem(50);
+    }
+
+    .input-field {
+      margin: rem(20) 0;
+      .input-wrapper {
+        input {
+          border-radius: rem(7);
+          padding: rem(14) rem(15);
+          height: rem(50);
+          border-color: $divider-grey;
+        }
+      }
+    }
+  }
+  &__form-cta {
+    display: flex;
+    align-items: center;
+    padding-top: rem(30);
+    @include media-breakpoint-down(sm) {
+      padding-top: rem(20);
+    }
+    li {
+      width: calc(50% - #{rem(10)});
+      @include media-breakpoint-down(sm) {
+        width: calc(50% - #{rem(8)});
+      }
+      &:not(:last-child) {
+        margin-right: rem(20);
+        @include media-breakpoint-down(sm) {
+          margin-right: rem(16);
+        }
+      }
+    }
+    .btn {
+      min-width: 100%;
+    }
+  }
+
+  &__grid {
+    padding-top: rem(65);
+    display: grid;
+    grid-template-columns: repeat(3, minmax(318px, 1fr));
+    grid-gap: rem(29);
+
+    @include media-breakpoint-down(lgxl) {
+      grid-template-columns: repeat(2, minmax(318px, 1fr));
+    }
+    @include media-breakpoint-down(sm) {
+      grid-template-columns: repeat(1, minmax(auto, 1fr));
+    }
+  }
+}

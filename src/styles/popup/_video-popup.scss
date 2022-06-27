@@ -1,0 +1,58 @@
+@import '../components/close-btn';
+
+.video-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $white;
+  background: $black;
+
+  &.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .video-player {
+    @include media-breakpoint-up(xl) {
+      height: 100%;
+
+      &:before {
+        padding-bottom: initial;
+      }
+    }
+  }
+
+  .close-btn-wrapper {
+    position: absolute;
+    top: rem(30);
+    right: rem(50);
+    z-index: 10;
+    width: rem(50);
+    height: rem(50);
+    background: rgba($white, 0.5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include media-breakpoint-down(md) {
+      right: 5%;
+    }
+
+    @include media-breakpoint-down(sm) {
+      top: rem(15);
+      right: rem(15);
+    }
+  }
+}

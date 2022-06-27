@@ -1,0 +1,61 @@
+.line-link {
+  position: relative;
+
+  &:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: rem(2);
+    position: absolute;
+    background-color: $cyan;
+    pointer-events: none;
+    top: 100%;
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
+  }
+
+  // &--bold {
+  //   &:after {
+  //     height: rem(2);
+  //   }
+  // }
+
+  &--shrink {
+    &:after {
+      transition: width 0.4s;
+      left: 0;
+      width: 100%;
+    }
+
+    @include hover() {
+      &:after {
+        left: unset;
+        right: 0;
+        width: 0;
+      }
+    }
+  }
+
+  &--grow {
+    &:after {
+      transition: width 0.4s;
+      right: 0;
+      width: 0;
+    }
+
+    @include hover() {
+      &:after {
+        left: 0;
+        width: 100%;
+      }
+    }
+  }
+
+  &.active {
+    &:after {
+      left: 0;
+      width: 100%;
+    }
+  }
+}

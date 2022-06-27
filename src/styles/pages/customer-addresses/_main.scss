@@ -1,0 +1,162 @@
+.customer-addresses {
+  padding-bottom: rem(35);
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+
+    @include media-breakpoint-up(lg) {
+      flex-direction: row;
+    }
+  }
+
+  &__wrapper {
+    margin: 0 auto;
+    width: 100%;
+
+    @include media-breakpoint-up(lg) {
+      width: rem(916);
+    }
+
+    h1 {
+      font-size: rem(32);
+      line-height: line-height(32, 38);
+    }
+
+    p {
+      a {
+        font-size: rem(14);
+        line-height: line-height(14, 21);
+        font-family: $headline-font;
+        color: $mine-shaft;
+        border-bottom: 1px solid $mine-shaft;
+      }
+    }
+
+    .btn {
+      width: rem(190);
+
+      span {
+        pointer-events: none;
+      }
+    }
+  }
+
+  &__form {
+    padding-top: rem(35);
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    pointer-events: none;
+    transition: all 0.5s ease;
+
+    @include media-breakpoint-up(lg) {
+      padding-top: rem(55);
+    }
+
+    &.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    h2 {
+      font-size: rem(24);
+      line-height: line-height(24, 30);
+      text-align: left;
+    }
+
+    form {
+      text-align: left;
+
+      .input-field {
+        margin-bottom: rem(18);
+
+        .input-wrapper {
+          label {
+            display: block;
+          }
+
+          input[type='country'],
+          input[type='phone'] {
+            border: 1px solid $silver-chalice;
+            border-radius: 3px;
+          }
+        }
+      }
+
+      .checkbox {
+        margin-bottom: rem(20);
+        font-size: rem(12);
+        line-height: line-height(12, 18);
+
+        @include media-breakpoint-up(lg) {
+          font-size: rem(14);
+          line-height: line-height(14, 21);
+        }
+      }
+    }
+
+    &-grid {
+      display: grid;
+
+      @include media-breakpoint-up(lg) {
+        grid-template-columns: repeat(2, minmax(auto, 1fr));
+        grid-column-gap: rem(30);
+      }
+    }
+
+    &-cancel {
+      display: block;
+      padding-top: rem(18);
+      font-size: rem(16);
+      line-height: line-height(16, 24);
+      font-family: $headline-font;
+
+      @include media-breakpoint-up(lg) {
+        font-size: rem(14);
+        line-height: line-height(14, 20);
+      }
+    }
+  }
+
+  &__info {
+    p {
+      font-size: rem(14);
+      line-height: line-height(14, 21);
+      font-family: $headline-font;
+    }
+
+    .btn-wrapper {
+      display: grid;
+      grid-row-gap: rem(5);
+      width: 100%;
+      max-width: rem(385);
+      margin: 0 auto;
+
+      @include media-breakpoint-up(lg) {
+        grid-template-columns: repeat(2, minmax(auto, 1fr));
+        grid-row-gap: 0;
+        grid-column-gap: rem(5);
+      }
+
+      .btn {
+        margin: 0 auto;
+        height: rem(30);
+      }
+    }
+  }
+
+  &__info-item {
+    margin-bottom: rem(55);
+
+    h2 {
+      font-size: rem(17);
+      line-height: line-height(17, 20);
+    }
+  }
+  .is-edit {
+    max-height: fit-content;
+    opacity: 1;
+    pointer-events: auto;
+  }
+}

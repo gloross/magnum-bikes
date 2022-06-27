@@ -1,0 +1,142 @@
+.home-hero {
+  min-height: rem(621);
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  height: 90vh;
+
+  @include media-breakpoint-down(sm) {
+    min-height: rem(518);
+    align-items: flex-start;
+  }
+
+  &::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 1;
+  }
+
+  &__inner {
+    position: relative;
+    z-index: 3;
+    max-width: rem(600);
+    width: 100%;
+  }
+
+  &__title {
+    @include media-breakpoint-down(sm) {
+      padding-top: rem(400);
+    }
+
+    h1 {
+      font-size: rem(56);
+      line-height: rem(64);
+      font-weight: 500;
+      color: $white-1;
+      padding-bottom: rem(7);
+
+      @include media-breakpoint-down(sm) {
+        font-size: rem(40);
+        line-height: rem(48);
+      }
+    }
+  }
+
+  &__cta {
+    display: flex;
+    align-items: flex-start;
+    font-size: rem(14);
+    line-height: rem(32);
+    text-transform: uppercase;
+    font-weight: 700;
+    color: $white-1;
+
+    .icon {
+      height: 16px;
+      width: 16px;
+      margin-top: rem(2);
+      margin-left: rem(5);
+
+      @include media-breakpoint-down(sm) {
+        width: 13px;
+      }
+    }
+  }
+
+  &__info {
+    padding: rem(142) 0 rem(120);
+    display:flex;
+
+    @include media-breakpoint-down(sm) {
+      padding: rem(35) 0 0;
+      flex-direction: column;
+      display: none;
+    }
+  }
+
+  &__info-item {
+    width: 33.33%;
+
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+
+      &:not(:last-child) {
+        margin-bottom: rem(16);
+      }
+    }
+
+    &:first-child {
+      margin-right: rem(7);
+    }
+
+    &:last-child {
+      margin-left: rem(14);
+
+      @include media-breakpoint-down(sm) {
+        margin-left: 0;
+      }
+    }
+
+    h5 {
+      font-size: rem(16);
+      line-height: rem(24);
+      color: $white;
+      padding-bottom: rem(10);
+      font-weight: 400;
+    }
+
+    p {
+      font-size: rem(24);
+      line-height: rem(24);
+      color: $white;
+      font-weight: 500;
+      display: inline-block;
+    }
+  }
+
+  &__video-background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__video{
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: center;
+    object-position: center;
+  }
+}

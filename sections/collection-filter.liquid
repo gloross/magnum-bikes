@@ -1,0 +1,201 @@
+<script type="module" src="{{- 'component-CollectionFilter.js'| asset_url -}}"></script>
+{{ 'component-productPhotoGallery.css' | asset_url | stylesheet_tag }}
+
+{% assign object=  section.settings %}
+
+{% liquid
+    assign filterCount = 0
+    for filter in collection.filters
+        assign filterCount = filterCount | plus: filter.active_values.size
+    endfor
+%}
+
+{% render 'collection-filter-side-bar' %}
+<section class="collection-filter"
+        data-component="collectionMain"
+        data-collection="{{ collection.handle }}"
+        data-product-count="{{ collection.all_products_count }}"
+        data-page-size={{ object.page_size }}
+        data-show-more={{ object.show_more }}
+        data-sort-order="{{ collection.default_sort_by }}">
+
+<div class="container container--small">
+    <div class="collection-filter__nav">
+        <div class="collection-filter__col">
+            <a class="collection-filter__link js-filter-trigger" href="">All Filters</a>
+            {% if collection.tags contains "Non-Bike" %}
+            <a href="" class="collection-filter__show-all">Showing {{ collection.products_count }} of <span class="js-total-products">{{ collection.all_products_count }}</span> Items</a>
+                {% else %}
+                <a href="" class="collection-filter__show-all">Showing {{ collection.products_count }} of <span class="js-total-products">{{ collection.all_products_count }}</span> Bikes</a>    
+            {% endif %}
+        </div>
+        <div class="collection-filter__col">
+            <span>Sort by</span>
+            <div class="select-field select-field--collection-filter">
+                <select class="js-select-sort">
+                    {% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
+                        {% for option in collection.sort_options %}
+                            <option value="{{ option.value }}" {% if option.value == sort_by %} selected="selected" {% endif %}>{{ option.name }}</option>
+                        {% endfor %}
+                </select>
+                <p class="select-field__message is-hidden">
+                    Please select size!
+                </p>
+            </div>
+            <a class="collection-filter__trigger js-grid-trigger" href="">
+                {% render 'icon', icon: 'filter-grid' %}
+            </a>
+            <a class="collection-filter__trigger js-list-trigger" href="">
+                {% render 'icon', icon: 'filter-list' %}
+            </a>
+        </div>
+    </div>
+    <ul class="collection-filter__tags js-active-filters-wrapper" style="display: none;">
+
+        <li class="clear">
+            <a href="" class="js-clear-all-filters">
+                <span>Clear All</span>
+            </a>
+        </li>
+    </ul>
+
+    {% liquid 
+        if object.show_info_card 
+            assign numOfProducts = object.page_size | minus: 1
+            assign showInfoCard = true
+        else
+            assign numOfProducts = object.page_size
+            assign showInfoCard = false
+        endif
+    %}
+
+    {% paginate collection.products by numOfProducts %}
+
+    <div class="collection-filter__inner js-grid-list-wrapper collection-grid js-results">
+        
+        {% for product in collection.products %}
+
+            {% if forloop.index == 4 and showInfoCard %}
+            <div class="collection-filter__inner-item collection-filter__inner-item--empty">
+                <div class="wrapper">
+                    <h3>{{ object.ic_text }}</h3>
+                    {% if object.ic_btn_url %}
+                    <a href="{{ object.ic_btn_url }}">{{ object.ic_btn_text }}
+                        {% render 'icon', icon: 'arrow-up-right' %}
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+            {% endif %}
+
+            <div class="collection-filter__item" {% if product.type == "Old bike"%} style="display: none" {% endif %}>
+                {% render 'collection-product-card' with {product: product} %}     
+            </div>
+
+        {% endfor %}
+
+    </div>
+
+        {% if paginate %}
+        <ul class="collection-filter__pagination">
+            {% comment %} <a href="#" class="btn js-show-more-btn" style="border-radius: 40px!important; padding: 0 40px;">Load more</a> {% endcomment %}
+
+            {% if paginate.previous.is_link %}
+                <li>
+                    <a href="{{ paginate.previous.url }}">{% render 'icon', icon: 'arrow-left' %}</a>
+                </li>
+            {% endif %}
+
+            {% for part in paginate.parts %}
+                {% if part.is_link %}
+                    <li>
+                        <a href="{{ part.url }}" class="btn">{{ part.title }}</a>
+                    </li>
+                {% else %}
+                    <li>
+                        <a class="btn active">{{ part.title }}</a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        
+            {% if paginate.next.is_link %}
+                <li>
+                    <a href="{{ paginate.next.url }}">{% render 'icon', icon: 'arrow-right' %}</a>
+                </li>
+            {% endif %}
+            
+        </ul>
+        {% endif %}
+
+    {% endpaginate %} 
+    
+</div>
+</section>
+
+
+{% schema %}
+{
+"name"
+:
+"Collection page",
+    "settings"
+:
+[
+    {
+        "type": "header",
+        "content": "General settings"
+    },
+    {
+        "id": "page_size",
+        "type": "range",
+        "min": 4,
+        "max": 32,
+        "step": 1,
+        "label": "Page size",
+        "default": 16
+    },
+    {
+        "id": "show_more",
+        "type": "range",
+        "min": 4,
+        "max": 32,
+        "step": 1,
+        "label": "Show more ( How many products to render )",
+        "default": 4
+    },
+    {
+        "id": "show_menu",
+        "type": "checkbox",
+        "label": "Show filter menu?",
+        "default": false
+    },
+    {
+        "type": "header",
+        "content": "Info Card"
+    },
+    {
+        "id": "show_info_card",
+        "type": "checkbox",
+        "label": "Show Info Card?",
+        "default": true
+    },
+    {
+        "type": "text",
+        "id": "ic_text",
+        "label": "Text",
+        "default": "Everyone has a perfect Magnum match."
+    },
+    {
+        "type": "text",
+        "id": "ic_btn_text",
+        "label": "Link text",
+        "default": "HELP ME CHOOSE"
+    },
+    {
+        "type": "url",
+        "id": "ic_btn_url",
+        "label": "Link url"
+    }
+]
+}
+{% endschema %}

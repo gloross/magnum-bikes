@@ -1,0 +1,132 @@
+<div class="dashboard-popup__pop-up-bar active js-dashboard-hero-pop-up">
+    <div class="container container--small">
+        <div class="dashboard-popup__pop-up-bar-inner">
+            <p>Congrats, you successfully added bike to your account!</p>
+            <a class="close js-dashboard-hero-pop-up-close" href="">
+                {% render 'icon', icon: 'close' %}</a>
+        </div>
+    </div>
+</div>
+
+<section class="dashboard">
+  <div class="container container--small">
+    <div class="dashboard__inner js-tabs-user-dashboard">
+      <ul class="dashboard__list">
+        <li><a href="" class="dashboard__links active">My Bike </a></li>
+        <li><a href="" class="dashboard__links">Personal Information </a></li>
+        <li><a href="" class="dashboard__links">My Orders </a></li>
+        <li><a href="" class="dashboard__links">Loyalty </a></li>
+      </ul>
+      <!-- STEP-1 -->
+      <div class="dashboard__tabs ">
+          <div class="dashboard-hero__tabs-inner">
+            <div class="dashboard-hero__tabs-text">
+              <h2>Hello, Welcome to Magnum.</h2>
+              <p>This is where you can find all the information you need on everything from orders and invoices to services and rewards.</p>
+            </div>
+            <div class="dashboard-hero__tabs-image">
+              <div class="media-wrapper">
+                 <img src="https://via.placeholder.com/692x375.jpg?text=Pleaceholder" loading="lazy" width="" height=""/>
+              </div>
+            </div>
+          </div>
+           <div class="dashboard-hero__add-bike-card">
+                   {% render 'icon', icon: 'add-e-bikes' %}
+                   <h3>Add New Bike</h3>
+                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed.</p>
+                   <a href="" class="u-d-flex u-align-center u-justify-center">
+                   {% render 'icon', icon: 'arrow-right' %}
+                   </a>
+            </div>
+      </div>
+      <!-- STEP-2 -->
+      <div class="dashboard__tabs">
+            <div class="dashboard-hero__form">
+              <h2>Add New Bike</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+              <div class="dashboard-hero__form-wrapper">
+                 <div class="select-field">
+                  <select name="magnum-bikes" id="magnum-bikes">
+                    <option value="internet-1">Select Model</option>
+                    <option value="internet-2">Select Model</option>
+                    <option value="internet-3">Select Model</option>
+                  </select>
+                </div>
+                {% render 'input-field',
+                    label: "",
+                    inputType: '',
+                    text: 'Where did you purchase it?',
+                    inputId: '',
+                    inputName: 'properties[]',
+                    classes: "border"
+                 %}
+                {% render 'input-field',
+                    label: "",
+                    inputType: '',
+                    text: 'Date of purchase (YYYY-MM-DD)*',
+                    inputId: '',
+                    inputName: 'properties[]',
+                    classes: "border"
+                %}
+                <ul class="dashboard-hero__form-cta">
+                  <li><a href="" class="btn">CANCEL</a></li>
+                  <li><a href="" class="btn btn--blue-fill">ADD BIKE</a></li>
+                </ul>
+              </div>
+            </div>
+      </div>
+  <!-- STEP-3 -->
+      <div class="dashboard__tabs active">
+            <div class="dashboard-hero__grid">
+                 <div class="dashboard-hero__grid-item">
+                   {% render 'component-user-added-bike-card',
+                        img: 'https://via.placeholder.com/692x375.jpg?text=Pleaceholder',
+                        title: 'Magnum Touring Navigator',
+                        textStrong: 'Registered on:',
+                        text: '12.10.2021.',
+                        link_text: 'activate warranty',
+                        link_url: '',
+                        link_class: 'js-modal-open',
+
+                      %}
+                 </div>
+                       <div class="dashboard-hero__grid-item">
+                   {% render 'component-user-added-bike-card',
+                        img: 'https://via.placeholder.com/692x375.jpg?text=Pleaceholder',
+                        title: 'Magnum Touring Navigator',
+                        textStrong: 'Registered on:',
+                        text: '12.10.2021.',
+                        link_text: 'activate warranty',
+                        link_url: '',
+                        link_class: 'js-modal-open',
+                      %}
+                 </div>
+                 <div class="dashboard-hero__grid-item">
+                     <div class="dashboard-hero__add-bike-card">
+                        {% render 'icon', icon: 'add-e-bikes' %}
+                        <h3>Add New Bike</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed.</p>
+                        <a href="" class="u-d-flex u-align-center u-justify-center">
+                        {% render 'icon', icon: 'arrow-right' %}
+                        </a>
+                     </div>
+                 </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</section>
+<div class="details-modal-overlay js-modal-overlay"></div>
+<div class="details-modal js-modal-wrapper">
+   <div class="container container--small">
+     <div class="details-modal__inner">
+       <a href="" class="details-modal__close js-modal-close">
+         {% render 'icon', icon: 'close' %}
+       </a>
+       <div class="details-modal__content">
+         <h2>Warranty Details</h2>
+         <p>This warranty gives you specific legal rights, and you may also have other rights which vary from state to state.</p>
+       </div>
+  </div>
+   </div>
+</div>

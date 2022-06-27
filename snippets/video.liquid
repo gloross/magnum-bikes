@@ -1,0 +1,64 @@
+{%- assign mod_class = mod_class | default: false -%}
+{%- assign mod_video_url = mod_video_url | default: false -%}
+{%- assign mod_poster = mod_poster | default: false -%}
+{%- assign mod_metafield_poster = mod_metafield_poster | default: false -%}
+{%- assign init_video = false -%}
+
+{%- if mod_video_url != blank -%}
+  {%- if mod_video_url contains 'youtube.com/watch' -%}
+    {%- assign video_id = mod_video_url | split: 'v=' -%}
+    {%- assign video_id = video_id[1] | split: '&' | first -%}
+    {%- assign init_video = true -%}
+  {%- elsif mod_video_url contains 'youtu.be/' -%}
+    {%- assign video_id = section.settings.video_url | split: '.be/' -%}
+    {%- assign video_id = video_id[1] | split: '&' | first -%}
+    {%- assign init_video = true -%}
+  {%- elsif mod_video_url contains '.mp4' -%}
+    {%- assign init_video = true -%}
+  {%- endif -%}
+
+  {%- if init_video -%}
+    <div class="video{% if mod_class %} {{ mod_class }}{% endif %} js-video-wrapper">
+      <div class="video__container">
+        {%- if video_id -%}
+          {% comment %} Youtube {% endcomment %}
+          <div
+            class="js-video-youtube"
+            data-youtube-id="{{ video_id }}"></div>
+
+          <picture class="video__poster media-wrapper">
+            {%- if mod_metafield_poster -%}
+              <img src="{{- mod_poster[0].cloudinary_src | append: 'w_775' -}}" alt="{{- mod_poster[0].alt | escape -}}" loading="lazy" />
+            {%- else -%}
+              {%- render 'img' with img: mod_poster -%}
+            {%- endif -%}
+          </picture><!-- /.video__poster -->
+        {%- else -%}
+          {% comment %} MP4 Video {% endcomment %}
+          {%- if mod_metafield_poster -%}
+            {%- assign poster = mod_poster[0].cloudinary_src | append: 'w_775' -%}
+          {%- else -%}
+            {%- assign poster = mod_poster | image_url: width: 775 -%}
+          {%- endif -%}
+
+          <video
+            class="js-video"
+            preload="metadata"
+            {% if mod_poster %}poster="{{- poster -}}"{% endif %}>
+            <source
+              src="{{- mod_video_url -}}"
+              type="video/mp4">
+          </video>
+        {%- endif -%}
+
+        <div class="video__btn js-video-play">
+          {% render 'icon', icon: 'video-play' %}
+        </div>
+      </div>
+    </div>
+  {%- endif -%}
+{%- endif -%}
+
+
+
+

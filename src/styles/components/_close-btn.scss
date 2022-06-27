@@ -1,0 +1,56 @@
+.close-btn {
+  width: rem(20);
+  height: rem(20);
+  flex: 0 0 rem(20);
+  transition: transform 0.3s $ease-out-sine;
+  transform-origin: center center;
+  will-change: transform;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+
+  &:after,
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: rem(1);
+    background: currentColor;
+    transition: $t-basic;
+  }
+
+  &:before {
+    transform: translate3d(0, -50%, 0) rotate(45deg);
+    top: 50%;
+  }
+
+  &:after {
+    transform: translate3d(0, 50%, 0) rotate(-45deg);
+    bottom: 50%;
+  }
+
+  @include hover() {
+    transform: rotate(-180deg) translateZ(0);
+
+    &:before {
+      transform: translate3d(0, -50%, 0) rotate(0);
+      top: 50%;
+    }
+
+    &:after {
+      transform: translate3d(0, 50%, 0) rotate(0);
+      bottom: 50%;
+    }
+
+    &:active {
+      transform: scale(0.9) rotate(-180deg) translateZ(0);
+      transition: 0.15s;
+    }
+  }
+
+  &:not(:hover):active {
+    transform: scale(0.9) translateZ(0);
+    transition: 0.15s;
+  }
+}

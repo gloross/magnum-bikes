@@ -1,0 +1,11 @@
+.about-hero {
+  .media-wrapper {
+    padding-bottom: 45.9%;
+    @include media-breakpoint-down(xs) {
+      padding-bottom: 113.23%;
+    }
+    img {
+      height: 100%;
+    }
+  }
+}

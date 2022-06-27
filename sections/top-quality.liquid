@@ -1,0 +1,84 @@
+{% liquid
+  assign object = section.settings
+  assign blocks = section.blocks
+%}
+<section class="top-quality">
+  <div class="container container--small">
+     <div class="top-quality__inner">
+         <div class="top-quality__col">
+           <h2>{{ object.section_title }}</h2>
+           <p>{{ object.description}}</p>
+         </div>
+         <div class="top-quality__col">
+              <ul class="top-quality__list">
+                {% for block in blocks %}
+                {% assign b = block.settings %}
+                    <li>
+                      {% if b.icon == blank %}
+                      {% render 'icon', icon: 'box' %}
+                      {% else %}
+                      {{ b.icon }}
+                      {%endif%}
+                      <h3>{{b.item_title}}</h3>
+                      {{b.item_content}}
+                    </li>
+                    {%endfor%}
+              </ul>
+         </div>
+     </div>
+  </div>
+</section>
+
+
+{% schema %}
+{
+"name": "Top quality",
+"max_blocks": 3,
+"settings": [
+{
+  "type": "text",
+  "id": "section_title",
+  "label": "Section title",
+  "default": "Top quality, yet affordable."
+},
+{
+  "type": "textarea",
+  "id": "description",
+  "label": "Section description",
+  "default": "Designed and engineered for quality and reliability, your Magnum is built to last thousands of miles and beyond—without breaking the bank."
+}
+],
+"blocks": [
+{
+  "name": "Item",
+  "type": "block",
+  "settings": [
+  {
+    "type": "html",
+    "id": "icon",
+    "label": "Icon in SVG HTML",
+    "info": "If empty deafault box icon will be used"
+  },
+  {
+    "type": "text",
+    "id": "item_title",
+    "label": "Item title",
+    "default": "Ride Now, Pay Later"
+  },
+  {
+    "type": "richtext",
+    "id": "item_content",
+    "label": "Item text content",
+    "default": "<p>We offer payment in monthly installments. <br> Get and enjoy your ride now and pay later.</p>"
+  }
+  ]
+}
+],
+"presets": [
+  {
+    "name": "Top quality"
+  }
+]
+}  
+{% endschema %}
+

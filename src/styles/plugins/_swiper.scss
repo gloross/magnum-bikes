@@ -1,0 +1,78 @@
+@import './core/swiper-core';
+
+.swiper-next,
+.swiper-prev,
+.swiper-pagination-bullet {
+  &:focus,
+  &:active {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.swiper-pagination {
+  //display: inline-block;
+  position: relative;
+  text-align: left;
+
+  &.swiper-pagination-fraction {
+    width: auto;
+    bottom: auto;
+    left: auto;
+    bottom: unset;
+    left: unset;
+  }
+
+  .swiper-pagination-bullet {
+    width: rem(10);
+    height: rem(10);
+    flex: 0 0 rem(10);
+    background: transparent !important;
+    border: rem(1) solid currentColor;
+    opacity: 1 !important;
+    margin: 0 rem(6);
+    transition: $t-basic;
+    border-radius: 50%;
+    cursor: none;
+
+    @include hover() {
+      background: currentColor !important;
+    }
+
+    &-active {
+      background: currentColor !important;
+
+      @include hover() {
+        background: currentColor !important;
+      }
+    }
+  }
+}
+
+.swiper-scrollbar {
+  width: 100%;
+  height: rem(5);
+  background-color: rgba($primary-color, 0.3);
+  border-radius: rem(30);
+
+  .swiper-scrollbar-drag {
+    height: inherit;
+    pointer-events: none;
+    background-color: $primary-color !important;
+    border-radius: inherit;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: inherit;
+      z-index: 10;
+      transform: translateY(-50%);
+      pointer-events: auto;
+      border-radius: inherit;
+      padding: rem(20) 0;
+    }
+  }
+}

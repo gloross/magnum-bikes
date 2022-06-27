@@ -1,0 +1,113 @@
+.product-item {
+  position: relative;
+
+  @include hover() {
+    .item-info__title {
+      text-decoration: underline;
+      text-underline-offset: rem(2);
+    }
+  }
+
+  a {
+    display: block;
+  }
+
+  img {
+    width: 100%;
+    max-width: rem(300);
+    margin: 0 auto;
+  }
+}
+
+.product-info {
+  padding-top: rem(10);
+  max-width: rem(300);
+  width: 100%;
+  margin: 0 auto;
+}
+
+.item-info {
+  &__desc {
+    span {
+      display: inline-block;
+      font-family: $headline-font;
+      font-size: rem(10);
+      line-height: line-height(10, 15);
+
+      &:first-of-type {
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+
+      &:last-of-type {
+        font-family: $font-light;
+        padding-left: rem(10);
+        font-size: rem(12);
+        line-height: line-height(12, 18);
+        text-decoration: line-through;
+      }
+    }
+  }
+
+  &__title {
+    padding-top: rem(4);
+    font-size: rem(12);
+    font-family: $font-bold;
+    text-transform: uppercase;
+  }
+
+  &__form {
+    padding-top: rem(20);
+    flex-direction: column;
+
+    @include media-breakpoint-up(md) {
+      flex-direction: row;
+    }
+
+    .actions {
+      width: rem(80);
+      padding-top: rem(15);
+
+      @include media-breakpoint-up(md) {
+        padding-top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      button {
+        position: relative;
+        width: rem(16);
+        height: rem(16);
+
+        &::before,
+        &::after {
+          content: '';
+          position: absolute;
+          background: $black;
+        }
+
+        &::before {
+          top: 0;
+          bottom: 0;
+          width: rem(1);
+        }
+
+        &::after {
+          left: 0;
+          right: 0;
+          height: rem(1);
+        }
+      }
+    }
+  }
+}
+.msg-response {
+  display: block;
+  text-align: center;
+  margin: rem(5) auto;
+  font-size: rem(13);
+  font-family: $headline-font;
+  font-weight: 700;
+  line-height: line-height(13, 20);
+}

@@ -1,0 +1,57 @@
+<div class="header__nav-dropdown-inner js-tabs-hover-shop" style="background: url({{b.bg_image | img_url: 'master'}}) no-repeat; background-size:cover;background-position:center center;">
+              <a href="" class="header__go-back-mob js-go-back">
+               {% render 'icon', icon: 'arrow-left-small' %}
+              <span >{{ goBackLink }}</span>
+            </a>
+        <div class="header__nav-dropdown-col-left">
+            <h3>{{b.title}}</h3>
+             <a class="u-uppercase view-all mob-show" href="{{b.view_all_url}}">{{b.view_all_text}}
+                    {% render 'icon', icon: 'arrow-up-right' %}
+                </a>
+            <div class="header__nav-dropdown-shop-tab">
+                <ul class="header__nav-dropdown-inner-list">
+                    <li class="js-tab-hover-btn active" data-name="parts">
+                        <a class="l-b" href="{{b.tab_1_url}}">{{b.tab_1_title}}</a>
+                    </li>
+                    <li class="js-tab-hover-btn" data-name="gear">
+                        <a class="l-b" href="{{b.tab_2_url}}">{{b.tab_2_title}}</a>
+                    </li>
+                    <li class="js-tab-hover-btn" data-name="swag">
+                        <a class="l-b" href="{{b.tab_3_url}}">{{b.tab_3_title}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="header__nav-dropdown-col-right">
+            <div class="header__nav-dropdown-col-right-shop-item js-tab-hover-content active" data-name="parts">
+                <h2>{{b.tab_1_title}}</h2>
+                <ul>
+            {% for link in linklists[b.tab_1_menu].links %}
+            <li><a href="{{link.url}}">{{link.title}}</a></li>
+            {%endfor%}
+                </ul>
+                <a class="u-uppercase view-all" href="{{b.view_all_url2}}">{{b.view_all_text2}}
+                    {% render 'icon', icon: 'arrow-up-right' %}
+                </a>
+            </div>
+            <div class="header__nav-dropdown-col-right-shop-item js-tab-hover-content"  data-name="gear">
+                <h2>{{b.tab_2_title}}</h2>
+                <ul>
+                    {% for link in linklists[b.tab_2_menu].links %}
+                    <li><a href="{{link.url}}">{{link.title}}</a></li>
+                    {%endfor%}
+                </ul>
+                <a class="u-uppercase view-all" href="{{b.view_all_url3}}">{{b.view_all_text3}}
+                    {% render 'icon', icon: 'arrow-up-right' %}
+                </a>
+            </div>
+            <div class="header__nav-dropdown-col-right-shop-item js-tab-hover-content" data-name="swag">
+                <h2>{{b.tab_3_title}}</h2>
+                <ul>
+                    {% for link in linklists[b.tab_3_menu].links %}
+                    <li><a href="{{link.url}}">{{link.title}}</a></li> 
+                    {%endfor%}
+                </ul> 
+            </div>
+        </div>
+    </div>

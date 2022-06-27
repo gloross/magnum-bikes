@@ -1,0 +1,117 @@
+@import 'nouislider/dist/nouislider.css';
+
+.range-slider {
+  width: 100%;
+  padding-bottom: rem(24);
+  display: flex;
+
+  @include media-breakpoint-down(md) {
+    padding-bottom: rem(16);
+  }
+
+  .noUiSlider-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    span {
+      font-size: rem(15);
+      line-height: line-height(15, 14);
+      color: $white;
+    }
+
+    .height-wrapper {
+      display: flex;
+      align-items: center;
+      padding: rem(17) rem(21);
+      margin-left: rem(20);
+      border: 1px solid $white;
+      border-radius: rem(40);
+
+      .slider-range-value {
+        margin-right: rem(3);
+      }
+    }
+
+    .noUi-horizontal {
+      height: 2px;
+      background-color: $grey-light;
+    }
+
+    .noUi-handle {
+      width: rem(32);
+      height: rem(32);
+      border-radius: 50%;
+      background-color: transparent;
+      box-shadow: none;
+      border: none;
+
+      &::before {
+        position: absolute;
+        content: '';
+        width: rem(6);
+        height: rem(6);
+        border-radius: 50%;
+        top: 6.5px;
+        // right: 0;
+        transform: translate(0%, -50%);
+        background-color: $white;
+        z-index: 1;
+      }
+
+      &::after {
+        position: absolute;
+        content: '';
+        width: rem(32);
+        height: rem(32);
+        border-radius: 50%;
+        // top: 50%;
+        right: 0;
+        transform: translate(-50%, -50%);
+        background-color: $white;
+        opacity: 0.1;
+        z-index: -1;
+      }
+    }
+
+    .noUi-connects {
+      border-radius: rem(20);
+
+      .noUi-connect {
+        background-color: $white;
+      }
+    }
+  }
+
+  .noUi-target {
+    width: 100%;
+    box-shadow: none;
+    border: none;
+    border-radius: rem(20);
+  }
+  &--quiz {
+    span {
+      color: $grey-light-1 !important;
+    }
+    .noUi-handle {
+      &::after {
+        background-color: rgba($grey-light-1, 1) !important;
+      }
+      &::before {
+        background-color: $grey-light-1 !important;
+      }
+    }
+    .noUi-connects {
+      .noUi-connect {
+        background-color: $grey-light-1 !important;
+      }
+    }
+    .height-wrapper {
+      color: $machine-grey !important;
+      border-color: $grey-light !important;
+    }
+  }
+  .noUi-horizontal {
+    background-color: $grey-light-2 !important;
+  }
+}

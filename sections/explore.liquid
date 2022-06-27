@@ -1,0 +1,828 @@
+{% liquid
+  assign object = section.settings
+  assign svg_desktop = product.metafields.main_cte_features.svg  
+  assign svg_mobile = product.metafields.cte.mobile_svg 
+  assign image_desktop = product.metafields.main_cte.background_image
+  assign image_mobile = product.metafields.cte_background.mobile_image
+  assign cte1_f1_heading = product.metafields.cte1.f1_heading
+  assign cte1_f1_subheading = product.metafields.cte1.f1_subheading
+  assign cte1_f1_detail = product.metafields.cte1.f1_detail
+  assign f1_image_1 = product.metafields.cte1.f1_image_1
+  assign f1_image_2 = product.metafields.cte1.f1_image_2
+  assign f1_image_3 = product.metafields.cte1.f1_image_3
+  assign cte2_f2_heading = product.metafields.cte2.f2_heading
+  assign cte2_f2_subheading = product.metafields.cte2.f2_subheading
+  assign cte2_f2_detail = product.metafields.cte2.f2_detail
+  assign f2_image_1 = product.metafields.cte2.f2_image_1
+  assign f2_image_2 = product.metafields.cte2.f2_image_2
+  assign f2_image_3 = product.metafields.cte2.f2_image_3
+  assign cte3_f3_heading = product.metafields.cte3.f3_heading
+  assign cte3_f3_subheading = product.metafields.cte3.f3_subheading
+  assign cte3_f3_detail = product.metafields.cte3.f3_detail
+  assign f3_image_1 = product.metafields.cte3.f3_image_1
+  assign f3_image_2 = product.metafields.cte3.f3_image_2
+  assign f3_image_3 = product.metafields.cte3.f3_image_3
+  assign cte4_f4_heading = product.metafields.cte4.f4_heading
+  assign cte4_f4_subheading = product.metafields.cte4.f4_subheading
+  assign cte4_f4_detail = product.metafields.cte4.f4_detail
+  assign f4_image_1 = product.metafields.cte4.f4_image_1
+  assign f4_image_2 = product.metafields.cte4.f4_image_2
+  assign f4_image_3 = product.metafields.cte4.f4_image_3
+  assign cte5_f5_heading = product.metafields.cte5.f5_heading
+  assign cte5_f5_subheading = product.metafields.cte5.f5_subheading
+  assign cte5_f5_detail = product.metafields.cte5.f5_detail
+  assign f5_image_1 = product.metafields.cte5.f5_image_1
+  assign f5_image_2 = product.metafields.cte5.f5_image_2
+  assign f5_image_3 = product.metafields.cte5.f5_image_3
+  assign cte6_f6_heading = product.metafields.cte6.f6_heading
+  assign cte6_f6_subheading = product.metafields.cte6.f6_subheading
+  assign cte6_f6_detail = product.metafields.cte6.f6_detail
+  assign f6_image_1 = product.metafields.cte6.f6_image_1
+  assign f6_image_2 = product.metafields.cte6.f6_image_2
+  assign f6_image_3 = product.metafields.cte6.f6_image_3
+  assign cte7_f7_heading = product.metafields.cte7.f7_heading
+  assign cte7_f7_subheading = product.metafields.cte7.f7_subheading
+  assign cte7_f7_detail = product.metafields.cte7.f7_detail
+  assign f7_image_1 = product.metafields.cte7.f7_image_1
+  assign f7_image_2 = product.metafields.cte7.f7_image_2
+  assign f7_image_3 = product.metafields.cte7.f7_image_3
+  assign cte8_f8_heading = product.metafields.cte8.f8_heading
+  assign cte8_f8_subheading = product.metafields.cte8.f8_subheading
+  assign cte8_f8_detail = product.metafields.cte8.f8_detail
+  assign f8_image_1 = product.metafields.cte8.f8_image_1
+  assign f8_image_2 = product.metafields.cte8.f8_image_2
+  assign f8_image_3 = product.metafields.cte8.f8_image_3
+  assign cte9_f9_heading = product.metafields.cte9.f9_heading
+  assign cte9_f9_subheading = product.metafields.cte9.f9_subheading
+  assign cte9_f9_detail = product.metafields.cte9.f9_detail
+  assign f9_image_1 = product.metafields.cte9.f9_image_1
+  assign f9_image_2 = product.metafields.cte9.f9_image_2
+  assign f9_image_3 = product.metafields.cte9.f9_image_3
+  assign cte10_f10_heading = product.metafields.cte10.f10_heading
+  assign cte10_f10_subheading = product.metafields.cte10.f10_subheading
+  assign cte10_f10_detail = product.metafields.cte10.f10_detail
+  assign f10_image_1 = product.metafields.cte10.f10_image_1
+  assign f10_image_2 = product.metafields.cte10.f10_image_2
+  assign f10_image_3 = product.metafields.cte10.f10_image_3
+  assign cte11_f11_heading = product.metafields.cte11.f11_heading
+  assign cte11_f11_subheading = product.metafields.cte11.f11_subheading
+  assign cte11_f11_detail = product.metafields.cte11.f11_detail
+  assign f11_image_1 = product.metafields.cte11.f11_image_1
+  assign f11_image_2 = product.metafields.cte11.f11_image_2
+  assign f11_image_3 = product.metafields.cte11.f11_image_3
+  assign cte12_f12_heading = product.metafields.cte12.f12_heading
+  assign cte12_f12_subheading = product.metafields.cte12.f12_subheading
+  assign cte12_f12_detail = product.metafields.cte12.f12_detail
+  assign f12_image_1 = product.metafields.cte12.f12_image_1
+  assign f12_image_2 = product.metafields.cte12.f12_image_2
+  assign f12_image_3 = product.metafields.cte12.f12_image_3
+%}
+<section class="explore-product">
+  <div class="explore-product__inner">
+    <div class="cte-wrapper cte-wrapper-des">
+      <div class="svg">
+      {{svg_desktop}}
+      </div>
+       <img class="cte-image" src="{{image_desktop}}" alt="">
+    </div>
+    <div class="cte-wrapper cte-wrapper-mob">
+      <div class="svg">
+        {{svg_mobile}}
+        </div>
+      <img class="cte-image" src="{{image_mobile}}" alt=""> 
+    </div>
+  </div>
+</section>
+<div class="explore-popup js-explore-popup">
+  <div class="explore">
+    <div class="explore__inner">
+      {% unless f1_image_1 == blank %}
+      <div class="explore-popup__box js-popup-box" data-target="feature_1">
+        <div class="explore__thumbs">
+          <a class="btn__nav btn__nav--close-preview btn__nav--close-thumb js-close-explore" href="javascript:void(0)"> {% render 'icon', icon: 'close' %}</a>
+          <div class="explore__title">
+            <h1 class="h3">{{ cte1_f1_heading}} </h1>
+          </div>
+          <div thumbsslider class="swiper-container js-explore-thumb">
+            <div class="swiper-wrapper">
+              {% if f1_image_1 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f1_image_1}}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+              {% if f1_image_2 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f1_image_2 }}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+              {% if f1_image_3 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f1_image_3}}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+            </div>
+            <div class="explore__arrows">
+              <div class="js-explore-arrow-prev btn__nav btn__nav--prev">{% render 'icon', icon: 'arrow-left' %}</div>
+              <div class="js-explore-arrow-next btn__nav btn__nav--next">{% render 'icon', icon: 'arrow-right' %}</div>
+            </div>
+          </div>
+          <div class="explore__text">
+            <h2 class="h5">{{cte1_f1_subheading}} </h2>
+            <p>{{cte1_f1_detail}}</p>
+          </div>
+        </div>
+        <div class="explore__slider">
+          <div class="swiper-container js-explore-slider">
+            <div class="swiper-wrapper">
+              {% if f1_image_1 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f1_image_1}}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+              {% if f1_image_2 != blank%}
+              <div class="swiper-slide">
+                <img src="{{f1_image_2 }}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+              {% if f1_image_3 != blank%}
+              <div class="swiper-slide">
+                <img src="{{  f1_image_3 }}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+            </div>
+          </div>
+          <a class="btn__nav btn__nav--close-preview js-close-explore" href="javascript:void(0)"> {% render 'icon', icon: 'close' %}</a>
+        </div>
+      </div>
+      {% endunless %}
+      {% unless f2_image_1 == blank %}
+      <div class="explore-popup__box js-popup-box" data-target="feature_2">
+        <div class="explore__thumbs">
+          <a class="btn__nav btn__nav--close-preview btn__nav--close-thumb js-close-explore" href="javascript:void(0)"> {% render 'icon', icon: 'close' %}</a>
+          <div class="explore__title">
+            <h1 class="h3">{{ cte2_f2_heading }} </h1>
+          </div>
+          <div thumbsslider class="swiper-container js-explore-thumb">
+            <div class="swiper-wrapper">
+              {% if f2_image_1 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f2_image_1}}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+              {% if f2_image_2 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f2_image_2 }}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+              {% if f2_image_3 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f2_image_3 }}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+            </div>
+            <div class="explore__arrows">
+              <div class="js-explore-arrow-prev btn__nav btn__nav--prev">{% render 'icon', icon: 'arrow-left' %}</div>
+              <div class="js-explore-arrow-next btn__nav btn__nav--next">{% render 'icon', icon: 'arrow-right' %}</div>
+            </div>
+          </div>
+          <div class="explore__text">
+            <h2 class="h5">{{cte2_f2_subheading}} </h2>
+            <p>{{cte2_f2_detail}}</p>
+          </div>
+        </div>
+        <div class="explore__slider">
+          <div class="swiper-container js-explore-slider">
+            <div class="swiper-wrapper">
+              {% if f2_image_1 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f2_image_1}}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+              {% if f2_image_2 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f2_image_2}}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+              {% if f2_image_3 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f2_image_3}}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+            </div>
+          </div>
+          <a class="btn__nav btn__nav--close-preview js-close-explore" href="javascript:void(0)"> {% render 'icon', icon: 'close' %}</a>
+        </div>
+      </div>
+      {% endunless %}
+      {% unless f3_image_1 == blank %}
+      <div class="explore-popup__box js-popup-box" data-target="feature_3">
+        <div class="explore__thumbs">
+          <a class="btn__nav btn__nav--close-preview btn__nav--close-thumb js-close-explore" href="javascript:void(0)"> {% render 'icon', icon: 'close' %}</a>
+          <div class="explore__title">
+            <h1 class="h3">{{cte3_f3_heading}} </h1>
+          </div>
+          <div thumbsslider class="swiper-container js-explore-thumb">
+            <div class="swiper-wrapper">
+              {% if f3_image_1 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f3_image_1 }}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+              {% if f3_image_2 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f3_image_2}}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+              {% if f3_image_3 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f3_image_3 }}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+            </div>
+            <div class="explore__arrows">
+              <div class="js-explore-arrow-prev btn__nav btn__nav--prev">{% render 'icon', icon: 'arrow-left' %}</div>
+              <div class="js-explore-arrow-next btn__nav btn__nav--next">{% render 'icon', icon: 'arrow-right' %}</div>
+            </div>
+          </div>
+          <div class="explore__text">
+            <h2 class="h5">{{cte3_f3_subheading}} </h2>
+            <p>{{cte3_f3_detail}}</p>
+          </div>
+        </div>
+        <div class="explore__slider">
+          <div class="swiper-container js-explore-slider">
+            <div class="swiper-wrapper">
+              {% if f3_image_1 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f3_image_1 }}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+              {% if f3_image_2 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f3_image_2 }}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+              {% if f3_image_3 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f3_image_3 }}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+            </div>
+          </div>
+          <a class="btn__nav btn__nav--close-preview js-close-explore" href="javascript:void(0)"> {% render 'icon', icon: 'close' %}</a>
+        </div>
+      </div>
+      {% endunless %}
+      {% unless f4_image_1 == blank %}
+      <div class="explore-popup__box js-popup-box" data-target="feature_4">
+        <div class="explore__thumbs">
+          <a class="btn__nav btn__nav--close-preview btn__nav--close-thumb js-close-explore" href="javascript:void(0)"> {% render 'icon', icon: 'close' %}</a>
+          <div class="explore__title">
+            <h1 class="h3">{{cte4_f4_heading}} </h1>
+          </div>
+          <div thumbsslider class="swiper-container js-explore-thumb">
+            <div class="swiper-wrapper">
+              {% if f4_image_1 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f4_image_1 }}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+              {% if f4_image_2 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f4_image_2 }}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+              {% if f4_image_3 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f4_image_3}}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+            </div>
+            <div class="explore__arrows">
+              <div class="js-explore-arrow-prev btn__nav btn__nav--prev">{% render 'icon', icon: 'arrow-left' %}</div>
+              <div class="js-explore-arrow-next btn__nav btn__nav--next">{% render 'icon', icon: 'arrow-right' %}</div>
+            </div>
+          </div>
+          <div class="explore__text">
+            <h2 class="h5">{{cte4_f4_subheading}} </h2>
+            <p>{{cte4_f4_detail}}</p>
+          </div>
+        </div>
+        <div class="explore__slider">
+          <div class="swiper-container js-explore-slider">
+            <div class="swiper-wrapper">
+              {% if f4_image_1 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f4_image_1 }}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+              {% if f4_image_2 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f4_image_2 }}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+              {% if f4_image_3 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f4_image_3 }}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+            </div>
+          </div>
+          <a class="btn__nav btn__nav--close-preview js-close-explore" href="javascript:void(0)"> {% render 'icon', icon: 'close' %}</a>
+        </div>
+      </div>
+      {% endunless %}
+      {% unless f5_image_1 == blank %}
+      <div class="explore-popup__box js-popup-box" data-target="feature_5">
+        <div class="explore__thumbs">
+          <a class="btn__nav btn__nav--close-preview btn__nav--close-thumb js-close-explore" href="javascript:void(0)"> {% render 'icon', icon: 'close' %}</a>
+          <div class="explore__title">
+            <h1 class="h3">{{cte5_f5_heading}} </h1>
+          </div>
+          <div thumbsslider class="swiper-container js-explore-thumb">
+            <div class="swiper-wrapper">
+              {% if f5_image_1 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f5_image_1 }}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+              {% if f5_image_2 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f5_image_2 }}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+              {% if f5_image_3 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f5_image_3}}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+            </div>
+            <div class="explore__arrows">
+              <div class="js-explore-arrow-prev btn__nav btn__nav--prev">{% render 'icon', icon: 'arrow-left' %}</div>
+              <div class="js-explore-arrow-next btn__nav btn__nav--next">{% render 'icon', icon: 'arrow-right' %}</div>
+            </div>
+          </div>
+          <div class="explore__text">
+            <h2 class="h5">{{cte5_f5_subheading}} </h2>
+            <p>{{cte5_f5_detail}}</p>
+          </div>
+        </div>
+        <div class="explore__slider">
+          <div class="swiper-container js-explore-slider">
+            <div class="swiper-wrapper">
+              {% if f5_image_1 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f5_image_1 }}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+              {% if f5_image_2 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f5_image_2 }}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+              {% if f5_image_3 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f5_image_3 }}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+            </div>
+          </div>
+          <a class="btn__nav btn__nav--close-preview js-close-explore" href="javascript:void(0)"> {% render 'icon', icon: 'close' %}</a>
+        </div>
+      </div>
+      {% endunless %}
+      {% unless f6_image_1 == blank %}
+      <div class="explore-popup__box js-popup-box" data-target="feature_6">
+        <div class="explore__thumbs">
+          <a class="btn__nav btn__nav--close-preview btn__nav--close-thumb js-close-explore" href="javascript:void(0)"> {% render 'icon', icon: 'close' %}</a>
+          <div class="explore__title">
+            <h1 class="h3">{{cte6_f6_heading}} </h1>
+          </div>
+          <div thumbsslider class="swiper-container js-explore-thumb">
+            <div class="swiper-wrapper">
+              {% if f6_image_1 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f6_image_1 }}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+              {% if f6_image_2 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f6_image_2 }}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+              {% if f6_image_3 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f6_image_3}}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+            </div>
+            <div class="explore__arrows">
+              <div class="js-explore-arrow-prev btn__nav btn__nav--prev">{% render 'icon', icon: 'arrow-left' %}</div>
+              <div class="js-explore-arrow-next btn__nav btn__nav--next">{% render 'icon', icon: 'arrow-right' %}</div>
+            </div>
+          </div>
+          <div class="explore__text">
+            <h2 class="h5">{{cte6_f6_subheading}} </h2>
+            <p>{{cte6_f6_detail}}</p>
+          </div>
+        </div>
+        <div class="explore__slider">
+          <div class="swiper-container js-explore-slider">
+            <div class="swiper-wrapper">
+              {% if f6_image_1 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f6_image_1 }}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+              {% if f6_image_2 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f6_image_2 }}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+              {% if f6_image_3 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f6_image_3 }}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+            </div>
+          </div>
+          <a class="btn__nav btn__nav--close-preview js-close-explore" href="javascript:void(0)"> {% render 'icon', icon: 'close' %}</a>
+        </div>
+      </div>
+      {% endunless %}
+      {% unless f7_image_1 == blank %}
+      <div class="explore-popup__box js-popup-box" data-target="feature_7">
+        <div class="explore__thumbs">
+          <a class="btn__nav btn__nav--close-preview btn__nav--close-thumb js-close-explore" href="javascript:void(0)"> {% render 'icon', icon: 'close' %}</a>
+          <div class="explore__title">
+            <h1 class="h3">{{cte7_f7_heading}} </h1>
+          </div>
+          <div thumbsslider class="swiper-container js-explore-thumb">
+            <div class="swiper-wrapper">
+              {% if f7_image_1 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f7_image_1 }}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+              {% if f7_image_2 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f7_image_2 }}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+              {% if f7_image_3 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f7_image_3}}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+            </div>
+            <div class="explore__arrows">
+              <div class="js-explore-arrow-prev btn__nav btn__nav--prev">{% render 'icon', icon: 'arrow-left' %}</div>
+              <div class="js-explore-arrow-next btn__nav btn__nav--next">{% render 'icon', icon: 'arrow-right' %}</div>
+            </div>
+          </div>
+          <div class="explore__text">
+            <h2 class="h5">{{cte7_f7_subheading}} </h2>
+            <p>{{cte7_f7_detail}}</p>
+          </div>
+        </div>
+        <div class="explore__slider">
+          <div class="swiper-container js-explore-slider">
+            <div class="swiper-wrapper">
+              {% if f7_image_1 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f7_image_1 }}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+              {% if f7_image_2 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f7_image_2 }}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+              {% if f7_image_3 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f7_image_3 }}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+            </div>
+          </div>
+          <a class="btn__nav btn__nav--close-preview js-close-explore" href="javascript:void(0)"> {% render 'icon', icon: 'close' %}</a>
+        </div>
+      </div>
+      {% endunless %}
+      {% unless f8_image_1 == blank %}
+      <div class="explore-popup__box js-popup-box" data-target="feature_8">
+        <div class="explore__thumbs">
+          <a class="btn__nav btn__nav--close-preview btn__nav--close-thumb js-close-explore" href="javascript:void(0)"> {% render 'icon', icon: 'close' %}</a>
+          <div class="explore__title">
+            <h1 class="h3">{{cte8_f8_heading}} </h1>
+          </div>
+          <div thumbsslider class="swiper-container js-explore-thumb">
+            <div class="swiper-wrapper">
+              {% if f8_image_1 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f8_image_1 }}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+              {% if f8_image_2 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f8_image_2 }}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+              {% if f8_image_3 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f8_image_3}}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+            </div>
+            <div class="explore__arrows">
+              <div class="js-explore-arrow-prev btn__nav btn__nav--prev">{% render 'icon', icon: 'arrow-left' %}</div>
+              <div class="js-explore-arrow-next btn__nav btn__nav--next">{% render 'icon', icon: 'arrow-right' %}</div>
+            </div>
+          </div>
+          <div class="explore__text">
+            <h2 class="h5">{{cte8_f8_subheading}} </h2>
+            <p>{{cte8_f8_detail}}</p>
+          </div>
+        </div>
+        <div class="explore__slider">
+          <div class="swiper-container js-explore-slider">
+            <div class="swiper-wrapper">
+              {% if f8_image_1 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f8_image_1 }}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+              {% if f8_image_2 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f8_image_2 }}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+              {% if f8_image_3 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f8_image_3 }}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+            </div>
+          </div>
+          <a class="btn__nav btn__nav--close-preview js-close-explore" href="javascript:void(0)"> {% render 'icon', icon: 'close' %}</a>
+        </div>
+      </div>
+      {% endunless %}
+      {% unless f9_image_1 == blank %}
+      <div class="explore-popup__box js-popup-box" data-target="feature_9">
+        <div class="explore__thumbs">
+          <a class="btn__nav btn__nav--close-preview btn__nav--close-thumb js-close-explore" href="javascript:void(0)"> {% render 'icon', icon: 'close' %}</a>
+          <div class="explore__title">
+            <h1 class="h3">{{cte9_f9_heading}} </h1>
+          </div>
+          <div thumbsslider class="swiper-container js-explore-thumb">
+            <div class="swiper-wrapper">
+              {% if f9_image_1 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f9_image_1 }}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+              {% if f9_image_2 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f9_image_2 }}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+              {% if f9_image_3 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f9_image_3}}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+            </div>
+            <div class="explore__arrows">
+              <div class="js-explore-arrow-prev btn__nav btn__nav--prev">{% render 'icon', icon: 'arrow-left' %}</div>
+              <div class="js-explore-arrow-next btn__nav btn__nav--next">{% render 'icon', icon: 'arrow-right' %}</div>
+            </div>
+          </div>
+          <div class="explore__text">
+            <h2 class="h5">{{cte9_f9_subheading}} </h2>
+            <p>{{cte9_f9_detail}}</p>
+          </div>
+        </div>
+        <div class="explore__slider">
+          <div class="swiper-container js-explore-slider">
+            <div class="swiper-wrapper">
+              {% if f9_image_1 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f9_image_1 }}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+              {% if f9_image_2 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f9_image_2 }}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+              {% if f9_image_3 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f9_image_3 }}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+            </div>
+          </div>
+          <a class="btn__nav btn__nav--close-preview js-close-explore" href="javascript:void(0)"> {% render 'icon', icon: 'close' %}</a>
+        </div>
+      </div>
+      {% endunless %}
+      {% unless f10_image_1 == blank %}
+      <div class="explore-popup__box js-popup-box" data-target="feature_10">
+        <div class="explore__thumbs">
+          <a class="btn__nav btn__nav--close-preview btn__nav--close-thumb js-close-explore" href="javascript:void(0)"> {% render 'icon', icon: 'close' %}</a>
+          <div class="explore__title">
+            <h1 class="h3">{{cte10_f10_heading}} </h1>
+          </div>
+          <div thumbsslider class="swiper-container js-explore-thumb">
+            <div class="swiper-wrapper">
+              {% if f10_image_1 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f10_image_1 }}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+              {% if f10_image_2 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f10_image_2 }}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+              {% if f10_image_3 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f10_image_3}}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+            </div>
+            <div class="explore__arrows">
+              <div class="js-explore-arrow-prev btn__nav btn__nav--prev">{% render 'icon', icon: 'arrow-left' %}</div>
+              <div class="js-explore-arrow-next btn__nav btn__nav--next">{% render 'icon', icon: 'arrow-right' %}</div>
+            </div>
+          </div>
+          <div class="explore__text">
+            <h2 class="h5">{{cte10_f10_subheading}} </h2>
+            <p>{{cte10_f10_detail}}</p>
+          </div>
+        </div>
+        <div class="explore__slider">
+          <div class="swiper-container js-explore-slider">
+            <div class="swiper-wrapper">
+              {% if f10_image_1 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f10_image_1 }}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+              {% if f10_image_2 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f10_image_2 }}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+              {% if f10_image_3 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f10_image_3 }}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+            </div>
+          </div>
+          <a class="btn__nav btn__nav--close-preview js-close-explore" href="javascript:void(0)"> {% render 'icon', icon: 'close' %}</a>
+        </div>
+      </div>
+      {% endunless %}
+      {% unless f11_image_1 == blank %}
+      <div class="explore-popup__box js-popup-box" data-target="feature_11">
+        <div class="explore__thumbs">
+          <a class="btn__nav btn__nav--close-preview btn__nav--close-thumb js-close-explore" href="javascript:void(0)"> {% render 'icon', icon: 'close' %}</a>
+          <div class="explore__title">
+            <h1 class="h3">{{cte11_f11_heading}} </h1>
+          </div>
+          <div thumbsslider class="swiper-container js-explore-thumb">
+            <div class="swiper-wrapper">
+              {% if f11_image_1 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f11_image_1 }}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+              {% if f11_image_2 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f11_image_2 }}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+              {% if f11_image_3 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f11_image_3}}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+            </div>
+            <div class="explore__arrows">
+              <div class="js-explore-arrow-prev btn__nav btn__nav--prev">{% render 'icon', icon: 'arrow-left' %}</div>
+              <div class="js-explore-arrow-next btn__nav btn__nav--next">{% render 'icon', icon: 'arrow-right' %}</div>
+            </div>
+          </div>
+          <div class="explore__text">
+            <h2 class="h5">{{cte11_f11_subheading}} </h2>
+            <p>{{cte11_f11_detail}}</p>
+          </div>
+        </div>
+        <div class="explore__slider">
+          <div class="swiper-container js-explore-slider">
+            <div class="swiper-wrapper">
+              {% if f11_image_1 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f11_image_1 }}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+              {% if f11_image_2 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f11_image_2 }}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+              {% if f11_image_3 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f11_image_3 }}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+            </div>
+          </div>
+          <a class="btn__nav btn__nav--close-preview js-close-explore" href="javascript:void(0)"> {% render 'icon', icon: 'close' %}</a>
+        </div>
+      </div>
+      {% endunless %}
+      {% unless f12_image_1 == blank %}
+      <div class="explore-popup__box js-popup-box" data-target="feature_12">
+        <div class="explore__thumbs">
+          <a class="btn__nav btn__nav--close-preview btn__nav--close-thumb js-close-explore" href="javascript:void(0)"> {% render 'icon', icon: 'close' %}</a>
+          <div class="explore__title">
+            <h1 class="h3">{{cte12_f12_heading}} </h1>
+          </div>
+          <div thumbsslider class="swiper-container js-explore-thumb">
+            <div class="swiper-wrapper">
+              {% if f12_image_1 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f12_image_1 }}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+              {% if f12_image_2 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f12_image_2 }}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+              {% if f12_image_3 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f12_image_3}}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+            </div>
+            <div class="explore__arrows">
+              <div class="js-explore-arrow-prev btn__nav btn__nav--prev">{% render 'icon', icon: 'arrow-left' %}</div>
+              <div class="js-explore-arrow-next btn__nav btn__nav--next">{% render 'icon', icon: 'arrow-right' %}</div>
+            </div>
+          </div>
+          <div class="explore__text">
+            <h2 class="h5">{{cte12_f12_subheading}} </h2>
+            <p>{{cte12_f12_detail}}</p>
+          </div>
+        </div>
+        <div class="explore__slider">
+          <div class="swiper-container js-explore-slider">
+            <div class="swiper-wrapper">
+              {% if f12_image_1 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f12_image_1 }}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+              {% if f12_image_2 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f12_image_2 }}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+              {% if f12_image_3 != blank%}
+              <div class="swiper-slide">
+                <img src="{{ f12_image_3 }}" loading="lazy" width="" height="" />
+              </div>
+              {% endif %}
+            </div>
+          </div>
+          <a class="btn__nav btn__nav--close-preview js-close-explore" href="javascript:void(0)"> {% render 'icon', icon: 'close' %}</a>
+        </div>
+      </div>
+      {% endunless %}
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+  {
+  "name": "Click to explore",
+  "settings": [
+  {
+    "type": "image_picker",
+    "id": "image",
+    "label": "Background image"
+  }
+  ],
+  "presets": [
+    {
+      "name": "Click to explore"
+    }
+  ]
+}
+{% endschema %}

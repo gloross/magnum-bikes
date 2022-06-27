@@ -1,0 +1,245 @@
+<section class="quiz frame-builder-formular js-quiz">
+  <div class="container">
+    <div class="js-quiz-form quiz__inner frame-builder-formular__form" id="frame-builder-formular-form">
+
+      {% form 'contact', id: 'quiz-form-id' %}
+      <div>
+        {% if form.posted_successfully? %}
+
+        {% else %}
+        <div class="quiz__step quiz__step--one step js-step">
+          <div class="quiz__content">
+            <div class="quiz-step-one">
+              <a class="btn__start-over js-btn-start-over" href="#">{% render 'icon', icon: 'back-arrow' %}Start
+                Over</a>
+              <a class="btn__close" href="#">{% render 'icon', icon: 'close' %}</a>
+              <div class="quiz-step-one__inner">
+                <h1>Before we get started, here are some features all Magnum E-Bikes have in common. </h1>
+                <div class="quiz-step-one__content">
+                  <div class="quiz-step-one__item">
+                    {% render 'icon', icon: 'pedal' %}
+                    <p>Throttle + Pedal-Assist</p>
+                  </div>
+                  <div class="quiz-step-one__item">
+                    {% render 'icon', icon: 'battery-big' %}
+                    <p>Removable Battery</p>
+                  </div>
+                  <div class="quiz-step-one__item">
+                    {% render 'icon', icon: 'disc' %}
+                    <p>Front + Rear Disc Brakes</p>
+                  </div>
+                  <div class="quiz-step-one__item">
+                    {% render 'icon', icon: 'lcd' %}
+                    <p>LCD Display</p>
+                  </div>
+                  <div class="quiz-step-one__item">
+                    {% render 'icon', icon: 'settings' %}
+                    <p>Mechanical Gears</p>
+                  </div>
+                  <div class="quiz-step-one__item">
+                    {% render 'icon', icon: 'warranty-big' %}
+                    <p>1 Year Warranty</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="quiz__step quiz__step--two step js-step">
+          <div class="quiz__content">
+            <div class="quiz-step-two">
+              <a class="btn__start-over js-btn-start-over" href="#">{% render 'icon', icon: 'back-arrow' %}Start
+                Over</a>
+              <a class="btn__close" href="#">{% render 'icon', icon: 'close' %}</a>
+              <div class="quiz-step-two__inner">
+                <!-- image desktop-->
+                <!-- <img src="../assets/image1.svg" alt=""> -->
+
+                <!-- image mob-->
+                <img src="../assets/image1-mob.svg" alt="">
+
+                <h2>Let’s get to know each other. What’s your name?</h2>
+                {% render 'input-field',
+                label: "",
+                inputType: 'text',
+                text: 'Enter Your First Name',
+                inputId: '',
+                inputName: 'properties[]',
+              classes: ""
+            %}
+              </div>
+            </div>
+            <div class="quiz__breadcrumbs quiz__breadcrumbs--two">
+              {% render 'icon', icon: 'flag' %}
+            </div>
+          </div>
+        </div>
+
+        <div class="quiz__step quiz__step--three step js-step">
+          <div class="quiz__content">
+            <div class="quiz-step-three">
+              <a class="btn__start-over js-btn-start-over" href="#">{% render 'icon', icon: 'back-arrow' %}Start
+                Over</a>
+              <a class="btn__close" href="#">{% render 'icon', icon: 'close' %}</a>
+              <h2>Hey Etan, what kind of riding posture are you most comfortable with?</h2>
+              <div class="swiper-container js-quiz-carousel">
+                <div class="swiper-wrapper  quiz-step-three__inner">
+                  <div class="swiper-slide">
+                    <div class="quiz-step-three__item">
+                      <input type="radio" name="check-icon" id="item-1" checked />
+                      <label for="item-1">
+                        <span class="quiz-step-three__icon"> {% render 'icon', icon: 'bike-1' %}</span>
+                      </label>
+                      <div class="quiz-step-three__text">
+                        <h4> Relaxed</h4>
+                        <p>Perfect for a laid back ride and enjoying the scenery.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="quiz-step-three__item">
+                      <input type="radio" name="check-icon" id="item-2" />
+                      <label for="item-2">
+                        <span class="quiz-step-three__icon"> {% render 'icon', icon: 'bike-2' %}</span>
+                      </label>
+                      <div class="quiz-step-three__text">
+                        <h4>Active</h4>
+                        <p> Perfect for longer rides, commuting and errands.</p>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="quiz-step-three__item">
+                      <input type="radio" name="check-icon" id="item-3" />
+                      <label for="item-3">
+                        <span class="quiz-step-three__icon"> {% render 'icon', icon: 'bike-3' %}</span>
+                      </label>
+                      <div class="quiz-step-three__text">
+                        <h4>Adrenaline </h4>
+                        <p> Perfect for sporty and adventurous riding.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-pagination quiz-step-three__pagination js-quiz-pagination"></div>
+              </div>
+            </div>
+
+            <div class="quiz__breadcrumbs quiz__breadcrumbs--three">
+              {% render 'icon', icon: 'flag' %}
+            </div>
+
+          </div>
+        </div>
+
+        <div class="quiz__step quiz__step--four step js-step">
+          <div class="quiz__content">
+            <div class="quiz-step-four">
+              <a class="btn__start-over js-btn-start-over" href="#">{% render 'icon', icon: 'back-arrow' %}Start
+                Over</a>
+              <a class="btn__close" href="#">{% render 'icon', icon: 'close' %}</a>
+              <div class="quiz-step-four__inner">
+                <img src="../assets/image2.svg" alt="">
+                <h2>How tall are you Etan?</h2>
+                {%- render 'range-slider' %}
+              </div>
+            </div>
+          </div>
+
+          <div class="quiz__breadcrumbs quiz__breadcrumbs--four">
+            {% render 'icon', icon: 'flag' %}
+          </div>
+        </div>
+        <div class="quiz__step quiz__step--five step js-step">
+          <div class="quiz__content">
+            <div class="quiz-step-five">
+              <a class="btn__start-over js-btn-start-over" href="#">{% render 'icon', icon: 'back-arrow' %}Start
+                Over</a>
+              <a class="btn__close" href="#">{% render 'icon', icon: 'close' %}</a>
+              <div class="quiz-step-five__inner">
+                <img src="../assets/image3.svg" alt="">
+                <p>Last question... are you interested in our <span> step-through models,</span> for easier mounting and
+                  dismounting? </p>
+                <div class="quiz__cta">
+                  <button class="btn btn-solid js-step-disagree"> NO</button>
+                  <button class="btn btn--machine-fill js-step-agree"> YES</button>
+                </div>
+              </div>
+              <a class="quiz-step-five__link" href="#"> {% render 'icon', icon: 'warning-3' %} How does this affect my
+                ride?</a>
+            </div>
+          </div>
+
+          <div class="quiz__breadcrumbs quiz__breadcrumbs--five">
+            {% render 'icon', icon: 'flag' %}
+          </div>
+        </div>
+
+        <div class="quiz__step quiz__step--six step js-step">
+          <div class="quiz__content">
+            <div class="quiz-step-six">
+              <a class="btn__start-over js-btn-start-over" href="#">{% render 'icon', icon: 'back-arrow' %}Start
+                Over</a>
+              <a class="btn__close" href="#">{% render 'icon', icon: 'close' %}</a>
+              <div class="quiz-step-six__inner">
+                <img src="../assets/image4.svg" alt="">
+                <h2>Thanks, Etan for taking the time to fill that out. </h2>
+                {% render 'input-field',
+                label: "",
+                inputType: 'text',
+                text: 'Enter Your First Name',
+                inputId: '',
+                inputName: 'properties[]',
+                classes: ""
+                %}
+                <div class="quiz__cta">
+                  <button class="btn btn--blue-fill js-step-agree"> VIEW RESULTS</button>
+                  <button class="btn btn-solid js-btn-start-over"> Start Over</button>
+                </div>
+              </div>
+              <div class="quiz-step-six__checkbox">
+                <div class="checkbox checkbox--quiz">
+                  <input name="contact[offer]" type="hidden" value="offer">
+                  <input type="checkbox" id="offer" name="offer" value="offer">
+                  <label for="offer">
+                    <div class="check-wrapper">
+                      {% render 'icon', icon: 'checkbox' %}
+                    </div>
+                    Receive exclusive updates, offers, tips & guides from Magnum HQ.
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {% endif %}
+        {% if form.posted_successfully? %}
+        <div class="quiz__col-right quiz__col-right--step-seven">
+
+
+          <div class="quiz__succesfully">
+            <div class="quiz__succesfully-image-text">
+              {% render 'icon', icon: 'agreement' %}
+              <h2>You’ve successfully Registered quiz & Created Your Magnum Profile!</h2>
+
+            </div>
+          </div>
+          <div class="quiz__btn-wrapper quiz__btn-wrapper--step-seven">
+            <a href="/" class="btn btn--blue-fill u-uppercase back-to-home">{{ 'templates.form.thank_you_cta' | t }}</a>
+          </div>
+        </div>
+        {% endif %}
+        <div class="frame-builder-formular__input-group--cta quiz__btn-wrapper">
+          <button type="button"
+            class="btn btn--blue-fill u-uppercase btn-prev js-btn-prev cta">{{ 'templates.form.submit' | t }}</button>
+          <button type="button" class="btn btn--machine-fill u-uppercase js-btn-next js-quiz-btn" data-step-text="Next"
+            data-step-first="OK, LET’S GET STARTED"
+            data-final-step-text="View Results">{{ 'templates.form.next' | t }}</button>
+        </div>
+      </div>
+      {% endform %}
+    </div>
+  </div>
+</section>

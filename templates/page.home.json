@@ -1,0 +1,61 @@
+{
+  "sections": {
+    "home-hero": {
+      "type": "home-hero",
+      "settings": {}
+    },
+    "home-carousel": {
+      "type": "home-carousel",
+      "settings": {}
+    },
+    "home-mission": {
+      "type": "home-mission",
+      "settings": {}
+    },
+    "home-gallery": {
+      "type": "home-gallery",
+      "settings": {}
+    },
+    "find-perfect": {
+      "type": "find-perfect",
+      "settings": {}
+    },
+    "home-service": {
+      "type": "home-service",
+      "settings": {}
+    },
+    "home-text-image": {
+      "type": "home-text-image",
+      "settings": {}
+    },
+    "home-stories": {
+      "type": "home-stories",
+      "settings": {}
+    },
+    "testimonial": {
+      "type": "testimonial",
+      "settings": {}
+    },
+    "home-shop": {
+      "type": "home-shop",
+      "settings": {}
+    },
+    "introducing": {
+      "type": "introducing",
+      "settings": {}
+    }
+  },
+  "order": [
+    "home-hero",
+    "home-carousel",
+    "home-mission",
+    "home-gallery",
+    "find-perfect",
+    "home-service",
+    "home-text-image",
+    "home-stories",
+    "testimonial",
+    "home-shop",
+    "introducing"
+  ]
+}

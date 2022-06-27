@@ -1,0 +1,37 @@
+{% assign object = section.settings %}
+{%- assign _image = section.settings.image -%}
+
+{%- if _image != blank -%}
+  <section
+    class="hero-landing{% if section.settings.enable_dark_overlay %} hero-landing--overlay{% endif %}"
+    style="background-image: url({{ _image | img_url: '1920x' }});"
+    aria-label="{{- _image.alt | escape -}}">
+    <div class="container container--small">
+      <h1 class="hero-landing__title">{{blog.title}}</h1>
+    </div>
+  </section>
+{%- endif -%}
+
+{% schema %}
+  {
+  "name": "Blog hero",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Hero Image"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_dark_overlay",
+      "label": "Enable dark overlay",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "Blog hero"
+    }
+  ]
+}
+{% endschema %}

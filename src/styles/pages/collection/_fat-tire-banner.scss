@@ -1,0 +1,58 @@
+.fat-tire-banner {
+  padding-top: rem(90);
+  background-color: $grey-light-7;
+
+  @include media-breakpoint-down(sm) {
+    padding-top: rem(40);
+  }
+
+  &__content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-bottom: rem(102);
+
+    @include media-breakpoint-down(sm) {
+      padding-bottom: rem(25);
+      flex-direction: column;
+    }
+
+    h2 {
+      max-width: rem(365);
+      font-size: rem(40);
+      line-height: line-height(40, 56);
+      font-weight: 700;
+      color: $machine-grey;
+
+      @include media-breakpoint-down(sm) {
+        margin-bottom: rem(12);
+        max-width: rem(246);
+        font-size: rem(24);
+        line-height: line-height(24, 34);
+      }
+    }
+
+    a {
+      font-size: rem(14);
+      line-height: line-height(14, 32);
+      font-weight: 700;
+      color: $magnum-black;
+    }
+    .icon--arrow-up-right {
+      margin-bottom: rem(5);
+    }
+  }
+
+  &__image {
+    @include media-breakpoint-down(sm) {
+      min-width: rem(528);
+    }
+    .media-wrapper {
+      padding-bottom: 46.3%;
+
+      @include media-breakpoint-down(sm) {
+        padding-bottom: 46.4%;
+      }
+    }
+  }
+}

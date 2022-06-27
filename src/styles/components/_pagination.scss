@@ -1,0 +1,38 @@
+.pagination {
+  font-weight: 500;
+  font-size: rem(16);
+  margin: rem(53) auto auto auto;
+  display: table;
+
+  @include media-breakpoint-up(xl) {
+    margin-top: rem(30);
+    font-size: rem(21);
+  }
+
+  * {
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+  }
+
+  .page-numbers {
+    color: #666666;
+    border-bottom: rem(2) solid transparent;
+    transition: $t-hover;
+    margin: 0 rem(23);
+
+    @include media-breakpoint-up(xl) {
+      margin: 0 rem(26);
+    }
+
+    @include hover() {
+      color: $primary-color;
+    }
+
+    &.current {
+      color: $primary-color;
+      pointer-events: none;
+      border-color: $primary-color;
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{%- assign current_variant = product.selected_or_first_available_variant -%}
+
+{%- capture form_classes -%}
+  product-form product-form-{{ section.id }} js-product-form
+{%- endcapture -%}
+
+{%- capture form_ids -%}add-to-cart-{{ product.handle }}-{{ collection.handle }}-{{ section.id }}{%- endcapture -%}
+
+{%- assign inventory_management = current_variant.inventory_management | default: '' -%}
+
+{% form 'product', product, class: form_classes, novalidate: 'novalidate', id: form_ids, data-inventory-management: inventory_management  %}
+  {% comment %} Option selection start here {% endcomment %}
+  <div class="js-product-select-wrapper" style="display: none">
+    {{ 'option_selection.js' | shopify_asset_url | script_tag }}
+    <select id="product-select" name="id">
+      {% for variant in product.variants %}
+        <option
+          value="{{ variant.id }}"
+          inventory-quantity="{{- variant.inventory_quantity -}}"
+          {% if variant == product.selected_or_first_available_variant %}selected="selected"{% endif %}
+        >
+          {{ variant.title }} - {{ variant.price | money }}
+        </option>
+      {% endfor %}
+    </select>
+  </div>
+  {% comment %} Option selection end here {% endcomment %}
+
+  <div class="product-details__color-variations" {% if product.variants.size > 0 %} style="display: none" {% endif %}>
+    <span>{{ current_variant.title }}</span>
+    <ul class="js-color-variation" data-option="option{{ product.options_by_name['Color'].position }}">
+      {% liquid
+        for color_option in product.options_by_name['Color'].values
+          assign active = false
+          if current_variant.title contains color_option
+            assign active = true
+          endif
+          render "component-color-swatch", name: color_option, selected: active
+        endfor
+      %}
+    </ul>
+  </div>
+
+  <div class="product-details__product-quantity u-d-flex u-align-center u-justify-between">
+    <div class="product-details__price">
+      <span class="old-price">{{ current_variant.compare_at_price | money_without_trailing_zeros }}</span>
+      <span class="price">{{current_variant.price | money_without_trailing_zeros}}</span>
+    </div><!-- /.product-details__price -->
+    <div class="input-increment input-increment--accessories  js-input-increment disable-decrease">
+       <button type="button" class="input-increment__cta js-number-decrease">{% render 'icon', icon: 'minus' %}</button>
+       <input class="input-increment__number js-input-number" type="number" id="Quantity-{{ section.id }}"
+         name="quantity" value="1" min="1" pattern="[0-9]*" />
+       <button type="button" class="input-increment__cta js-number-increase">{% render 'icon', icon: 'plus' %}</button>
+     </div>
+  </div>
+
+  {%- render 'product-details-button' with mod_variant: current_variant -%}
+
+  {%- render 'json-product' with mod_item: product -%}
+{%- endform -%}

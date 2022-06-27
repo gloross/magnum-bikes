@@ -1,0 +1,61 @@
+{% assign object = section.settings %}
+<div class="about-bikes">
+  <div class="about-bikes__title">
+    <h2>{{ object.title}} </h2>
+    <p>{{ object.description }}</p>
+  </div>
+  <div class="about-bikes__image">
+    <div class="media-wrapper">
+      {%- render 'img',
+      img: object.image,
+      img_sm:  object.image_mobile,
+      img_md: '',
+      img_lg: ''
+    -%}
+    </div>
+  </div>
+  <div class="about-bikes__text">
+    <p>{{ object.description_bottom }}</p>
+  </div>
+</div>
+
+{% schema %}
+  {
+  "name": "About Bikes",
+  "settings": [
+  {
+    "type": "text",
+    "label": "Section title",
+    "id": "title",
+    "default": "Our Bikes"
+  },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Text content",
+      "default": "Magnum stands for pushing the limits and setting the bar higher. At Magnum Bikes we believe in our brand and stand behind our product. Magnum produces the greatest electric bikes at the highest level of quality with the ultimate design and comfort."
+    },
+    {
+      "type": "image_picker",
+      "label": "Image",
+      "id": "image"
+    },
+    {
+      "type": "image_picker",
+      "label": "Image Mobile",
+      "id": "image_mobile"
+    },
+    {
+      "type": "textarea",
+      "id": "description_bottom",
+      "label": "Text content at the bottom",
+      "default": "We work with top brand name bicycle components including Schwalbe, Tektro, Promax, Hesling, 8Fun, Samsung, Selle Royal, Shimano, RST, Wellgo and many more."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bikes"
+    }
+  ]
+}  
+{% endschema %}

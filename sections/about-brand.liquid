@@ -1,0 +1,53 @@
+{% liquid
+  assign object = section.settings
+  assign blocks = section.blocks
+%}
+<section class="about-brand">
+  <div class="container container--small">
+    <div class="about-brand__inner">
+    {% for block in blocks %}
+    {% assign b = block.settings %}
+    <a class="about-brand__item" href="{{b.url}}">
+      {%- render 'img',
+      img: b.image,
+      img_sm: '',
+      img_md: '',
+      img_lg: '',
+      m_width: '500'
+    -%}
+    </a>
+    {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+  "name": "About Brands",
+  "settings": [
+  ],
+  "blocks": [
+  {
+    "name": "Item",
+    "type": "block",
+    "settings": [
+    {
+      "type": "url",
+      "id": "url",
+      "label": "Brand URL"
+    },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Brand logo image"
+        }
+    ]
+  }
+],
+  "presets": [
+    {
+      "name": "About Brands"
+    }
+  ]
+}  
+{% endschema %}

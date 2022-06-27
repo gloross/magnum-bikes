@@ -1,0 +1,71 @@
+.wishlist {
+  &__modal {
+    font-family: $headline-font !important;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: $pampas;
+    padding: rem(85) 0 rem(55) 0;
+    width: rem(615);
+    z-index: 99999;
+
+    &.is-active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &--overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 9999;
+
+      &.is-active {
+        display: block;
+      }
+    }
+
+    &--login {
+      position: relative;
+      text-align: center;
+
+      p {
+        font-size: 14px;
+        letter-spacing: 1px;
+      }
+
+      p:first-child {
+        margin-bottom: rem(55);
+      }
+
+      a {
+        text-decoration: underline;
+        letter-spacing: 1px;
+
+        &.bold {
+          font-weight: 700;
+          text-transform: uppercase;
+        }
+      }
+    }
+
+    &--close {
+      position: absolute;
+      top: rem(15);
+      left: rem(15);
+      width: rem(20);
+      height: rem(20);
+      background: url('//cdn.shopify.com/s/files/1/0032/1162/4494/t/71/assets/close.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center center;
+    }
+  }
+}

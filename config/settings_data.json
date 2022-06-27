@@ -1,0 +1,706 @@
+{
+  "current": {
+    "v_color_1_title": "Black",
+    "v_color_1": "#000000",
+    "v_color_2_title": "Sand",
+    "v_color_2": "#f7ead1",
+    "v_color_3_title": "Desert Camo",
+    "v_color_4_title": "Urban Camo",
+    "v_color_4_svg": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"27\" height=\"26\" viewbox=\"0 0 27 26\" fill=\"none\" xmlns:xlink=\"http:\/\/www.w3.org\/1999\/xlink\">\n<circle cx=\"13.5\" cy=\"13\" r=\"13\" fill=\"url(#pattern0)\"><\/circle>\n<defs>\n<pattern id=\"pattern0\" patterncontentunits=\"objectBoundingBox\" width=\"1\" height=\"1\">\n<use xlink:href=\"#image0_454_8655\" transform=\"scale(0.0169492)\"><\/use>\n<\/pattern>\n<image id=\"image0_454_8655\" width=\"59\" height=\"59\" xlink:href=\"data:image\/png;base64,iVBORw0KGgoAAAANSUhEUgAAADsAAAA7CAYAAADFJfKzAAAWAElEQVRoBW2b53LcSJaF66E3ZqYliuW994ZVRYqkTLfULUNRdCJlWtOzsftQd+M7wIHQiv1xA0AClchzz3WZiSo83Z\/HfLKK4+U+zk6exfH2NNarXcxX25jMN5Llchfr9XFwXCy2ktnsKObzozg6OonNahfD7jBq5WL0qtWYdruSfrcdw343xoO+jr1OK0a9QUyH45gMRjHo9KLbakev1Ylxf6g27vfbXcmo1dE9nkMa1UY8eXSod719cxlfPn2P+5svcf3xLm6vPsXd9X1yvHqIT9ef4+H2q+7fXN7Hx\/c3UdiuTmIz2cRuvovz7XnsN6exWu1jvtrFdLGJ2XIroJvNicACUEBna4GlfXd0EvPJIvr1psCOW62YtNsx6HUyAajA9nsC+zdQvUHMx9NYzeYCbQV0mq1o1erRrjcEGqVUDotRr9Tj\/Ol53F09CBBAfwbLPQAjgL3+8CkKm8UutrNt7Bf7OFmdxHZ1LHCAnS2PxCKMogBYBSiymG8ylgG7Xm4DJtqlUnTK5RjU69FpNQQQhjlHUAAsAnbY7UvybAO0Wa1Fp9GU1MsVXcM2z9dK5Tj45UnMxvN49\/tlwt7dl4xVAf\/4ELf\/jxQwwdXiKI4XO5ky58ucAAo2AWpWacPUOU6nmzha7tVHr93TYDDnVr0a7WYCGJCtRk3CuQcOSAQThTWYhEWE806zk53zDM82KtX453\/9K9qNdrx5fSFTfvj0VczefEwYNqMGDMucF8wKICXzTcyma4nYm28yXzWrKGO13OqZ6WQdWIeY7Y1kdgCz2XbbTYE2cB0bTfkqTBksjCL2V8CjPEDynI+teit++cejaBfr8fbl2\/h6\/z0Ai99eXd4GgPFjBICYMGARgRW7MDhZxXy2FmMA9rnNF2CwC1grZMpv5kex3RzHcrZMAk6npaA0GQ4CEzZQFCBzTsECDBAGYvOmHeBu52hFoACCVKvYjJcnLzMzBuzlxbVAm1n89OriVv4qZvFFmeFsG4tpAhTWAAQIzFQBaZ5c+xw\/dtCij+32aazmm+i2ujJBIu5iOhZo2IVtjjBmFsVeq5NE3n4vedY+22xlpm3\/5XkUUXtcjVaxpexBBP50+zljFtCwiQCUKAxorgsMdD3fxmq2lRnji4DN+6pTDkcLQLfb09jtziSARVn4GeJUArMC2WllJmrGeMbnpCJM2n4LKMwXxThgcR\/AxYNSDOq9+PX567i\/+yIhMGHCiMFdfbgLxKacgQUw5gxYWDVYKWN9nEVe51mOZhfA5GfAYmaIBworDBymZ6OJcinAENINsphMdR8ggOXI7xeDkY5ittmSAgleh48ex2Q4jQ\/vr+Lz\/TcxC1hYRTBZpxzAAj4zY1g1WIBaAARYWOQcn3Ub5mwTJ12dbM9lxv1OX2BhxOYHe4A1OEDDKm3L6Uz5FdYUhVPl8JtZbyBRSqs3xDKpiFy732wFAGbvbh6Uesyso69MGXZTvy1QGS0mG4kC1XIrM16v95nJwqD9F\/AwiQLUlkZjwC5n62g3e0HETHw38U\/7Gmw5CHGOABKBfZTjtDNstmPQaCl3c+xW60o7pYMnAv365a9Z1JXppqxyDot5gVmkwKBhdTk9iqP1XkCJwphzHhBMAvro6Gnqo6e6dvtu\/VTRvFFtR7VUFVj7I0cLoAze5460PKPzelPVWKdSi16toXPAt4rFKD85jPViHR8vPsbD3besHHTake9e3mdg8yyLWcyQXAmz+OpkvNTR5jsZr2SyXAOWI+J6mSPtMNttD1TOkfTNmk3253oYZg2Yc+5PYb\/dFaPDRiPyAliU8duLV\/JTwAJGgegiybF5sA5UmLOiMT5I6gEsRYUC02wtv8VkYRPfRLh2W\/4coERmci1BCr\/FjA0ExgCMcG5mrQyzzjV+Ou8PFZwWg4EmFNTalKH1g4PYzhYqHigmKBwMVIEonRAYHGAdoGTGgEEMEj9E1Jb6LdcUERQQmK2ZBDDnPpJ+nG+JyBTx+CFsADApAVuZr1Inq25u4uPJM4AF5GYyjtVoEvN+PwbdZpSePJbPPj97rorp+\/13BSXMVxE4TT2OyE5BUkYakWXGm81xVus65Qg0aSid1rlioh2AmHGeXSyEoHa8P5fvwyyRE4AAATTgAY25KiIP+poY6H76HOwCdj0e6QhY8nS1dKjo\/f7NZXx9+DO+XCdTO8ApKKUzH87tvzBsdmXGDJg5KaIITCmYphVMF3A849xrgGpL57mAByyKUj\/LrQp1wJoxjpi1THU0UbpZzX\/kV+7b3HkGkMyLJ52OJhUo6+zkTL76+dOfcZ\/OUWGOyIvvIgbIEf+lwrIyCqpt0+jrgoJojAAasAYCYJutleBgxTO6z9RwvIxmLWESEAYMCKcbCon1fCGGaUN+TkuApZauFksxHc1CrN5\/zwoGSkGDBTAA8+LJvM28MBzOYjRchCLuJAHIoFUyUkgQnCaJv8KcGU3M9oc5c407kL6GvUnUyjXlTIDKV9NiweewSFFhwbQBDPuAdrVFqYiFnB6fylf\/\/PzX3xh0ADJIXyvPXiUm\/fHDjdgtDIfzBExa8OOjsIfAXgI0mfKJ8TR42ZzNNAzvKTZWu+h1hko\/+C0A8FOvOFA0ICiBe4CksgK0ozSsM4PiHmDHg0lcvL2M71\/+o9yKHyIAsk\/alKmWEDOt67Q+LsCoATJgUoiDD2ARmTNmzTx3lkRqQMp0U+XwO4IT6YtcSzQe98diCWAG64AFMNjFtAHF0T69mC60EkGuZlLBEgxlIekGcJfvrjNABoy\/Ug8bPEzDMsI5zxUAA0vOlQAFvIFyD1CwihlbMbQZOG08B7OAhdlBZyBGAO0S0PnUDMIsIGl3W6KAkZRVPqzFqDeKd3+8VwRmAQ2mBPbDncwZgGbRpsw14PPAudash8GaJQFzUEpXEgHu+ygDVvFlmMa\/uU8fmubNNxoojMCUfLSZ5FYXFTBt36TNvgpghMhLsc8kndKQQPPt4d8qIgBAMQFwM3l3cRe37xPz5b4VwLkVwFFgGawCUVop5aNwnmGbrp81WJ6nzakLX3WAAixsYaqIFeA2Zj34qNkFLL9lUa1Z78Tvr97GX9\/+J75\/\/W+xZX8E7PVVYqqARRycAGYTNrtaSoURBmuAGvhk\/ffonPolzxqomKa8TM0Z31e0Xm5VKjLBhh1PvGHTjAIMRpV+FktN88wuFsFviweVODs6Cyqlv779b9zf\/hnvfr+Kl+ev49mzV\/HHHx\/iw4dkyQVAgNUxzbUKTOnUDuAZWLPngROBGfx4tJQSYBQxgzzPswKcuoDmuiyvzjeqjZn5kB9ZDWT5k6kZ1zANsOEwmc8ShSkbvTZFfj58XI5Wo6sFtT9v\/x1Xb27i+dnrOD46k7ug8M3+LH7\/\/ULs2j9hFBNXsErrYrONIgqwZbBm2Cy73WnG92nnhRy5Rx8AJzcTyEgVFooBwAG6VCpFtVKKRr0a9VpFEbpZq6gUPHzyOMrlcrRYbOuOpLRnT1\/Gi7NXsV2dxny8llAEDcbzmC6O4uzFa4EF4KcUHMFJAQqzTtOQASsa2zTzYAAAmwbCPQPMswpgAU1LSsASkSkumAVtd8exOcJVZmKz3W5Hs1ETWIoFACJ1FtU7nVgsVln5ypSRhQXm2ggLeooLm30s1vs4ffabTJmABFj7rSO2KqwUsMxYLFEhTZMVfq4BBkizxj3MmnbabNY8k2\/nPmApLADLwFRVUXtv9wK9XLK0w\/yYrY5xDEeTmM0Wur8\/Pond0\/PYHp9pNwIWcQspbXOsfklvJyfPY719Gvvdebx6dRHXHx7i4fJL3KdFBsAu3lxlKSrzWbMECHItRwZNO6AyZUzWUoDzMM+gBPyaZ2nnyPOsfLBo7iVZ5efFUQZ8tzuNPSsea6yHZZ7TODt9Efunz2K9O43V0UlMNuw3JTMpFAZglMh7KGDW66cxm+3i7OTXuH33Kb5cfYvPKcOAff\/HRwGWKafrUPJZAwUcA85MeEG5uBJ7AvFTGTmarbJFOAah1Yo0BtAnkpWbqQJpy1uG381vk820I4E9Oj4XKO4zJo4+ZyzIaLSO1eok3rx6H5+vvsbDxy9x9\/4+rt\/cxoe3V3H9Nqm0ACwzpgOzBVMwBlhE7GkSkOwE5F9oFvPK4T6\/QThnQDCPqXNOn\/4d13kXQAHsGBJ4lkwojs+11sVvUJj75Jrf0s90mqx4svP4+28XcfP2TmA\/XvzYCSBCv39\/rVRV8GDpALB5oQ0xAJ7NS77EBBz3eJbfGJj7417+HckzrHIkiwCyqvVeYNkXBjigpYA0pmR9UrVpD3mnGdtgMIvl8jh+ffYmPry7Veoh\/eCrl5d3AvvmzWUUzCaDoTMGa0268zxYDThlmwGyrIoP+bf0QzvgOdLObxD1nVoPzwHUz3ANq+P5OgaTZeAiALVp024l0M41z\/Ncuz+JTm8Wi8U+Xr58qxKRCO2ofHFxo\/MCAzBQg0sG8mOwPMNgbZryw9yg7QY8Rx9cA4J+pJz0We7nhXtWBibNwAGRB0aKAdRwmtxP9o23UghtKADlABihv+fPX2s7E7\/FVxGAK8\/yAGKQgOKaARvIz\/d4hoEzSN\/j6L44mk2D4j6\/sTXZxOkDGc8tawEHiNkGmMHRnhfae6O5wDa7I8UJxvfbi7fyYdLSzbubH2AN0INkgHmwXBsMz\/p5s+x7\/n3+mjY\/nwdrFs2k38FvOZcyJgnTedD0QX98GYA1wCyA++NFtHuj6HRGgR\/v1mfx7uVFfLp4UPBKNrbSlMKgzBYvo0NeTBtCG+Jz3zNg3+dosB6475lN\/Wa+i9mCQScfq3CPdxL4sCh+Qxv3MWfYRDHuH6AABGiiMBSTWAD9Twar2M9P4s3zd3H1x00U9vsXcX7yIti+GA9m0Wn1YzKca+Ec8H4BL2QgGkCaCv4GIA1aVgT3+C2McGRA9kmfL4jEm9OYznfRHSyi05\/HeJwsEGjPmPKQAoXtmZyraQzTTbCkBIOsodkF8u\/s02d3GovpLn57+joKLKUknwcttG5UelKNfmekD0nQLoOnAzRrpg2SYx5c\/hxG\/GK0bqC0uZ0KazxaRKs1iHK5FaVSM+r1XnQbg+i3RjHsTGLQHsewO00AjRZ6nu0Z5tL4OYAl0ySCY9I2a3I8yuD3TCQKrPd4YevgX79odYCdOIpufyaEKQLUYAEFYxwR7iO+\/lkZDAqzot39oAzmt0z7Dh8Xo\/SkFCzDIMxlq48qUTqoRfFxVW18DlSrN6PeaEWn20\/AphbjwoXjD\/C8k2nqInq9SbTbwyiwPlSvlKJ4eBBMs5h7stA16I41e9F3UunqP6bEINEc7NjHAQkQA+YZA+YeQDkCVGXhbB2NRjcOfvlnPP7XPzTXZQrIR12VYkWT9\/rjsua1KIE2lMIOXrFYFOgBy7Cp6\/A+zjHnfn+aMp1E9v5oFq3eWFJgks2ckjkmwvoPCuDl+C8b1TC83pwKDP42mCzErMEaXB4s4JgA0KbBaNkm2WZh9fHJo1JgSaxmaE8o\/SwIZSNM\/xDdazQ1Rj45qhSfZIT0+xMxh0kD1j6M6RK4cJ3ucBb1\/iRao3kUWBlgXYj9FL5qMdDy4YE+v5l2J8l25jLx38T3ki1MpnNmlaMA2qTTr21sDQyGxTmCIExhul6yQcEIH5lgZYhA+vupelVbIJACYK2AVBua6LPIz86hJyz2U0dprLBNSpqkYFlJ0Gc7aLBai0a1rBey2z2od2JGKTZJTHNC6J8lmkSjP4MFHGwSRBRIcibOgFhEY42pVSwnS6wAbTUyZQPUH43RzsdjXLsdZhEAQxRzYib5fNbEGLEiAR7P5W4OVqxuFMqH5WQvJv2ahTUiNNxuVKJdrordbqUb4\/48MUm+Z0ST8pNkQg84\/NFmrWpoxJZKApj7RPbBYKpAVHtUCnbVAcK7tP7UasiyzJ7YTb+Sg2UIALSlePBIgFlXXs1XYhfAKB8rAhz+igynFB3LKLAQxgvYJ2XVD8Gk6BxTRhy0Rv2pAg+gCED2RepVZihqS4MG5u50Q9qiGut0hlF8nPSH2wDUgDkqdlTLejfvx620f5uas9ysWRfLh49\/EXAyCWDZTJNMk4kE5SOCOcNuZzCNAubAi6xd0gFg0ayCASZUxldqMkEKjix9oEl8Ux91JnNLtCrtagazUiCDVYIVaYOIClNeUZQVNesag9nMvoTjO8fcR560A5i9WpjleVYnSZNidbyU7wIOoEkwTc6JyEo9dGBzIkDJbyuJiWkwaRu5jnVdALPs4i1Oci6STzcu37SNuT5W1KxUajI9lOt3mi2bL0rnM0Ar4+fn+C0g2YnHpFl\/1ucR07V8lbyqYkNZI2G00RlGoz2IgqOwBwBQBNC8OP8y2omkCgxMmFlVoJ7mo820nLTfApaABKMohaiJdWBJDBaxqaJQzhHGM+onez+0My7EyvDvYBeLY0+JAIUQmAwW8yXtMO2DVWZDBXfol3GtIFWrZ+EfwPYn5b9KXYUHJR0m60UyMUxBMWOi\/QMsZWGvP0zdoZgB07taDfVN\/ygXsLxf6Sj9RtlsOipbWY4lWBpLrbgQCuboKR+AAQ7ogpnjZXTKyxAxXKuIWZ6xMmAcAXS13FTQwWcBDLvyWerWebLFCVDYZf8nSRcJKIDZB3kv1\/in3YijxpLGELVT\/OSiMv6Plcmt5knxotJ0ulFwNLsEJzGLb\/BSOnZgABydc2QQiCzAaSL9nB0fxg+bnUHCJL6blor6Cp2d+vS7ZL56SwZXSd7H3g8spv3r3Wm\/lI3am02rOYImG16MAbAwC8tUXzw3HS1U6aFoqijMWfl2vhaj+Ct+W+C7Be299JMqCi3nQXowtBlwdr\/ZikqlEqVKLeqtnnyEF5JXYZuozZov\/gRYPrDE1\/g9yrQZA5pzxwqeRaRwYgeFh74sT2qAjN1SWc\/xWQPvFcB0MgDDRGX8FaBiln9mOLwDlI48iAyUA1Xqx2haKcoDqJEOqlGrtqPV6muWwYsBy2IcqcHMwki3UtH\/COQ6FDApeIFKPyGiNsdVXBubXZTPGMn\/qqvrbJTxZesmSUGzZDqJrzLb6XaTSYDyLGaMZnmhmEuZ9TWdc18ml9awDiCYFkUIA2FwAkzErbSi2WRPdqHKhpKOYKItzDQ2MGCE96hvzDkFqoqJWVClKnatXN5nsFgIMQAzprpjwkKQcnDEX81oFo3xFfusTZZjHjjXDMqax7w4xyIUVIjW1NQALpIDmZsCJvkmgiBCO+AMzNZD3x4D\/eYB2oz1PltRan1KQSij0ZZS9TniLAmQmDDMEksk3VHUmr0o+GUGlNc0Zu0oLfCpGdu0bP6AsK9zDjBYFGCKk\/R3UliqOEArKKWWwzn31VeN4oV\/f7QyJboPxgNQmMVaUCRlrL6En22zRXPMtjGcaAGOAHVYbv5IPRmw9J8bDCbzYVc8tR8MZsGENkyTAiCdojkfwhLPYQX0Bxj6RMwwbWonQNUoWH6kF34LSFsN\/aEM+sdnAcx9FhpYdsFvmcBrKWY4j95wqgBVqXfi0UE9\/g9LymgXQJQZuwAAAABJRU5ErkJggg==\"><\/image>\n<\/defs>\n<\/svg>",
+    "v_color_5_title": "Blue",
+    "v_color_5": "#1663e6",
+    "v_color_5_svg": "",
+    "v_color_6_title": "Grey",
+    "v_color_6": "#4B4B4B",
+    "v_color_7_title": "Forest",
+    "v_color_7": "#093b19",
+    "v_color_8_title": "Tan",
+    "articles_limit": 5,
+    "mega_menus": "e-bikes|shop|learn|why-magnum",
+    "faq_left_links": "General information,Battery,Display settings,Troubleshooting, Miscellaneous, Warranty,",
+    "social_facebook_link": "https:\/\/www.facebook.com\/magnumbikes\/",
+    "social_twitter_link": "https:\/\/twitter.com\/MagnumBikes",
+    "social_linkedin_link": "",
+    "social_youtube_link": "https:\/\/www.youtube.com\/c\/MagnumBikes",
+    "social_instagram_link": "https:\/\/www.instagram.com\/magnumbikes\/",
+    "social_tiktok_link": "",
+    "favicon": "shopify:\/\/shop_images\/Favicon.png",
+    "klaviyo_public_key": "Xjgejj",
+    "klaviyo_newsletter_embed_code": "<div class=\"klaviyo-form-S2un5A\"><\/div>",
+    "bis_list_id": "Y6P5wG",
+    "bis_continue_shopping_url": "shopify:\/\/collections\/all",
+    "checkout_logo_image": "shopify:\/\/shop_images\/logo.png",
+    "checkout_heading_font": "Roboto",
+    "checkout_body_font": "Roboto",
+    "checkout_accent_color": "#8a9093",
+    "checkout_button_color": "#26bbee",
+    "checkout_error_color": "#df5265",
+    "sections": {
+      "header": {
+        "type": "header",
+        "blocks": {
+          "4c3e8c5c-97b8-40c0-97c2-871012630d22": {
+            "type": "type-1",
+            "settings": {
+              "menu_handle": "e-bikes",
+              "bg_image": "shopify:\/\/shop_images\/Jumbo_Menu_Hovers_-_Touring.png",
+              "by_category_text": "By Category",
+              "by_use_text": "By Use",
+              "menu_by_category": "e-bikes-by-catee",
+              "new_tag": "mountain|touring",
+              "sale_tag": "",
+              "menu_by_use": "e-bikes-by-use",
+              "view_all_url": "shopify:\/\/collections\/e-bikes",
+              "view_all_text": "view all",
+              "right_heading": "Everyone has a perfect Magnum match.",
+              "right_description": "Shop our e-bikes by category, by use, or browse our entire lineup to narrow down your selection.",
+              "right_cta_label": "",
+              "right_cta_url": ""
+            }
+          },
+          "8df76ced-bd29-4d88-bd66-1a8ee36c14fc": {
+            "type": "type-2",
+            "settings": {
+              "menu_handle": "shop",
+              "bg_image": "shopify:\/\/shop_images\/Jumbo_Menu_Hovers_-_Shop_dd9beb4b-c20e-4a58-9812-6a345a6b9482.png",
+              "title": "Make Your Ride Complete",
+              "view_all_url": "shopify:\/\/collections\/non-bike",
+              "view_all_text": "view all",
+              "tab_1_title": "Parts & Upgrades",
+              "tab_1_menu": "parts-upgrades",
+              "tab_1_url": "shopify:\/\/collections\/parts",
+              "tab_2_title": "Gear & Accessories",
+              "tab_2_url": "shopify:\/\/collections\/gear-accessories",
+              "tab_2_menu": "gear-accessories",
+              "view_all_url2": "shopify:\/\/collections\/parts",
+              "view_all_text2": "view all",
+              "view_all_url3": "shopify:\/\/collections\/gear-accessories",
+              "view_all_text3": "view all",
+              "tab_3_title": "",
+              "tab_3_url": "",
+              "tab_3_menu": ""
+            }
+          },
+          "52874e33-65d2-4183-9937-3b942515e251": {
+            "type": "type-3",
+            "settings": {
+              "menu_handle": "learn",
+              "title": "The Magnum Academy",
+              "cta_url": "shopify:\/\/blogs\/learning-hub",
+              "cta_text": "Go To academy hub",
+              "slide_1_img": "shopify:\/\/shop_images\/CARD1_8x10_ratio.png",
+              "slide_1_url": "shopify:\/\/blogs\/learning-hub\/get-to-know-your-e-bike-battery",
+              "slide_1_text": "Get To Know Your E-Bike Battery",
+              "slide_2_img": "shopify:\/\/shop_images\/CARD2_8x10_ratio.png",
+              "slide_2_url": "shopify:\/\/blogs\/learning-hub\/checking-your-e-bike-spoke-tension",
+              "slide_2_text": "Ride Safe: Checking Your E-Bike Spoke Tension",
+              "slide_3_img": "shopify:\/\/shop_images\/CARD3_8x10_ratio.png",
+              "slide_3_url": "shopify:\/\/blogs\/learning-hub\/how-to-remove-and-reinstall-the-rear-wheel-on-your-e-bike-1",
+              "slide_3_text": "How To Remove And Reinstall The Rear Wheel On Your E-Bike",
+              "slide_4_img": "shopify:\/\/shop_images\/CARD4_8x10_ratio.png",
+              "slide_4_url": "shopify:\/\/blogs\/learning-hub\/understanding-your-e-bike-electric-system-a-complete-guide",
+              "slide_4_text": "Understanding Your E-Bike Electric System: A Complete Guide",
+              "slide_5_img": "shopify:\/\/shop_images\/CARD5_8x10_ratio.png",
+              "slide_5_url": "shopify:\/\/blogs\/learning-hub\/how-to-remove-and-reinstall-the-rear-wheel-on-your-e-bike",
+              "slide_5_text": "The Complete Guide to E-Bike Batteries: Care, Maintenance, and Storage",
+              "slide_6_url": "",
+              "slide_6_text": ""
+            }
+          },
+          "572ee45d-7196-4250-b59f-0445ddf616c6": {
+            "type": "type-4",
+            "disabled": true,
+            "settings": {
+              "menu_handle": "why-magnum",
+              "bg_image": "shopify:\/\/shop_images\/Jumbo_Menu_Hovers_-_Why_Magnum.png",
+              "why_magnum_menu": "",
+              "right_heading": "Ride Faster. Ride Stronger. Ride Further.",
+              "icon_1": "",
+              "description_1": "<span>250+<\/span>Authorized dealers and service points across the U.S.",
+              "icon_2": "",
+              "description_2": "<span>10,000+<\/span>Community of Magnum Riders"
+            }
+          },
+          "e2dd8b92-270c-4728-8e89-ebb519e324e1": {
+            "type": "type-5",
+            "settings": {
+              "menu_handle": "stories",
+              "title": "The Magnum Academy",
+              "cta_url": "",
+              "cta_text": "Go To academy hub",
+              "slide_1_url": "",
+              "slide_1_text": "",
+              "slide_2_url": "",
+              "slide_2_text": "",
+              "slide_3_url": "",
+              "slide_3_text": "",
+              "slide_4_url": "",
+              "slide_4_text": "",
+              "slide_5_url": "",
+              "slide_5_text": "",
+              "slide_6_url": "",
+              "slide_6_text": ""
+            }
+          }
+        },
+        "block_order": [
+          "4c3e8c5c-97b8-40c0-97c2-871012630d22",
+          "8df76ced-bd29-4d88-bd66-1a8ee36c14fc",
+          "52874e33-65d2-4183-9937-3b942515e251",
+          "572ee45d-7196-4250-b59f-0445ddf616c6",
+          "e2dd8b92-270c-4728-8e89-ebb519e324e1"
+        ],
+        "settings": {
+          "main_navigation": "main-menu",
+          "show_bar": true,
+          "link_1_url": "",
+          "link_1_text": "",
+          "link_2_url": "shopify:\/\/pages\/ride-now-pay-later",
+          "link_2_text": "Ride Now, Pay Later",
+          "link_3_url": "https:\/\/servicemagnumb.wpengine.com\/warranty\/",
+          "link_3_text": "Register Warranty",
+          "link_4_url": "shopify:\/\/pages\/store-locator",
+          "link_4_text": "Find A Store",
+          "mob_cta_url": "",
+          "mob_cta_text": ""
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "icon_1": "<svg width=\"32\" height=\"32\" viewbox=\"0 0 32 32\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<path d=\"M26.0561 23.9856C27.3517 25.2816 27.3517 27.157 26.0561 28.5209L24.0109 30.5668C23.1933 31.3846 22.2039 31.8628 21.0455 31.9654C20.8404 32 20.6367 32 20.4316 32C18.8631 32 17.4663 31.5565 16.5116 31.1822C13.8871 30.2272 11.501 28.7607 8.90964 26.6138C5.77384 23.9859 3.31993 20.8492 1.58077 17.2689C0.933652 15.8704 0.149362 14.0296 0.0121925 11.949C-0.0903366 10.2787 0.455606 8.91483 1.58077 7.85726L1.61539 7.82263C1.95627 7.51628 2.29715 7.17531 2.63803 6.83434C2.87637 6.56129 3.14934 6.32287 3.42232 6.04981C4.82046 4.72055 6.66065 4.72055 8.02416 6.08444L11.2625 9.32374C11.9096 9.93777 12.2851 10.7223 12.2851 11.5401C12.2851 12.3925 11.9443 13.1771 11.2625 13.859L9.25187 15.8702C8.77518 16.3471 8.02416 16.3471 7.54748 15.8702C7.0708 15.3934 7.0708 14.6422 7.54748 14.1653L9.55811 12.1541C9.76317 11.949 9.86437 11.7452 9.86437 11.5401C9.86437 11.335 9.69393 11.1312 9.55811 10.994L6.28514 7.72005C5.84173 7.2765 5.46758 7.31115 5.02417 7.75468C4.78582 7.9931 4.54749 8.19822 4.30778 8.47128C3.93227 8.8469 3.55812 9.2558 3.11471 9.63006C2.50086 10.2094 2.26252 10.8581 2.33042 11.7785C2.43295 13.4487 3.11471 15.0178 3.6593 16.2112C5.22788 19.4851 7.47678 22.3488 10.3412 24.7357C12.7966 26.7136 14.9778 28.0429 17.3292 28.93C18.7273 29.4415 19.8178 29.6466 20.8405 29.5773C21.4198 29.5094 21.8978 29.3043 22.3399 28.8954L24.3505 26.8842C24.8618 26.338 24.5888 25.9638 24.3505 25.6907L24.3159 25.6561C23.975 25.3151 23.6341 24.9741 23.2932 24.5985C23.0882 24.428 22.9177 24.2229 22.714 24.0191L21.1135 22.4168C20.6368 21.94 20.3292 21.94 19.8525 22.4168L19.3412 22.9283C18.8299 23.4051 18.3865 23.8833 17.9098 24.3948L17.8752 24.4294C17.1255 25.1793 16.3759 24.9062 16.1362 24.8383C16.1015 24.8383 16.0682 24.8037 16.0682 24.8037C15.011 24.3601 14.0576 23.7807 12.8645 22.8604C11.7061 21.9053 10.7167 20.9503 9.83128 19.962C9.38786 19.4506 9.45577 18.7007 9.93381 18.2918C10.4451 17.8483 11.1948 17.9162 11.6036 18.3944C12.3879 19.3147 13.2733 20.1672 14.3306 21.0196C15.1149 21.6336 15.7966 22.1105 16.4784 22.4182C16.8539 22.0093 17.2627 21.6336 17.6368 21.2594L18.1481 20.7479C19.5463 19.3494 21.3865 19.3494 22.7848 20.7479L24.3866 22.3502L24.9326 22.8964C25.3067 23.236 25.6806 23.61 26.0561 23.9856ZM15.6246 8.74422C17.534 9.05057 19.2716 9.97229 20.6351 11.3362C21.9987 12.7001 22.9188 14.4396 23.2264 16.3482C23.3289 16.9276 23.8402 17.3365 24.3848 17.3365H24.5899C25.237 17.234 25.6804 16.6199 25.5779 15.9726C25.1691 13.5858 24.0439 11.4042 22.3049 9.66452C20.5659 7.92499 18.3848 6.80085 15.9987 6.39059C15.3515 6.28803 14.7377 6.73157 14.6351 7.37888C14.5339 8.02752 14.9775 8.64166 15.6246 8.74422ZM26.6353 5.36776C23.8057 2.5387 20.2264 0.663283 16.3063 0.0147426C15.6592 -0.0878168 15.0454 0.355721 14.9428 1.00303C14.8403 1.65035 15.2837 2.26438 15.9308 2.36695C19.3396 2.94633 22.4753 4.5833 24.9641 7.038C27.4528 9.52742 29.0546 12.6294 29.6338 16.0739C29.7363 16.6533 30.2476 17.0622 30.7922 17.0622C30.8601 17.0622 30.928 17.0622 30.9973 17.0276C31.6444 16.925 32.0878 16.311 31.9853 15.6637C31.3048 11.7451 29.4647 8.19787 26.6353 5.36776Z\" fill=\"#151515\"><\/path>\n<\/svg>",
+          "call_us_phone": "(323) 375-2666",
+          "call_us_text": "Call Us",
+          "icon_2": "<svg width=\"33\" height=\"31\" viewbox=\"0 0 33 31\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<path d=\"M33 19.0771V4.76953C33 2.13905 30.8857 0 28.2855 0H15.3212C14.6701 0 14.1427 0.533537 14.1427 1.19229C14.1427 1.85105 14.6701 2.38459 15.3212 2.38459H28.2855C29.5848 2.38459 30.6426 3.45467 30.6426 4.76917V19.0767C30.6426 20.3912 29.5848 21.4613 28.2855 21.4613H20.0355C19.3843 21.4613 18.8569 21.9948 18.8569 22.6536V27.7001L8.854 21.6314C8.83043 21.618 8.80538 21.618 8.78034 21.6046C8.71211 21.5687 8.63976 21.548 8.56463 21.5265L8.55641 21.5241C8.4798 21.5033 8.40761 21.4824 8.32953 21.4779C8.30154 21.4764 8.27797 21.4615 8.24998 21.4615H4.71427C3.41491 21.4615 2.35714 20.3915 2.35714 19.077V4.76944C2.35714 3.45494 3.41491 2.38485 4.71427 2.38485H8.24998C8.90115 2.38485 9.42855 1.85131 9.42855 1.19256C9.42855 0.5338 8.90115 0.000262706 8.24998 0.000262706H4.71427C2.11407 0.000262706 0 2.13895 0 4.76944V19.077C0 21.7074 2.11407 23.8461 4.71427 23.8461H7.92292L19.4288 30.8301C19.6159 30.9434 19.8265 31 20.0357 31C20.2361 31 20.4365 30.9493 20.6162 30.845C20.9874 30.6334 21.2143 30.2369 21.2143 29.8077V23.8462H28.2857C30.8859 23.8462 33 21.7075 33 19.0771Z\" fill=\"#151515\"><\/path>\n<path d=\"M10.6072 11.3883C10.6072 10.3674 9.78808 9.53871 8.77892 9.53871C7.77124 9.53871 6.95065 10.3674 6.95065 11.3883C6.95065 12.4092 7.76977 13.2378 8.77892 13.2378C9.78808 13.2378 10.6072 12.4092 10.6072 11.3883Z\" fill=\"#151515\"><\/path>\n<path d=\"M14.6719 11.3882C14.6719 12.4091 15.4925 13.2378 16.5002 13.2378C17.5078 13.2378 18.3284 12.4091 18.3284 11.3882C18.3284 10.3673 17.5078 9.53867 16.5002 9.53867C15.4925 9.53867 14.6719 10.3673 14.6719 11.3882Z\" fill=\"#151515\"><\/path>\n<path d=\"M22.3931 11.3882C22.3931 12.4091 23.2137 13.2378 24.2214 13.2378C25.2291 13.2378 26.0496 12.4091 26.0496 11.3882C26.0496 10.3673 25.2305 9.53867 24.2214 9.53867C23.2122 9.53867 22.3931 10.3673 22.3931 11.3882Z\" fill=\"#151515\"><\/path>\n<\/svg>",
+          "chat_text": "Email Us",
+          "chat_url": "mailto:info@magnumbikes.com",
+          "chat_text_label": "Send Email",
+          "icon_3": "<svg width=\"26\" height=\"32\" viewbox=\"0 0 26 32\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M3.1 0C1.38792 0 0 1.38792 0 3.1V28.1C0 29.8121 1.38792 31.2 3.1 31.2H22.1C23.8121 31.2 25.2 29.8121 25.2 28.1V24.9214C25.2 24.3139 24.7075 23.8214 24.1 23.8214C23.4925 23.8214 23 24.3139 23 24.9214V28.1C23 28.5971 22.5971 29 22.1 29H3.1C2.60294 29 2.2 28.5971 2.2 28.1V3.1C2.2 2.60294 2.60294 2.2 3.1 2.2H22.1C22.5971 2.2 23 2.60294 23 3.1V18.1893C23 18.7968 23.4925 19.2893 24.1 19.2893C24.7075 19.2893 25.2 18.7968 25.2 18.1893V3.1C25.2 1.38792 23.8121 0 22.1 0H3.1ZM5.1001 8.2H20.1001V6H5.1001V8.2ZM20.1001 14.2H5.1001V12H20.1001V14.2ZM5.1001 20.2H13.1001V18H5.1001V20.2Z\" fill=\"#151515\"><\/path>\n<\/svg>",
+          "contact_text": "Message Us",
+          "contact_url": "https:\/\/servicemagnumb.wpengine.com\/contact\/",
+          "contact_text_label": "We’ll Get Back to You",
+          "text_right": "Looking to perfect your ride? We’re here to help.",
+          "first_column_title": "Shop",
+          "first_col_menu": "footer-first-column",
+          "second_column_title": "Learn",
+          "second_col_menu": "footer-second-column",
+          "third_column_title": "Help",
+          "third_col_menu": "footer-third-column",
+          "newsletter_description": "Receive exclusive updates, offers, tips & guides from Magnum HQ.",
+          "show_social": true,
+          "social_text": "Join our active community of over 75,000 Magnum Riders."
+        }
+      },
+      "subfooter": {
+        "type": "subfooter",
+        "settings": {
+          "bg_image": "shopify:\/\/shop_images\/cockpit_subfooter.v6.jpg",
+          "link_1_url": "shopify:\/\/policies\/privacy-policy",
+          "link_1_label": "Privacy Policy",
+          "link_2_url": "shopify:\/\/policies\/terms-of-service",
+          "link_2_label": "Terms of Service",
+          "link_3_url": "",
+          "link_3_label": "",
+          "copyright": "© Magnum Electric Bikes 2022. All Rights Reserved."
+        }
+      },
+      "go-cart": {
+        "type": "go-cart",
+        "settings": {
+        }
+      },
+      "faq-hero": {
+        "type": "faq-hero",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/fix.jpg",
+          "section_title": "Frequently Asked Questions"
+        }
+      },
+      "faq-item-1": {
+        "type": "faq-item-1",
+        "blocks": {
+          "cdeb3ed5-d3f7-4c8d-883a-c304d6cb643e": {
+            "type": "Accordion",
+            "settings": {
+              "question": "What is the top speed of my E-Bike?",
+              "answer": "<p>  The top speed of your e-bike is determined by several of the following factors: weather, rider weight, terrain, incline, using the throttle and pedal assist.\nIn great conditions, the top speed of using throttle only will be 20MPH.\nDepending on the bike model and the use of pedal assist, the top speed will be between 25MPH-28MPH.<br>\n<em><strong>These speeds may be lower if any of the above factors are in place.<\/strong><\/em>\n\nYour top speed will also be determined by which class it is in. Class is determined by state and city laws.\n\nThe classes include:\n<\/p><ul>\n \t<li>\n<strong>Class 1:<\/strong> The Class 1 e-bike provides assistance only when you pedal, and stops assisting when you reach 20 mph — great for bike lanes, bike paths, roads or anywhere you would take a traditional bike.<\/li>\n \t<li>\n<strong>Class 2:<\/strong> The Class 2 e-bike is equipped with a throttle which provides a boost without pedaling, and stops assisting at 20 mph.<\/li>\n \t<li>\n<strong>Class 3:<\/strong> The Class 3 e-bike is equipped with a speedometer, and only assists until the bike reaches 28 mph on pedal assist alone, and throttle allowed in some states up to 20mph.<\/li>\n<\/ul> <p><\/p>"
+            }
+          },
+          "b21210af-dcb2-474c-b18b-e843963e484a": {
+            "type": "Accordion",
+            "settings": {
+              "question": "What is the difference between purchasing directly from Magnum Bikes online versus a certified dealer?",
+              "answer": "<p>  The main difference is availability.\nWe highly recommend purchasing through a certified dealer when possible. It builds a good relationship for service and support. You can find a dealer near you <a href=\"https:\/\/www.magnumbikes.com\/store-locator\/\" target=\"_blank\" rel=\"noopener noreferrer\">here<\/a>.\n\nFor customers who purchase directly from Magnum Bikes online, because they are not near a certified dealer, most of their service and support goes through our customer support team. Shop directly <a href=\"https:\/\/www.magnumbikes.com\/shop\/\" target=\"_blank\" rel=\"noopener noreferrer\">here<\/a>.\n\nIf you are local to Salt Lake City, come visit us at our flagship store. All the details <a href=\"https:\/\/www.magnumbikes.com\/magnum-bikes-store\/\" target=\"_blank\" rel=\"noopener noreferrer\"><u>here<\/u><\/a><em>. <\/em><\/p>"
+            }
+          },
+          "98ab0b12-47d2-4a81-b693-d3face37bd99": {
+            "type": "Accordion",
+            "settings": {
+              "question": "How can I test ride a Magnum Bike?",
+              "answer": "<p>At your nearest dealer <a href=\"https:\/\/www.magnumbikes.com\/store-locator\/\" target=\"_blank\" rel=\"noopener noreferrer\">here.<\/a>\n\nAt our retail shop - location details <a href=\"https:\/\/www.magnumbikes.com\/magnum-bikes-store\/\" target=\"_blank\" rel=\"noopener noreferrer\">here<\/a>.\n\nFill out a test ride waiver - <a href=\"https:\/\/www.magnumbikes.com\/magnum-bikes-ride-waiver\/\" target=\"_blank\" rel=\"noopener noreferrer\">here<\/a>.<\/p>"
+            }
+          },
+          "7738d531-10d1-42a0-95a6-f33abb351002": {
+            "type": "Accordion",
+            "settings": {
+              "question": "What are the classes of e-bikes?",
+              "answer": "<p> There are three different classes of e-bikes. Classes were created to determine how e-bikes should be used according to local e-bike laws. Currently, 22 states across the U.S. utilize the three-class system for e-bikes.\n\nThe classes include:\n<\/p><ul>\n \t<li>\n<strong>Class 1:<\/strong> The Class 1 e-bike provides assistance only when you pedal, and stops assisting when you reach 20 mph — great for bike lanes, bike paths, roads or anywhere you would take a traditional bike.<\/li>\n \t<li>\n<strong>Class 2:<\/strong> The Class 2 e-bike is equipped with a throttle which provides a boost without pedaling, and stops assisting at 20 mph.<\/li>\n \t<li>\n<strong>Class 3:<\/strong> The Class 3 e-bike is equipped with a speedometer, and only assists until the bike reaches 28 mph on pedal assist alone, and throttle allowed in some states up to 20mph.<\/li>\n<\/ul>"
+            }
+          }
+        },
+        "block_order": [
+          "cdeb3ed5-d3f7-4c8d-883a-c304d6cb643e",
+          "b21210af-dcb2-474c-b18b-e843963e484a",
+          "98ab0b12-47d2-4a81-b693-d3face37bd99",
+          "7738d531-10d1-42a0-95a6-f33abb351002"
+        ],
+        "settings": {
+        }
+      },
+      "faq-item-2": {
+        "type": "faq-item-2",
+        "blocks": {
+          "832bb98d-6485-4ae0-be57-ca941435e969": {
+            "type": "Accordion",
+            "settings": {
+              "question": "What is the cycle life of my battery?",
+              "answer": "<p> All Magnum Electric Bikes come with a lithium battery. The Lithium-NCM battery has a life cycle of 700 cycles. Over time your battery capacity will diminish. This means that you can charge and discharge the battery completely 700 times at a discharge rate of 0.5C before the capacity depletes to 80% efficiency.<\/p>"
+            }
+          },
+          "234cdb87-03e9-4893-a445-341b90a54411": {
+            "type": "Accordion",
+            "settings": {
+              "question": "How long will my Magnum Bikes battery last me?",
+              "answer": "<p>  You will typically get 800-1000 charge cycles out of your battery, as long as you are storing it appropriately. It is best to store indoors and out of extreme hot or cold temperatures.<\/p>"
+            }
+          },
+          "48dea55a-d320-4371-b3a9-562e469b07b1": {
+            "type": "Accordion",
+            "settings": {
+              "question": "How do I take care of my Magnum Bikes battery?",
+              "answer": "<p>Always pedal along with your e-bike, especially up hills so the battery is not depleted too quickly.\n\nAlways keep your battery charged. Lithium batteries life cycle can be extended by not depleting your battery fully. Even if you have not depleted your battery entirely during your ride we suggest that you charge it.\n \nDo not overcharge your battery. Be sure not to leave your battery charging for more than 24 hours at a time.\n \n1. Keep out of extreme hot or cold temperatures. \n2. Store indoors.\n3. Keep out of the rain or snow.<\/p>"
+            }
+          },
+          "0fa07646-6ea7-465e-a7fe-97f04ea3374e": {
+            "type": "Accordion",
+            "settings": {
+              "question": "How do I extend the range of my Magnum Bike per charge?",
+              "answer": "<p> Your e-bike will consume much less battery when you begin riding by pedaling and not using the throttle. Stop and go riding with the throttle can limit the range of your e-bike.\n \nAlways make sure your tires are inflated properly. Riding on low pressure tires will consume more energy.\n\nAlways pedal up hills. Do not use throttle only when riding up hills.\n\nUse your mechanical gears correctly. When you are pedaling make sure to be in the correct gear. Lower your gears while going up hills and raise the gears on flat and downhill terrain.<\/p>"
+            }
+          },
+          "7d2af6b2-3645-442b-9a73-cbfde71ef14b": {
+            "type": "Accordion",
+            "settings": {
+              "question": "What do the terms amps, watts and volts mean for my E-bike?",
+              "answer": "<p> Your e-bike has an electric system that is measured by volts and amps. The voltage is the amount of potential electricity your battery holds.\n \nThe amps or current refers to the speed or rate of flow of electricity as it is being drawn from the battery. The higher the current the quicker the battery will be depleted. High current happens when riding with a heavy load, riding uphill, riding on bumpy and grass terrain etc.\n \nThe watts is a measure of the output of power that your e-bike can provide. Watts are measured by multiplying the voltage by the current.\n\nExample: A 350 watt system can put out up to about 600 watts at peak but will provide 350 watts of power when riding under normal conditions. The rated power of your e-bike will affect the speed and or torque depending on the configuration.<\/p>"
+            }
+          },
+          "0187e2ef-8eae-4631-b35e-f08d6f9486cf": {
+            "type": "Accordion",
+            "settings": {
+              "question": "How long does it take re-charge my battery?",
+              "answer": "<p> On average the recharge time for our batteries is approximately 6.5 hours.<\/p>"
+            }
+          },
+          "f3a49c6a-ca73-42ba-8cc5-7d516acafdd0": {
+            "type": "Accordion",
+            "settings": {
+              "question": "What are the differences between Magnum batteries?",
+              "answer": "<p> Batteries are classified by voltage and amp hour. The voltage can be thought of as the size of an engine, this determines the power output. A 48V will be more powerful than a 36V.\n\nThe amp hour can be thought of as the size of a gas tank. The higher the number, the greater the range. A 17.5ah has a longer mile range than a 13ah battery.\n\n                    <b>*Safety note: Battery voltage should be compatible with the controller and charger you are using. For example, only use a 48V charger with a 48V battery. Using an incompatible charger or controller could damage your battery, bike, or even cause an electrical fire.<\/b><\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "832bb98d-6485-4ae0-be57-ca941435e969",
+          "234cdb87-03e9-4893-a445-341b90a54411",
+          "48dea55a-d320-4371-b3a9-562e469b07b1",
+          "0fa07646-6ea7-465e-a7fe-97f04ea3374e",
+          "7d2af6b2-3645-442b-9a73-cbfde71ef14b",
+          "0187e2ef-8eae-4631-b35e-f08d6f9486cf",
+          "f3a49c6a-ca73-42ba-8cc5-7d516acafdd0"
+        ],
+        "settings": {
+        }
+      },
+      "faq-item-3": {
+        "type": "faq-item-3",
+        "blocks": {
+          "75c8e1ac-138c-4024-95bf-311040317b60": {
+            "type": "Accordion",
+            "settings": {
+              "question": "Can I see the trip distance in Miles or only in Kilometers?",
+              "answer": "<p>  Yes. Your trip distance will change in accordance with the denomination you set your display to show (Miles or Kilometers).\n<span style=\"font-weight: 400;\">*Note: the Magnum Cosmopolitan only reads in kilometers and not miles. <\/span> <\/p>"
+            }
+          },
+          "48c65533-8526-47f1-886e-4469e0c78b91": {
+            "type": "Accordion",
+            "settings": {
+              "question": "How do I change the settings from MPH to KMH or vice versa?",
+              "answer": "<p>  The trip distance indication on the display is always \"KM\". This does not mean to say that the distance showing is in kilometers but rather to indicate to you when you're viewing your trip distance. When your display is set to miles your trip distance reflects the miles traveled.<\/p>"
+            }
+          },
+          "2f76ab4f-606b-4fbe-b2e3-97ce5e816e73": {
+            "type": "Accordion",
+            "settings": {
+              "question": "How do I gain access to my C6, C7, and L7 display settings?",
+              "answer": "<p>1. Hold + and - for about 5 seconds<\/p>\n \t<p>2. You will see the screen change to 8888<\/p>\n \t<p>3. Using + or - to change numbers and set to toggle<\/p>\n \t<p>4. Change the code to 8088 “if that doesn't work use 8306 or 8108”<\/p>\n \t<p>5. The first screen is P. Pedal assist top speed<\/p>\n \t<p>6. The second screen is throttle top speed.<\/p>\n \t<p>7. The third screen is the tire size<\/p>\n \t<p>8. The fourth screen is the odometer<\/p>\n \t<p>9. The fifth screen is the battery size<\/p>\n \t<p>10. The sixth screen is power level<\/p>\n \t<p>11. Hold set to exit back to the home screen (or + and - if it is the L7 display)<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "75c8e1ac-138c-4024-95bf-311040317b60",
+          "48c65533-8526-47f1-886e-4469e0c78b91",
+          "2f76ab4f-606b-4fbe-b2e3-97ce5e816e73"
+        ],
+        "settings": {
+        }
+      },
+      "faq-item-4": {
+        "type": "faq-item-4",
+        "blocks": {
+          "9df01a6d-46ac-49cd-91f1-a1e7a2b19830": {
+            "type": "Accordion",
+            "settings": {
+              "question": "My E-Bike motor is making loud noises. What should I do?",
+              "answer": "<p>1. Check the brakes to be sure they are adjusted properly and not the cause of the noise<\/p>\n \t<p>2. Ride the bicycle without power to be sure the noise is not originating from any of the other mechanical parts of your E-bike<\/p>\n \t<p>3. If the problem persists please see your licensed Magnum Bikes dealer<\/p>"
+            }
+          },
+          "63b89690-92c5-4aa4-ab94-3d027040bde0": {
+            "type": "Accordion",
+            "settings": {
+              "question": "What do I do if the power of my E-bike cuts out?",
+              "answer": "<p>1. Check the battery voltage on the top of your battery<\/p>\n \t<p>2. Check all of your connections, specifically the connector to the LCD display<\/p>\n \t<p>3. Remove the battery, then insert it back into place<\/p>\n \t<p>4. Check if the system may be overloaded (riding up steep hill without assistance, heavy load)<\/p>\n \t<p>5. If the problem persists please see your licensed Magnum Bikes dealer<\/p>"
+            }
+          },
+          "3c1ab629-60f4-4e8e-95bb-8c1a05511753": {
+            "type": "Accordion",
+            "settings": {
+              "question": "What do I do if the range of my E-Bike is low?",
+              "answer": "<p>1. Check your charger. Please deplete the battery entirely and check the time it takes to complete the charge of your battery from 0-100%. The correct time should be 6.5 hours. If the charge time is less this indicates that the charger is not completing the charge<\/p>\n \t<p>2. After charging your battery completely, ride it out. Ride the E-bike once and measure your total trip distance to see if the battery is functioning properly. Magnum Bikes support center will want to know the actual range of your battery<\/p>\n \t<p>3. If you are able, measure the battery voltage when fully charged. The voltage of your lithium battery should be 42V. If it is less than this there is a problem with either your battery or charger<\/p>\n \t<p>4. If the problem persists please see your licensed Magnum Bikes dealer<\/p>"
+            }
+          },
+          "d94b4d32-61ef-499d-843d-022cc781567b": {
+            "type": "Accordion",
+            "settings": {
+              "question": "What should I do if my E-Bike spokes are loose?",
+              "answer": "<p> Your E-bike motor is attached to the rear wheel, which applies more stress to the spokes than on a regular bike. Because of this, it is essential to check the strength of the spokes periodically. If any spokes are loose, please do not continue riding your E-bike before tightening the spokes.\n\nPlease note: Continuing to ride with loose spokes will eventually cause all of the spokes to loosen and break.<\/p>"
+            }
+          },
+          "0cef024a-f7e6-4477-99da-dd5714360215": {
+            "type": "Accordion",
+            "settings": {
+              "question": "How do I change a flat tire on the rear motor wheel of my E-Bike?",
+              "answer": "<p>1. Turn the power of your battery off or remove the battery entirely from your E-bike<\/p>\n \t<p>2. Disconnect the motor cable quick connector<\/p>\n \t<p>3. Change the flat tire as you would a regular bike<\/p>\n \t<p>4. Reconnect the motor plug matching up the arrows on the cable connectors<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "9df01a6d-46ac-49cd-91f1-a1e7a2b19830",
+          "63b89690-92c5-4aa4-ab94-3d027040bde0",
+          "3c1ab629-60f4-4e8e-95bb-8c1a05511753",
+          "d94b4d32-61ef-499d-843d-022cc781567b",
+          "0cef024a-f7e6-4477-99da-dd5714360215"
+        ],
+        "settings": {
+        }
+      },
+      "faq-item-5": {
+        "type": "faq-item-5",
+        "blocks": {
+          "e6b287f8-faf3-4991-b484-112d3caa6136": {
+            "type": "Accordion",
+            "settings": {
+              "question": "Can I ride off-road with my Magnum Bikes E-Bike?",
+              "answer": "<p>1. The Magnum Mi5 and Leisger MD5 are both mountain E-bikes. They are made for both off and on road terrain.<\/p>\n \t<p>2. The Magnum Ui5 and Leisger CD5 are city bikes made for Urban use and we do not suggest using them off road.<\/p>\n\n<p><u>Please note:<\/u> Off road riding will consume more energy from your battery and limit the range of your E-bike. We strongly caution and advise against jumping and rough riding with your E-bike. <\/p>"
+            }
+          },
+          "cb255024-7569-4bb9-8380-2030f2591f7d": {
+            "type": "Accordion",
+            "settings": {
+              "question": "Does the motor work with the mechanical gears of the Electric Bike?",
+              "answer": "<p>  Your Magnum e-bike comes with a rear hub geared motor. The motor has its own internal planetary gear transmission. The mechanical gears on your E-bike are externally attached to the motor wheel and allow you to pedal thereby assisting your E-bike. Using the correct mechanical gears is important since when pedaling the motor is assisted and will work quicker and more powerfully.<\/p>"
+            }
+          },
+          "4f255bd6-566b-4462-b172-56b327005bc8": {
+            "type": "Accordion",
+            "settings": {
+              "question": "How can I see the display while riding at night?",
+              "answer": "<p> When riding at night please press the power button on the LCD display once to light the back light on the display.<\/p>"
+            }
+          },
+          "066ee9fc-db23-4207-88f0-81b891b80338": {
+            "type": "Accordion",
+            "settings": {
+              "question": "If I get a punctured tire must I go to an E-Bicycle specialist to have it fixed?",
+              "answer": "<p> While we generally suggest that all maintenance on your E-bike is done by someone with ample experience, changing a flat is quite simple.\n\nMagnum Bikes all come standard with a quick release plug to allow for easy access to the rear wheel. Anyone with basic bicycle technical experience can easily disconnect the motor cable change the flat and reconnect it.\n\nNOTICE: When disconnecting and reconnecting the motor cable be sure that the power is turned off and the arrows on the cable on the motor are matched up.<\/p>"
+            }
+          },
+          "09f65ba2-14e2-4b00-b4a5-c903d9ec6b8c": {
+            "type": "Accordion",
+            "settings": {
+              "question": "Can I ride my Magnum E-Bike in the rain?",
+              "answer": "<p> Your e-bike is water resistant and can be ridden in an average rainfall. We advise against riding in heavy rain and strongly advise against leaving your e-bike outside while it's raining.<\/p>"
+            }
+          },
+          "969901ba-c0aa-4fe2-bf10-8830540c3352": {
+            "type": "Accordion",
+            "settings": {
+              "question": "What is the correct tire pressure for my Electric Bike?",
+              "answer": "<p>1. Keeping your tire pressure correct at all times is important. Correct tire pressure will increase the efficiency of your E-bike and prevent from getting flat tires while riding.<\/p>\n \t<p>2. The correct PSI varies according to the tire of your E-bike. The maximum PSI can be found on the side of your tire.<\/p>"
+            }
+          },
+          "6a7afa59-9d95-453c-8b73-d24cabe01c3d": {
+            "type": "Accordion",
+            "settings": {
+              "question": "Can I get replacement keys for my battery?",
+              "answer": "<p> If you lose your keys, we sell the entire lock mechanism with new keys. We do not keep stock of single keys for security reasons.<\/p>"
+            }
+          },
+          "15bb7573-3bdf-4d6b-9cee-02a21e07a4a3": {
+            "type": "Accordion",
+            "settings": {
+              "question": "What bike trailer do you recommend using with Magnum Bikes?",
+              "answer": "<p> Burley brand bike trailers work well.<\/p>"
+            }
+          },
+          "d6b9edf7-8e68-42dd-8f2f-2ed405497c11": {
+            "type": "Accordion",
+            "settings": {
+              "question": "What car rack is recommended to use with Magnum Bikes?",
+              "answer": "<p> Our bikes are made to fit most standard car racks. E-bikes are heavier than regular pedal bikes, so we recommend a rack that is rated to hold at least 60lbs, more if you have more than one bike. We also recommend taking your battery out while transporting as that will be safer for the battery and will make the bike lighter by 7-10lbs. When looking for specific bike racks for your car, we recommend a tray style.\nKuat brand car racks work well with Magnum Bikes.<\/p>"
+            }
+          },
+          "5c9100c9-5eb0-48d3-8e9d-f2b1d177c083": {
+            "type": "Accordion",
+            "settings": {
+              "question": "What is the weight limit on a Magnum Bike?",
+              "answer": "<p> Payload ~ 350lb <br>\n\nNavigator, Ranger, Summit, Navigator, Cruiser, Lowrider, Metro, Metro+, Peak, Pathfinder, Ui6,Ui6+, Mi6, Ui5, Mi5 ~ 265lbs <br>\n\nPremium II, Classic II, Premium, Classic ~ 242lbs <br>\n\nCosmo ~ 220 lbs<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "e6b287f8-faf3-4991-b484-112d3caa6136",
+          "cb255024-7569-4bb9-8380-2030f2591f7d",
+          "4f255bd6-566b-4462-b172-56b327005bc8",
+          "066ee9fc-db23-4207-88f0-81b891b80338",
+          "09f65ba2-14e2-4b00-b4a5-c903d9ec6b8c",
+          "969901ba-c0aa-4fe2-bf10-8830540c3352",
+          "6a7afa59-9d95-453c-8b73-d24cabe01c3d",
+          "15bb7573-3bdf-4d6b-9cee-02a21e07a4a3",
+          "d6b9edf7-8e68-42dd-8f2f-2ed405497c11",
+          "5c9100c9-5eb0-48d3-8e9d-f2b1d177c083"
+        ],
+        "settings": {
+        }
+      },
+      "faq-item-6": {
+        "type": "faq-item-6",
+        "blocks": {
+          "55fdf085-e36f-46f8-8280-6e9390bca204": {
+            "type": "Accordion",
+            "settings": {
+              "question": "What is included in my warranty?",
+              "answer": "<p>Magnum guarantees the frame, motor, and electrical components are free of manufacturer defect for 1 year from purchase date. Please be sure to register your warranty on our website. Commercial or business use will void a bike's warranty. The other components on our bikes are subject to the different manufacturers' warranties. For example: Shimano, Schwalbe, and Tektro are commonly seen components on our bikes and a Magnum dealer can submit a warranty request to them on your behalf. <\/p>"
+            }
+          },
+          "24c9cd0a-96a1-48ab-832d-3b1c5030bad5": {
+            "type": "Accordion",
+            "settings": {
+              "question": "How do I fill out my warranty form?",
+              "answer": "<p>You can fill out your warranty registration <a href=\"https:\/\/www.magnumbikes.com\/warranty\/\">here<\/a>.\n\nYou will need to locate the following serial numbers : Frame, battery, and motor\n\nYou will also need the purchasing information: Date of purchase, where you purchased, and invoice number.<br>\n\n                    <b>*The video on the warranty page will also show you how to find your serial numbers.<\/b><\/p>"
+            }
+          },
+          "01ff7ede-a728-4dfa-b804-7652dd8becd1": {
+            "type": "Accordion",
+            "settings": {
+              "question": "Where can I find my frame number?",
+              "answer": "<p>The frame number is typically stamped into the head tube. In the rare event that it is not, there is also a sticker with a barcode on it. Beneath that barcode you will also find your frame number.\nYou can find a video <a href=\"https:\/\/www.magnumbikes.com\/warranty\/\" target=\"_blank\" rel=\"noopener noreferrer\"><u>here<\/u><\/a> that demonstrates how to find it. <\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "55fdf085-e36f-46f8-8280-6e9390bca204",
+          "24c9cd0a-96a1-48ab-832d-3b1c5030bad5",
+          "01ff7ede-a728-4dfa-b804-7652dd8becd1"
+        ],
+        "settings": {
+        }
+      },
+      "faq-item-7": {
+        "type": "faq-item-7",
+        "settings": {
+        }
+      },
+      "faq-item-8": {
+        "type": "faq-item-8",
+        "settings": {
+        }
+      },
+      "still-have-questions": {
+        "type": "still-have-questions",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/Footer_FAQ_2.png"
+        }
+      },
+      "image-with-text": {
+        "type": "image-with-text",
+        "blocks": {
+          "a2ac0ffc-3a70-46a8-b88e-1918db1f1e4b": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/careers.jpg"
+            }
+          }
+        },
+        "block_order": [
+          "a2ac0ffc-3a70-46a8-b88e-1918db1f1e4b"
+        ],
+        "settings": {
+          "heading": "",
+          "description": ""
+        }
+      },
+      "about-store-hero-salt": {
+        "type": "about-store-hero-salt",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/store_hero3.png",
+          "section_title": "Magnum Bikes Salt Lake City"
+        }
+      },
+      "about-store-main-salt": {
+        "type": "about-store-main-salt",
+        "settings": {
+          "title": "About The Store",
+          "html_content": "<li>\n<span><strong>Address:<\/strong><\/span><span>629 S State St, Salt Lake City, UT 84111<\/span>\n<\/li><li>\n<span><strong>Hours:<\/strong><\/span><span>\nSunday, 11am–4pm <br>\nMonday, 10am–6pm <br>\nTuesday, 10am–6pm <br>\nWednesday, 10am–6pm <br>\nThursday, 10am–6pm <br>\nFriday, 10am–6pm  <br>\nSaturday, Closed <br>\n<\/span>\n<\/li><li>\n<span><strong>Phone:<\/strong><\/span><a href=\"tel:+13857224033\">(385) 722-4033<\/a>\n<\/li><li>\n<span><strong>Email Address:<\/strong><\/span><a href=\"mailto:saltlakecity@magnumbikes.com\">saltlakecity@magnumbikes.com<\/a>\n<\/li><li>\n<span><\/span>\n<\/li>",
+          "text": "Our Downtown Salt Lake City Store is conveniently located on South State Street. Our friendly and expert staff are on-hand six days a week to help with sales and service for Magnum's full e-bike lineup as well as a full line of gear & accessories.",
+          "notification_text": "Schedule a Free Demo Ride Today!",
+          "first_link_text": "Schedule A Free Demo Ride",
+          "first_link_url": "https:\/\/6q3ujvq1quk.typeform.com\/to\/Kf9iELSq?utm_source=xxxxx&utm_medium=xxxxx&utm_campaign=xxxxx&utm_term=xxxxx&utm_content=xxxxx",
+          "second_link_text": "",
+          "second__link_url": "",
+          "third_link_text": "",
+          "third__link_url": "",
+          "html_content_map": "<iframe src=\"https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d3022.3003908741375!2d-111.88793899999999!3d40.7554174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8752f51667fdb2d5%3A0x4a47e4b2a1c0597d!2sMagnum%20Electric%20Bikes%2C%20Salt%20Lake%20City!5e0!3m2!1sen!2sil!4v1653056229887!5m2!1sen!2sil\" width=\"600\" height=\"318\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"><\/iframe>",
+          "cta_text": "Get Directions",
+          "cta_url": "https:\/\/www.google.com\/maps\/dir\/\/Magnum+Electric+Bikes,+Salt+Lake+City,+629+S+State+St,+Salt+Lake+City,+UT+84111,+United+States\/@40.7554174,-111.887939,17z\/data=!4m16!1m6!3m5!1s0x8752f51667fdb2d5:0x4a47e4b2a1c0597d!2sMagnum+Electric+Bikes,+Salt+Lake+City!8m2!3d40.7554174!4d-111.887939!4m8!1m0!1m5!1m1!1s0x8752f51667fdb2d5:0x4a47e4b2a1c0597d!2m2!1d-111.887939!2d40.7554174!3e2?hl=en",
+          "social_title": "",
+          "facebook_url": "",
+          "instagram_url": "",
+          "tiktok_url": "",
+          "linkedin_url": ""
+        }
+      },
+      "about-store-hero-park": {
+        "type": "about-store-hero-park",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/store_pc.png",
+          "section_title": "Magnum Bikes Park City"
+        }
+      },
+      "about-store-main-park": {
+        "type": "about-store-main-park",
+        "settings": {
+          "title": "About The Store",
+          "html_content": "<li>\n<span><strong>Address:<\/strong><\/span><span>732 Main St 2 100b, Park City, UT 84060<\/span>\n<\/li><li>\n<span><strong>Hours:<\/strong><\/span><span>\nSunday, 9am - 5pm <br>\nMonday, 9am - 5pm <br>\nTuesday, 9am - 5pm <br>\nWednesday, 9am - 5pm <br>\nThursday, 9am - 5pm <br>\nFriday, 9am - 5pm <br>\n\n<\/span>\n<\/li><li>\n<span><strong>Phone:<\/strong><\/span><a href=\"tel:+14352003339\">(435) 200-3339<\/a>\n<\/li><li>\n<span><strong>Email Address:<\/strong><\/span><a href=\"mailto:parkcity@magnumbikes.com\">parkcity@magnumbikes.com<\/a>\n<\/li><li>\n<span><\/span>\n<\/li>",
+          "text": "Our Park City Store is conveniently located in Park City's Historic Main Street District. Our friendly and expert staff are on-hand six days a week to help with sales, service and rentals for Magnum's full e-bike lineup as well as a full line of gear & accessories.",
+          "notification_text": "Schedule a Free Demo Ride Today!",
+          "first_link_text": "",
+          "first_link_url": "",
+          "second_link_text": "",
+          "second__link_url": "",
+          "third_link_text": "",
+          "third__link_url": "",
+          "html_content_map": "<iframe src=\"https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d3027.2087072025447!2d-111.50002118562021!3d40.647329549508164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x875272a2bc0c5cff%3A0x7a64ccfca0f7101!2s732%20Main%20St%202%20100b%2C%20Park%20City%2C%20UT%2084060%2C%20USA!5e0!3m2!1sen!2sil!4v1653169642933!5m2!1sen!2sil\" width=\"600\" height=\"318\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"><\/iframe>",
+          "cta_text": "Get Directions",
+          "cta_url": "https:\/\/www.google.com\/maps\/dir\/\/732+Main+St+2+100b,+Park+City,+UT+84060,+USA\/@40.6473295,-111.5000212,17z\/data=!4m17!1m7!3m6!1s0x875272a2bc0c5cff:0x7a64ccfca0f7101!2s732+Main+St+2+100b,+Park+City,+UT+84060,+USA!3b1!8m2!3d40.6473255!4d-111.4978325!4m8!1m0!1m5!1m1!1s0x875272a2bc0c5cff:0x7a64ccfca0f7101!2m2!1d-111.4978325!2d40.6473255!3e2?hl=en",
+          "social_title": "",
+          "facebook_url": "",
+          "instagram_url": "",
+          "tiktok_url": "",
+          "linkedin_url": ""
+        }
+      },
+      "about-store-hero-scottsdale": {
+        "type": "about-store-hero-scottsdale",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/bike_path.png",
+          "section_title": "Magnum Bikes Scottsdale"
+        }
+      },
+      "about-store-main-scottsdale": {
+        "type": "about-store-main-scottsdale",
+        "settings": {
+          "title": "About The Store",
+          "html_content": "<li>\n<span><strong>Address:<\/strong><\/span><span>4821 N Scottsdale Rd Suite 107, Scottsdale, AZ 85251<\/span>\n<\/li><li>\n<span><strong>Hours:<\/strong><\/span><span>\nSunday, 11am–4pm <br>\nMonday, 10am–6pm <br>\nTuesday, 10am–6pm <br>\nWednesday, 10am–6pm <br>\nThursday, 10am–6pm <br>\nFriday, 10am–6pm  <br>\nSaturday, 10am–6pm <br>\n<\/span>\n<\/li><li>\n<span><strong>Phone:<\/strong><\/span><a href=\"tel:+14802539398\">(480) 253-9398<\/a>\n<\/li><li>\n<span><strong>Email Address:<\/strong><\/span><a href=\"mailto:scottsdale@magnumbikes.com\">scottsdale@magnumbikes.com<\/a>\n<\/li><li>\n<span><\/span>\n<\/li>",
+          "text": "Our Scottsdale Store is conveniently located on North Scottsdale Road, in Fashion Square just east of the canal. Our friendly and expert staff are on-hand seven days a week to help with sales and service for Magnum's full e-bike lineup as well as e-bike rentals and a full line of gear & accessories. ",
+          "notification_text": "Schedule A Free Demo Ride Today!",
+          "first_link_text": "Schedule A Free Demo Ride",
+          "first_link_url": "https:\/\/6q3ujvq1quk.typeform.com\/to\/zU7eIrFO?utm_source=xxxxx&utm_medium=xxxxx&utm_campaign=xxxxx&utm_term=xxxxx&utm_content=xxxxx",
+          "second_link_text": "Schedule Appointment",
+          "second__link_url": "",
+          "third_link_text": "Test",
+          "third__link_url": "",
+          "html_content_map": "<iframe src=\"https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d3326.79584834313!2d-111.92783598466309!3d33.50668825372874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b0bb45b896ff5%3A0x8bf82f7e93868a2d!2sMagnum%20Electric%20Bikes%2C%20Scottsdale!5e0!3m2!1sen!2sil!4v1655209647311!5m2!1sen!2sil\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"><\/iframe>",
+          "cta_text": "Get Directions",
+          "cta_url": "https:\/\/www.google.com\/maps\/dir\/\/Magnum+Electric+Bikes,+Scottsdale,+4821+N+Scottsdale+Rd+Suite+107,+Scottsdale,+AZ+85251,+United+States\/@33.5066883,-111.927836,17z\/data=!3m1!5s0x872b0ba785913d3b:0x30f7cb72e23c973a!4m9!4m8!1m0!1m5!1m1!1s0x872b0bb45b896ff5:0x8bf82f7e93868a2d!2m2!1d-111.9256473!2d33.5066838!3e0",
+          "social_title": "",
+          "facebook_url": "",
+          "instagram_url": "",
+          "tiktok_url": "",
+          "linkedin_url": ""
+        }
+      },
+      "about-store-main-encinitas": {
+        "type": "about-store-main-encinitas",
+        "settings": {
+          "title": "About The Store",
+          "html_content": "<li>\n<span><strong>Address:<\/strong><\/span><span>900 S Coast Hwy 101, Encinitas, CA 92024<\/span>\n<\/li><li>\n<span><strong>Phone:<\/strong><\/span><a href=\"tel:+17603324277\">(760) 332-4277<\/a>\n<\/li><li>\n<span><strong>Email Address:<\/strong><\/span><a href=\"mailto:encinitas@magnumbikes.com\">encinitas@magnumbikes.com<\/a>\n<\/li><li>\n<span><\/span>\n<\/li>",
+          "text": "Our Encinitas Store is conveniently located on South Coast Highway 101, just three blocks east of the ocean. Our friendly and expert staff will be on-hand to help with sales and service for Magnum's full e-bike lineup as well as e-bike rentals and a full line of gear & accessories. ",
+          "notification_text": "Store Opens June 27!",
+          "first_link_text": "",
+          "first_link_url": "",
+          "second_link_text": "Schedule Appointment",
+          "second__link_url": "",
+          "third_link_text": "Rental",
+          "third__link_url": "",
+          "html_content_map": "<iframe src=\"https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d3344.5570123963344!2d-117.2934897!3d33.04179945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dc0dae8ab60eaf%3A0x6e7a2f47d080ee31!2sMagnum%20Electric%20Bikes%2C%20Encinitas!5e0!3m2!1sen!2sil!4v1655219197046!5m2!1sen!2sil\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"><\/iframe>",
+          "cta_text": "Get Directions",
+          "cta_url": "https:\/\/www.google.com\/maps\/dir\/\/Magnum+Electric+Bikes,+Encinitas,+900+S+Coast+Hwy+101,+Encinitas,+CA+92024,+United+States\/@33.0417994,-117.2934897,17z\/data=!4m9!4m8!1m0!1m5!1m1!1s0x80dc0dae8ab60eaf:0x6e7a2f47d080ee31!2m2!1d-117.293306!2d33.0405211!3e0?hl=en",
+          "social_title": "",
+          "facebook_url": "",
+          "instagram_url": "",
+          "tiktok_url": "",
+          "linkedin_url": ""
+        }
+      },
+      "about-store-hero-encinitas": {
+        "type": "about-store-hero-encinitas",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/store.png",
+          "section_title": "Magnum Bikes Encinitas"
+        }
+      }
+    },
+    "content_for_index": [
+
+    ],
+    "blocks": {
+      "7570552984445421165": {
+        "type": "shopify:\/\/apps\/yotpo-product-reviews-photos\/blocks\/settings\/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "855628211100114053": {
+        "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/klaviyo-onsite-embed\/2632fe16-c075-4321-a88b-50b567f42507",
+        "disabled": false,
+        "settings": {
+        }
+      }
+    }
+  },
+  "presets": {
+    "Default": {
+    }
+  }
+}

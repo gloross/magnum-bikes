@@ -1,0 +1,84 @@
+{% liquid
+  assign object = section.settings
+  assign product_handle = article.metafields.accentuate.article_featured_product
+  assign product = all_products[product_handle]
+  assign current_variant = product.selected_variant
+%}
+
+{% if product_handle != blank %}
+<div class="article-gallery">
+  <div class="container container--small">
+    <div class="article-gallery__title">
+      <h4>{{ object.section_title }}</h4>
+      <a class="article-gallery__cta" href="{{object.top_cta_url}}"> {{object.top_cta_text}}{% render 'icon', icon: 'arrow-up-right' %} </a>
+    </div>
+    <div class="article-gallery__slider">
+      <div class="article-gallery__col-left">
+        <div class="article-gallery__text">
+          <h2>{{product.title}}</h2>
+          <div class="article-gallery__pagination js-article-gallery-pagination"></div>
+          <div class="product-details__color-variations">
+            <ul data-option="option{{ product.options_by_name['Color'].position }}">
+              {% liquid
+                for color_option in product.options_by_name['Color'].values
+                  render "component-color-swatch", name: color_option
+                endfor
+              %}
+            </ul>
+          </div>
+          <a href="{{product.url}}" class="btn btn--machine-fill">{{object.bottom_cta_text}}</a>
+        </div>
+      </div>
+      <div class="article-gallery__col-right">
+        <div class="swiper js-article-gallery">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="media-wrapper">
+                {% render 'img'
+                img: product.featured_image
+                %}
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Article featured product",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section title",
+      "default": "Featured in this Article "
+    },
+    {
+      "type": "text",
+      "id": "top_cta_text",
+      "label": "Top CTA text",
+      "default": "View the magnum lineup"
+    },
+    {
+      "type": "text",
+      "id": "top_cta_url",
+      "label": "Top CTA URL"
+    },
+    {
+      "type": "text",
+      "id": "bottom_cta_text",
+      "label": "Bottom CTA text",
+      "default": "VIEW BUYING OPTIONS"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Article featured product"
+    }
+  ]
+}
+{% endschema %}

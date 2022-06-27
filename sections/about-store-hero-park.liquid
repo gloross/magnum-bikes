@@ -1,0 +1,17 @@
+{% assign object = section.settings %}
+
+<section
+  class="about-store-hero"
+  style="background-image: url({{
+    object.image | img_url: 'master'
+  }}); background-position: center"
+>
+  <div class="container container--small">
+    <h1>{{ object.section_title }}</h1>
+  </div>
+</section>
+
+{% schema %} { "name": "About Store Hero Park", "settings": [ { "type":
+"image_picker", "id": "image", "label": "Hero Image" }, { "type": "text", "id":
+"section_title", "label": "Title", "default": "Heales Cycles" } ], "presets": [
+{ "name": "About Store Hero Park" } ] } {% endschema %}

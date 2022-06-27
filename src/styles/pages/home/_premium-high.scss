@@ -1,0 +1,121 @@
+.premium-high {
+  padding: rem(182) 0;
+  background-color: black;
+
+  @include media-breakpoint-down(md) {
+    padding: rem(107) 0;
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding: rem(40) 0;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+
+    @include media-breakpoint-down(sm) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__col-left {
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+      margin-bottom: rem(32);
+    }
+    .icon--logo-white {
+      margin-bottom: rem(15);
+      width: rem(103);
+      height: rem(32);
+    }
+
+    h2 {
+      font-size: rem(56);
+      line-height: line-height(56, 64);
+      font-weight: 700;
+      margin-bottom: rem(20);
+      color: $white;
+
+      @include media-breakpoint-down(md) {
+        max-width: rem(338);
+      }
+      @include media-breakpoint-down(sm) {
+        max-width: 100%;
+        font-size: rem(28);
+        line-height: line-height(28, 36);
+      }
+    }
+
+    p {
+      max-width: rem(475);
+      font-size: rem(17);
+      line-height: line-height(17, 27);
+      color: $white;
+      letter-spacing: normal;
+      @include media-breakpoint-down(md) {
+        max-width: rem(290);
+      }
+      @include media-breakpoint-down(sm) {
+        padding-right: rem(11);
+        max-width: 100%;
+      }
+    }
+  }
+
+  &__col-right {
+    padding-left: rem(37);
+    border-left: 1px solid $white;
+    margin-left: auto;
+
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+      margin-left: 0;
+      padding-left: rem(16);
+    }
+
+    h3 {
+      display: inline-block;
+      position: relative;
+      margin-bottom: rem(20);
+      font-size: rem(18);
+      line-height: line-height(18, 40);
+      font-weight: 700;
+      color: $off-white;
+
+      @include media-breakpoint-down(sm) {
+        margin-bottom: rem(16);
+      }
+
+      .icon--4star {
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(100%, 0);
+      }
+    }
+
+    ul {
+      li {
+        margin-bottom: rem(24);
+        font-size: rem(15);
+        color: $white;
+
+        span {
+          display: flex;
+          align-items: center;
+          margin-top: rem(12);
+          font-weight: 700;
+        }
+
+        .icon--warning {
+          margin-left: rem(5);
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

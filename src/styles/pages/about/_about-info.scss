@@ -1,0 +1,119 @@
+.about-info {
+  padding: rem(135) 0;
+
+  @include media-breakpoint-down(lgxl) {
+    padding: rem(70) 0;
+  }
+
+  @include media-breakpoint-down(md) {
+    padding: rem(48) 0 rem(40);
+  }
+
+  &__text {
+    max-width: rem(630);
+    width: 100%;
+    padding-bottom: rem(95);
+
+    @include media-breakpoint-down(lg) {
+      padding-bottom: rem(65);
+    }
+
+    @include media-breakpoint-down(sm) {
+      max-width: 100%;
+      padding-bottom: rem(40);
+    }
+
+    p {
+      font-size: rem(32);
+      line-height: rem(49);
+      color: $machine-grey;
+
+      @include media-breakpoint-down(lg) {
+        font-size: rem(28);
+        line-height: rem(45);
+      }
+
+      @include media-breakpoint-down(sm) {
+        font-size: rem(24);
+        line-height: rem(36);
+      }
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    margin: 0 rem(-15);
+    padding-bottom: rem(84);
+
+    @include media-breakpoint-down(lg) {
+      padding-bottom: rem(54);
+    }
+
+    @include media-breakpoint-down(sm) {
+      flex-direction: column;
+      margin: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  &__col {
+    width: 50%;
+
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+      margin-bottom: rem(40);
+    }
+  }
+
+  &__col-content {
+    margin: 0 rem(15);
+    text-align: left;
+    color: $machine-grey;
+
+    @include media-breakpoint-down(sm) {
+      margin: 0;
+    }
+
+    .media-wrapper {
+      padding-bottom: 129.8%;
+      @include media-breakpoint-down(sm) {
+        padding-bottom: 107.8%;
+      }
+    }
+
+    h4 {
+      font-size: rem(24);
+      line-height: rem(34);
+      margin-top: rem(32);
+      font-weight: 500;
+      color: $machine-grey;
+      @include media-breakpoint-down(sm) {
+        margin-top: rem(23);
+      }
+    }
+
+    p {
+      font-size: rem(16);
+      line-height: rem(24);
+      margin-top: rem(7);
+      color: $machine-grey;
+
+      @include media-breakpoint-down(sm) {
+        font-size: rem(14);
+      }
+    }
+  }
+
+  &__image {
+    .media-wrapper {
+      padding-bottom: 41.98%;
+
+      @include media-breakpoint-down(sm) {
+        padding-bottom: 75%;
+        img {
+          height: 100%;
+        }
+      }
+    }
+  }
+}

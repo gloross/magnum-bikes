@@ -1,0 +1,126 @@
+{% assign object = section.settings %}
+<div class="about-info">
+  <div class="container container--small">
+    <div class="about-info__text">
+      <p> {{ object.about_info }}</p>
+    </div>
+    <div class="about-info__wrapper">
+      <div class="about-info__col">
+        <div class="about-info__col-content">
+          <div class="media-wrapper">
+            {%- render 'img',
+            img: object.image_left,
+            img_sm: object.image_left,
+            img_md: '',
+            img_lg: '',
+            m_width: '500'
+          -%}
+          </div>
+          <h4>{{ object.title_left }}</h4>
+          <p>{{ object.description_left }}
+          </p>
+        </div>
+      </div>
+      <div class="about-info__col">
+        <div class="about-info__col-content">
+          <div class="media-wrapper">
+            {%- render 'img',
+            img: object.image_right,
+            img_sm: object.image_right,
+            img_md: '',
+            img_lg: '',
+            m_width: '500'
+          -%}
+          </div>
+          <h4>{{ object.title_right }}</h4>
+          <p>{{ object.description_right }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="about-info__image">
+        <div class="media-wrapper">
+          {%- render 'img',
+          img: object.image_bottom,
+          img_sm: object.image_bottom_mob,
+          img_md: '',
+          img_lg: '',
+          m_width: '500'
+        -%}
+        </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+  "name": "About Info",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "about_info",
+      "label": "About info",
+      "default": "We believe electric bicycles are changing the concept of travel providing a clean, efficient and exciting new mode of transportation that is affordable to all."
+    },
+    {
+      "type": "image_picker",
+      "label": "Left column image",
+      "id": "image_left"
+    },
+    {
+      "type": "image_picker",
+      "label": "Left column image mobile",
+      "id": "image_left_mobile"
+    },
+    {
+      "type": "text",
+      "label": "Left column title",
+      "id": "title_left",
+      "default": "Ride Faster"
+    },
+    {
+      "type": "textarea",
+      "label": "Left column description TEXT",
+      "id": "description_left",
+      "default": "Our knowledge and control of the manufacturing process allows us to provide you with the maximum product."
+    },
+    {
+      "type": "image_picker",
+      "label": "Right column image",
+      "id": "image_right"
+    },
+    {
+      "type": "image_picker",
+      "label": "Right column image mobile",
+      "id": "image_right_mobile"
+    },
+    {
+      "type": "text",
+      "label": "Right column title",
+      "id": "title_right",
+      "default": "Ride Farther"
+    },
+    {
+      "type": "textarea",
+      "label": "Right column description TEXT",
+      "id": "description_right",
+      "default": "Our knowledge and control of the manufacturing process allows us to provide you with."
+    },
+    {
+      "type": "image_picker",
+      "label": "Bottom image",
+      "id": "image_bottom"
+    },
+    {
+      "type": "image_picker",
+      "label": "Bottom image Mobile",
+      "id": "image_bottom_mobile"
+    }
+  ],
+  "presets": [
+    {
+      "name": "About Info"
+    }
+  ]
+}  
+{% endschema %}
+

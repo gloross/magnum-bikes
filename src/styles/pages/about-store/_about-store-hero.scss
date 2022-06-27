@@ -1,0 +1,20 @@
+.about-store-hero {
+  padding: rem(166) 0 rem(147);
+  background-size: cover;
+
+  @include media-breakpoint-down(md) {
+    padding: rem(176) 0 rem(185);
+  }
+
+  h1 {
+    color: $white;
+    font-size: rem(56);
+      line-height:line-height(56,72);
+
+
+    @include media-breakpoint-down(md) {
+      font-size: rem(36);
+      line-height:line-height(36,38);
+    }
+  }
+}

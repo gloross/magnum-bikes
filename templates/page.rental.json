@@ -1,0 +1,64 @@
+{
+  "sections": {
+    "rental": {
+      "type": "rental",
+      "blocks": {
+        "f46c5256-c697-4fc0-9320-7fcbfc41dec7": {
+          "type": "block",
+          "settings": {
+            "item_heading": "Initial 2",
+            "item_details": "I acknowledge that I have been advised to use protective equipment that I deem sufficient for protection while participating in this event, and at the minimum, I will wear a helmet at all times and also will wear appropriate clothing and shoes for bicycling. My eyesight and health are suitable for bicycling.\n                I am aware of the bicycling laws of the State of Utah and will abide by them at all times. Also, I am familiar with the surrounding area and will exercise caution when bicycling.ride any bicycle that appears unsafe. I know how to safely ride the test bicycle. By taking the bike for a test ride, I release and forever discharge Magnum Bikes for any and all liability claims, actions, or causes of actions of any nature whatsoever, arising out of any damage, loss, or injury to the undersigned while participating in this test ride.The undersigned further releases Magnum Bikes from all liability for any other activity which may be contemplated at the time of the test ride. This release applies whether such loss, injury, or damage results from negligence of the released party, or from some other cause."
+          }
+        },
+        "c488408c-e3b9-4680-bef6-6e0213bb9730": {
+          "type": "block",
+          "settings": {
+            "item_heading": "Initial 3",
+            "item_details": "I acknowledge and fully understand that I will be engaging in activities that involve risk of injury or death, including economic losses which might result not only from my injuries to myself or family members including medical or hospital bills, permanent or partial disability or death and damages to property, real or personal caused by or resulting from bicycling.\n                I am aware that some of the hazards of bicycling include, but are not limited to, faulty equipment, wheels falling off, tires going flat, faulty brakes, loose handlebars, loose wheel axels, bolts, skewers, loose equipment, hidden bicycle manufacturing and design defects, collisions with other bicyclists, collisions with vehicles, collisions with pedestrians and dangerous or defective roads."
+          }
+        },
+        "ba1de3ce-c314-4a3e-bed6-c0255d78d3d3": {
+          "type": "block",
+          "settings": {
+            "item_heading": "Initial 4",
+            "item_details": "I acknowledge and fully understand that I will be engaging in activities that involve risk of injury or death, including economic losses which might result not only from my injuries to myself or family members including medical or hospital bills, permanent or partial disability or death and damages to property, real or personal caused by or resulting from bicycling.\n                I am aware that some of the hazards of bicycling include, but are not limited to, faulty equipment, wheels falling off, tires going flat, faulty brakes, loose handlebars, loose wheel axels, bolts, skewers, loose equipment, hidden bicycle manufacturing and design defects, collisions with other bicyclists, collisions with vehicles, collisions with pedestrians and dangerous or defective roads."
+          }
+        },
+        "119decdd-6b27-4a1f-bb13-45b28beee0cc": {
+          "type": "block",
+          "settings": {
+            "item_heading": "Initial 5",
+            "item_details": "I am personally and expressly assuming all risks of riding a bicycle and will be personally responsible for any and all injuries to myself, any others, family members, as well as any and all property damage or other damages stemming from any lawsuit related to my bicycling."
+          }
+        },
+        "6d160dd5-2e55-4159-8ca7-449ed81a76e8": {
+          "type": "block",
+          "settings": {
+            "item_heading": "Initial 6",
+            "item_details": "I HAVE CAREFULLY READ THIS ENTIRE WAIVER AND RELEASE, I UNDERSTAND THAT I HAVE GIVEN UP SUBSTANTIAL RIGHTS BY SIGNING IT AND DO SO VOLUNTARILY, KNOWINGLY, AND INTELLIGENTLY. I READ AND UNDERSTAND THE ENGLISH LANGUAGE."
+          }
+        }
+      },
+      "block_order": [
+        "f46c5256-c697-4fc0-9320-7fcbfc41dec7",
+        "c488408c-e3b9-4680-bef6-6e0213bb9730",
+        "ba1de3ce-c314-4a3e-bed6-c0255d78d3d3",
+        "119decdd-6b27-4a1f-bb13-45b28beee0cc",
+        "6d160dd5-2e55-4159-8ca7-449ed81a76e8"
+      ],
+      "settings": {
+        "title": "Privacy Policy",
+        "description": "Waiting on Etan's text",
+        "where_did_text": "Where did you hear about Magnum Bikes?",
+        "select_options": "Internet Search||News||Other",
+        "offers_text": "Email me with news and offers.",
+        "ridding_place": "Where is your ride taking place?",
+        "success_heading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
+        "success_details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+      }
+    }
+  },
+  "order": [
+    "rental"
+  ]
+}

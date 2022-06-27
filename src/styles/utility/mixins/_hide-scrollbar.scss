@@ -1,0 +1,17 @@
+@mixin hide-scrollbar {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: transparent;
+  }
+}

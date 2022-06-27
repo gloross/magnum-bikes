@@ -1,0 +1,29 @@
+//
+// Basic table
+//
+.table {
+  width: 100%;
+  margin-bottom: rem(15);
+  color: $body-color;
+  border-color: $black-40;
+
+  > :not(caption) > * > * {
+    padding: rem(15) rem(10);
+    border-bottom-width: 1px;
+    border-bottom-color: $black-40;
+    border-bottom-style: solid;
+  }
+
+  > tbody {
+    vertical-align: inherit;
+  }
+
+  > thead {
+    vertical-align: bottom;
+  }
+
+  // Highlight border color between thead, tbody and tfoot.
+  > :not(:last-child) > :last-child > * {
+    border-bottom-color: $black-40;
+  }
+}

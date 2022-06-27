@@ -1,0 +1,7 @@
+.big-image {
+  margin: rem(10) rem(10) rem(30);
+
+  @include media-breakpoint-up(md) {
+    margin: rem(10) rem(10) rem(120);
+  }
+}

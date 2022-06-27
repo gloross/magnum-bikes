@@ -1,0 +1,88 @@
+/* ------------------------------------------------------------ *\
+  Article Images
+\* ------------------------------------------------------------ */
+
+.article-images {
+  position: relative;
+  font-family: $regular-font;
+  font-size: rem(16);
+  line-height: line-height(16, 24);
+
+  @include media-breakpoint-down(sm) {
+    font-size: rem(14);
+    line-height: line-height(14, 24);
+  }
+
+  &__inner {
+    display: flex;
+    max-width: rem(774+40);
+    margin: 0 rem(-20);
+
+    @include media-breakpoint-down(sm) {
+      max-width: 100%;
+      margin: 0;
+
+      > :first-child {
+        margin-right: rem(16);
+      }
+    }
+  }
+
+  &__col {
+    width: 50%;
+    margin: 0 rem(20);
+
+    @include media-breakpoint-down(sm) {
+      margin: 0;
+
+      :first {
+        margin-right: rem(18);
+      }
+    }
+  }
+
+  .media-wrapper {
+    padding-bottom: 127.35%;
+  }
+
+  &__info {
+    position: absolute;
+    top: 0;
+    left: rem(-315);
+    width: rem(264);
+    font-family: $regular-font;
+
+    @include media-breakpoint-down(md) {
+      left: rem(-248);
+      width: rem(216);
+    }
+
+    @include media-breakpoint-down(sm) {
+      position: relative;
+      width: 100%;
+      left: 0;
+      top: 0;
+      padding-top: 40px;
+    }
+
+    @include media-breakpoint-down(xs) {
+      width: rem(264);
+    }
+
+    p {
+      margin-bottom: rem(24);
+      font-family: inherit;
+      font-size: inherit;
+      line-height: inherit;
+      color: $grey-light;
+
+      @include media-breakpoint-down(sm) {
+        margin-bottom: rem(25);
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

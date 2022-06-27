@@ -1,0 +1,45 @@
+{%- assign mod_class = mod_class | default: false -%}
+{%- assign mod_image_left = mod_image_left | default: false -%}
+{%- assign mod_image_right = mod_image_right | default: false -%}
+{%- assign mod_text_left = mod_text_left | default: false -%}
+{%- assign mod_text_right = mod_text_right | default: false -%}
+{%- assign mod_metafield_images = mod_metafield_images | default: false -%}
+{%- assign mod_class = mod_class | default: false -%}
+
+{%- if mod_image_left or mod_image_right -%}
+  <div class="article-images{% if mod_class %} {{ mod_class }}{% endif %}">
+    <div class="article-images__inner">
+      {%- for i in (1..2) -%}
+        {%- if forloop.first -%}
+          {%- assign _image = mod_image_left[0] -%}
+        {%- else -%}
+          {%- assign _image = mod_image_right[0] -%}
+        {%- endif -%}
+
+        {%- if _image -%}
+          <div class="article-images__col">
+            {%- if mod_metafield_images -%}
+              <img src="{{- _image.cloudinary_src | append: 'x_600' -}}" alt="{{- _image.alt | escape -}}" loading="lazy" />
+            {%- else -%}
+              {%- render 'img' with img: _image -%}
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+    {%- if mod_text_left or mod_text_right -%}
+      <div class="article-images__info">
+        {%- for i in (1..2) -%}
+          {%- if forloop.first -%}
+            {%- assign _text = mod_text_left -%}
+          {%- else -%}
+            {%- assign _text = mod_text_right -%}
+          {%- endif -%}
+
+          {{- _text -}}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+{%- endif -%}

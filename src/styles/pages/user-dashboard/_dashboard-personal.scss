@@ -1,0 +1,73 @@
+.dashboard-personal {
+  padding-top: rem(34);
+
+  @include media-breakpoint-down(sm) {
+    padding-top: rem(16);
+  }
+
+  &__inner {
+    max-width: rem(710);
+    width: 100%;
+  }
+
+  &__item {
+    position: relative;
+    padding: rem(30) 0;
+    border-bottom: 1px solid $grey-1;
+
+    @include media-breakpoint-down(sm) {
+      padding: rem(24) 0;
+    }
+
+    &.active {
+      .input-field {
+        display: block;
+      }
+
+      span {
+        display: none;
+      }
+    }
+
+    h3 {
+      margin-bottom: rem(18);
+      font-size: rem(18);
+      line-height: line-height(18, 26);
+      font-weight: 700;
+    }
+
+    span {
+      font-size: rem(18);
+      line-height: line-height(18, 26);
+      color: $grey-dark;
+    }
+
+    .input-field {
+      display: none;
+      max-width: rem(495);
+      width: 100%;
+    }
+  }
+
+  &__cta {
+    position: absolute;
+    top: rem(30);
+    right: 0;
+    .save,
+    .change {
+      display: none;
+      text-decoration: underline;
+      font-size: rem(16);
+      line-height: line-height(16, 24);
+      font-weight: 700;
+
+      &.active {
+        display: block;
+      }
+    }
+
+    .save {
+      color: $cyan;
+    }
+  }
+}

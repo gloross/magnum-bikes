@@ -1,0 +1,15 @@
+{
+  "sections": {
+    "warranty": {
+      "type": "warranty",
+      "settings": {
+        "page_title": "Checking status of order",
+        "page_paragraph": "<p>text missing...<\/p>",
+        "page_form": "<form action=\"https:\/\/webto.salesforce.com\/servlet\/servlet.WebToCase?encoding=UTF8\" method=\"POST\" class=\"akeo-form\">\n<input type=\"hidden\" name=\"orgid\" value=\"00D4x0000069epE\">\n<input type=\"hidden\" name=\"retURL\" value=\"http:\/\/\">\n<!--  ----------------------------------------------------------------------  -->\n<!--  NOTE: These fields are optional debugging elements. Please uncomment  -->\n<!--  these lines if you wish to test in debug mode.  -->\n<!--  <input type=\"hidden\" name=\"debug\" value=1>  -->\n<!--  <input type=\"hidden\" name=\"debugEmail\"  -->\n<!--  value=\"support@magnumbikes.com\">  -->\n<!--  ----------------------------------------------------------------------  -->\n<label for=\"name\">Contact Name<\/label><input id=\"name\" maxlength=\"80\" name=\"name\" size=\"20\" type=\"text\" placeholder=\"Contact Name\"><br>\n<label for=\"email\">Email<\/label><input id=\"email\" maxlength=\"80\" name=\"email\" size=\"20\" type=\"text\" placeholder=\"Email\"><br>\n<label for=\"phone\">Phone<\/label><input id=\"phone\" maxlength=\"40\" name=\"phone\" size=\"20\" type=\"text\" placeholder=\"Phone\"><br>\n<input id=\"00N4x00000PiNQv\" maxlength=\"15\" name=\"00N4x00000PiNQv\" size=\"20\" type=\"text\" placeholder=\"Website Order Number:\"><br>\n<label for=\"description\">Description<\/label><textarea name=\"description\" placeholder=\"Description\"><\/textarea><br>\n<input type=\"submit\" name=\"submit\">\n\n<\/form>"
+      }
+    }
+  },
+  "order": [
+    "warranty"
+  ]
+}

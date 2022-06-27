@@ -1,0 +1,172 @@
+{
+  "sections": {
+    "product-gallery": {
+      "type": "main-product",
+      "settings": {
+      }
+    },
+    "service": {
+      "type": "service",
+      "blocks": {
+        "ad110f29-90cc-4c61-a8a3-f60465d9df7c": {
+          "type": "block",
+          "settings": {
+            "svg_icon": "<svg width=\"52\" height=\"52\" viewbox=\"0 0 52 52\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M41.5 23C37.3579 23 34 26.3579 34 30.5C34 34.6421 37.3579 38 41.5 38C45.6421 38 49 34.6421 49 30.5H51C51 35.7467 46.7467 40 41.5 40C36.2533 40 32 35.7467 32 30.5C32 25.2533 36.2533 21 41.5 21C43.6705 21 45.8074 21.73 47.4241 22.9796L46.2009 24.562C44.9449 23.5912 43.2412 23 41.5 23Z\" fill=\"#26BBEE\"><\/path>\n<path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M42 30.0661V26H40V30.9774L44.3438 34.7546L45.6562 33.2454L42 30.0661Z\" fill=\"#26BBEE\"><\/path>\n<path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M46.0002 23.9925V20.5H48.0002V25.2803L44.414 26.9104L43.5864 25.0896L46.0002 23.9925Z\" fill=\"#26BBEE\"><\/path>\n<path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M22.9375 14.9981L14.9375 14.4981L15.0623 12.502L23.0623 13.002L22.9375 14.9981Z\" fill=\"#151515\"><\/path>\n<path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M34.5429 14.5232L29.2197 13.9951L29.4171 12.0049L35.2676 12.5853C35.6653 12.6247 36.0103 12.8768 36.1688 13.2437L38.1887 17.9192L25.3246 30.6809C25.1186 30.8853 24.8401 31 24.5499 31H11.2031C10.2908 31 9.77504 29.9535 10.3307 29.23L19.6316 17.1196C19.8398 16.8486 20.1622 16.6897 20.504 16.6897H35.4789L34.5429 14.5232ZM34.5723 18.6897H20.9476L13.0291 29H24.1792L34.5723 18.6897Z\" fill=\"#151515\"><\/path>\n<path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M23.5688 29.8644L19.0688 18.3644L20.9313 17.6356L25.4313 29.1356L23.5688 29.8644Z\" fill=\"#151515\"><\/path>\n<path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M19.9701 13.7574L20.9701 17.7574L19.0298 18.2425L18.0298 14.2425L19.9701 13.7574Z\" fill=\"#151515\"><\/path>\n<path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M10.5 23C6.35786 23 3 26.3579 3 30.5C3 34.6421 6.35786 38 10.5 38C14.6421 38 18 34.6421 18 30.5C18 26.3579 14.6421 23 10.5 23ZM1 30.5C1 25.2533 5.25329 21 10.5 21C15.7467 21 20 25.2533 20 30.5C20 35.7467 15.7467 40 10.5 40C5.25329 40 1 35.7467 1 30.5Z\" fill=\"#151515\"><\/path>\n<\/svg>",
+            "description": "Ride Now, Pay Later",
+            "item_url": "#"
+          }
+        },
+        "f58691ba-8b7b-49fd-8507-fe35a9082fd8": {
+          "type": "block",
+          "settings": {
+            "svg_icon": "<svg width=\"52\" height=\"52\" viewbox=\"0 0 52 52\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M41.9529 33.3915C41.9526 33.3916 41.9531 33.3914 41.9529 33.3915L33.601 37.6447C33.1793 37.8594 32.7128 37.9714 32.2396 37.9714H23.7049V35.9714H32.2396C32.3974 35.9714 32.5528 35.9341 32.6934 35.8625L41.0471 31.6084C42.5052 30.8677 44.1173 31.2428 45.0558 32.2509C45.5304 32.7608 45.8379 33.4405 45.842 34.2058C45.8462 34.9746 45.5447 35.7401 44.9618 36.4289C44.7337 36.6985 44.465 36.8855 44.2232 37.018L31.0714 44.2303C29.4845 45.1006 27.5897 45.208 25.9146 44.5227L17.4854 41.0744C17.3652 41.0253 17.2366 41 17.1067 41H13V39H17.1067C17.4963 39 17.8821 39.0758 18.2426 39.2233L26.6719 42.6717C27.7886 43.1285 29.0518 43.0569 30.1097 42.4767L43.2616 35.2644C43.3614 35.2097 43.4116 35.1647 43.4351 35.1369C43.7628 34.7497 43.8432 34.4328 43.8421 34.2167C43.8409 33.9972 43.7557 33.7896 43.5919 33.6136C43.2537 33.2504 42.6056 33.0603 41.9529 33.3915Z\" fill=\"#151515\"><\/path>\n<path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M19.2132 31.5H13V29.5H19.7868L23.7868 32H32.101L32.1999 32.0202C33.1243 32.2088 34.0397 32.966 34.3783 34.0357C34.7465 35.199 34.3849 36.5167 33.1705 37.7125L31.7672 36.2875C32.5839 35.4833 32.5596 34.9176 32.4715 34.6393C32.366 34.3058 32.0862 34.0762 31.8715 34H23.2132L19.2132 31.5Z\" fill=\"#151515\"><\/path>\n<path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M12 42V27H14V44H6V37.8571H8V42H12Z\" fill=\"#151515\"><\/path>\n<path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M6 27H13V29H8V33H6V27Z\" fill=\"#151515\"><\/path>\n<path d=\"M30.1245 27.4706H26.1634L25.3741 25.0232L24.2486 24.5191L22.1365 25.7391L19.352 22.8534L20.7552 20.8078L20.1486 19.5439L18 18.6453V15.1093L20.2583 14.1815L20.5141 13.2537L19.3813 11.0985L22.2534 8.43922L24.5263 9.73964L24.9721 9.54238L25.4252 9.27938L26.1707 7H30.0295L30.6288 9.32321L31.535 9.70311L34.0052 8.43922L36.6143 11.0912L35.4376 13.2391L35.708 14.1011L38.4706 15.0874V18.6599L36.1246 19.617L35.5399 21.0343L36.8043 23.1237L33.8371 26.0021L31.7908 24.6433L30.5703 25.1401L30.1245 27.4706ZM27.2231 26.0094H28.9113L29.2767 24.088L31.9443 23.0068L33.6544 24.1392L34.948 22.8899L33.9029 21.1585L35.0138 18.5065L37.0089 17.6882V16.1248L34.5241 15.2408L33.859 13.0857L34.8091 11.3469L33.7129 10.2291L31.5935 11.3177L29.3863 10.3898L28.8967 8.46114H27.2304L26.6384 10.2583L25.6006 10.8574L24.4386 11.3761L22.4581 10.2364L21.1937 11.4053L22.0707 13.0783L21.4788 15.2554L19.4617 16.081V17.6736L21.223 18.4188L22.4361 20.9393L21.2303 22.7L22.3923 23.9054L24.1682 22.8826L26.5653 23.9565L27.2231 26.0094Z\" fill=\"#26BBEE\"><\/path>\n<path d=\"M28.2315 21.911C25.5348 21.911 23.3423 19.7193 23.3423 17.0235C23.3423 14.3277 25.5348 12.136 28.2315 12.136C30.9283 12.136 33.1208 14.3277 33.1208 17.0235V17.7541H31.6591V17.0235C31.6591 15.1313 30.1244 13.5971 28.2315 13.5971C26.3387 13.5971 24.8039 15.1313 24.8039 17.0235C24.8039 18.9157 26.3387 20.4499 28.2315 20.4499C29.1524 20.4499 30.0148 20.0919 30.6652 19.4344L31.1768 18.9157L32.2146 19.9458L31.703 20.4645C30.7748 21.3996 29.5397 21.911 28.2315 21.911Z\" fill=\"#26BBEE\"><\/path>\n<\/svg>",
+            "description": "Expert Service & Support",
+            "item_url": "#"
+          }
+        },
+        "a5d32663-6411-4150-8d23-7c4501f3f12e": {
+          "type": "block",
+          "settings": {
+            "svg_icon": "<svg width=\"52\" height=\"52\" viewbox=\"0 0 52 52\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M37.4085 18.9759L33.8209 23.3363L32.2765 22.0655L35.8641 17.7052L37.4085 18.9759Z\" fill=\"#26BBEE\"><\/path>\n<path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M42.3919 23.076L38.8043 27.4364L37.2599 26.1656L40.8475 21.8053L42.3919 23.076Z\" fill=\"#26BBEE\"><\/path>\n<path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M17.0166 39.3428L20.3786 35.2569L21.923 36.5277L18.561 40.6135C18.4273 40.776 18.3431 40.8965 18.2897 41.0052C17.8414 41.9175 17.8393 43.0229 18.2444 43.7152C18.4325 44.0366 18.7144 44.2871 19.1333 44.4233C19.5669 44.5643 20.2169 44.6039 21.1507 44.359C21.6835 44.2193 22.1887 43.8483 22.6303 43.3116L26.442 38.6789L27.9864 39.9497L24.1747 44.5824C23.5648 45.3236 22.7261 46.0134 21.6581 46.2936C20.4638 46.6068 19.4078 46.6157 18.5148 46.3253C17.607 46.0301 16.9414 45.4485 16.5182 44.7253C15.7008 43.3283 15.8208 41.4945 16.4948 40.123C16.6502 39.8069 16.8495 39.5458 17.0166 39.3428Z\" fill=\"#26BBEE\"><\/path>\n<path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M41.6378 10.836C38.7385 11.1179 36.6168 13.6967 36.8986 16.5959C37.1805 19.4951 39.7593 21.6169 42.6585 21.335C45.5577 21.0532 47.6795 18.4744 47.3976 15.5752C47.3867 15.4628 47.3724 15.3517 47.3547 15.2419L44.9477 18.0485L40.7552 17.6171L39.7004 13.7198L41.842 10.8202C41.7751 10.824 41.7072 10.8293 41.6378 10.836ZM34.908 16.7894C34.5193 12.7908 37.4456 9.23417 41.4442 8.84541C42.3253 8.75975 43.023 8.85136 43.8828 9.02065L45.4321 9.32572L41.8835 14.1304L42.3268 15.7682L44.111 15.9518L47.9616 11.4619L48.6384 12.7967C49.037 13.583 49.2981 14.4546 49.3883 15.3816C49.777 19.3802 46.8506 22.9369 42.852 23.3257C38.8534 23.7144 35.2968 20.788 34.908 16.7894Z\" fill=\"#26BBEE\"><\/path>\n<path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M17.3914 8.08555L24.4301 13.7821L10.2742 31.426L2.99949 25.6064L6.48319 21.3653L8.02865 22.6348L5.83095 25.3103L9.96401 28.6166L21.6239 14.0839L17.6766 10.8893L11.7726 18.0769L10.2271 16.8074L17.3914 8.08555Z\" fill=\"#151515\"><\/path>\n<path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M21.4772 17.0865L22.7479 15.5421L24.8349 17.2593L30.9694 15.5167L35.1114 18.9247L33.8407 20.4691L30.5078 17.7269L24.3734 19.4695L21.4772 17.0865Z\" fill=\"#151515\"><\/path>\n<path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M31.2221 20.4264L41.3339 28.2134L41.4369 28.4447C41.7889 29.2359 41.9155 29.9881 41.799 30.6855C41.6813 31.3907 41.3307 31.9458 40.8933 32.3594C40.3824 32.8426 39.7444 33.1445 39.1484 33.3231C39.1651 34.3341 38.7447 35.1664 38.1609 35.7841C37.6704 36.3031 37.07 36.6713 36.5222 36.9129C36.492 37.4405 36.3724 37.9146 36.1674 38.3344C35.8632 38.9573 35.4055 39.3896 34.9222 39.6843C34.4607 39.9658 33.9603 40.129 33.5192 40.2274C33.5314 40.5896 33.4912 40.9314 33.392 41.2496C33.189 41.9012 32.7684 42.3562 32.2675 42.637C31.3487 43.152 30.2151 43.062 29.5374 42.9071L29.3163 42.8565L11.1296 28.4202L12.3731 26.8537L30.19 40.9965C30.6209 41.0616 31.051 41.0261 31.2895 40.8924C31.3865 40.838 31.4455 40.7737 31.4827 40.6544C31.5193 40.5368 31.5483 40.3149 31.4799 39.9413L29.8741 38.6201L31.1448 37.0757L32.6866 38.3443C33.0911 38.289 33.5275 38.1923 33.881 37.9767C34.0966 37.8453 34.2613 37.6798 34.3703 37.4567C34.4522 37.2888 34.5217 37.0492 34.5293 36.705L32.3815 34.9378L33.6522 33.3934L35.7091 35.0858C36.056 34.9334 36.4285 34.7054 36.7074 34.4103C37.0229 34.0765 37.2205 33.6683 37.1232 33.094L34.2659 30.7431L35.5367 29.1987L38.3057 31.477C38.7561 31.3791 39.2234 31.186 39.5192 30.9062C39.6898 30.7449 39.7909 30.5684 39.8263 30.3562C39.8577 30.1685 39.8485 29.8854 39.6996 29.4791L30.0018 22.011L31.2221 20.4264Z\" fill=\"#151515\"><\/path>\n<\/svg>",
+            "description": "Easy Assembly by You or Us",
+            "item_url": "#"
+          }
+        }
+      },
+      "block_order": [
+        "ad110f29-90cc-4c61-a8a3-f60465d9df7c",
+        "f58691ba-8b7b-49fd-8507-fe35a9082fd8",
+        "a5d32663-6411-4150-8d23-7c4501f3f12e"
+      ],
+      "settings": {
+      }
+    },
+    "premium-high": {
+      "type": "premium-high",
+      "settings": {
+      }
+    },
+    "battery-section": {
+      "type": "battery-section",
+      "settings": {
+        "cta_url": "",
+        "cta_text": "How is range calculated?"
+      }
+    },
+    "battery-section-reverse": {
+      "type": "battery-section-reverse",
+      "settings": {
+        "reverse": true,
+        "cta_url": "",
+        "cta_text": "How does this affect my ride?"
+      }
+    },
+    "carousel-slider": {
+      "type": "carousel-slider",
+      "settings": {
+      }
+    },
+    "explore": {
+      "type": "explore",
+      "disabled": true,
+      "settings": {
+        "image": "shopify:\/\/shop_images\/pathfinder_image_croped.png"
+      }
+    },
+    "measures": {
+      "type": "measures",
+      "disabled": true,
+      "settings": {
+        "section_title": "Does it fit you?",
+        "section_description": "We suggest Nomad for riders 5’6″ and taller. However, the bike won’t be suitable for all people the same. Let’s find out if this bike fits you by following our simple calculator below.",
+        "image": "shopify:\/\/shop_images\/magnum.png",
+        "tab_title_1": "Measure Inner Leg",
+        "tab_1_description": "Measure your inseam. Stand with your feet six inches apart, and measure up to your pubic bone from the inside of your foot (where your leg meets your hip in your crotch).",
+        "tab_title_2": "Measure Height",
+        "tab_2_description": "CMS Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde molestiae dolore alias nostrum perferendis suscipit aliquam magni error reprehenderit doloribus!",
+        "message_correct": "<h4>It’s a perfect match.<\/h4><p>We include an easy to use toolkit and an assembly manual to make the remaining 15% easy.<\/p>",
+        "message_incorrect": "<h4>Not the right size.<\/h4><p>We include an easy to use toolkit and an assembly manual to make <a href=\"\">check out bikes which fit.<\/a><\/p>"
+      }
+    },
+    "component-overview": {
+      "type": "component-overview",
+      "settings": {
+        "title": "Component Overview"
+      }
+    },
+    "videos-tab": {
+      "type": "videos-tab",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "1645612596f0cb8b3b": {
+      "type": "apps",
+      "disabled": true,
+      "blocks": {
+        "c545581a-f7c9-4d7f-8887-fa4fca9bc9da": {
+          "type": "shopify:\/\/apps\/yotpo-product-reviews-photos\/blocks\/reviews\/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
+          "settings": {
+            "product": "{{product}}"
+          }
+        }
+      },
+      "block_order": [
+        "c545581a-f7c9-4d7f-8887-fa4fca9bc9da"
+      ],
+      "settings": {
+        "include_container": true
+      }
+    },
+    "gallery": {
+      "type": "gallery-slider",
+      "disabled": true,
+      "settings": {
+        "section_title": "see it in the wild"
+      }
+    },
+    "compare": {
+      "type": "compare",
+      "disabled": true,
+      "settings": {
+        "section_title": "Compare the Metros",
+        "subtitle": "Metro S, Metro X & Metro 750.",
+        "description": "We suggest Nomad for riders 5’6″ and taller. However, the bike won’t be suitable for all people the same. Let’s find out if this bike fits you by following our simple calculator below.",
+        "cta_url_left": "",
+        "left_cta_text_label": "Compare the Metro Series",
+        "help_url": "",
+        "help_link_text": "Help me choose A BIKE"
+      }
+    },
+    "163956386889829511": {
+      "type": "cta",
+      "disabled": true,
+      "settings": {
+        "call_us_phone": "111 - 555 - 678",
+        "call_us_text": "Call Us",
+        "chat_url": "",
+        "chat_text": "Live Chat",
+        "size_cta_url": "",
+        "size_cta_text": "Is the size right for me?",
+        "compare_cta_url": "",
+        "compare_cta_text": "Compare"
+      }
+    }
+  },
+  "order": [
+    "product-gallery",
+    "service",
+    "premium-high",
+    "battery-section",
+    "battery-section-reverse",
+    "carousel-slider",
+    "explore",
+    "measures",
+    "component-overview",
+    "videos-tab",
+    "1645612596f0cb8b3b",
+    "gallery",
+    "compare",
+    "163956386889829511"
+  ]
+}

@@ -1,0 +1,77 @@
+//.loading {
+//  .scroll-btn {
+//    bottom: 50%;
+//    right: 50%;
+//    transform: translate(50%, 50%);
+//
+//    .icon {
+//      display: none;
+//    }
+//  }
+//}
+
+.scroll-btn {
+  position: fixed;
+  bottom: rem(20);
+  right: rem(10);
+  z-index: 999999;
+  border-radius: 50%;
+  display: flex;
+  mix-blend-mode: difference;
+
+  @include media-breakpoint-up(sm) {
+    right: rem(26);
+  }
+
+  @include media-breakpoint-up(md) {
+    right: rem(17);
+  }
+
+  @include media-breakpoint-up(lg) {
+    bottom: rem(57);
+    right: rem(58);
+  }
+
+  svg {
+    width: rem(74);
+    height: rem(74);
+
+    @include media-breakpoint-up(md) {
+      width: rem(100);
+      height: rem(100);
+    }
+
+    @include media-breakpoint-up(lg) {
+      width: rem(124);
+      height: rem(124);
+    }
+  }
+
+  &__text,
+  &__arrow {
+    transform-origin: center center;
+  }
+
+  &__arrow {
+    transition: transform $t-basic;
+  }
+
+  &:active {
+    .scroll-btn__arrow {
+      transform: scale(0.8);
+      transition: transform 0.15s;
+    }
+  }
+
+  &--down {
+    .scroll-btn__arrow {
+      transform: rotate(180deg);
+    }
+
+    &:active {
+      .scroll-btn__arrow {
+        transform: rotate(180deg) scale(0.8);
+      }
+    }
+  }
+}

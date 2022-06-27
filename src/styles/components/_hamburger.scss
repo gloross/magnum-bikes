@@ -1,0 +1,64 @@
+.hamburger {
+  pointer-events: auto;
+  display: flex;
+  transition-property: opacity;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  transform-origin: center center;
+  position: relative;
+
+  &__inner {
+    display: block;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    transform-origin: center;
+  }
+
+  .line {
+    width: rem(22);
+    height: rem(2);
+    margin-left: rem(1);
+    margin-bottom: rem(4);
+    display: block;
+    background: $black;
+    transform-origin: center;
+    transition: all 0.2s ease 0s;
+
+    &--1 {
+      background: $black;
+    }
+
+    &--3 {
+      background: $black;
+    }
+  }
+
+  &.active {
+    .hamburger__inner {
+      transition: all 0.3s ease 0s;
+    }
+
+    .line--1,
+    .line--3 {
+      position: absolute;
+      left: 0;
+      top: 0;
+      transition: all 0.2s ease 0s;
+      transform-origin: center;
+    }
+
+    .line {
+      &--1 {
+        transform: rotate(-45deg);
+      }
+
+      &--2 {
+        background: transparent;
+      }
+
+      &--3 {
+        transform: rotate(45deg);
+      }
+    }
+  }
+}

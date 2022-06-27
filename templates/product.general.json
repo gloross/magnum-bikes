@@ -1,0 +1,49 @@
+{
+  "sections": {
+    "product-gallery": {
+      "type": "product-gallery",
+      "settings": {
+      }
+    },
+    "service": {
+      "type": "service",
+      "blocks": {
+        "ad110f29-90cc-4c61-a8a3-f60465d9df7c": {
+          "type": "block",
+          "settings": {
+            "svg_icon": "",
+            "description": "Ride Now, Pay Later",
+            "item_url": ""
+          }
+        },
+        "f58691ba-8b7b-49fd-8507-fe35a9082fd8": {
+          "type": "block",
+          "settings": {
+            "svg_icon": "",
+            "description": "Ride Now, Pay Later",
+            "item_url": ""
+          }
+        },
+        "a5d32663-6411-4150-8d23-7c4501f3f12e": {
+          "type": "block",
+          "settings": {
+            "svg_icon": "",
+            "description": "Ride Now, Pay Later",
+            "item_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "ad110f29-90cc-4c61-a8a3-f60465d9df7c",
+        "f58691ba-8b7b-49fd-8507-fe35a9082fd8",
+        "a5d32663-6411-4150-8d23-7c4501f3f12e"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "product-gallery",
+    "service"
+  ]
+}

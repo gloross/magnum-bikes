@@ -1,0 +1,106 @@
+.gallery {
+  padding: rem(40) 0;
+  background-color: #272526;
+  overflow: hidden;
+
+  @include media-breakpoint-up(md) {
+    padding: rem(70) 0 rem(44);
+  }
+
+  &__title {
+    .h4 {
+      font-size: rem(14);
+      line-height: rem(32);
+      color: $grey-light;
+      text-transform: uppercase;
+      display: none;
+
+      @include media-breakpoint-up(md) {
+        padding: 0 0 rem(34) rem(169);
+        display: block;
+      }
+    }
+  }
+
+  &__item {
+    img {
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+  }
+
+  .swiper-container {
+    overflow: visible;
+    position: relative;
+
+    @include media-breakpoint-up(md) {
+      padding: 0 rem(44);
+    }
+
+    @include media-breakpoint-up(lgxl) {
+      padding: 0 rem(107);
+    }
+
+    @include media-breakpoint-up(xsm) {
+      padding: 0 rem(169);
+    }
+  }
+  .swiper-slide {
+    opacity: 0.3;
+    &-active {
+      opacity: 1;
+    }
+  }
+  &__arrows {
+    max-width: rem(112);
+    display: flex;
+    justify-content: space-between;
+    margin: rem(33) auto 0 auto;
+
+    @include media-breakpoint-up(md) {
+      margin: rem(33) 0 0;
+    }
+
+    .btn__nav {
+      width: rem(50);
+      height: rem(50);
+      border-radius: 50%;
+      border: 1px solid $grey-light-2;
+      background-color: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: $t-hover;
+
+      &--prev {
+        &:hover {
+          .icon {
+            margin-left: rem(-6);
+          }
+        }
+      }
+
+      &--next {
+        &:hover {
+          .icon {
+            margin-right: rem(-6);
+          }
+        }
+      }
+    }
+
+    .icon {
+      transition: $t-hover;
+      width: rem(13);
+
+      path {
+        fill: $white;
+      }
+    }
+  }
+}

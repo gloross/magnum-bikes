@@ -1,0 +1,447 @@
+<!doctype html>
+<html class="no-js" lang="{{- request.locale.iso_code -}}" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-type" content="text/html">
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NPFHHJT');</script>
+<!-- End Google Tag Manager -->
+
+  <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+  {%- unless settings.fonts_header.system? and settings.fonts_body.system? -%}
+  <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+  {%- endunless -%}
+  {%- unless settings.fonts_header.system? -%}
+  <link rel="preload" href="{{ settings.fonts_header | font_url }}" type="font/woff2" as="font" crossorigin>
+  {%- endunless -%}
+
+  {%- unless settings.fonts_body.system? -%}
+  <link rel="preload" href="{{ settings.fonts_body | font_url }}" type="font/woff2" as="font" crossorigin>
+  {%- endunless -%}
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <style>
+    /* cyrillic-ext */
+    @font-face {
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(https://fonts.gstatic.com/s/roboto/v29/KFOmCnqEu92Fr1Mu72xKKTU1Kvnz.woff2) format('woff2');
+      unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+    }
+    /* cyrillic */
+    @font-face {
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(https://fonts.gstatic.com/s/roboto/v29/KFOmCnqEu92Fr1Mu5mxKKTU1Kvnz.woff2) format('woff2');
+      unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+    }
+    /* greek-ext */
+    @font-face {
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(https://fonts.gstatic.com/s/roboto/v29/KFOmCnqEu92Fr1Mu7mxKKTU1Kvnz.woff2) format('woff2');
+      unicode-range: U+1F00-1FFF;
+    }
+    /* greek */
+    @font-face {
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(https://fonts.gstatic.com/s/roboto/v29/KFOmCnqEu92Fr1Mu4WxKKTU1Kvnz.woff2) format('woff2');
+      unicode-range: U+0370-03FF;
+    }
+    /* vietnamese */
+    @font-face {
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(https://fonts.gstatic.com/s/roboto/v29/KFOmCnqEu92Fr1Mu7WxKKTU1Kvnz.woff2) format('woff2');
+      unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+    }
+    /* latin-ext */
+    @font-face {
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(https://fonts.gstatic.com/s/roboto/v29/KFOmCnqEu92Fr1Mu7GxKKTU1Kvnz.woff2) format('woff2');
+      unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    /* latin */
+    @font-face {
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(https://fonts.gstatic.com/s/roboto/v29/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    /* cyrillic-ext */
+    @font-face {
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url(https://fonts.gstatic.com/s/roboto/v29/KFOlCnqEu92Fr1MmEU9fCRc4AMP6lbBP.woff2) format('woff2');
+      unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+    }
+    /* cyrillic */
+    @font-face {
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url(https://fonts.gstatic.com/s/roboto/v29/KFOlCnqEu92Fr1MmEU9fABc4AMP6lbBP.woff2) format('woff2');
+      unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+    }
+    /* greek-ext */
+    @font-face {
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url(https://fonts.gstatic.com/s/roboto/v29/KFOlCnqEu92Fr1MmEU9fCBc4AMP6lbBP.woff2) format('woff2');
+      unicode-range: U+1F00-1FFF;
+    }
+    /* greek */
+    @font-face {
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url(https://fonts.gstatic.com/s/roboto/v29/KFOlCnqEu92Fr1MmEU9fBxc4AMP6lbBP.woff2) format('woff2');
+      unicode-range: U+0370-03FF;
+    }
+    /* vietnamese */
+    @font-face {
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url(https://fonts.gstatic.com/s/roboto/v29/KFOlCnqEu92Fr1MmEU9fCxc4AMP6lbBP.woff2) format('woff2');
+      unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+    }
+    /* latin-ext */
+    @font-face {
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url(https://fonts.gstatic.com/s/roboto/v29/KFOlCnqEu92Fr1MmEU9fChc4AMP6lbBP.woff2) format('woff2');
+      unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    /* latin */
+    @font-face {
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url(https://fonts.gstatic.com/s/roboto/v29/KFOlCnqEu92Fr1MmEU9fBBc4AMP6lQ.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    /* cyrillic-ext */
+    @font-face {
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: url(https://fonts.gstatic.com/s/roboto/v29/KFOlCnqEu92Fr1MmWUlfCRc4AMP6lbBP.woff2) format('woff2');
+      unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+    }
+    /* cyrillic */
+    @font-face {
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: url(https://fonts.gstatic.com/s/roboto/v29/KFOlCnqEu92Fr1MmWUlfABc4AMP6lbBP.woff2) format('woff2');
+      unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+    }
+    /* greek-ext */
+    @font-face {
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: url(https://fonts.gstatic.com/s/roboto/v29/KFOlCnqEu92Fr1MmWUlfCBc4AMP6lbBP.woff2) format('woff2');
+      unicode-range: U+1F00-1FFF;
+    }
+    /* greek */
+    @font-face {
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: url(https://fonts.gstatic.com/s/roboto/v29/KFOlCnqEu92Fr1MmWUlfBxc4AMP6lbBP.woff2) format('woff2');
+      unicode-range: U+0370-03FF;
+    }
+    /* vietnamese */
+    @font-face {
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: url(https://fonts.gstatic.com/s/roboto/v29/KFOlCnqEu92Fr1MmWUlfCxc4AMP6lbBP.woff2) format('woff2');
+      unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+    }
+    /* latin-ext */
+    @font-face {
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: url(https://fonts.gstatic.com/s/roboto/v29/KFOlCnqEu92Fr1MmWUlfChc4AMP6lbBP.woff2) format('woff2');
+      unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    /* latin */
+    @font-face {
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: url(https://fonts.gstatic.com/s/roboto/v29/KFOlCnqEu92Fr1MmWUlfBBc4AMP6lQ.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+  </style>
+
+  {%- liquid
+      render 'head-seo'
+      render 'head-metas'
+      render 'head-settings'
+    -%}
+
+  <script type="module" src="{{- 'lazysizes.min.js' | asset_url -}}"></script>
+  <script type="module" src="{{- 'ls.respimg.min.js' | asset_url -}}"></script>
+  <script type="module" src="{{- 'ls.bgset.min.js' | asset_url -}}"></script>
+
+  {{ 'base.css' | asset_url | stylesheet_tag: preload: true }}
+
+  {{ 'component-productSlider.css' | asset_url | stylesheet_tag }}
+  {{ 'component-productPhotoGallery.css' | asset_url | stylesheet_tag }}
+
+  <!-- Header hook for plugins -->
+  {{ content_for_header }}
+
+  {%- render 'locales' -%}
+  {%- render 'settings' -%}
+
+  {% comment %} BREAD SCRIPT {% endcomment %}
+  <script type="text/javascript" src="https://checkout.getbread.com/bread.js" data-api-key="e313a68a-8114-457e-a451-1c8e1e56596f"></script>
+  {% comment %} <script src="https://checkout-sandbox.getbread.com/bread.js" data-api-key="535d68bf-dd16-48bd-8f11-ab32c463a0a9"></script> {% endcomment %}
+
+  {% render 'gsf-conversion-pixels' %}
+</head>
+<body class="layout-theme template-{{- template.name -}}{%- if template.suffix -%}-{{- template.suffix -}}{%- endif -%}">
+
+
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NPFHHJT"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  {% comment %} Accessibilty {% endcomment %}
+  <div class="a11y o-container --medium u-pv-small" tabindex="-1" hidden>
+    <a role="button" class="c-button --small" href="#main-content">
+      {{- "accessibility.skip_to_content" | t -}}
+    </a>
+    <button type="button" class="c-button --small" onclick="this.blur();">{{ "accessibility.close" | t }}</button>
+  </div>
+
+  {%- section 'header' -%}
+
+  <main id="main-content" role="main" class="u-focus-none" tabindex="-1">
+    {{ content_for_layout }}
+  </main>
+
+  {%- section 'footer' -%}
+  {%- section 'subfooter' -%}
+
+  <ul hidden>
+    <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>
+  </ul>
+
+  {%- section 'go-cart' -%}
+
+  {%- if template.name contains 'product' -%}
+    {% render 'popup-bis' %}
+  {%- endif -%}
+
+  <!-- //TODO proveriti i ocistiti JS -->
+  <!-- START BASE JS GLOBAL -->
+  <script src="{{- 'base.js' | asset_url -}}" defer></script>
+  <!-- END BASE JS GLOBAL -->
+
+  {% if template == 'index' %}
+  <!-- START HOME JS -->
+  <script type="module" src="{{- 'component-HomeCarousel.js'| asset_url -}}"></script>
+  <script type="module" src="{{- 'component-HomeGallery.js'| asset_url -}}"></script>
+  <!-- END HOME JS -->
+  {% endif %}
+
+  <!-- START PRODUCT JS -->
+  <!-- END PRODUCT JS -->
+
+  {% if template contains 'collection' %}
+  <!-- START COLLECTION JS -->
+    <script type="module" src="{{- 'component-collection.js' | asset_url -}}"></script>
+    <script type="module" src="{{- 'component-CollectionFilter.js'| asset_url -}}"></script>
+    <script type="module" src="{{- 'component-noUiSlider.js' | asset_url -}}"></script>
+    <script type="module" src="{{- 'component-filterRangeSlider.js'| asset_url -}}"></script>
+    <!-- END COLLECTION JS -->
+  {% endif %}
+
+  <!-- START CART JS -->
+  <!-- END CART JS -->
+
+  {% unless template == 'index' %}
+  <!-- GLOBAL -->
+    <script type="module" src="{{- 'component-learningSlider.js'| asset_url -}}"></script>
+    <script type="module" src="{{- 'component-ExploreSlider.js'| asset_url -}}"></script>
+    <script type="module" src="{{- 'component-contactFormBuilder.js'| asset_url -}}"></script>
+    <script type="module" src="{{- 'component-rentalForm.js'| asset_url -}}"></script>
+    <script type="module" src="{{- 'component-warrantyForm.js'| asset_url -}}"></script>
+    <script type="module" src="{{- 'component-ArticlelSlider.js'| asset_url -}}"></script>
+    {%comment%}<script type="module" src="{{- 'component-ArticleGallery.js'| asset_url -}}"></script>{%endcomment%}
+    <!-- User-Dashboard My Orders -->
+    <script type="module" src="{{- 'component-VanillaDataTables.js'| asset_url -}}"></script>
+    <script type="module" src="{{- 'component-account.js'| asset_url -}}"></script>
+
+    <!-- QUIZ PAGE -->
+    <script type="module" src="{{- 'component-QuizCarousel.js'| asset_url -}}"></script>
+    <script type="module" src="{{- 'component-quizForm.js'| asset_url -}}"></script>
+    <!-- END GLOBAL -->
+  {% endunless %}
+
+  <script type="module" src="{{- 'component-CarouselSlider.js'| asset_url -}}"></script>
+  <script type="module" src="{{- 'component-MouseFollow.js'| asset_url -}}"></script>
+  <script type="module" src="{{- 'component-Gallery.js'| asset_url -}}"></script>
+  <script type="module" src="{{- 'component-headerSlider.js'| asset_url -}}"></script>
+  <script type="module" src="{{- 'component-SingleItemGallery.js'| asset_url -}}"></script>
+  <script type="module" src="{{- 'component-accordion.js'| asset_url -}}"></script>
+  <script type="module" src="{{- 'component-featuredBikeSlider.js'| asset_url -}}"></script>
+
+  <script type="module" src="{{- 'component-tabs.js'| asset_url -}}"></script>
+  <script type="module" src="{{- 'component-tabsHover.js'| asset_url -}}"></script>
+  <script type="module" src="{{- 'component-VideoComponent.js'| asset_url -}}"></script>
+
+
+  <script type="module" src="{{- 'component-Testimonial.js'| asset_url -}}"></script>
+  <script type="module" src="{{- 'component-CtaTapeHidden.js'| asset_url -}}"></script>
+  <script type="module" src="{{- 'component-IncDecInput.js'| asset_url -}}"></script>
+  <script type="module" src="{{- 'component-Checkout.js'| asset_url -}}"></script>
+  <script type="module" src="{{- 'component-Sticky.js'| asset_url -}}"></script>
+  <script type="module" src="{{- 'component-Select.js'| asset_url -}}"></script>
+
+  <!-- Start vendor third party libaries -->
+  <script src="{{- 'vendors.js' | asset_url -}}" defer></script>
+  <!-- End vendor third party libaries -->
+
+  <script type="module" src="{{- 'component-collection.js' | asset_url -}}"></script>
+  <script type="module" src="{{- 'component-noUiSlider.js' | asset_url -}}"></script>
+  <script type="module" src="{{- 'component-productSlider.js' | asset_url -}}"></script>
+  <script type="module" src="{{- 'component-CarouselSlider.js'| asset_url -}}"></script>
+  <script type="module" src="{{- 'component-learningSlider.js'| asset_url -}}"></script>
+  <script type="module" src="{{- 'component-MouseFollow.js'| asset_url -}}"></script>
+  <script type="module" src="{{- 'component-Gallery.js'| asset_url -}}"></script>
+  <script type="module" src="{{- 'component-ExploreSlider.js'| asset_url -}}"></script>
+  <script type="module" src="{{- 'component-CollectionFilter.js'| asset_url -}}"></script>
+  <script type="module" src="{{- 'component-headerSlider.js'| asset_url -}}"></script>
+  <script type="module" src="{{- 'component-custom.js'| asset_url -}}"></script>
+
+  {% unless template contains 'no-bikes' %}
+    <script type="module" src="{{- 'component-productPhotoGallery.js'| asset_url -}}"></script>
+  {% endunless %}
+
+  <script type="module" src="{{- 'component-SingleItemGallery.js'| asset_url -}}"></script>
+  <script type="module" src="{{- 'component-accordion.js'| asset_url -}}"></script>
+  <script type="module" src="{{- 'component-featuredBikeSlider.js'| asset_url -}}"></script>
+  <script type="module" src="{{- 'component-contactFormBuilder.js'| asset_url -}}"></script>
+  <script type="module" src="{{- 'component-headerScroll.js'| asset_url -}}"></script>
+  <script type="module" src="{{- 'component-rentalForm.js'| asset_url -}}"></script>
+  <script type="module" src="{{- 'component-warrantyForm.js'| asset_url -}}"></script>
+  <script type="module" src="{{- 'component-tabs.js'| asset_url -}}"></script>
+  <script type="module" src="{{- 'component-tabsHover.js'| asset_url -}}"></script>
+
+  <script type="module" src="{{- 'component-rentalForm.js'| asset_url -}}"></script>
+  <script type="module" src="{{- 'component-warrantyForm.js'| asset_url -}}"></script>
+  <script type="module" src="{{- 'component-tabs.js'| asset_url -}}"></script>
+  <script type="module" src="{{- 'component-tabsHover.js'| asset_url -}}"></script>
+  <script type="module" src="{{- 'component-ArticlelSlider.js'| asset_url -}}"></script>
+  <script type="module" src="{{- 'component-VideoComponent.js'| asset_url -}}"></script>
+  {%comment%}<script type="module" src="{{- 'component-ArticleGallery.js'| asset_url -}}"></script>{%endcomment%}
+  <script type="module" src="{{- 'component-Testimonial.js'| asset_url -}}"></script>
+  <script type="module" src="{{- 'component-CtaTapeHidden.js'| asset_url -}}"></script>
+  <script type="module" src="{{- 'component-account.js'| asset_url -}}"></script>
+  <script type="module" src="{{- 'component-GoCart.js'| asset_url -}}"></script>
+  <script type="module" src="{{- 'component-IncDecInput.js'| asset_url -}}"></script>
+  <script type="module" src="{{- 'component-Checkout.js'| asset_url -}}"></script>
+  <script type="module" src="{{- 'component-Sticky.js'| asset_url -}}"></script>
+  <script type="module" src="{{- 'component-Select.js'| asset_url -}}"></script>
+  <script type="module" src="{{- 'component-filterRangeSlider.js'| asset_url -}}"></script>
+  <script type="module" src="{{- 'component-modalVideo.js'| asset_url -}}"></script>
+  <script type="module" src="{{- 'component-blogController.js'| asset_url -}}"></script>
+  <script type="module" src="{{- 'component-TooltipPricelist.js'| asset_url -}}"></script>
+  <script type="module" src="{{- 'component-formBis.js'| asset_url -}}"></script>
+  <script type="module" src="{{- 'component-popup.js'| asset_url -}}"></script>
+
+  {%- if template.name == 'product' -%}
+    <script type="module" src="{{- 'component-product.js'| asset_url -}}"></script>
+  {%- endif -%}
+
+  <!-- User-Dashboard My Orders -->
+  <script type="module" src="{{- 'component-VanillaDataTables.js'| asset_url -}}"></script>
+
+  <!-- QUIZ PAGE -->
+  <script type="module" src="{{- 'component-QuizCarousel.js'| asset_url -}}"></script>
+  <script type="module" src="{{- 'component-quizForm.js'| asset_url -}}"></script>
+
+  <script src="https://www.youtube.com/iframe_api" defer></script>
+
+  {% if template contains 'product' %}
+    <script type="text/javascript">
+      (function e(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="//staticw2.yotpo.com/###APP_KEY###/widget.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();
+    </script>
+  {% endif %}
+
+  
+<!-- PF EDT START -->
+<script type='text/javascript'>
+{%- if content_for_header contains 'shopify-product-customizer' -%}
+    {%- if product -%}
+        {%- if product.first_available_variant -%}
+            var pfProductId = {{ product.metafields.printful.is_synced | json }};
+            var pfEdt = {{ shop.metafields.printful.is_edt_enabled | json }};
+            var pfEdtTextColor = {{ shop.metafields.printful.edt_text_color | json }};
+            var pfEdtBackgroundColor = {{ shop.metafields.printful.edt_background_color | json }};
+            var pfEdtBorderColor = {{ shop.metafields.printful.edt_border_color | json }};  
+            var pfEdtUseDefaultStyling = {{ shop.metafields.printful.edt_default_style | json }};
+            var pfEdtTextAlignment = {{ shop.metafields.printful.edt_text_alignment | json }};
+            var pfEdtFlags = {
+                US: "{{ 'US.svg' | asset_url }}",CA: "{{ 'CA.svg' | asset_url }}",ES: "{{ 'ES.svg' | asset_url }}",LV: "{{ 'LV.svg' | asset_url }}",GB: "{{ 'GB.svg' | asset_url }}",DE: "{{ 'DE.svg' | asset_url }}",FR: "{{ 'FR.svg' | asset_url }}",AU: "{{ 'AU.svg' | asset_url }}",JP: "{{ 'JP.svg' | asset_url }}",NZ: "{{ 'NZ.svg' | asset_url }}",IT: "{{ 'IT.svg' | asset_url }}",BR: "{{ 'BR.svg' | asset_url }}",KR: "{{ 'KR.svg' | asset_url }}",NL: "{{ 'NL.svg' | asset_url }}",
+            };
+        {%- else -%}
+            var pfEdt = 0;
+        {%- endif -%}
+    {%- endif -%}
+{%- endif -%}
+</script>
+<!-- PF EDT END -->
+</body>
+</html>

@@ -1,0 +1,210 @@
+
+<div class="collection-side-filter js-collection-filter-wrapper">
+
+    <div class="collection-side-filter__inner">
+
+        <div class="collection-side-filter__header u-d-flex u-justify-between u-align-center">
+            <h2>Filters</h2>
+            <a class="js-filter-trigger" href="">
+                {% render 'icon', icon: 'close' %}
+            </a>
+        </div>
+
+        <form class="filter-form">
+        {%- for filter in collection.filters -%}
+            <div class="collection-side-filter__filter-group">
+
+                <h3>{{ filter.label }}</h3>
+
+                {% if filter.active_values.size > 0 or filter.min_value.value or filter.max_value.value %}
+                    <a href="{{ filter.url_to_remove }}" class="clear u-d-flex u-align-center">Clear
+                    {% render 'icon', icon: 'close' %}</a>
+                {% endif %}
+        
+                <div class="filter-group-display">
+        
+                {%- case filter.type -%}
+                    {%- when 'boolean' or 'list' -%}
+                    
+                        {% if filter.label == 'Category' or filter.label == 'Your Height' or filter.label == 'Max Range' or filter.label == 'Bike Weight' %}
+
+                            <ul class="filter-group-display__list filter-round">
+                                {%- for filter_value in filter.values -%}
+                                    <li class="filter-group-display__list-item">
+            
+                                        <label for="Filter-{{ filter.param_name }}-{{ forloop.index }}" class="{% if filter_value.count == 0 and filter_value.active == false -%}disabled {%- endif %} {% if filter_value.active == true -%} active {%- endif %}">{{ filter_value.label }}</label>
+                                        
+                                        <input type="checkbox"
+                                        name="{{ filter_value.param_name }}"
+                                        value="{{ filter_value.value }}"
+                                        id="Filter-{{ filter.param_name }}-{{ forloop.index }}"
+                                        {% if filter_value.active -%}checked{%- endif %}
+                                        {% if filter_value.count == 0 and filter_value.active == false -%}disabled{%- endif %}
+                                        >
+                                    </li>
+                                {%- endfor -%}
+                            </ul>
+
+                        {% else %}
+
+                            <ul class="filter-group-display__list filter-box">
+                                {%- for filter_value in filter.values -%}
+                                    <li class="filter-group-display__list-item">
+                    
+                                        <label for="Filter-{{ filter.param_name }}-{{ forloop.index }}" class="{% if filter_value.count == 0 and filter_value.active == false -%}disabled {%- endif %} {% if filter_value.active == true -%} active {%- endif %}">
+                                            {% render 'filter-icon' icon: filter_value.label %}
+                                            <span>{{ filter_value.label }}</span>
+                                        </label>
+                                        
+                                        <input type="checkbox"
+                                        name="{{ filter_value.param_name }}"
+                                        value="{{ filter_value.value }}"
+                                        id="Filter-{{ filter.param_name }}-{{ forloop.index }}"
+                                        {% if filter_value.active -%}checked{%- endif %}
+                                        {% if filter_value.count == 0 and filter_value.active == false -%}disabled{%- endif %}
+                                        >
+                                    </li>
+                                {%- endfor -%}
+                            </ul>
+
+                        {% endif %}
+
+                    {%- when 'price_range' -%}
+                    <div class="collection-side-filter__price js-filter-price ">
+
+                        <div class="collection-side-filter__price-range">
+                            <div class="noUiSlider-wrapper">
+                                <div class="slider-range js-filter-range-slider"></div>
+
+                                <div>
+                                    <span class="input-wrapper">
+                                        {{ cart.currency.symbol }}
+                                        <input name="{{ filter.min_value.param_name }}"
+                                            id="Filter-{{ filter.min_value.param_name }}"
+                                            {% if filter.min_value.value -%}
+                                            value="{{ filter.min_value.value | money_without_currency | replace: ',', '' }}"
+                                            {%- endif %}
+                                            type="number"
+                                            placeholder="0"
+                                            min="0"
+                                            max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
+                                            class="input-field js-range-filter js-filter-min"
+                                        >
+                                    </span>
+                                    <span class="input-wrapper">
+                                        {{ cart.currency.symbol }}
+                                        <input name="{{ filter.max_value.param_name }}"
+                                            id="Filter-{{ filter.max_value.param_name }}"
+                                            {% if filter.max_value.value -%}
+                                            value="{{ filter.max_value.value | money_without_currency | replace: ',', '' }}"
+                                            {%- endif %}
+                                            type="number"
+                                            placeholder="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
+                                            min="0"
+                                            max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
+                                            class="input-field js-range-filter js-filter-max"
+                                        >
+                                    </span>
+                                </div>
+                                
+                                <div style="display:none">
+                                    <span class="value-wrapper">$<span class="slider-range-value js-filter-range-min"></span></span>
+                                    <span class="value-wrapper">$<span class="slider-range-value js-filter-range-max"></span></span>
+                                </div>
+            
+                            </div>
+                        </div>
+
+                    </div>
+
+                {%- endcase -%}
+                </div>
+            </div>
+        {%- endfor -%}
+      
+        {% comment %} <div class="active-filters">
+          {%- for filter in collection.filters -%}
+            {%- if filter.type == "price_range" -%}
+              {%- if filter.min_value.value != nil or filter.max_value.value != nil -%}
+                <a class="active-filters__remove-filter" href="{{ filter.url_to_remove }}">
+                  {%- assign min_value = filter.min_value.value | default: 0 -%}
+                  {%- assign max_value = filter.max_value.value | default: filter.range_max -%}
+                  {{ min_value | money }} - {{ max_value | money }} X
+                </a>
+              {%- endif -%}
+            {%- else -%}
+              {%- for filter_value in filter.active_values -%}
+                <a class="active-filters__remove-filter" href="{{ filter_value.url_to_remove }}">
+                  {{ filter.label }}: {{ filter_value.label }} X
+                </a>
+              {%- endfor -%}
+            {%- endif- %}
+          {%- endfor -%}
+        </div> {% endcomment %}
+      
+        
+        {% comment %} <div class="collection-side-filter__cta js-filter">
+            <h3>frame shape
+            <a href="" class="js-info-popup-trigger">{% render 'icon', icon: 'warning-3' %}
+            </a>
+             <div class="info-popup">
+                  <p>Select below the desired frame shape. Low-step, Mid-step or High-step.</p>
+                </div>
+            </h3>
+            <!-- ! FILTER SEKCIJA TEST -->
+
+            <ul class="collection-side-filter__cta-wrapper u-d-flex u-align-center js-shape-filters">
+                    <!-- <li><a href="{{shop.url}}/collection/all{{tag | handle }}">{{tag}} {% render 'icon', icon: 'low-step-bike' %} </a> </li>
+                    <li><a href="{{shop.url}}/collection/all/{{'low-step?' | handle }}"> {{tag?}} {% render 'icon', icon: 'mid-step-active' %} </a></li>
+                    <li><a href="{{shop.url}}/collection/all{{tag | handle }}"> {% render 'icon', icon: 'high-step' %} </a></li> -->
+            </ul>
+        </div> {% endcomment %}
+
+        <!-- ! END OF FILTER -->
+        {% comment %} <div class="collection-side-filter__cta">
+            <h3>Sitting position
+            <a href="">{% render 'icon', icon: 'warning-3' %}</a>
+            </h3>
+            <ul class="collection-side-filter__cta-wrapper u-d-flex u-align-center js-sitting-position">
+                <!-- <li><a href="#"> {% render 'icon', icon: 'relaxed' %} </a></li>
+                <li><a href=""> {% render 'icon', icon: 'upright-active' %} </a></li>
+                <li><a href=""> {% render 'icon', icon: 'adrenaline' %} </a></li> -->
+            </ul>
+        </div> {% endcomment %}
+
+        {% comment %} <div class="collection-side-filter__price js-filter-range">
+            <h3>Max Range</h3>
+            <div class="collection-side-filter__price-range">
+                <div class="noUiSlider-wrapper">
+                        <div>
+                            <input type="number" class="input-field hidden js-range-filter js-filter-max">
+                        </div>
+                    <div class="slider-range js-filter-max-range-slider"></div>
+                    <span class="value-wrapper"><span class="slider-range-value js-filter-range-max"></span> mi
+                    </span>
+                </div>
+            </div>
+        </div> {% endcomment %}
+
+        {% comment %} <div class="collection-side-filter__price js-filter-weight">
+            <h3>Bike weight</h3>
+            <div class="collection-side-filter__price-range">
+                <div class="noUiSlider-wrapper">
+                    <div>
+                        <input type="number" class="input-field hidden js-range-filter js-filter-max">
+                    </div>
+                    <div class="slider-range js-filter-weight-slider"></div>
+                    <span class="value-wrapper"><span class="slider-range-value js-filter-range-max"></span> lbs</span>
+                </div>
+            </div>
+        </div> {% endcomment %}
+
+        <div class="collection-side-filter__bottom-cta u-d-flex u-align-center u-justify-between">
+            <a href="{{ collection.url }}?sort_by={{ collection.sort_by }}" class="active-filters__clear btn">DELETE ALL</a>
+            <input type="submit" value="APPLY" class="btn btn--blue-fill">
+        </div>
+
+        </form>
+    </div>
+</div>
+<div class="collection-side-filter__overlay js-collection-filter-overlay"></div>

@@ -1,0 +1,70 @@
+{% liquid
+  assign object = section.settings
+  assign image_1 = product.metafields.lower_gallery.url_image_1
+  assign alt_1 = product.metafields.lower_gallery.alt_text_image_1
+  assign image_2 = product.metafields.lower_gallery.url_image_2
+  assign alt_2 = product.metafields.lower_gallery.alt_text_image_2
+  assign image_3 = product.metafields.lower_gallery.url_image_3
+  assign alt_3 = product.metafields.lower_gallery.alt_text_image_3
+  assign image_4 = product.metafields.lower_gallery.url_image_4
+  assign alt_4 = product.metafields.lower_gallery.alt_text_image_4
+  assign image_5 = product.metafields.lower_gallery.url_image_5
+  assign alt_5 = product.metafields.lower_gallery.alt_text_image_5
+  assign image_6 = product.metafields.lower_gallery.url_image_6
+  assign alt_6 = product.metafields.lower_gallery.alt_text_image_6
+  assign image_7 = product.metafields.lower_gallery.url_image_7
+  assign alt_7 = product.metafields.lower_gallery.alt_text_image_7
+  assign image_8 = product.metafields.lower_gallery.url_image_8
+  assign alt_8 = product.metafields.lower_gallery.alt_text_image_8
+  assign image_9 = product.metafields.lower_gallery.url_image_9
+  assign alt_9 = product.metafields.lower_gallery.alt_text_image_9
+  assign image_10 = product.metafields.lower_gallery.url_image_10
+  assign alt_10 = product.metafields.lower_gallery.alt_text_image_10
+
+  assign all_images = image_1 | append: ',' | append: image_2 | append: ',' | append: image_3 | append: ',' | append: image_4 | append: ',' | append: image_5 | append: ',' | append: image_6 | append: ',' | append: image_7 | append: ',' | append: image_8 | append: ',' | append: image_9 | append: ',' | append: image_10
+  assign alts   = alt_1 | append: ',' | append: alt_2 | append: ',' | append: alt_3 | append: ',' | append: alt_4 | append: ',' | append: alt_5 | append: ',' | append: alt_6 | append: ',' | append: alt_7 | append: ',' | append: alt_8 | append: ',' | append: alt_9 | append: ',' | append: alt_10 | split: ","
+
+%}
+<div class="gallery">
+  <div class="gallery__title">
+    <h2 class="h4">{{object.section_title}} </h2>
+  </div>
+  <div class="swiper-container gallery__inner  js-gallery-slider">
+    <div class="swiper-wrapper">
+      {{ all_images }}
+      {% assign all_images = all_images | split: ',' %}
+      {% for image in all_images %}
+        {% assign img_name  = image | split: "/" | last | split: "?" | first %}
+        {% assign img       = images[img_name] %}
+
+        <div class="swiper-slide gallery__item" style="max-height: 550px;overflow: hidden">
+          {{ img | image_url: width: 1400 | image_tag: height: 550, alt: alts[forloop.index], lazyload: true }}
+        </div>
+      {% endfor %}
+    </div>
+    <div class="gallery__arrows u-d-flex">
+      <div class="js-arrow-prev-gallery btn__nav btn__nav--prev">{% render 'icon', icon: 'arrow-left' %} </div>
+      <div class="js-arrow-right-gallery btn__nav btn__nav--next">{% render 'icon', icon: 'arrow-right' %} </div>
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+  {
+  "name": "Gallery slider",
+  "settings": [
+  {
+  "type": "text",
+  "id": "section_title",
+  "label": "Section title",
+  "default": "see it in the wild"
+  }
+  ],
+  "presets": [
+  {
+  "name": "Gallery slider"
+  }
+  ]
+  }
+{% endschema %}

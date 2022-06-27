@@ -1,0 +1,103 @@
+.compare-section {
+  position: relative;
+  padding: rem(40) 0 rem(72);
+
+  @include media-breakpoint-up(md) {
+    padding: rem(90) 0 rem(120);
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__image {
+    @include media-breakpoint-up(md) {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+
+    img {
+      @include media-breakpoint-down(xs) {
+        width: auto;
+        margin-left: auto;
+      }
+    }
+  }
+
+  &__text {
+    flex: 0 0 100%;
+    z-index: 1;
+    position: relative;
+
+    @include media-breakpoint-up(lg) {
+      flex: 0 0 60%;
+    }
+
+    @include media-breakpoint-up(lg) {
+      flex: 0 0 38%;
+    }
+
+    .h2 {
+      font-size: rem(28);
+      line-height: rem(36);
+      padding-bottom: rem(5);
+
+      @include media-breakpoint-up(md) {
+        font-size: rem(40);
+        line-height: rem(56);
+      }
+    }
+
+    .h5 {
+      font-size: rem(24);
+      line-height: rem(34);
+      color: $grey-light;
+      padding-bottom: rem(24);
+      font-weight: 400;
+
+      @include media-breakpoint-up(md) {
+        font-size: rem(22);
+        line-height: rem(32);
+        padding-bottom: rem(24);
+      }
+    }
+
+    p {
+      width: 100%;
+      color: $grey-light;
+      padding-bottom: rem(30);
+
+      @include media-breakpoint-up(md) {
+        max-width: rem(328);
+      }
+    }
+  }
+
+  &__cta {
+    position: absolute;
+    bottom: rem(40);
+
+    @include media-breakpoint-up(lg) {
+      position: relative;
+      bottom: auto;
+    }
+
+    a {
+      display: flex;
+      align-items: flex-start;
+      font-size: rem(14);
+      line-height: rem(32);
+      text-transform: uppercase;
+      font-weight: 700;
+
+      .icon {
+        height: 16px;
+        width: 16px;
+        margin-top: rem(2);
+        margin-left: rem(5);
+      }
+    }
+  }
+}

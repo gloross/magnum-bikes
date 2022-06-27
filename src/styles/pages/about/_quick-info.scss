@@ -1,0 +1,118 @@
+.quick-info {
+  margin-top: rem(90);
+  overflow-x: hidden;
+  @include media-breakpoint-down(md) {
+    margin-top: 0;
+  }
+
+  &__inner {
+    display: flex;
+
+    @include media-breakpoint-down(sm) {
+      flex-direction: column;
+    }
+  }
+
+  &__image {
+    width: 49%;
+
+    @include media-breakpoint-down(sm) {
+      width: calc(100% + #{rem(40)});
+    }
+
+    .media-wrapper {
+      padding-bottom: 114.48%;
+
+      @include media-breakpoint-down(sm) {
+        padding-bottom: 111.11%;
+        margin: 0 rem(-20);
+      }
+    }
+  }
+
+  &__text {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 51%;
+
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+    }
+  }
+
+  &__text-content {
+    max-width: rem(400);
+    width: 100%;
+    padding: 0 0 0 rem(14);
+
+    @include media-breakpoint-down(md) {
+      max-width: rem(600);
+      padding: rem(40) rem(20) rem(20) rem(20);
+    }
+
+    @include media-breakpoint-down(sm) {
+      max-width: 100%;
+      padding: rem(40) 0 rem(20);
+    }
+
+    .h2 {
+      font-size: rem(40);
+      line-height: rem(54);
+      color: $machine-grey;
+      padding-bottom: rem(13);
+
+      @include media-breakpoint-down(md) {
+        font-size: rem(36);
+        line-height: rem(50);
+      }
+
+      @include media-breakpoint-down(sm) {
+        font-size: rem(28);
+        line-height: rem(36);
+      }
+    }
+
+    p {
+      font-size: rem(15);
+      line-height: rem(25);
+      color: $grey-light;
+
+      @include media-breakpoint-down(sm) {
+        font-size: rem(14);
+        line-height: rem(24);
+      }
+    }
+  }
+
+  &--reverse {
+    margin-top: rem(70);
+
+    @include media-breakpoint-down(md) {
+      margin-top: rem(32);
+    }
+
+    @include media-breakpoint-down(sm) {
+      margin-top: 0;
+    }
+
+    .quick-info__inner {
+      flex-direction: row-reverse;
+
+      @include media-breakpoint-down(sm) {
+        flex-wrap: wrap;
+        flex-direction: column;
+      }
+    }
+
+    .quick-info__image {
+      // @include media-breakpoint-down(sm) {
+      //   width: calc(100vh + #{rem(40)});
+      // }
+    }
+
+    .quick-info__text {
+      justify-content: flex-start;
+    }
+  }
+}

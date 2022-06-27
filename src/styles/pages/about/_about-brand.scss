@@ -1,0 +1,50 @@
+.about-brand {
+  padding: rem(13) 0;
+  @include media-breakpoint-down(sm) {
+    padding: rem(11) 0 rem(8) 0;
+  }
+  &__inner {
+    display: grid;
+    align-items: center;
+    padding: 0 rem(10);
+    grid-template-columns: repeat(4, minmax(auto, 1fr));
+    grid-column-gap: rem(100);
+
+    @include media-breakpoint-down(lg) {
+      grid-column-gap: rem(50);
+      padding: 0;
+    }
+
+    @include media-breakpoint-down(sm) {
+      grid-template-columns: repeat(2, minmax(auto, 1fr));
+      grid-column-gap: rem(30);
+    }
+  }
+
+  &__item {
+    display: block;
+    padding-bottom: rem(57);
+    @include media-breakpoint-down(sm) {
+      padding-bottom: rem(32);
+    }
+    img {
+      opacity: 0.3;
+      transition: $t-hover;
+
+      @include media-breakpoint-down(sm) {
+        width: 100%;
+        max-width: rem(190);
+        margin: 0 auto;
+      }
+      @include media-breakpoint-down(xs) {
+        width: 100%;
+      }
+    }
+
+    &:hover {
+      img {
+        opacity: 1;
+      }
+    }
+  }
+}

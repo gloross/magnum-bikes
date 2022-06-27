@@ -1,0 +1,50 @@
+{% assign object = section.settings%}
+<section class="repack">
+  <div class="container container--small">
+    <div class="repack__inner">
+      <div class="repack__info">
+        <h2>{{object.section_title}}</h2>
+        <p>{{object.description}}</p>
+      </div>
+      <div class="repack__image">
+          <div class="media-wrapper">
+            {% render 'img',
+            img: object.image_desktop,
+            %}
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{% schema %}
+{
+"name": "Repack Ebike",
+"settings": [
+{
+  "type": "text",
+  "id": "section_title",
+  "label": "Section title",
+  "default": "How to Repack Your E-Bike?"
+},
+{
+  "type": "textarea",
+  "id": "description",
+  "label": "Section description",
+  "default": "We suggest Nomad for riders 5’6″ and taller. However, the bike won’t be suitable for all people the same. Let’s find out if this bike fits you by following our simple calculator below."
+},
+{
+  "type": "image_picker",
+  "id": "image_desktop",
+  "label": "Desktop image"
+}
+],
+"presets": [
+  {
+    "name": "Repack Ebike"
+  }
+]
+}  
+{% endschema %}
+

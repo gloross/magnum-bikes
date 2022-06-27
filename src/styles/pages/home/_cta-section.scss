@@ -1,0 +1,59 @@
+.cta-section {
+  background-color: #3a3a3a;
+  padding: rem(28) rem(20);
+  &__inner {
+    display: flex;
+    max-width: rem(1074);
+    margin: 0 auto;
+  }
+  &__col-left {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__col-right {
+    margin-left: rem(140);
+    flex: 0 0 29.6%;
+    p {
+      font-size: rem(24);
+      line-height: rem(32);
+      color: $white;
+      font-weight: 700;
+    }
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    .icon {
+      width: rem(40);
+      height: rem(43);
+      margin-right: rem(18);
+      path {
+        fill: $grey-light;
+      }
+    }
+  }
+  &__item-text {
+    font-size: rem(15);
+    line-height: rem(25);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    span {
+      font-size: rem(17);
+      line-height: rem(26);
+      color: $white;
+      font-weight: 700;
+    }
+    a {
+      font-size: rem(15);
+      line-height: rem(25);
+      color: $grey-light;
+      transition: $t-hover;
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+}

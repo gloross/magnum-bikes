@@ -1,0 +1,59 @@
+/* ------------------------------------------------------------ *\
+  Article Author
+\* ------------------------------------------------------------ */
+
+.article-author {
+  display: flex;
+  align-items: center;
+  flex-flow: row wrap;
+  width: 100%;
+  font-family: $regular-font;
+
+  &__image {
+    flex: 0 0 rem(56);
+    width: rem(56);
+    max-width: rem(56);
+    height: rem(56);
+    padding-bottom: 0;
+
+    img {
+      height: 100%;
+    }
+  }
+
+  &__content {
+    flex: 0 1 calc(100% - rem(56));
+    padding-left: rem(32);
+    font-size: rem(14);
+    line-height: rem(22);
+    color: $machine-grey;
+
+    p {
+      font-size: inherit;
+      line-height: inherit;
+    }
+
+    span {
+      color: $grey-light;
+    }
+  }
+
+  &__entry {
+    flex: 1 0 100%;
+    width: 100%;
+    margin-top: rem(23);
+    font-size: rem(14);
+    line-height: line-height(14, 26);
+    color: $grey-light;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    p {
+      font-family: inherit;
+      font-size: inherit;
+      line-height: inherit;
+    }
+  }
+}

@@ -1,0 +1,86 @@
+{% liquid
+  assign object = section.settings 
+  assign article = object.article
+  %}
+<section class="perfect-match">
+  <div class="container container--small">
+    <div class="perfect-match__inner">
+      <div class="perfect-match__help">
+        <div class="media-wrapper">
+          {% render 'img',
+          img: object.left_image
+          %}
+        </div>
+        <div class="perfect-match__help-info">
+          <h2>{{object.title}}</h2>
+          <p>{{object.description}}</p>
+          <a href="{{object.cta_url}}" class="btn btn--blue-fill">{{object.cta_text}}</a>
+        </div>
+      </div>
+      <div class="perfect-match__article">
+        <a href="{{article.url}}">
+        <div class="media-wrapper">
+          {% render 'img',
+          img: article.image
+          %}
+        </div>
+      </a>
+        <div class="perfect-match__article-info">
+          <h4>Article</h4>
+          <h3>{{article.title}}</h3>
+          <p>{{article.excerpt}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% comment%}
+{% render 'pagination' %}
+{% endcomment %}
+
+
+{% schema %}
+  {
+  "name": "Perfect match",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section title",
+      "default": "Everyone has a perfect Magnum match."
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Section description",
+      "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    {
+      "type": "image_picker",
+      "id": "left_image",
+      "label": "Image left"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA button text",
+      "default": "Help Me Choose"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "CTA button url"
+    },
+    {
+      "type": "article",
+      "id": "article",
+      "label": "Select Article"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Perfect match"
+    }
+  ]
+}  
+{% endschema %}

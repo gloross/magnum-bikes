@@ -1,0 +1,68 @@
+{% assign object = section.settings %}
+<section class="introducing">
+  <div class="introducing__inner">
+    <div class="introducing__text">
+      <div class="introducing__text-content">
+        <h2 class="h2">{{ object.title }}</h2>
+        <p> {{ object.description }}</p>
+        <a class="btn btn--fill-grey" href="{{object.cta_url}}">{{ object.cta_label }}</a>
+      </div>
+    </div>
+    <div class="introducing__image">
+      <div class="media-wrapper">
+      {%- render 'img',
+      img: object.image,
+      img_sm: object.image_mobile,
+      img_md: '',
+      img_lg: '',
+      m_width: '500'
+    -%}
+  </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+  "name": "Introducing",
+  "settings": [
+  {
+    "type": "text",
+    "id": "title",
+    "label": "Title",
+    "default": "E-Bikes 101"
+  },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "CTA button label",
+      "default": "Go To Knowledge Library"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "CTA button URL"
+    },
+    {
+      "type": "image_picker",
+      "label": "Image",
+      "id": "image"
+    },
+    {
+      "type": "image_picker",
+      "label": "Image Mobile",
+      "id": "image_mobile"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Introducing"
+    }
+  ]
+}  
+{% endschema %}

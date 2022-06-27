@@ -1,0 +1,248 @@
+{% assign object = section.settings %}
+
+<section class="warranty frame-builder-formular">
+  <div class="container container--small">
+    <div class="js-warranty-form warranty__inner frame-builder-formular__form" id="frame-builder-formular-form">
+      <div class="warranty__col-left">
+        <h1>{{object.page_title}}</h1>
+        <p>{{object.page_paragraph}}</p>
+      </div>
+      <div class="warranty__col-right salesforce-form">
+        {{object.page_form}}
+      </div>
+      {% comment %} {% form 'contact', id: 'warranty-form-id' %}
+        <div>
+          {% if form.posted_successfully? %}
+
+          {% else %}
+          <div class="warranty__col-right warranty__col-right--step-one step js-step">
+            <div class="warranty__breadcrumbs">
+              <span>Ride Agreement  /</span><span>Bike Information  /</span><span>Personal Information  /</span>
+              {% render 'icon', icon: 'checkmark' %}
+            </div>
+            <div class="warranty__content">
+              <p>Magnum Bikes warrants that all new Magnum Electric Bicycles and main components therein sold by an authorized Magnum Bikes retailer are warranted to the original retail purchaser against
+                manufacturing defects in materials and/or workmanship for a period of one (1) years from the date of original retail purchase.
+                Warranties must be filled out no later than 90 days from the date of purchase, or the warranty may be void.</p>
+              <p>This warranty pertains to any of the essential electric bicycle components that are found defective; provided that the product was used in a standard and controlled manner,
+                and that it was maintained according to the manufacturer’s instructions manual. Essential components include the bicycle frame, electric motor, battery, display console, and controller.</p>
+              <p>If a defective part is found during the warranty period and the customer notifies us immediately, the seller will repair or replace the part based on his sole discretion.
+                This warranty will be void if any repair or change is performed by any third party aside from an authorized dealer or service center.</p>
+                <p>It is expressly agreed that this warranty applies only to the cost of repair or replacement of the product and its accessories and the seller is not liable for any financial loss and/or prevention of profit and/or any consequential loss that may be caused by non-standard usage of the product.
+                We hereby inform the buyer that Magnum Bikes is not responsible for any liability that may occur which could possibly apply to the product and/or its user due to the usage of the product and that the customer alone is solely responsible for third party insurance and/or other insurance as required by the nature of the particular product.
+                The seller is not responsible for any possible damage including bodily harm and damage to property. The warranty does not apply if any part of the product is damaged as a result of negligence, an accident, or inadequate maintenance.
+                This warranty gives you specific legal rights, and you may also have other rights which vary from state to state.</p>
+            </div>
+          </div>
+          <div class="warranty__col-right warranty__col-right--step-two step js-step">
+            <div class="warranty__breadcrumbs warranty__breadcrumbs--step-two">
+              <span>Ride Agreement  /</span><span>Bike Information  /</span><span>Personal Information  /</span>
+              {% render 'icon', icon: 'checkmark' %}
+            </div>
+            <div class="warranty__content">
+              <div class="select-field">
+                <select name="model" id="model" placeholder="Model Search">
+                  <option value="model-1">Model Search</option>
+                  <option value="model-2">Model Search</option>
+                  <option value="model-3">Model Search</option>
+                </select>
+              </div>
+              <div class="input-field">
+                <div class="input-wrapper">
+                  <input name="options[prefix]" type="hidden" value="purchase">
+                  <input name="type" type="hidden" value="purchase"/>
+                <label for="purchase">
+                    Where did you purchase it?
+                  </label>
+                  <input id="purchase" placeholder="Where did you purchase it?" type="purchase" value="Where did you purchase it?">
+                </div>
+              </div>
+              <div class="input-field">
+                <div class="input-wrapper">
+                  <input name="options[prefix]" type="hidden" value="invoice-number">
+                  <input name="type" type="hidden" value="invoice-number"/>
+                  <label for="invoice-number">
+                    Invoice Number or Receipt Number*
+                  </label>
+                  <input id="invoice-number" placeholder="Invoice Number or Receipt Number*" type="invoice-number" value="Invoice Number or Receipt Number*">
+                </div>
+              </div>
+              <div class="input-field">
+                <div class="input-wrapper">
+                  <input name="options[prefix]" type="hidden" value="frame-number">
+                  <input name="type" type="hidden" value="frame-number"/>
+                  <label for="frame-number">
+                    Frame Number*
+                  </label>
+                  <input id="frame-number" placeholder="Frame Number*" type="frame-number" value="Frame Number*">
+                  {% render 'icon' class: 'js-open-popup', icon: 'input-tooltip' %}
+                </div>
+                <div class="js-input-popup input-popup">
+                  <div>
+                    <h5>How to find your Frame Number?</h5>
+                    {% render 'icon', class: 'js-close-popup', icon: 'close' %}
+                  </div>
+                  <img src="https://via.placeholder.com/284x160" loading="lazy" width="" height="" alt="" />
+                  <p>Fill out the following agreement to register your warranty. For the best service and support please complete all fields as accurately as possible.</p>
+                </div>
+              </div>
+              <div class="input-field">
+                <div class="input-wrapper">
+                  <input name="options[prefix]" type="hidden" value="battery-number">
+                  <input name="type" type="hidden" value="battery-number"/>
+                  <label for="battery-number">
+                    Battery number*
+                  </label>
+                  <input id="battery-number" placeholder="Battery number*" type="battery-number" value="Battery number*">
+                </div>
+              </div>
+              <div class="input-field">
+                <div class="input-wrapper">
+                  <input name="options[prefix]" type="hidden" value="motor-number">
+                  <input name="type" type="hidden" value="motor-number"/>
+                  <label for="motor-number">
+                    Motor number*
+                  </label>
+                  <input id="motor-number" placeholder="Motor number*" type="motor-number" value="Motor number*">
+                </div>
+              </div>
+              <div class="input-field">
+                <div class="input-wrapper">
+                  <input name="options[prefix]" type="hidden" value="data-of-purchase">
+                  <input name="type" type="hidden" value="data-of-purchase"/>
+                  <label for="data-of-purchase">
+                    Date of purchase (YYYY-MM-DD)*
+                  </label>
+                  <input id="data-of-purchase" placeholder="Date of purchase (YYYY-MM-DD)*" type="data-of-purchase" value="Date of purchase (YYYY-MM-DD)*">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="warranty__col-right warranty__col-right--step-three step js-step">
+            <div class="warranty__breadcrumbs warranty__breadcrumbs--step-three">
+              <span>Ride Agreement  /</span><span>Bike Information  /</span><span>Personal Information  /</span>
+              {% render 'icon', icon: 'checkmark' %}
+            </div>
+              <div class="warranty__content">
+                <div class="warranty__form-input">
+                  <div class="input-field">
+                    <div class="input-wrapper">
+                      <input name="contact[customer_name]" type="hidden" value="name">
+                      <input name="type" type="hidden" value="name"/>
+                      <input placeholder="Customer Name*" type="text" value="Customer Name*">
+                    </div>
+                    <div class="input-wrapper">
+                      <input name="contact[d]" type="hidden" value="addresses">
+                      <input name="type" type="hidden" value="addresses"/>
+                      <input placeholder="Address*" type="text" value="Address*">
+                    </div>
+                    <div class="input-wrapper">
+                      <input name="contact[phone]" type="hidden" value="phone">
+                      <input name="type" type="hidden" value="phone"/>
+                      <input placeholder="Phone Number*" type="number" value="Phone Number*">
+                    </div>
+                    <div class="input-wrapper">
+                      <input name="contact[email]" type="hidden" value="email">
+                      <input name="type" type="hidden" value="email"/>
+                      <input placeholder="Email*" type="email" value="Email*">
+                    </div>
+                  </div>
+                </div>
+                <div class="warranty__account">
+                  <div class="checkbox">
+                    <input name="contact[account]" type="hidden" value="account">
+                    <input type="checkbox" id="account" name="account" value="account">
+                    <label for="account">
+                      <div class="check-wrapper">
+                        {% render 'icon', icon: 'checkbox' %}
+                      </div>
+                      I want to create an account.
+                    </label>
+                  </div>
+                  <h3>You are just one step away from creating an account.</h3>
+                  <p>Fill out the following agreement to register your warranty. For the best service and support please complete all fields as accurately as possible.</p>
+                  <div class="input-field">
+                    <div class="input-wrapper">
+                      <input name="contact[password]" type="hidden" value="password">
+                      <input name="type" type="hidden" value="password"/>
+                      <input placeholder="Set Password" type="text" value="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+          {% endif %}
+          {% if form.posted_successfully? %}
+            <div class="warranty__col-right warranty__col-right--step-four">
+
+              <div class="warranty__breadcrumbs warranty__breadcrumbs--step-four">
+                <span>Ride Agreement  /</span><span>Bike Information  /</span><span>Personal Information  /</span>
+                {% render 'icon', icon: 'checkmark' %}
+              </div>
+              <div class="warranty__agreement">
+                <div class="warranty__agreement-image-text">
+                  {% render 'icon', icon: 'agreement' %}
+                  <h2>You’ve successfully Registered Warranty & Created Your Magnum Profile!</h2>
+                </div>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+              </div>
+              <div class="warranty__btn-wrapper warranty__btn-wrapper--step-four">
+                <a href="/" class="btn btn--blue-fill u-uppercase back-to-home">{{ 'templates.form.thank_you_cta' | t }}</a>
+              </div>
+            </div>
+          {% endif %}
+          <div class="frame-builder-formular__input-group--cta warranty__btn-wrapper">
+            <button type="button" class="btn btn--blue-fill u-uppercase btn-prev js-btn-prev cta">{{ 'templates.form.submit' | t }}</button>
+            <button type="button" class="btn btn--blue-fill u-uppercase js-btn-next" data-step-text="Next" data-final-step-text="Send">{{ 'templates.form.next' | t }}</button>
+          </div>
+        </div>
+      {% endform %} {% endcomment %}
+    </div>
+  </div>
+</section>
+
+<div class="subscribe-popup js-subscribe-popup" style="display: none;">
+  <div class="subscribe-popup__close js-close-popup">
+    {% render 'icon', icon: 'close' %}
+  </div>
+  <div class="subscribe-popup__details">
+    {% render 'icon', icon: 'subscription-handshake' %}
+    <h2>Subscribe to Our Mailing List Too?</h2>
+    <p>Receive exclusive updates, offers, tips & guides from Magnum HQ.</p>
+    <div class="subscribe-popup__btn-wrapper">
+      <button type="button" class="btn btn--outline-grey">No Thanks</button>
+      <button type="button" class="btn btn--blue-fill u-uppercase">Subscribe</button>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Warranty Page",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Warranty Page Content"
+    },
+    {
+      "type": "text",
+      "id": "page_title",
+      "label": "Title",
+      "default": "Warranty Activation"
+    },
+    {
+      "type": "richtext",
+      "id": "page_paragraph",
+      "label": "Paragraph",
+      "default": "<p>Fill out the following agreement to register your warranty. For the best service and support please complete all fields as accurately as possible.</p>"
+    },
+    {
+      "type": "html",
+      "id": "page_form",
+      "label": "Form HTML"
+    }
+  ]
+}
+{% endschema %}

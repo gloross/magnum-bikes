@@ -1,0 +1,113 @@
+.home-carousel {
+  padding: rem(65) 0;
+  overflow: hidden;
+
+  @include media-breakpoint-down(sm) {
+    padding: rem(55) rem(16) rem(40) rem(16);
+  }
+
+  &__subtitle {
+    display: flex;
+    align-items: flex-start;
+    font-size: rem(14);
+    line-height: rem(32);
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+
+    .icon {
+      height: 16px;
+      width: 16px;
+      margin-top: rem(2);
+      margin-left: rem(5);
+
+      @include media-breakpoint-down(sm) {
+        width: 13px;
+      }
+    }
+  }
+
+  &__title {
+    max-width: rem(600);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 rem(40) rem(84);
+
+    @include media-breakpoint-down(sm) {
+      padding: 0;
+      margin-bottom: rem(30);
+    }
+
+    h2 {
+      font-size: rem(48);
+      line-height: rem(56);
+      text-transform: uppercase;
+      font-weight: 500;
+      color: $machine-grey;
+      text-transform: capitalize;
+      text-align: center;
+
+      @include media-breakpoint-down(sm) {
+        font-size: rem(32);
+        line-height: rem(56);
+      }
+    }
+  }
+
+  &__text {
+    display: none;
+    margin: rem(40) rem(-25) 0 rem(-25);
+    overflow: hidden;
+
+    @include media-breakpoint-down(sm) {
+      display: flex;
+      margin: rem(32) 0 0 0;
+    }
+
+    .swiper-slide-active & {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__text-item {
+    padding: 0 rem(25);
+    text-align: center;
+
+     @include media-breakpoint-down(sm) {
+      padding: 0 rem(12);
+    }
+
+    h5 {
+      font-size: rem(16);
+      line-height: rem(24);
+      color: $grey-light;
+      padding-bottom: rem(10);
+      font-weight: 400;
+    }
+
+    p {
+      font-size: rem(24);
+      line-height: rem(24);
+      color: $machine-grey;
+      font-weight: 500;
+      display: inline-block;
+      white-space: nowrap;
+    }
+  }
+
+  &__slider {
+    margin: 0 auto;
+
+    .swiper-slide {
+      opacity: 0.4;
+      user-select: none;
+    }
+
+    .swiper-slide-active {
+      opacity: 1;
+    }
+  }
+}

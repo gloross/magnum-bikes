@@ -1,0 +1,91 @@
+<div class="header__nav-dropdown-inner-slider">
+    <a href="" class="header__go-back-mob js-go-back">
+   {% render 'icon', icon: 'arrow-left-small' %}
+   <span >{{ goBackLink }}</span>
+ </a>
+<div class="header__nav-dropdown-slider-title">
+ <h2>{{b.title}}</h2>
+ <a class="u-uppercase view-all" href="{{b.cta_url}}">{{b.cta_text}}
+     {% render 'icon', icon: 'arrow-up-right' %}
+ </a>
+</div>
+<div class="header__nav-dropdown-slider-item  ">
+ <div class="header__nav-dropdown-swiper-wrapper js-header-mouse-follow">
+     <div class="swiper-container js-header-slider">
+         <div class="swiper-wrapper">
+             {% if b.slide_1_img != blank and b.slide_1_url != blank%}
+             <div class="swiper-slide">
+                <a href="{{b.slide_1_url}}">
+                   <div class="media-wrapper stories-wrapper">
+                     <img class="stories-img" height="" loading="lazy" src="{{b.slide_1_img | img_url: '800x'}}" width=""/>
+                   
+                         <h3 class="stories-h3">{{b.slide_1_text}}</h3>
+                    
+                 </div>
+                </a>
+             </div>
+             {%endif%}
+             {% if b.slide_2_img != blank and b.slide_2_url != blank%}
+             <div class="swiper-slide">
+                <a href="{{b.slide_2_url}}">
+                   <div class="media-wrapper stories-wrapper">
+                     <img class="stories-img" height="" loading="lazy" src="{{b.slide_2_img | img_url: '800x'}}" width=""/>
+                         <h3 class="stories-h3">{{b.slide_2_text}}</h3>
+                     
+                 </div>
+                </a>
+             </div>
+             {%endif%}
+             {% if b.slide_3_img != blank and b.slide_3_url != blank%}
+             <div class="swiper-slide">
+                <a href="{{b.slide_3_url}}">
+                   <div class="media-wrapper stories-wrapper">
+                     <img class="stories-img" height="" loading="lazy" src="{{b.slide_3_img | img_url: '800x'}}" width=""/>
+                         <h3 class="stories-h3">{{b.slide_3_text}}</h3>
+                    
+                 </div>
+                </a>
+             </div>
+             {%endif%}
+             {% if b.slide_4_img != blank and b.slide_4_url != blank%}
+             <div class="swiper-slide">
+                <a href="{{b.slide_4_url}}">
+                   <div class="media-wrapper stories-wrapper">
+                     <img class="stories-img" height="" loading="lazy" src="{{b.slide_4_img | img_url: '800x'}}" width=""/>
+                         <h3 class="stories-h3">{{b.slide_4_text}}</h3>
+                     
+                 </div>
+                </a>
+             </div>
+             {%endif%}
+             {% if b.slide_5_img != blank and b.slide_5_url != blank%}
+             <div class="swiper-slide">
+                <a href="{{b.slide_5_url}}">
+                   <div class="media-wrapper stories-wrapper">
+                     <img class="stories-img" height="" loading="lazy" src="{{b.slide_5_img | img_url: '800x'}}" width=""/>
+                         <h3 class="stories-h3">{{b.slide_5_text}}</h3>
+                     
+                 </div>
+                </a>
+             </div>
+             {%endif%}
+             {% if b.slide_6_img != blank and b.slide_6_url != blank%}
+             <div class="swiper-slide">
+                <a href="{{b.slide_6_url}}">
+                   <div class="media-wrapper stories-wrapper">
+                     <img class="stories-img" height="" loading="lazy" src="{{b.slide_6_img | img_url: '800x'}}" width=""/>
+                         <h3 class="stories-h3">{{b.slide_6_text}}</h3>
+                     
+                 </div>
+                </a>
+             </div>
+             {%endif%}
+         </div>
+     </div>
+     <div class="cursor js-cursor">
+         {% render 'icon', icon: 'icon-cursor' %}
+     </div>
+ </div>
+</div>
+</div>
+ 

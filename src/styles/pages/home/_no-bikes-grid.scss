@@ -1,0 +1,70 @@
+.no-bikes-grid {
+  padding: rem(92) 0;
+  background-color: $off-white;
+
+  @include media-breakpoint-down(sm) {
+    padding: rem(24) 0;
+  }
+
+  &__title {
+    padding-bottom: rem(48);
+
+    @include media-breakpoint-down(sm) {
+      padding-bottom: rem(16);
+    }
+
+    h2 {
+      text-align: center;
+      font-size: rem(30);
+      line-height: line-height(30, 44);
+      font-weight: 700;
+      color: $machine-grey;
+
+      @include media-breakpoint-down(sm) {
+        text-align: left;
+      }
+    }
+  }
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(auto, 1fr));
+    grid-gap: rem(32);
+
+    @include media-breakpoint-down(lgxl) {
+      grid-gap: rem(20);
+    }
+    @include media-breakpoint-down(md) {
+      grid-template-columns: repeat(3, minmax(auto, 1fr));
+    }
+    @include media-breakpoint-down(sm) {
+      grid-template-columns: repeat(2, minmax(auto, 1fr));
+      grid-gap: rem(16);
+    }
+  }
+
+  &__item {
+    padding: rem(17);
+    background-color: $white;
+
+    @include media-breakpoint-down(sm) {
+      padding: rem(3);
+    }
+    a {
+      display: block;
+    }
+    .media-wrapper {
+      padding-bottom: 68.69%;
+      @include media-breakpoint-down(sm) {
+        padding-bottom: 68.96%;
+      }
+    }
+
+    h3 {
+      margin-top: rem(17);
+      text-align: center;
+      font-size: rem(18);
+      line-height: line-height(18, 26);
+      font-weight: 700;
+    }
+  }
+}

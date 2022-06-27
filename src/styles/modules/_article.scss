@@ -1,0 +1,121 @@
+/* ------------------------------------------------------------ *\
+  Article
+\* ------------------------------------------------------------ */
+
+.article {
+  padding: rem(70) 0 rem(140);
+  overflow: hidden;
+
+  @include media-breakpoint-down(md) {
+    padding: rem(70) 0 rem(70);
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding: rem(32) 0 rem(60);
+  }
+
+  .container {
+    padding: 0 12.346vw 0 10.094vw;
+
+    @include media-breakpoint-down(xl) {
+      padding: 0 6.5vw;
+    }
+
+    @include media-breakpoint-down(md) {
+      padding: 0 rem(20);
+    }
+  }
+
+  &__inner {
+    display: flex;
+
+    @include media-breakpoint-down(sm) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__col-left {
+    width: rem(256);
+    margin-right: rem(64);
+
+    @include media-breakpoint-down(md) {
+      width: rem(216);
+      margin-right: rem(32);
+    }
+
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+      margin-right: 0;
+    }
+  }
+
+  &__col-right {
+    width: calc(100% - rem(320));
+
+    @include media-breakpoint-down(md) {
+      width: calc(100% - rem(248));
+    }
+
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+    }
+  }
+
+  &__content {
+    max-width: rem(742);
+  }
+
+  &__title {
+    max-width: rem(622);
+    margin-bottom: rem(44);
+    font-size: rem(40);
+    line-height: rem(56);
+    color: $machine-grey;
+    font-weight: 700;
+
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__text-content,
+  &__images {
+    margin-bottom: rem(50);
+
+    @include media-breakpoint-down(sm) {
+      margin-bottom: rem(38);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__foot {
+    padding-top: rem(69);
+    border-top: 1px solid $grey-light-2;
+    margin-top: rem(69);
+
+    @include media-breakpoint-down(sm) {
+      padding-top: 0;
+      border-top: 0;
+      margin-top: rem(28);
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  &__author {
+    max-width: rem(304);
+
+    @include media-breakpoint-down(sm) {
+      max-width: 100%;
+    }
+  }
+}

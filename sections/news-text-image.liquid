@@ -1,0 +1,95 @@
+{% liquid
+   assign object = section.settings 
+   assign blocks = section.blocks
+  %}
+<section class="news-text-image">
+  <div class="container container--small">
+    <div class="news-text-image__title">
+      <h2>{{ object.title }}</h2>
+    </div>
+    {% for block in blocks %}
+    {% liquid
+      assign b = block.settings
+      assign mod = forloop.index | modulo: 2 
+      assign featured_article = b.featured_article
+      if b.image_desktop == blank
+      assign image_desktop = featured_article.image
+      else 
+      assign image_desktop = b.image_desktop
+      endif
+      if b.image_mobile == blank
+      assign image_mobile = featured_article.image
+      else 
+      assign image_mobile = b.image_mobile
+      endif
+      %}
+    <div class="news-text-image__item {% if mod == 0 %}news-text-image__item--reverse{%endif%}">
+      <div class="news-text-image__inner">
+        <div class="news-text-image__image">
+          <a href="{{featured_article.url}}">
+          <div class="media-wrapper">
+            {% render 'img',
+            img: image_desktop,
+            img_sm: image_mobile,
+            img_md: image_mobile
+            %}       
+          </div>
+        </a>
+        </div>
+        <div class="news-text-image__text">
+          <div class="news-text-image__content">
+            <span class="news-text-image__date"> {{ featured_article.published_at | date: "%d.%m.%Y" }}</span>
+            <h3>{{featured_article.title}}</h3>
+            <p>{{featured_article.excerpt}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+  {
+  "name": "News text image",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section title",
+      "default": "Magnum News"
+    }
+  ],
+  "blocks": [
+  {
+    "name": "Item",
+    "type": "block",
+    "settings": [
+    {
+      "type": "article",
+      "id": "featured_article",
+      "label": "Select featured article"
+  },
+    {
+      "type": "image_picker",
+      "id": "image_desktop",
+      "label": "Image desktop",
+      "info": "If blank default article image will be displayed"
+  },
+  {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image mobile",
+      "info": "If blank default article image will be displayed"
+  }
+
+    ]
+  }
+],
+  "presets": [
+    {
+      "name": "News text image"
+    }
+  ]
+}  
+{% endschema %}

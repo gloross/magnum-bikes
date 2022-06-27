@@ -1,0 +1,46 @@
+{% liquid
+  assign object = section.settings 
+  assign limit =  settings.articles_limit | default: 6 
+  %}
+  {% paginate blog.articles by limit%}
+<section class="news-blog">
+  <div class="container container--small">
+   
+    <div class="news-blog__title">
+      <h2>{{ object.title }}</h2>
+    </div>
+    <div class="news-blog__inner js-articles-container">
+      {% for article in blog.articles%}
+        {%- render 'news-item', article: article -%}
+        {%endfor%}
+    </div>
+
+  {%- if paginate.pages > 1 -%}
+    <a href="javascript:void(0)" class="btn btn--solid news-blog__cta js-blog-show-more"
+    data-paginate-by="{{ limit }}" data-page="2"
+    data-articles="{{blog.articles_count}}"
+    data-blog="{{blog.handle}}"
+    > Load More </a>
+    {%- endif -%}
+  </div>
+</section>
+{%endpaginate%}
+
+{% schema %}
+  {
+  "name": "News articles",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section title",
+      "default": "Magnum News"
+    }
+  ],
+  "presets": [
+    {
+      "name": "News articles"
+    }
+  ]
+}  
+{% endschema %}

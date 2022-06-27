@@ -1,0 +1,100 @@
+{% liquid
+    assign object = section.settings
+    assign blocks = section.blocks
+  %}
+<div class="support-grid">
+    <div class="container container--small">
+        <div class="support-grid__inner">
+
+            {% for block in blocks %}
+            {% assign b = block.settings %}
+            <div class="support-grid__item">
+                <a href="{{b.item_url}}">
+                    {% render 'icon', icon: b.icon_picker %}
+                    <h3>{{b.item_title}}</h3>
+                    <p>{{b.item_content}}</p>
+                </a>
+            </div>
+            {% endfor%}
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+"name": "Support grid",
+"max_blocks": 8,
+"settings": [
+],
+"blocks": [
+{
+  "name": "Item",
+  "type": "block",
+  "settings": [
+  {
+    "type": "select",
+    "id": "icon_picker",
+    "label": "Select icon",
+    "options": [
+      {
+        "value": "warranty",
+        "label": "Warranty"
+      },
+      {
+        "value": "troubleshoot",
+        "label": "Troubleshoot"
+      },
+      {
+        "value": "shipping",
+        "label": "Shipping"
+      },
+      {
+        "value": "manuals",
+        "label": "Manuals"
+      },
+      {
+        "value": "faq",
+        "label": "Faq"
+      },
+      {
+        "value": "help-me-choose",
+        "label": "Help me choose"
+      },
+      {
+        "value": "financing",
+        "label": "Financing"
+      },
+      {
+        "value": "store-locator",
+        "label": "Store-locator"
+      }
+    ],
+    "default": "warranty"
+  },
+  {
+    "type": "text",
+    "id": "item_title",
+    "label": "Item title",
+    "default": "Title"
+  },
+  {
+    "type": "textarea",
+    "id": "item_content",
+    "label": "Item text content",
+    "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  },
+  {
+    "type": "url",
+    "id": "item_url",
+    "label": "Item URL"
+  }
+  ]
+}
+],
+"presets": [
+  {
+    "name": "Support grid"
+  }
+]
+}  
+{% endschema %}

@@ -1,0 +1,230 @@
+{%- assign article_title = article.title -%}
+{%- assign read_time = article.metafields.main.read_time -%}
+{%- assign _blocks = section.blocks -%}
+
+{% comment %} Find the Author {% endcomment %}
+{%- for _block in _blocks -%}
+  {%- assign current_block = _block.settings -%}
+
+  {%- if current_block.name == article.metafields.main.author_name -%}
+    {%- assign author_image = current_block.image | default: false -%}
+    {%- assign author_name = current_block.name | default: false -%}
+    {%- assign author_description = current_block.description | default: false -%}
+    {%- assign author_email = current_block.email | default: false -%}
+    {%- assign author_facebook = current_block.facebook | default: false -%}
+    {%- assign author_twitter = current_block.twitter | default: false -%}
+    {%- assign author_tiktok = current_block.tiktok | default: false -%}
+    {%- assign author_linkedin = current_block.linkedin | default: false -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{% comment %} Hero {% endcomment %}
+<div class="article-hero">
+  {%- assign image_desktop = article.image | image_url: width: 1920 -%}
+
+  {%- if article.metafields.main.image -%}
+    {%- assign image_desktop = article.metafields.main.image[0].cloudinary_src | append: 'x_1920' -%}
+  {%- endif -%}
+
+  {%- if image_desktop -%}
+    <div class="media-wrapper">
+      <picture>
+        {%- assign image_mobile = article.metafields.main.image_mobile[0].cloudinary_src -%}
+
+        {%- if image_mobile -%}
+          {%- assign image_mobile = article.metafields.main.image_mobile[0].cloudinary_src | append: 'x_500' -%}
+
+          <source srcset="{{- image_mobile -}}" media="(max-width: 768px)"/>
+        {%- endif -%}
+
+        <img src="{{- image_desktop -}}" alt="{{- image_desktop.alt | escape -}}" loading="lazy" />
+      </picture>
+    </div>
+  {%- endif -%}
+</div>
+
+{% comment %} Main {% endcomment %}
+<div class="article">
+  <div class="container">
+    <div class="article__inner">
+      {% comment %} Sidebar {% endcomment %}
+      <div class="article__col-left">
+        <div class="article-writer">
+          <div class="article-writer__title">
+            <h3>{{ article_title }}</h3>
+          </div>
+
+          {% comment %} Tags {% endcomment %}
+          {%- render 'article-tags' with
+            mod_class: 'article-writer__tags',
+            mod_article: article,
+            mod_max_tags: 2 -%}
+
+          {% comment %} Date {% endcomment %}
+          <div class="article-writer__date">
+            <p>{{ article.published_at | date: "%b %d" }}</p>
+
+            {%- if read_time -%}
+              <span>{{ read_time }}</span>
+            {%- endif -%}
+          </div>
+
+          {% comment %} Author {% endcomment %}
+          {%- if author_name -%}
+            {%- render 'article-author' with
+              mod_class: 'article-writer__author',
+              mod_name: author_name,
+              mod_image: author_image -%}
+
+            {% comment %} Socials {% endcomment %}
+            {%- if
+              author_facebook or
+              author_twitter or
+              author_tiktok or
+              author_linkedin or
+              author_email
+            -%}
+              <ul class="article-writer__social">
+                {% if author_facebook != blank %}
+                  <li><a href="{{- author_facebook -}}">{% render 'icon', icon: 'fb' %}</a></li>
+                {% endif %}
+                {% if author_twitter != blank %}
+                  <li><a href="{{- author_twitter -}}">{% render 'icon', icon: 'twitter' %}</a></li>
+                {% endif %}
+                {% if author_tiktok != blank %}
+                  <li><a href="{{- author_tiktok -}}">{% render 'icon', icon: 'tiktok' %}</a></li>
+                {% endif %}
+                {% if author_linkedin != blank %}
+                  <li><a href="{{- author_linkedin -}}">{% render 'icon', icon: 'linkedin' %}</a></li>
+                {% endif %}
+                {% if author_email != blank %}
+                  <li><a href="mailto:{{- author_email -}}">{% render 'icon', icon: 'letter' %}</a></li>
+                {% endif %}
+              </ul>
+            {%- endif -%}
+          {%- endif -%}
+        </div>
+      </div>
+
+      {% comment %} Content {% endcomment %}
+      <div class="article__col-right">
+        <div class="article__content">
+          {% assign sections = shop.metafields.acf_settings.article_layouts | where: "id", article.id | first | map: "sections" | where: "visible" %}
+
+          <h1 class="article__title">{{- article_title -}}</h1>
+
+          {%- if sections.size > 0 -%}
+            <div class="article__body">
+              {%- for metafield_section in sections -%}
+                {%- assign metafield = article.metafields[metafield_section.name] -%}
+                {%- assign index = metafield_section.index -%}
+
+                {% comment %} Text Content {% endcomment %}
+                {%- if metafield_section.name == 'text_content' -%}
+                  {%- if metafield.text[index] -%}
+                    {%- render 'text-content' with
+                      mod_class: 'article__text-content',
+                      mod_content: metafield.text[index] -%}
+                  {%- endif -%}
+                {%- endif -%}
+
+                {% comment %} Images {% endcomment %}
+                {%- if metafield_section.name == 'images' -%}
+                  {%- render 'article-images' with
+                    mod_class: 'article__images',
+                    mod_image_left: metafield.image_left[index],
+                    mod_image_right: metafield.image_right[index],
+                    mod_text_left: metafield.text_left[index],
+                    mod_text_right: metafield.text_right[index],
+                    mod_metafield_images: true -%}
+                {%- endif -%}
+
+                {% comment %} Video {% endcomment %}
+                {%- if metafield_section.name == 'video' -%}
+                  {%- render 'video' with
+                    mod_class: 'article__video',
+                    mod_video_url: metafield.video_url[index],
+                    mod_poster: metafield.poster[index],
+                    mod_metafield_poster: true -%}
+                {%- endif -%}
+
+                {% comment %} Slider {% endcomment %}
+                {%- if metafield_section.name == 'slider' -%}
+                  {%- render 'article-slider' with
+                    mod_class: 'article__slider',
+                    mod_images: metafield.image[index] -%}
+                {%- endif -%}
+              {%- endfor -%}
+            </div><!-- /.article__body -->
+          {%- endif -%}
+
+          {% comment %} Footer Author {% endcomment %}
+          {%- if author_name -%}
+            <footer class="article__foot">
+              {%- render 'article-author' with
+                mod_class: 'article__author',
+                mod_name: author_name,
+                mod_image: author_image,
+                mod_description: author_description -%}
+            </footer>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Article",
+  "settings": [],
+  "blocks": [
+    {
+      "name": "Author",
+      "type": "author",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "text",
+          "id": "email",
+          "label": "Email"
+        },
+        {
+          "type": "text",
+          "id": "facebook",
+          "label": "Facebook URL"
+        },
+        {
+          "type": "text",
+          "id": "twitter",
+          "label": "Twitter URL"
+        },
+        {
+          "type": "text",
+          "id": "tiktok",
+          "label": "TikTok URL"
+        },
+        {
+          "type": "text",
+          "id": "linkedin",
+          "label": "LinkedIn URL"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

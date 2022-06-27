@@ -1,0 +1,63 @@
+{% liquid
+  assign object = section.settings 
+  assign tooltip_content = product.metafields.the_battery.tooltip
+  assign top_features_image = product.metafields.top_features.image
+  %}
+<div class="battery-section">
+        <div class="battery-section__inner">
+            <div class="battery-section__image">
+                <div class="media-wrapper">
+                    <img src="{{ top_features_image }}" alt="" loading="lazy" width="" height=""> 
+                </div>
+            </div>
+            <div class="battery-section__text">
+                <div class="battery-section__text-wrapper">
+                    <div class="battery-section__text-top">
+                        <h2 class="h2">{{ product.metafields.top_features.heading }}</h2>
+                        <p>{{ product.metafields.top_features.decription }}</p>
+                    </div>
+                    <div class="battery-section__text-bottom">
+                        <div class="battery-section__text-content">
+                            <h4 class="h4"> {{product.metafields.battery.battery_capacity_}}</h4>
+                            <p> <span>{{product.metafields.top_features.ah_max_range}}</span> Max Range</p>
+                            <p> <span> {{product.metafields.top_features.charge_time}}</span> Charge Time</p>
+                        </div>
+                        {%comment%}TO DO metafields are missing for this part{%endcomment%}
+                        {%comment%}
+                        <div class="battery-section__text-content">
+                            <h4 class="h4"> 19.5 Ah</h4>
+                            <p> <span>25 - 30 </span> Miles</p>
+                            <p> <span> 8.5 Hours</span> Charge Time</p>
+                        </div>{%endcomment%}
+                    </div>
+                    {% if tooltip_content != blank %}
+                    <a class="battery-section__link js-tooltip" data-tippy-content="{{tooltip_content}}" href="{{object.cta_url}}"> {% render 'icon', icon: 'warning-2' %} {{object.cta_text}}</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+</div>
+
+{% schema %}
+  {
+  "name": "Battery Section",
+  "settings": [
+  {
+    "type": "url",
+    "label": "CTA URL",
+    "id": "cta_url"
+  },
+  {
+    "type": "text",
+    "label": "CTA TEXT",
+    "id": "cta_text",
+    "default": "How is range calculated?"
+  }
+  ],
+  "presets": [
+    {
+      "name": "Battery Section"
+    }
+  ]
+}  
+{% endschema %}

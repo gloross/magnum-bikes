@@ -1,0 +1,49 @@
+{
+  "sections": {
+    "product-gallery-no-bikes": {
+      "type": "product-no-bikes",
+      "settings": {
+      }
+    },
+    "product-overview": {
+      "type": "product-overview",
+      "settings": {
+        "section_title": "Product Overview",
+        "left_col_title": "Description",
+        "right_col_title": ""
+      }
+    },
+    "no-bikes-grid": {
+      "type": "no-bikes-grid",
+      "disabled": true,
+      "settings": {
+        "section_title": "Compatible bikes"
+      }
+    },
+    "1645613015d2d99fff": {
+      "type": "apps",
+      "disabled": true,
+      "blocks": {
+        "672a0fa9-6778-426f-97cf-323b9b5a02df": {
+          "type": "shopify:\/\/apps\/yotpo-product-reviews-photos\/blocks\/reviews\/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
+          "disabled": true,
+          "settings": {
+            "product": "{{product}}"
+          }
+        }
+      },
+      "block_order": [
+        "672a0fa9-6778-426f-97cf-323b9b5a02df"
+      ],
+      "settings": {
+        "include_container": true
+      }
+    }
+  },
+  "order": [
+    "product-gallery-no-bikes",
+    "product-overview",
+    "no-bikes-grid",
+    "1645613015d2d99fff"
+  ]
+}

@@ -1,0 +1,7 @@
+{%- assign mod_class = mod_class | default: false -%}
+
+{%- if settings.klaviyo_newsletter_embed_code != blank -%}
+  <div class="newsletter{% if mod_class %} {{ mod_class }}{% endif %}">
+    {{- settings.klaviyo_newsletter_embed_code -}}
+  </div>
+{%- endif -%}

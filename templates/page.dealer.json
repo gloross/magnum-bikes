@@ -1,0 +1,33 @@
+{
+  "sections": {
+    "about-store-hero": {
+      "type": "about-store-hero",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/PC_store_image.png",
+        "section_title": "Magnum Bikes Park City"
+      }
+    },
+    "about-store-main": {
+      "type": "about-store-main",
+      "settings": {
+        "title": "Sales | Service | Rentals",
+        "html_content": "<li>\n<span><strong>Address:<\/strong><\/span><span>738 Main Street, Suite 2-100B, \nPark City, UT, 84060<\/span>\n<\/li><li>\n<span><strong>\n\nHours:<\/strong><\/span>\n\n<span>Sunday 9AM – 5PM <\/span>\n<span> Monday 9AM – 5PM <\/span>\n<span>Tuesday 9AM – 5PM <\/span>\n<span> Wednesday 9AM – 5PM <\/span>\n<span>Thursday 9AM – 5PM <\/span>\n<span>Friday 9AM – 5PM <\/span>\n<span> Saturday\t- Closed <\/span>\n\n<\/li>\n\n\n<li>\n<span>\n<strong>Phone:<\/strong><\/span><a href=\"tel:435-200-3339%0A\">435-200-3339\n<\/a>\n<\/li><li>\n<span><strong>Email Address:<\/strong><\/span><a href=\"mailto:parkcity@magnumbikes.com\">parkcity@magnumbikes.com<\/a>\n<\/li><li>",
+        "text": "",
+        "notification_text": "Stock levels vary by location. Call in advance to check availability.",
+        "first_link_text": "Test Ride",
+        "first_link_url": "mailto:parkcity@magnumbikes.com",
+        "second_link_text": "Schedule Appointment",
+        "second__link_url": "mailto:parkcity@magnumbikes.com",
+        "third_link_text": "Rental",
+        "third__link_url": "mailto:parkcity@magnumbikes.com",
+        "cta_text": "Get Directions",
+        "cta_url": "https:\/\/goo.gl\/maps\/KaR158Qxs3pRyXW3A",
+        "social_title": ""
+      }
+    }
+  },
+  "order": [
+    "about-store-hero",
+    "about-store-main"
+  ]
+}

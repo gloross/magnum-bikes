@@ -1,0 +1,60 @@
+{% liquid
+  assign object = section.settings
+  assign blocks = section.blocks
+%}
+<section class="home-shop">
+  <div class="container">
+    <div class="home-shop__inner">
+     {% for block in blocks %}
+     {% assign b = block.settings %}
+      <a href="{{b.item_url}}" class="home-shop__item">
+        <div class="home-shop__item-content">
+            {%- render 'img',
+              img: b.item_image
+            -%}
+          <h4>{{b.item_title}} {% render 'icon', icon: 'arrow-up-right' %} </h4>
+        </div>
+      </a>
+      {%endfor%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+"name": "Home Shop",
+"max_blocks": 3,
+"settings": [
+],
+"blocks": [
+{
+  "name": "Item",
+  "type": "block",
+  "settings": [
+  {
+    "type": "image_picker",
+    "id": "item_image",
+    "label": "Item image"
+  },
+  {
+    "type": "text",
+    "id": "item_title",
+    "label": "Item title",
+    "default": "SHOP E-BIKES"
+  },
+  {
+    "type": "url",
+    "id": "item_url",
+    "label": "Item URL"
+  }
+  ]
+}
+],
+"presets": [
+  {
+    "name": "Home Shop"
+  }
+]
+}
+{% endschema %}
+

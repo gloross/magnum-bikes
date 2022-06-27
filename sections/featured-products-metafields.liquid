@@ -1,0 +1,39 @@
+{%- assign metafields = product.metafields.featured_products -%}
+{%- assign heading = metafields.title -%}
+{%- assign product_handles = metafields.products -%}
+
+{%- if product_handles != blank -%}
+  {%- assign product_handles_array = product_handles | split: '|' -%}
+
+  <div class="featured-products" id="featured-products">
+    <div class="container container--small">
+      {%- if heading -%}
+        <h2 class="featured-products__title">
+          {{- heading -}}
+        </h2><!-- /.featured-products__title -->
+      {%- endif -%}
+
+      <div class="featured-products__items">
+        {%- for product_handle in product_handles_array -%}
+          {%- assign _product = all_products[product_handle] -%}
+
+          {%- if _product -%}
+            <div class="featured-products__item">
+              {%- render 'product-item-simple' with
+                mod_product: _product,
+                mod_class: 'featured-products__product' -%}
+            </div><!-- /.featured-products__item -->
+          {%- endif -%}
+        {%- endfor -%}
+      </div><!-- /.featured-products__items -->
+    </div><!-- /.container -->
+  </div><!-- /.featured-products -->
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Featured products",
+  "tag": "section",
+  "settings": []
+}
+{% endschema %}

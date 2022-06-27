@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "dashboard-hero": {
+      "type": "dashboard-hero"
+    },
+        "compatible-parts": {
+      "type": "compatible-parts"
+    },
+      "dashboard-suggest": {
+      "type": "dashboard-suggest"
+    }
+  },
+  "order": [
+    "dashboard-hero",
+    "compatible-parts",
+    "dashboard-suggest"
+  ]
+}

@@ -1,0 +1,55 @@
+<div class="header__nav-dropdown-inner" style="background: url({{b.bg_image | img_url: 'master'}}) no-repeat; background-size:cover;background-position:center center;">
+            <a href="" class="header__go-back-mob js-go-back">
+              {% render 'icon', icon: 'arrow-left-small' %}
+              <span>{{ goBackLink }}</span>
+            </a>
+  <div class="header__nav-dropdown-col-left js-nav-category-tabs">
+        <a class="u-uppercase view-all" href="{{b.view_all_url}}">{{b.view_all_text}} 
+            {% render 'icon', icon: 'arrow-up-right' %}
+        </a>
+        <ul class="header__nav-dropdown-tabs-list">
+            <li class="js-tab-btn active" data-name="by-category">{{b.by_category_text}}</li>
+            <li class="js-tab-btn" data-name="by-use">{{b.by_use_text}}</li>
+        </ul>
+        <div class="header__nav-dropdown-tabs js-tab-content active" data-name="by-category">
+            <ul class="header__nav-dropdown-inner-list">
+                {% for link in linklists[b.menu_by_category].links%}
+                {% assign new_tag = b.new_tag | downcase | replace: ' ', '-' %}
+                {% assign sale_tag = b.sale_tag | downcase | replace: ' ', '-' %}
+                {% assign link_title = link.title | handleize %}
+                <li>
+                    <a
+                    {% if new_tag contains link_title and sale_tag contains link_title %}
+                    class="new_sale"    
+                    {%elsif  new_tag contains link_title%}
+                        class="new"
+                    {%elsif sale_tag contains link_title%}
+                        class="sale"
+                    {% else %}
+                    class="l-b"
+                    {%endif%}
+                   
+                    href="{{link.url}}">{{link.title}}
+                </a>
+                </li>
+                {%endfor%}
+            </ul>
+        </div>
+        <div class="header__nav-dropdown-tabs js-tab-content" data-name="by-use">
+            <ul class="header__nav-dropdown-inner-list">
+                {% for link in linklists[b.menu_by_use].links%}
+                <li>
+                    <a class="l-b" href="{{link.url}}">{{link.title}}</a>
+                </li>
+                {%endfor%}
+            </ul>
+        </div>
+    </div>
+    <div class="header__nav-dropdown-col-right">
+        <div class="header__nav-dropdown-col-right-item">
+            <h2>{{b.right_heading}}</h2>
+            <p>{{b.right_description}}</p>
+            <a class="btn btn--outline" href="{{b.right_cta_url}}">{{b.right_cta_label}}</a>
+        </div>
+    </div>
+</div>

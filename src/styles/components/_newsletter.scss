@@ -1,0 +1,148 @@
+/* ------------------------------------------------------------ *\
+  Newsletter
+\* ------------------------------------------------------------ */
+
+.newsletter {
+  /* Wrapper */
+  .klaviyo-form {
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+
+    @include media-breakpoint-down(sm) {
+      max-width: rem(550);
+    }
+
+    /* Container */
+    > div {
+      display: block !important;
+      min-height: auto !important;
+    }
+  }
+
+  /* Row */
+  [data-testid="form-row"] {
+    display: block !important;
+    margin-bottom: 10px;
+
+    @include media-breakpoint-down(sm) {
+      display: flex !important;
+    }
+
+    @include media-breakpoint-down(xs) {
+      display: block !important;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  /* Column */
+  [data-testid="form-component"] {
+    padding: 0 !important;
+    margin-bottom: rem(15) !important;
+
+    @include media-breakpoint-down(sm) {
+      margin: 0 rem(16) 0 0 !important;
+    }
+
+    @include media-breakpoint-down(xs) {
+      margin: 0 0 rem(15) !important;
+    }
+
+    &:last-child {
+      margin-bottom: 0 !important;
+
+      @include media-breakpoint-down(sm) {
+        margin-right: 0 !important;
+      }
+
+      @include media-breakpoint-down(xs) {
+        margin-bottom: 0 !important;
+      }
+    }
+  }
+
+  /* Email field */
+  input {
+    height: auto !important;
+    border: rem(1) solid $grey-light !important;
+    border-radius: rem(40) !important;
+    padding: rem(15.5) rem(25) !important;
+    background: transparent !important;
+    font-family: $regular-font !important;
+    font-size: rem(15) !important;
+    line-height: line-height(15, 14) !important;
+    color: $white !important;
+    transition: $t-hover !important;
+
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+    }
+
+    @include media-breakpoint-down(xs) {
+      max-width: 100%;
+    }
+
+    &::placeholder {
+      font-family: inherit !important;
+      font-size: rem(15) !important;
+      line-height: line-height(15, 14) !important;
+      color: $grey-light !important;
+    }
+
+    &:hover,
+    &.go1652256424.go1652256424.go1652256424:hover {
+      border-color: $grey-light !important;
+    }
+
+    &:focus,
+    &.go1652256424.go1652256424.go1652256424:focus {
+      border-color: $white !important;
+    }
+  }
+
+  /* Button */
+  button {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-width: rem(224);
+    height: auto !important;
+    padding: rem(16) rem(24) !important;
+    border: rem(1) solid $cyan;
+    border-radius: rem(40) !important;
+    background: $cyan !important;
+    font-family: $regular-font !important;
+    font-size: rem(13) !important;
+    line-height: line-height(13, 14) !important;
+    color: $white !important;
+    font-weight: 500 !important;
+    text-transform: uppercase;
+    pointer-events: auto !important;
+    transition: $t-hover;
+
+    @include media-breakpoint-down(sm) {
+      min-width: rem(160);
+    }
+
+    @include hover() {
+      background-color: rgba($cyan, 0.8) !important;
+    }
+  }
+
+  /* Thank you message */
+  .ql-editor p {
+    font-family: $regular-font !important;
+    line-height: 1.2 !important;
+    color: inherit !important;
+    text-align: left !important;
+
+    span {
+      line-height: 1.63 !important;
+    }
+  }
+}

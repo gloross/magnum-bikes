@@ -1,0 +1,144 @@
+.customer-account {
+  padding-bottom: rem(110);
+
+  @include media-breakpoint-up(lg) {
+    padding-bottom: rem(65);
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+
+    @include media-breakpoint-up(lg) {
+      flex-direction: row;
+    }
+  }
+
+  h1 {
+    margin-bottom: rem(55);
+    font-size: rem(32);
+    line-height: line-height(32, 38);
+  }
+
+  h4 {
+    font-size: rem(17);
+    line-height: line-height(17, 20);
+  }
+
+  a,
+  p {
+    font-size: rem(12);
+    font-family: $regular-font;
+    line-height: line-height(12, 18);
+    color: $friar-gray;
+  }
+
+  a {
+    border-bottom: 1px solid $mine-shaft;
+    transition: $t-hover;
+
+    @include hover() {
+      color: $mine-shaft;
+    }
+  }
+
+  p {
+    margin-bottom: rem(10);
+  }
+
+  &__logout {
+    width: rem(190);
+  }
+
+  &__details {
+    @include media-breakpoint-up(lg) {
+      flex: 1 0 33.33333%;
+    }
+
+    & > div {
+      margin-bottom: rem(20);
+    }
+  }
+
+  &__history {
+    padding-top: rem(80);
+    flex: 1;
+
+    @include media-breakpoint-up(lg) {
+      padding: 0 0 0 rem(100);
+      flex: 1 0 66.66667%;
+    }
+
+    p {
+      font-size: rem(14);
+      color: $black;
+      font-family: $headline-font;
+    }
+
+    table {
+      width: 100%;
+
+      tr {
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px dashed $silver-chalice;
+
+        @include media-breakpoint-up(lg) {
+          display: table-row;
+          border: none;
+        }
+      }
+
+      th {
+        display: none;
+        padding: rem(20) rem(10);
+        font-size: rem(14);
+        font-family: $font-bold;
+        line-height: line-height(14, 22);
+        text-transform: uppercase;
+        text-align: left;
+        letter-spacing: 1px;
+        border-top: 0;
+
+        @include media-breakpoint-up(lg) {
+          display: table-cell;
+        }
+      }
+
+      td {
+        position: relative;
+        font-size: rem(12);
+        color: $friar-gray;
+        padding: rem(20) rem(10);
+        text-align: right;
+
+        &::before {
+          content: attr(data-label);
+          position: absolute;
+          left: 0;
+          padding-right: rem(10);
+          font-size: rem(12);
+
+          @include media-breakpoint-up(lg) {
+            display: none;
+          }
+        }
+
+        @include media-breakpoint-up(lg) {
+          position: static;
+          border-top: 1px dashed $silver-chalice;
+          border-bottom: 1px dashed $silver-chalice;
+          text-align: left;
+        }
+
+        &:last-of-type {
+          text-align: right;
+        }
+
+        &.warning-text {
+          color: $red-light;
+        }
+      }
+    }
+  }
+}

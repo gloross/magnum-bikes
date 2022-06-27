@@ -1,0 +1,19 @@
+.dashbord-orders {
+  padding-top: rem(64);
+  overflow-x: auto;
+
+  &::-webkit-scrollbar {
+    width: 0;
+    display: none;
+  }
+
+  @include media-breakpoint-down(lg) {
+    width: calc(100% + #{rem(20)});
+  }
+
+  .row {
+    @include media-breakpoint-down(lg) {
+      min-width: rem(1024);
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{% assign object = section.settings %}
+<section class="about-text-image">
+        <div class="about-text-image__inner">
+            <div class="about-text-image__col-left">
+                    <p>{{ object.description }}</p>
+            </div>
+             <div class="about-text-image__col-right">
+                <div class="media-wrapper">
+                    {%- render 'img',
+                    img: object.image,
+                    img_sm: '',
+                    img_md: '',
+                    img_lg: '',
+                    m_width: '500'
+                  -%}
+                </div>
+            </div>
+        </div>
+</section>
+{% schema %}
+  {
+  "name": "About Text Image",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Text content",
+      "default": "Our innovation, design and focus on quality allows us to produce stunning high level electric bicycles that lead the e-bike market internationally."
+    },
+    {
+      "type": "image_picker",
+      "label": "Image",
+      "id": "image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "About Text Image"
+    }
+  ]
+}  
+{% endschema %}
+

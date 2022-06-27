@@ -1,0 +1,9 @@
+$fontFolder: '../assets/';
+
+@mixin font-face($font-name, $font-filename: $font-name) {
+  @font-face {
+    font-family: '#{$font-name}';
+    src: url('#{$fontFolder+$font-filename}.woff2');
+    font-display: swap;
+  }
+}

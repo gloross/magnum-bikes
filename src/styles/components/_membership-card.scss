@@ -1,0 +1,82 @@
+.membership__grid-card {
+  .card-inner {
+    &__wrapper {
+      height: rem(200);
+      margin: rem(20) auto rem(10);
+
+      @include media-breakpoint-up(xl) {
+        height: rem(340);
+        margin: rem(30) auto rem(15);
+      }
+
+      img {
+        object-fit: contain;
+        height: 100%;
+      }
+    }
+
+    &--first {
+      padding-right: rem(10);
+      border-right: rem(1) dotted $black;
+    }
+
+    &--second {
+      padding-left: rem(10);
+    }
+
+    &--first,
+    &--second {
+      @include media-breakpoint-up(xl) {
+        padding: rem(30) rem(50) rem(40);
+        background-color: $white;
+        border-radius: rem(20);
+        border: none;
+      }
+    }
+
+    h4,
+    p {
+      font-size: rem(15);
+      line-height: rem(17);
+      font-family: $font-light;
+    }
+
+    p {
+      @include media-breakpoint-up(xl) {
+        font-size: rem(18);
+        line-height: line-height(17, 18);
+      }
+    }
+
+    h4 {
+      margin-bottom: rem(10);
+
+      @include media-breakpoint-up(xl) {
+        margin-bottom: rem(25);
+        font-size: rem(25);
+        font-weight: 700;
+        letter-spacing: rem(1.14);
+        line-height: line-height(25, 30);
+        font-family: $font-bold;
+      }
+    }
+
+    .hide-sm {
+      display: none;
+
+      @include media-breakpoint-up(xl) {
+        display: flex;
+        z-index: 1;
+        width: 300px;
+        height: rem(50);
+        font-size: rem(14);
+        line-height: line-height(50, 50);
+        margin: rem(35) auto 0;
+        border-radius: 0;
+      }
+    }
+  }
+  .btn__text {
+    font-family: $regular-font;
+  }
+}

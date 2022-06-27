@@ -1,0 +1,52 @@
+{% comment %}
+    Renders the article's tags, excluding tags containing a prefix such as "category:", "author:" etc.
+
+    Accepts:
+    - mod_article: {Object} Article Liquid Object (required)
+    - mod_class: {String} Add additional class (optional)
+    - mod_max_tags: {Number} The max number of tags that will be shown before adding the "..." icon. It's default value is 2 (optional)
+
+    Usage:
+    {%- render 'article-tags' with mod_article: article -%}
+{% endcomment %}
+
+{%- assign mod_article = mod_article | default: false -%}
+{%- assign mod_class = mod_class | default: false -%}
+{%- assign mod_max_tags = mod_max_tags | default: 2 -%}
+
+{%- if mod_article -%}
+  {%- assign tags_html = '' -%}
+  {%- assign index = 0 -%}
+
+  {%- for tag in mod_article.tags -%}
+    {%- unless tag contains 'category:' or tag contains 'author:' -%}
+      {%- assign index = index | plus: 1 -%}
+
+      {%- capture tag_html -%}
+        {%- if index > mod_max_tags -%}
+          <li>
+            <span>
+              {%- render 'icon' with 'dots' -%}
+            </span>
+          </li>
+        {%- else -%}
+          <li>
+            <a href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>
+          </li>
+        {%- endif -%}
+      {%- endcapture -%}
+
+      {%- assign tags_html = tags_html | append: tag_html -%}
+
+      {%- if index > mod_max_tags -%}
+        {%- break -%}
+      {%- endif -%}
+    {%- endunless -%}
+  {%- endfor -%}
+
+  {%- if tags_html != blank -%}
+    <ul class="article-tags{% if mod_class %} {{ mod_class }}{% endif %}">
+      {{- tags_html -}}
+    </ul>
+  {%- endif -%}
+{%- endif -%}

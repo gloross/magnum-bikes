@@ -1,0 +1,21 @@
+{% comment %} @info
+  This module represents the product data in a consistent way.
+  Primarily, it is used to pass product data to product.js component.
+
+  API:
+    @param {String} mod_item The Shopify product to represent
+
+  Example:
+    {% render 'json-product', mod_item: product %}
+
+{% endcomment %}
+
+{%- assign mod_item = mod_item | default: '{}' -%}
+
+<script
+  type="application/json"
+  class="js-product-json">
+  {%- if mod_item -%}
+    {{- mod_item | json -}}
+  {%- endif -%}
+</script>

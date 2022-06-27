@@ -1,0 +1,68 @@
+{% assign object = section.settings %}
+<section class="another-cta {% if template contains 'learning-hub' %} another-cta--learning-hub{% endif %}">
+    <div class="container {% if template contains 'learning-hub' %} container--small {% else %} container--middle {% endif %}">
+        <div class="another-cta__content">
+            <div class="media-wrapper">
+                {%
+                    render 'img',
+                    img: object.image, 
+                    img_sm: object.image_mobile
+                    %}
+            </div>
+            <div class="another-cta__text">
+            <div class="another-cta__text-content">
+                <h3>{{ object.section_title }}</h3>
+               <p>{{ object.description }}</p>
+                <a href="{{object.cta_url}}" class="another-cta__btn" >{{ object.cta_text }} {% render 'icon', icon: 'arrow-up-right' %} </a>
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+  {
+  "name": "Another CTA",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Desktop Image"
+    },
+    {
+        "type": "image_picker",
+        "id": "image_mobile",
+        "label": "Mobile Image"
+      },
+    {
+        "type": "text",
+        "id": "section_title",
+        "label": "Section title",
+        "default": "Another CTA"
+    },
+    {
+        "type": "text",
+        "id": "description",
+        "label": "Section description",
+        "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    {
+        "type": "text",
+        "id": "cta_text",
+        "label": "CTA text",
+        "default": "Check Out Fat Tire Bikes"
+    },
+    {
+        "type": "url",
+        "id": "cta_url",
+        "label": "CTA URL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Another CTA"
+    }
+  ]
+}  
+{% endschema %}
+

@@ -1,0 +1,26 @@
+.breadcrumbs {
+  color: $grey-light;
+  padding-top: rem(32);
+  a,
+  span {
+    display: inline-block;
+    font-size: rem(14);
+    line-height: line-height(14, 26);
+    color: $grey-light;
+  }
+
+  a {
+    padding-right: rem(8);
+  }
+
+  span {
+    padding: 0 rem(8);
+  }
+
+  &--dark {
+    a,
+    span {
+      color: $machine-grey;
+    }
+  }
+}

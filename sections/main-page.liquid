@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="{{ 'section-main-page.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'section-main-page.css' | asset_url | stylesheet_tag }}</noscript>
+
+<div class="container">
+  <h1>{{page.title}}</h1>
+  <div>
+  	{{page.content}}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.page.name",
+  "tag": "section",
+  "settings": []
+}
+{% endschema %}

@@ -1,0 +1,65 @@
+{% assign object = section.settings %}
+<section class="home-text-image {% if object.reverse%}home-text-image--reverse{%endif%}">
+  <div class="home-text-image__inner">
+    <div class="home-text-image__text">
+      <div class="home-text-image__text-content">
+        <h4> {{object.section_title}} </h4>
+        <p>{{object.description}}</p>
+      </div>
+    </div>
+    <div class="home-text-image__image">
+      <div class="media-wrapper">
+        {%- render 'img',
+        img: object.image_desktop,
+        img_sm: object.image_mobile,
+        img_md: '',
+        img_lg: '',
+        m_width: '500'
+      -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{% schema %}
+{
+"name": "Home Text Image",
+"settings": [
+{
+  "type": "checkbox",
+  "id": "reverse",
+  "label": "Reverse image/text position",
+  "default": false
+},
+{
+  "type": "text",
+  "id": "section_title",
+  "label": "Section title",
+  "default": "Premium Quality Components. For Less."
+},
+{
+  "type": "textarea",
+  "id": "description",
+  "label": "Section description",
+  "default": "750W Bafang Motor, which peaks at 1000 watts, with 6 modes of pedal assist, for speeds of up to 28 mph. Let\’s also have copy about \“How does it feel\”?"
+},
+{
+  "type": "image_picker",
+  "id": "image_desktop",
+  "label": "Desktop image"
+},
+{
+  "type": "image_picker",
+  "id": "image_mobile",
+  "label": "Mobile image"
+}
+],
+"presets": [
+  {
+    "name": "Home Text Image"
+  }
+]
+}  
+{% endschema %}
+

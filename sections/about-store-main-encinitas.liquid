@@ -1,0 +1,215 @@
+
+{% liquid
+    assign object = section.settings
+    assign facebook_ac  = settings.social_facebook_link
+    assign instagram_ac = settings.social_instagram_link
+    assign ln_ac        = settings.social_linkedin_link
+    assign tiktok_ac   = settings.social_tiktok_link
+  
+     %}
+  
+  {%- render "notification-bar", notification_text: object.notification_text -%}
+  <section class="about-store-main">
+    <div class="container container--small">
+      <div class="about-store-main__inner">
+        <div class="about-store-main__col-left">
+          <h2>{{ object.title }}</h2>
+          <p>
+            {{ object.text }}
+          </p>
+          <ul class="about-store-main__link-list">
+            {% if object.first_link_text != blank %}
+            <li>
+              <a href="{{ object.first_link_url}}" class="about-store-main__link">
+                {% render 'icon', icon: 'test-ride' %}
+                <span>{{ object.first_link_text }}</span>
+                {% render 'icon', icon: 'arrow-right' %}
+              </a>
+            </li>
+            {% endif %}
+            {% if object.second_link_url != blank %}
+            <li>
+              <a href="{{ object.second_link_url}}" class="about-store-main__link">
+                {% render 'icon', icon: 'schedule-appointment' %}
+                <span>{{ object.second_link_text }}</span>
+                {% render 'icon', icon: 'arrow-right' %}
+              </a>
+            </li>
+            {% endif %}
+            {% if object.thirt_link_url != blank %}
+            <li>
+              <a href="{{ object.thirt_link_url}}" class="about-store-main__link">
+                {% render 'icon', icon: 'rental' %}
+                <span>{{ object.third_link_text }}</span>
+                {% render 'icon', icon: 'arrow-right' %}
+              </a>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
+        <div class="about-store-main__col-right">
+            <div class="about-store-main__map">
+             {{object.html_content_map}}
+            </div>
+            <div class="about-store-main__map-info-wrapper">
+              <a href="{{ object.cta_url }}" class="about-store-main__get-dirextions-link">
+                {% render 'icon', icon: 'hook-arrow-right' %}
+                <span>{{ object.cta_text }}</span>
+              </a>
+               <ul class="about-store-main__map-info">
+                   {{ object.html_content }}
+                 <li>
+                  <span><strong>{{ object.social_title }}</strong></span>
+                    <div class="about-store-main__map-info-social">
+                        {% if object.facebook_url != blank %}
+                      <a href="{{ object.facebook_url }}" target="_blanck" class="about-store-main__map-info-social-link">
+                        {% render 'icon', icon: 'facebook' %}
+                      </a>
+                      {%endif%}
+                        {% if object.instagram_url != blank %}
+                      <a href="{{ object.instagram_url}}" target="_blanck" class="about-store-main__map-info-social-link">
+                        {% render 'icon', icon: 'instagram-blue' %}
+                      </a>
+                      {%endif%}
+                        {% if object.tiktok_url != blank %}
+                      <a href="{{ object.tiktok_url }}" target="_blanck" class="about-store-main__map-info-social-link">
+                        {% render 'icon', icon: 'tiktok' %}
+                      </a>
+                      {%endif%}
+                        {% if object.linkedin_url != blank %}
+                      <a href="{{ object.linkedin_url }}" target="_blanck" class="about-store-main__map-info-social-link">
+                        {% render 'icon', icon: 'linkedin-blue' %}
+                      </a>
+                      {%endif%}
+                    </div>
+                </li>
+                </ul>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  {% schema %}
+    {
+    "name": "About Store Main Enc",
+    "settings": [
+      {
+        "type": "html",
+        "id": "title",
+        "label": "Title",
+        "default": "About The Store"
+      },
+         {
+        "type": "html",
+        "id": "html_content",
+        "label": "HTML Content",
+        "default": "<li><span><strong>Address:<\/strong><\/span><span>477 Hale End Road, London<\/span><\/li><li><span><strong>Hours:<\/strong><\/span><span>08:00 - 21:00 Weekdays<\/span><span>08:00 - 21:00 Saturday<\/span><span>Closed on Sundays<\/span><\/li><li><span><strong>Phone:<\/strong><\/span><a href=\"tel:213 32178361 3218\">213 32178361 3218<\/a><\/li><li><span><strong>Email Address:<\/strong><\/span><a href=\"mailto:ebikestore@gmail.com\">ebikestore@gmail.com<\/a><\/li><li><span><strong>Website<\/strong><\/span><a href=\"\" target=\"_blanck\"><span>www.heales.com<\/span><\/a><\/li>"
+  
+      },
+       {
+        "type": "text",
+        "id": "text",
+        "label": "Text",
+        "default": "We include an easy to use toolkit and an assembly manual to make the remaining.We include an easy to use toolkit and an assembly."
+      },
+           {
+        "type": "text",
+        "id": "notification_text",
+        "label": "Notification Text",
+        "default": "Stock levels vary by location. Call in advance to check availability."
+      },
+       {
+        "type": "header",
+        "content": "Left col"
+      },
+      {
+        "type": "text",
+        "id": "first_link_text",
+        "label": "First link text(if this feald is empty, CTA will not show on page)",
+        "default": "Test Ride"
+      },
+      {
+        "type": "url",
+        "id": "first_link_url",
+        "label": "First link URL"
+      },
+      {
+        "type": "text",
+        "id": "second_link_text",
+        "label": "Second link text(if this feald is empty, CTA will not show on page)",
+        "default": "Schedule Appointment"
+      },
+      {
+        "type": "url",
+        "id": "second__link_url",
+        "label": "Second  link URL"
+      },
+      {
+        "type": "text",
+        "id": "third_link_text",
+        "label": "Third link text(if this feald is empty, CTA will not show on page)",
+        "default": "Rental"
+      },
+      {
+        "type": "url",
+        "id": "third__link_url",
+        "label": "Third  link URL"
+      },
+      {
+        "type": "header",
+        "content": "Right col"
+      },
+      {
+        "type": "html",
+        "id": "html_content_map",
+        "label": "HTML Content for Map",
+        "default": "<p>need code</p>"
+  
+      },
+      {
+        "type": "text",
+        "id": "cta_text",
+        "label": "CTA text",
+        "default": "Get Directions"
+      },
+      {
+        "type": "url",
+        "id": "cta_url",
+        "label": "CTA URL"
+      },
+      {
+        "type": "text",
+        "id": "social_title",
+        "label": "Social title",
+        "default": "Social media"
+      },
+      {
+        "type": "url",
+        "id": "facebook_url",
+        "label": "Facebook URL"
+      },
+      {
+        "type": "url",
+        "id": "instagram_url",
+        "label": "Instaram URL"
+      },
+      {
+        "type": "url",
+        "id": "tiktok_url",
+        "label": "Tiktok URL"
+      },
+      {
+        "type": "url",
+        "id": "linkedin_url",
+        "label": "Linkedin URL"
+      }
+    ],
+    "presets": [
+      {
+        "name": "About Store Main Enc"
+      }
+    ]
+  }
+  {% endschema %}
+  

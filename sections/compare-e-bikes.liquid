@@ -1,0 +1,89 @@
+<section class="compare-bikes js-compare-e-bikes">
+    <div class="container container--small">
+        <a href="" class="compare-bikes__go-back">
+         {% render 'icon', icon: 'arrow-left' %}
+           Go Back
+        </a>
+        <div class="compare-bikes__title">
+          <h1>Compare E-Bikes</h1>
+        </div>
+        <ul class="compare-bikes__nav">
+             <li><a href="">Comparing 3 Bikes</a></li>
+             <li class="js-tab-btn active" data-name="all-features">Show All Features</li>
+             <li class="js-tab-btn" data-name="differences-only">Show Differences Only</li>
+        </ul>
+        <div class="compare-bikes__select-wrapper  js-tab-content active" data-name="all-features">
+          <div class="compare-bikes__select-inner js-scroll-select">
+              <div class="compare-bikes__select-item">
+                    <div class="select-field select-field--compare">
+                  <select class="js-select-sizes">
+                      <option>The Scout</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option disabled="">3</option>
+                      <option value="4">4</option>
+                  </select>
+                  <p class="select-field__message is-hidden">
+                    Please select size!
+                  </p>
+                </div>
+                    <div class="select-field select-field--compare">
+                  <select class="js-select-sizes">
+                      <option>The Scout</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option disabled="">3</option>
+                      <option value="4">4</option>
+                  </select>
+                  <p class="select-field__message is-hidden">
+                    Please select size!
+                  </p>
+                </div>
+                    <div class="select-field select-field--compare">
+                  <select class="js-select-sizes">
+                      <option>The Scout</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option disabled="">3</option>
+                      <option value="4">4</option>
+                  </select>
+                  <p class="select-field__message is-hidden">
+                    Please select size!
+                  </p>
+                </div>
+                    <div class="select-field select-field--compare">
+                  <select class="js-select-sizes">
+                      <option>The Scout</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option disabled="">3</option>
+                      <option value="4">4</option>
+                  </select>
+                  <p class="select-field__message is-hidden">
+                    Please select size!
+                  </p>
+                </div>
+                </div>
+            </div>
+         </div>
+        <div class="compare-bikes__inner js-scroll-card">
+          <div class="compare-bikes__tabs js-tab-content active" data-name="all-features">
+           <div class="compare-bikes__item">
+            {% render  'component-product-card.liquid'%}
+          </div>
+            <div class="compare-bikes__item">
+            {% render  'component-product-card.liquid'%}
+          </div>
+            <div class="compare-bikes__item">
+            {% render  'component-product-card.liquid'%}
+          </div>
+            <div class="compare-bikes__item">
+            {% render  'component-product-card.liquid'%}
+          </div>
+          </div>
+          <div class="compare-bikes__tabs js-tab-content"  data-name="differences-only">
+            <h1>Show Differences Only</h1>
+          </div>
+        </div>
+    </div>
+</section>

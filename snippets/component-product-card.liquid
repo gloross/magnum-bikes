@@ -1,0 +1,136 @@
+{% comment %}
+    Renders a product card component
+
+    Accepts:
+    - product_card_product: {Object} Product Liquid object (optional)
+    - media_size: {String} Size of the product image card. Values are "square" and "portrait". Default is "square" (optional)
+    - show_secondary_image: {Boolean} Show the secondary image on hover. Default: false (optional)
+    - show_vendor: {Boolean} Show the product vendor. Default: false
+    - show_rating: {Boolean} Show the product rating. Default: false
+
+    Usage:
+    {%- render 'component-product-card',
+      show_vendor: section.settings.show_vendor
+    -%}
+{% endcomment %}
+
+<div class="compare-product-card">
+      <div class="media-wrapper">
+        <img alt="" src="https://via.placeholder.com/217x152" width="" height="" loading="lazy">
+      </div>
+      <div class="compare-product-card__inner">
+
+        {% for product_option in product.options_with_values %}
+        {% if product_option.name == 'Color' %}
+          <ul class="js-color-variation" data-option="option{{ product.options_by_name['Color'].position }}">
+            {% liquid
+              for color_option in product.options_by_name['Color'].values
+                assign active = false
+                if forloop.index == 1
+                  assign active = true
+                endif
+                render "component-color-swatch", name: color_option, product: product, selected: active
+              endfor
+            %}
+          </ul>
+        {% endif %}
+      {% endfor %}
+      
+    <ul class="choose-color">
+        <li>
+            {% render 'radio-checkbox',
+                  text: ' ',
+                  name: 'color',
+                  id: 'color-1',
+                  checked: 'checked'
+
+                %}
+        </li>
+        <li>
+            {% render 'radio-checkbox',
+                  text: ' ',
+                  name: 'color',
+                  id: 'color-2'
+                %}
+        </li>
+         <li>
+            {% render 'radio-checkbox',
+                  text: ' ',
+                  name: 'color',
+                  id: 'color-3'
+                %}
+        </li>
+         <li>
+            {% render 'radio-checkbox',
+                  text: ' ',
+                  name: 'color',
+                  id: 'color-4'
+                %}
+        </li>
+         <li>
+            {% render 'radio-checkbox',
+                  text: ' ',
+                  name: 'color',
+                  id: 'color-5'
+                %}
+        </li>
+         <li>
+            {% render 'radio-checkbox',
+                  text: ' ',
+                  name: 'color',
+                  id: 'color-6'
+                %}
+        </li>
+          <li>
+            {% render 'radio-checkbox',
+                  text: ' ',
+                  name: 'color',
+                  id: 'color-7'
+                %}
+        </li>
+         <li>
+            {% render 'radio-checkbox',
+                  text: ' ',
+                  name: 'color',
+                  id: 'color-8'
+                %}
+        </li>
+    </ul>
+      <h3>Premium II High Step</h3>
+      <button class="btn btn--fill-grey">VIEW DETAILS</button>
+      <h4>BATTERY & PRICE</h4>
+     {% render 'product-radio-checkbox',
+                  text: ' ',
+                  name: 'price',
+                  id: 'second-price',
+                  textAh: '17.5 Ah',
+                  price: '$2,500',
+                  oldPrice: '$2,500'
+
+                %}
+     {% render 'product-radio-checkbox',
+        text: ' ',
+        name: 'price',
+        id: 'second-price',
+        textAh: '19.5 Ah',
+        price: '$2,500',
+        oldPrice: '$2,500'
+
+      %}
+      <h4>MOTOR</h4>
+      <span class="motor">750W</span>
+      <h4>FRAME</h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <h4>FORK</h4>
+      <p>Suspension Fork with Lockout</p>
+       <h4>FRAME</h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <h4>FORK</h4>
+      <p>Suspension Fork with Lockout</p>
+       <h4>FRAME</h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <h4>FORK</h4>
+      <p>Suspension Fork with Lockout</p>
+      <button class="btn btn--fill-grey">VIEW DETAILS</button>
+    </div>
+</div>

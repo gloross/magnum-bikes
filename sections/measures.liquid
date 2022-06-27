@@ -1,0 +1,125 @@
+
+{% liquid
+  assign object = section.settings
+  assign min_height = product.metafields.measure.min_height
+  assign min_inner_leg = product.metafields.measure.min_inner_leg
+ %}
+<section class="measures active">
+        <div class="measures__inner">
+            <div class="measures__col-left">
+              {% render 'img', img: object.image, img_wrapper: false, show_attribute: true %}
+            </div>
+            <div class="measures__col-right">
+                <h2>{{object.section_title}}</h2>
+                <p>{{object.section_description}}</p>
+                <div class="measures__tab js-tabs-measures" data-leg="{{min_inner_leg}}"  data-height="{{min_height}}">
+                    <ul class="measures__tab-nav u-d-flex u-align-center u-justify-center">
+                        <li class="js-tab-btn active" data-name="measures-leg">{{object.tab_title_1}}</li>
+                         <li class="js-tab-btn" data-name="measures-height">{{object.tab_title_2}}</li>
+                    </ul>
+                    <div class="measures__tabs js-tab-content active" data-name="measures-leg">
+                         {%- render 'range-slider', class: 'js-select-measures', valueClass: 'js-select-value' %}
+                         {% render 'icon', icon: 'warning' %}
+                         <p>{{object.tab_1_description}}</p>
+                    </div>
+                      <div class="measures__tabs js-tab-content" data-name="measures-height">
+                      {%- render 'range-slider', class: 'js-select-height', valueClass: 'js-select-value-1' %}
+                         {% render 'icon', icon: 'warning' %}
+                         <p>{{object.tab_2_description}}</p>
+                    </div>
+                </div>
+                <div class="measures__results js-match">
+                     {% render 'icon', icon: 'correctly' %}
+                     <div class="measures__message">
+                      {{object.message_correct}}
+                     </div>
+                </div>
+                   <div class="measures__results js-mismatch">
+                     {% render 'icon', icon: 'incorrectly' %}
+                     <div class="measures__message">
+                      {{object.message_incorrect}}
+                     </div>
+                </div>
+            </div>
+        </div>
+  </section>
+<style>
+  .cta{
+    display: none;
+  }
+</style>
+  {% schema %}
+  {
+  "name": "Measures",
+  "settings": [
+     {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section title",
+      "default": "Does it fit you?"
+     },
+     {
+      "type": "textarea",
+      "id": "section_description",
+      "label": "Section description",
+      "default": "We suggest Nomad for riders 5’6″ and taller. However, the bike won’t be suitable for all people the same. Let’s find out if this bike fits you by following our simple calculator below."
+     },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "header",
+      "content": "Measure inner leg TAB"
+    },
+    {
+      "type": "text",
+      "id": "tab_title_1",
+      "label": "Tab title",
+      "default": "Measure Inner Leg"
+    },
+    {
+      "type": "textarea",
+      "id": "tab_1_description",
+      "label": "Measure inner leg explanation",
+      "default": "Measure your inseam. Stand with your feet six inches apart, and measure up to your pubic bone from the inside of your foot (where your leg meets your hip in your crotch)."
+    },
+    {
+      "type": "header",
+      "content": "Measure height TAB"
+    },
+    {
+      "type": "text",
+      "id": "tab_title_2",
+      "label": "Tab title",
+      "default": "Measure Height"
+    },
+    {
+      "type": "textarea",
+      "id": "tab_2_description",
+      "label": "Measure height explanation",
+      "default": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde molestiae dolore alias nostrum perferendis suscipit aliquam magni error reprehenderit doloribus!"
+    },
+    {
+      "type": "html",
+      "id": "message_correct",
+      "label": "Message for perfect match HTML",
+      "default": "<h4>It’s a perfect match.</h4><p>We include an easy to use toolkit and an assembly manual to make the remaining 15% easy.</p>"
+    },
+    {
+      "type": "html",
+      "id": "message_incorrect",
+      "label": "Message for incorrect match HTML",
+      "default": "<h4>Not the right size.</h4><p>We include an easy to use toolkit and an assembly manual to make <a href=\"\">check out bikes which fit.</a></p>"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Measures"
+    }
+  ]
+}
+{% endschema %}
+
+

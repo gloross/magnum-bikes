@@ -1,0 +1,183 @@
+{% assign object = section.settings%}
+<section class="shipping-returns">
+    <div class="container container--small">
+        <div class="shipping-returns__inner">
+            <div class="shipping-returns__col-left financing-left">
+                <h2>{{object.section_title}}</h2>
+                <p>{{object.description}}</p>
+                <a href="{{object.cta_url}}" class="btn btn--blue-fill product-details__link bread-promo bread-modal-button" data-custom=true data-button-location="financing">{{object.cta_text}}</a>
+                    <div class="financing_layout_icon&text">
+                        <div class="financing-icon blue_icon">
+                            {{ object.icon_1 }}
+                            <a href="{{ object.chat_url }}"> {{ object.text_placeholder }} </a>
+                        </div>
+                        
+                        <div class="financing-icon">
+                            {{ object.icon_2 }}
+                            <a href="{{ object.chat_url_2 }}"> {{ object.text_placeholder2 }} </a>
+                        </div>
+                        
+                    </div>
+            </div>
+
+            <div class="shipping-returns__col-right financing-right">
+                <ul class="top-quality__list financing-list">
+
+
+                
+                    <li>
+                        
+                            {{ object.icon_benefit_1 }}
+                            <h5>{{object.benefit_title_1}}</h5>
+                            {{object.benefit_content_1}}
+                        
+                    </li>
+                    <li>
+                        
+                            {{ object.icon_benefit_2 }}
+                            <h5>{{object.benefit_title_2}}</h5>
+                            {{object.benefit_content_2}}
+                        
+                    </li>
+                    <li>
+                        
+                            {{ object.icon_benefit_3 }}
+                            <h5>{{object.benefit_title_3}}</h5>
+                            {{object.benefit_content_3}}
+                        
+                    </li>
+                </ul>
+                <div class="br-line"></div>
+                <p class="description-under-line">{{object.description_2}}</p>
+            </div>
+            
+        </div>
+        
+    </div>
+</section>
+
+{% schema %}
+{
+"name": "Financing",
+"settings": [
+{
+  "type": "text",
+  "id": "section_title",
+  "label": "Section title",
+  "default": "Shipping & Returns"
+},
+{
+  "type": "textarea",
+  "id": "description",
+  "label": "Section description",
+  "default": "In order to get Magnum Bike Test Ride Agreement, you’ll need to fill Agreement and your Personal Contanct information."
+},
+{
+    "type": "text",
+    "id": "cta_text",
+    "label": "CTA button text",
+    "default": "Help Me Choose"
+},
+{
+    "type": "url",
+    "id": "cta_url",
+    "label": "CTA button url"
+},
+{   "type": "html",
+    "id": "icon_1",
+    "label": "SVG HTML icon 1",
+    "info": "If can be empty"
+},
+{
+    "type": "text",
+    "label": "TEXT for SVG icon 1",
+    "id": "text_placeholder",
+    "default": "support@getbread.com"
+},
+{
+  "type": "url",
+  "label": "URL for icon 1",
+  "id": "chat_url"
+},
+{   "type": "html",
+    "id": "icon_2",
+    "label": "SVG HTML",
+    "info": "If can be empty"
+},
+{
+    "type": "text",
+    "label": "TEXT for SVG icon 2",
+    "id": "text_placeholder2",
+    "default": "(844) 992-7323 ext. 1"
+},
+{
+  "type": "url",
+  "label": "URL for icon 2",
+  "id": "chat_url_2"
+},
+
+{   "type": "html",
+    "id": "icon_benefit_1",
+    "label": "SVG HTML 1 benefit",
+    "info": "If can be empty"
+},
+{
+    "type": "text",
+    "id": "benefit_title_1",
+    "label": "Notice title",
+    "default": "Affordable Monthly Plans"
+  },
+  {
+    "type": "richtext",
+    "id": "benefit_content_1",
+    "label": "Notice box content",
+    "default": "<p>from 6, 12, or 24 month financing at competitive interest rates.*</p>"
+  },
+{   "type": "html",
+    "id": "icon_benefit_2",
+    "label": "SVG HTML 2 benefit",
+    "info": "If can be empty"
+},
+{
+    "type": "text",
+    "id": "benefit_title_2",
+    "label": "Notice title",
+    "default": "No Prepayment Penalties"
+  },
+  {
+    "type": "richtext",
+    "id": "benefit_content_2",
+    "label": "Notice box content",
+    "default": "<p>Pay for your purchase with monthly payments and prepay at any time without penalty.</p>"
+  },
+{   "type": "html",
+    "id": "icon_benefit_3",
+    "label": "SVG HTML 3 benefit",
+    "info": "If can be empty"
+},
+{
+    "type": "text",
+    "id": "benefit_title_3",
+    "label": "Notice title",
+    "default": "Quick and Easy Application"
+  },
+  {
+    "type": "richtext",
+    "id": "benefit_content_3",
+    "label": "Notice box content",
+    "default": "<p>Get a decision in seconds with no obligation to buy. Checking your rate won’t affect your credit score.</p>"
+  },
+  {
+    "type": "textarea",
+    "id": "description_2",
+    "label": "Section description",
+    "default": "In order to get Magnum Bike Test Ride Agreement, you’ll need to fill Agreement and your Personal Contanct information."
+  }
+],
+"presets": [
+  {
+    "name": "Shipping & Returns"
+  }
+]
+}  
+{% endschema %}

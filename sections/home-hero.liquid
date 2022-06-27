@@ -1,0 +1,118 @@
+{% liquid
+  assign object = section.settings
+  assign blocks = section.blocks
+%}
+{% if object.video_url_mp4 %}
+  {% capture video %}
+    <video id="home-video" width="100%" height="500px" muted playsinline loop class="home-hero__video" poster="{{ object.image | img_url: '1920x' }}" alt="">
+      <source src="{{ object.video_url_webm }}" type="video/webm">
+      <source src="{{ object.video_url_mp4 }}" type="video/mp4">
+    </video>
+  {% endcapture %}
+{% endif %}
+<section class="home-hero lazyload"
+  {% unless object.video_url_mp4 %}
+    data-bgset="{% render 'bg_set', image: object.image %}"
+    data-sizes="auto"
+    style="background-position: center center; background-repeat: no-repeat; background-size: cover;"
+  {% endunless %}
+>
+  <div class="container container--small">
+    <div class="home-hero__inner">
+      <div class="home-hero__title">
+        <h1>{{object.section_title}}</h1>
+        <a class="home-hero__cta" href="{{object.cta_url}}">{{object.cta_text}} {% render 'icon', icon: 'arrow-up-right' %} </a>
+      </div>
+      <div class="home-hero__info">
+        {% for block in blocks %}
+        {% assign b = block.settings %}
+        <div class="home-hero__info-item">
+          <h5> {{b.item_title}}</h5>
+          <p> {{b.item_description}}</p>
+        </div>
+        {%endfor%}
+      </div>
+    </div>
+  </div>
+  {% if object.video_url_mp4 %}
+    <div class="home-hero__video-background">
+      {{ video }}
+    </div>
+  {% endif %}
+</section>
+
+{% if object.video_url_mp4 %}
+  <script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+      let vid = document.getElementById("home-video");
+      vid.play();
+    });
+
+  </script>
+{% endif %}
+
+{% schema %}
+{
+"name": "Home Hero",
+"max_blocks": 3,
+"settings": [
+{
+  "type": "text",
+  "id": "section_title",
+  "label": "Section title",
+  "default": "Flatten all hills."
+},
+{
+  "type": "image_picker",
+  "id": "image",
+  "label": "Hero image"
+},
+{
+"type": "url",
+"id": "video_url_mp4",
+"label": "Video URL mp4"
+},
+{
+"type": "url",
+"id": "video_url_webm",
+"label": "Video URL webm"
+},
+{
+  "type": "text",
+  "id": "cta_text",
+  "label": "CTA text",
+  "default": "DISCOVER the SCOUT"
+},
+{
+  "type": "text",
+  "id": "cta_url",
+  "label": "CTA URL"
+}
+],
+"blocks": [
+{
+  "name": "Text item",
+  "type": "block",
+  "settings": [
+  {
+    "type": "text",
+    "id": "item_title",
+    "label": "Item title",
+    "default": "Power"
+  },
+  {
+    "type": "text",
+    "id": "item_description",
+    "label": "Item description",
+    "default": "750W Motor"
+  }
+  ]
+}
+],
+"presets": [
+  {
+    "name": "Home Hero"
+  }
+]
+}
+{% endschema %}

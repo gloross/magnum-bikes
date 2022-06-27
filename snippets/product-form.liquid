@@ -1,0 +1,98 @@
+{%- assign current_variant = product.selected_or_first_available_variant -%}
+
+{%- capture form_classes -%}
+  product-form product-form-{{ section.id }} js-product-form
+{%- endcapture -%}
+
+{%- capture form_ids -%}add-to-cart-{{ product.handle }}-{{ collection.handle }}-{{ section.id }}{%- endcapture -%}
+
+{%- assign inventory_management = current_variant.inventory_management | default: '' -%}
+
+{%- form 'product', product, class: form_classes, novalidate: 'novalidate', id: form_ids, data-inventory-management: inventory_management -%}
+  {% comment %} Option selection start here {% endcomment %}
+  <div class="js-product-select-wrapper" style="display: none">
+    {{ 'option_selection.js' | shopify_asset_url | script_tag }}
+    <select id="product-select" name="id">
+      {% for variant in product.variants %}
+        <option
+          value="{{ variant.id }}"
+          inventory-quantity="{{- variant.inventory_quantity -}}"
+          {% if variant == product.selected_or_first_available_variant %}selected="selected"{% endif %}
+        >
+          {{ variant.title }} - {{ variant.price | money }}
+        </option>
+      {% endfor %}
+    </select>
+  </div>
+  {% comment %} Option selection end here {% endcomment %}
+
+  <div class="product-details__color-variations">
+    <span class="js-public-title">{{ current_variant.title }}</span>
+    <ul class="js-color-variation" data-option="option{{ product.options_by_name['Color'].position }}">
+      {% liquid
+        for color_option in product.options_by_name['Color'].values
+          assign active = false
+          if current_variant.title contains color_option
+            assign active = true
+          endif
+          render "component-color-swatch", name: color_option, selected: active
+        endfor
+      %}
+    </ul>
+  </div>
+
+  {% if product.options_by_name['Battery'] %}
+    <battery-variation>
+      <div class="product-details__battery">
+        <p>
+          {% render 'icon', icon: 'thunder' %}
+          <span>Battery Capacity</span>
+        </p>
+        {% comment %} <a href="#">How does this affect my ride?
+          {% render 'icon', icon: 'arrow-up-right' %}
+        </a> {% endcomment %}
+      </div>
+      <div class="product-details__options js-battery-variation" data-option="option{{ product.options_by_name['Battery'].position }}">
+        {% for battery_option in product.options_by_name['Battery'].values %}
+          {% liquid
+            assign selected = ''
+            if current_variant.title contains battery_option
+              assign selected = 'checked'
+            endif
+            assign id = forloop.index | append: '_option'
+          %}
+          <div class="product-radio">
+            <script>console.log ('{{current_variant.inventory_quantity}}')</script>
+            <input
+              type="radio"
+              id="{{ id }}"
+              name="battery"
+              value="{{battery_option}}"
+              {% if selected == 'checked' %}checked=checked{% endif %}">
+            <label  for="{{ id }}">
+              {% if current_variant.inventory_quantity<= 0 %}
+                <span class="battery-value sold_out"><s>{{ battery_option }}</s><p class="bold_sold_out"> <b>  Sold Out</b> </p></span>
+                <div>
+                  <span class="old-price color_sold_out">{{ current_variant.compare_at_price | money_without_trailing_zeros }}</span>
+                  <span class="color_sold_out">{{ current_variant.price | money_without_trailing_zeros }}</span>
+                </div>
+                {% else %}
+                <span class="battery-value">{{ battery_option }}</span>
+                <div>
+                  <span class="old-price">{{ current_variant.compare_at_price | money_without_trailing_zeros }}</span>
+                  <span>{{ current_variant.price | money_without_trailing_zeros }}</span>
+                </div>
+              {% endif %}              
+            </label>
+          </div>
+        {% endfor %}
+      </div>
+    </battery-variation>
+  {% endif %}
+
+  {%- render 'product-details-button' with
+    mod_variant: current_variant,
+    mod_button_try: true -%}
+
+  {%- render 'json-product' with mod_item: product -%}
+{%- endform -%}

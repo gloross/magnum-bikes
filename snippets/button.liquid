@@ -1,0 +1,7 @@
+{%- assign mod_class = mod_class | default: false -%}
+
+<a
+  href="{{- mod_href -}}"
+  class="btn{% if mod_class %} {{ mod_class }}{% endif %}">
+  {{- mod_value -}}
+</a>

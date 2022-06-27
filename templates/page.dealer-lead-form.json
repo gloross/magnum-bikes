@@ -1,0 +1,15 @@
+{
+  "sections": {
+    "warranty": {
+      "type": "warranty",
+      "settings": {
+        "page_title": "Become a Magnum Dealer",
+        "page_paragraph": "<p>Interested in becoming a Magnum dealer or distributor? Contact us today!<\/p>",
+        "page_form": "<form action=\"https:\/\/webto.salesforce.com\/servlet\/servlet.WebToLead?encoding=UTF-8\" method=\"POST\" class=\"akeo-form\">\n\n<input type=\"hidden\" name=\"oid\" value=\"00D4x0000069epE\">\n<input type=\"hidden\" name=\"retURL\" value=\"https:\/\/magnumbikes.com\/collections\/e-bikes\">\n\n<!--  ----------------------------------------------------------------------  -->\n<!--  NOTE: These fields are optional debugging elements. Please uncomment    -->\n<!--  these lines if you wish to test in debug mode.                          -->\n<!--  <input type=\"hidden\" name=\"debug\" value=1>                              -->\n<!--  <input type=\"hidden\" name=\"debugEmail\"                                  -->\n<!--  value=\"support@magnumbikes.com\">                                        -->\n<!--  ----------------------------------------------------------------------  -->\n\n<label for=\"first_name\">First Name<\/label><input id=\"first_name\" maxlength=\"40\" name=\"first_name\" size=\"20\" type=\"text\" placeholder=\"First Name\"><br>\n\n<label for=\"last_name\">Last Name<\/label><input id=\"last_name\" maxlength=\"80\" name=\"last_name\" size=\"20\" type=\"text\" placeholder=\"Last Name\"><br>\n\n<label for=\"email\">Email<\/label><input id=\"email\" maxlength=\"80\" name=\"email\" size=\"20\" type=\"text\" placeholder=\"Email\"><br>\n\n<label for=\"phone\">Phone<\/label><input id=\"phone\" maxlength=\"40\" name=\"phone\" size=\"20\" type=\"text\" placeholder=\"Phone\"><br>\n\n<label for=\"company\">Company<\/label><input id=\"company\" maxlength=\"40\" name=\"company\" size=\"20\" type=\"text\" placeholder=\"Company\"><br>\n\n<label for=\"city\">City<\/label><input id=\"city\" maxlength=\"40\" name=\"city\" size=\"20\" type=\"text\" placeholder=\"City\"><br>\n\n<label for=\"state\">State\/Province<\/label><input id=\"state\" maxlength=\"20\" name=\"state\" size=\"20\" type=\"text\" placeholder=\"State\/Province\"><br>\n\n<label for=\"url\">Website<\/label><input id=\"url\" maxlength=\"80\" name=\"url\" size=\"20\" type=\"text\" placeholder=\"Website\"><br>\n\n<textarea id=\"00N4x00000RAqA3\" name=\"00N4x00000RAqA3\" type=\"text\" wrap=\"soft\" placeholder=\"Years in Business\"><\/textarea><br>\n\n<textarea id=\"00N4x00000RAqA8\" name=\"00N4x00000RAqA8\" type=\"text\" wrap=\"soft\" placeholder=\"Number of Locations\"><\/textarea><br>\n\n<textarea id=\"00N4x00000RAz1b\" name=\"00N4x00000RAz1b\" type=\"text\" wrap=\"soft\" placeholder=\"How did you hear about us?\"><\/textarea><br>\n\n<input type=\"submit\" name=\"submit\">\n\n<\/form>"
+      }
+    }
+  },
+  "order": [
+    "warranty"
+  ]
+}

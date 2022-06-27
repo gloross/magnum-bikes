@@ -1,0 +1,33 @@
+{% assign object = section.settings %}
+<section class="cg-hero" style="background-image: url({{object.image | img_url: 'master'}}); background-position: center">
+    <div class="container container--small">
+    <h1 class="h1 cg-hero__title">
+        {%comment%}TO DO check this, this probably should be collection title {%endcomment%}
+        {{ object.title }}
+    </h1>
+</div>
+</section>
+
+{% schema %}
+  {
+  "name": "Collection grid Hero",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Hero Image"
+    },
+    {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "The Line Up"
+      }
+  ],
+  "presets": [
+    {
+      "name": "Collection grid Hero"
+    }
+  ]
+}  
+{% endschema %}

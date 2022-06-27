@@ -1,0 +1,80 @@
+<section class="learning-filter">
+  <div class="container container--small">
+    <div class="learning-filter__inner">
+      <div class="learning-filter__options">
+        <h4>{{- 'blogs.filter_by' | t -}}</h4>
+
+        <div class="learning-filter__options-select">
+          <div class="select-field select-field--blog-filter">
+            <select class="js-select-url">
+              <option disabled selected>{{- 'blogs.filter_categories_label' | t -}}</option>
+
+              {%- for tag in blog.all_tags -%}
+                {%- if tag contains 'category:' -%}
+                  {%- assign tag_url = tag | link_to_add_tag: tag | split: 'href="' | last | split: '"' | first -%}
+
+                  {%- if current_tags contains tag -%}
+                    {%- assign tag_url = tag | link_to_remove_tag: tag | split: 'href="' | last | split: '"' | first -%}
+                  {%- endif -%}
+
+                  <option value="{{- tag_url -}}">{{- tag | remove: 'category:' -}}</option>
+                {%- endif -%}
+              {%- endfor -%}
+            </select>
+          </div>
+          <div class="select-field select-field--blog-filter">
+            <select class="js-select-url">
+              <option disabled selected>{{- 'blogs.filter_tags_label' | t -}}</option>
+
+              {%- for tag in blog.all_tags -%}
+                {%- unless tag contains 'category:' or tag contains 'author:' -%}
+                  {%- assign tag_url = tag | link_to_add_tag: tag | split: 'href="' | last | split: '"' | first -%}
+
+                  {%- if current_tags contains tag -%}
+                    {%- assign tag_url = tag | link_to_remove_tag: tag | split: 'href="' | last | split: '"' | first -%}
+                  {%- endif -%}
+
+                  <option value="{{- tag_url -}}">{{- tag -}}</option>
+                {%- endunless -%}
+              {%- endfor -%}
+            </select>
+          </div>
+        </div>
+
+        {%- if current_tags -%}
+          <a class="hide-sm" href="{{ blog.url }}">{{- 'blogs.reset_filters_desktop' | t -}}</a>
+          <a class="hide-lg" href="{{ blog.url }}">{{- 'blogs.reset_filters_mobile' | t -}}</a>
+        {%- endif -%}
+      </div>
+
+      {%- if current_tags -%}
+        <div class="learning-filter__tags">
+          <div class="learning-filter__tags-wrapper">
+            {%- for tag in current_tags -%}
+              {%- assign tag_url_remove = tag | link_to_remove_tag: tag | split: 'href="' | last | split: '"' | first -%}
+
+              <a class="learning-filter__tag" href="{{- tag_url_remove -}}">
+                <span>{{- tag | remove: 'category:' -}}</span>
+                {%- render 'icon', icon: 'close' -%}
+              </a>
+            {%- endfor -%}
+
+            <a class="learning-filter__clear clear-filter" href="{{ blog.url }}">{{- 'blogs.clear_filters' | t -}}</a>
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Blog filters",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Blog filters"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,120 @@
+{
+  "sections": {
+    "cg-hero": {
+      "type": "cg-hero",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/still-have.jpg",
+        "title": "The Line Up"
+      }
+    },
+    "top-quality": {
+      "type": "top-quality",
+      "blocks": {
+        "ead073e7-961b-41c6-8d76-e388ddce4654": {
+          "type": "block",
+          "settings": {
+            "icon": "",
+            "item_title": "Ride Now, Pay Later",
+            "item_content": "<p>We offer payment in monthly installments. <br> Get and enjoy your ride now and pay later.<\/p>"
+          }
+        },
+        "c6efd558-c407-4347-98b4-e76615a081b9": {
+          "type": "block",
+          "settings": {
+            "icon": "",
+            "item_title": "Expert Service & Support",
+            "item_content": "<p>We include an easy to use toolkit and an assembly manual to make the remaining 15% easy.<\/p>"
+          }
+        },
+        "24c5f5c1-a6d9-4a2a-b2e6-9213bf3a853b": {
+          "type": "block",
+          "settings": {
+            "icon": "",
+            "item_title": "Easy Assembly by You or Us",
+            "item_content": "<p>We include an easy to use toolkit and an assembly manual to make the remaining 15% easy.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "ead073e7-961b-41c6-8d76-e388ddce4654",
+        "c6efd558-c407-4347-98b4-e76615a081b9",
+        "24c5f5c1-a6d9-4a2a-b2e6-9213bf3a853b"
+      ],
+      "settings": {
+        "section_title": "Top quality, yet affordable.",
+        "description": "Designed and engineered for quality and reliability, your Magnum is built to last thousands of miles and beyond—without breaking the bank."
+      }
+    },
+    "text-image": {
+      "type": "text-image",
+      "settings": {
+      }
+    },
+    "journey-covered": {
+      "type": "journey-covered",
+      "blocks": {
+        "d58bfe5e-1c7a-4932-a766-2c89ca7a2460": {
+          "type": "block",
+          "settings": {
+            "item_image": "shopify:\/\/shop_images\/ac-item.png",
+            "item_title": "Learn everthing you need to know about e-bikes",
+            "item_url": "",
+            "item_cta_label": "Go to"
+          }
+        },
+        "1b5cba8e-a8d3-4cb2-b648-d96cf708deec": {
+          "type": "block",
+          "settings": {
+            "item_image": "shopify:\/\/shop_images\/ac-item.png",
+            "item_title": "Learn everthing you need to know about e-bikes",
+            "item_url": "",
+            "item_cta_label": "Go to"
+          }
+        },
+        "d07890ad-9f77-4cab-9b4f-ed5758276fd7": {
+          "type": "block",
+          "settings": {
+            "item_image": "shopify:\/\/shop_images\/ac-item.png",
+            "item_title": "Learn everthing you need to know about e-bikes",
+            "item_url": "",
+            "item_cta_label": "Go to"
+          }
+        },
+        "ae1c0c18-ed33-4514-9c8b-e10af405af3d": {
+          "type": "block",
+          "settings": {
+            "item_image": "shopify:\/\/shop_images\/ac-item.png",
+            "item_title": "Learn everthing you need to know about e-bikes",
+            "item_url": "",
+            "item_cta_label": "Go to"
+          }
+        }
+      },
+      "block_order": [
+        "d58bfe5e-1c7a-4932-a766-2c89ca7a2460",
+        "1b5cba8e-a8d3-4cb2-b648-d96cf708deec",
+        "d07890ad-9f77-4cab-9b4f-ed5758276fd7",
+        "ae1c0c18-ed33-4514-9c8b-e10af405af3d"
+      ],
+      "settings": {
+      }
+    },
+    "introducing": {
+      "type": "introducing",
+      "settings": {
+        "title": "E-Bikes 101",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "cta_label": "Go To Knowledge Library",
+        "cta_url": "",
+        "image": "shopify:\/\/shop_images\/Rectangle-1354.jpg"
+      }
+    }
+  },
+  "order": [
+    "cg-hero",
+    "top-quality",
+    "text-image",
+    "journey-covered",
+    "introducing"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "sections": {
+    "checkout-accessories": {
+      "type": "checkout-accessories",
+      "settings": {
+        "continue_shopping_url": "shopify:\/\/collections\/e-bikes"
+      }
+    }
+  },
+  "order": [
+    "checkout-accessories"
+  ]
+}

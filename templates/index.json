@@ -1,0 +1,396 @@
+{
+  "sections": {
+    "home-hero": {
+      "type": "home-hero",
+      "blocks": {
+        "73d8b147-ecc3-4a93-97fc-e076e499d7b7": {
+          "type": "block",
+          "settings": {
+            "item_title": "Power",
+            "item_description": "500W Motor"
+          }
+        },
+        "183f0209-5bf6-48cd-a1c9-4246c68c99ce": {
+          "type": "block",
+          "settings": {
+            "item_title": "Battery",
+            "item_description": "15Ah"
+          }
+        },
+        "07cc40e3-01d3-4d76-b29a-2859a68a2121": {
+          "type": "block",
+          "settings": {
+            "item_title": "Price",
+            "item_description": "$2,799 Delivered"
+          }
+        }
+      },
+      "block_order": [
+        "73d8b147-ecc3-4a93-97fc-e076e499d7b7",
+        "183f0209-5bf6-48cd-a1c9-4246c68c99ce",
+        "07cc40e3-01d3-4d76-b29a-2859a68a2121"
+      ],
+      "settings": {
+        "section_title": "Flatten all hills.",
+        "image": "shopify:\/\/shop_images\/peak_t5_lifestyle_image_7.webp",
+        "video_url_mp4": "",
+        "video_url_webm": "",
+        "cta_text": "DISCOVER THE PEAK T5",
+        "cta_url": "https:\/\/magnumebikes.myshopify.com\/products\/magnum-peak-t5"
+      }
+    },
+    "home-carousel": {
+      "type": "home-carousel",
+      "blocks": {
+        "0cadea1a-5ae5-422b-86f2-523b294b5727": {
+          "type": "block",
+          "settings": {
+            "product": "magnum-scout"
+          }
+        },
+        "2f3973f2-5d32-4465-8338-9208eebcd793": {
+          "type": "block",
+          "settings": {
+            "product": "magnum-cosmo-x"
+          }
+        },
+        "f09e31f8-bdee-407c-a8c6-181d325a762e": {
+          "type": "block",
+          "settings": {
+            "product": "magnum-peak-t5"
+          }
+        },
+        "db35b9f0-8bae-4bd7-af19-75bb2ce5dbc6": {
+          "type": "block",
+          "settings": {
+            "product": "magnum-metro-s"
+          }
+        },
+        "8635af58-6fbb-46e9-aede-4644d7ac308a": {
+          "type": "block",
+          "settings": {
+            "product": "magnum-pathfinder-t"
+          }
+        }
+      },
+      "block_order": [
+        "0cadea1a-5ae5-422b-86f2-523b294b5727",
+        "2f3973f2-5d32-4465-8338-9208eebcd793",
+        "f09e31f8-bdee-407c-a8c6-181d325a762e",
+        "db35b9f0-8bae-4bd7-af19-75bb2ce5dbc6",
+        "8635af58-6fbb-46e9-aede-4644d7ac308a"
+      ],
+      "settings": {
+      }
+    },
+    "home-mission": {
+      "type": "home-mission",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/homepage_mission.png",
+        "title": "OUR MISSION",
+        "content": "Our top quality yet affordable electric bikes give people of all ages and fitness levels access to the life-changing experience of electric biking."
+      }
+    },
+    "home-gallery": {
+      "type": "home-gallery",
+      "blocks": {
+        "989e2981-4edf-45fa-8a8c-3dde0e210970": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Touring_9e514094-b1c2-4290-a155-34317e4415e0.png",
+            "slide_title": "Touring",
+            "item_url": "shopify:\/\/collections\/touring"
+          }
+        },
+        "922bdfb4-e580-45f0-9f69-2049f7e28ced": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Trail.png",
+            "slide_title": "Mountain",
+            "item_url": "shopify:\/\/collections\/mountain"
+          }
+        },
+        "10ed5472-5fea-42c6-b0b2-c245e29d8501": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Fat_Tire_-_Option_2.png",
+            "slide_title": "Fat Tire",
+            "item_url": "shopify:\/\/collections\/fat-tire"
+          }
+        },
+        "96e47033-17a1-4def-953b-0f0d0877d31e": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Cruiser.png",
+            "slide_title": "Cruiser",
+            "item_url": "shopify:\/\/collections\/cruiser-e-bikes-1"
+          }
+        },
+        "4ee38005-41d4-4a17-a292-47f2b1d78200": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Folding.png",
+            "slide_title": "Folding",
+            "item_url": "shopify:\/\/collections\/folding"
+          }
+        },
+        "61796c80-9ffc-4400-a44b-32ed25058f87": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Cargo.png",
+            "slide_title": "Cargo",
+            "item_url": "shopify:\/\/collections\/cargo"
+          }
+        }
+      },
+      "block_order": [
+        "989e2981-4edf-45fa-8a8c-3dde0e210970",
+        "922bdfb4-e580-45f0-9f69-2049f7e28ced",
+        "10ed5472-5fea-42c6-b0b2-c245e29d8501",
+        "96e47033-17a1-4def-953b-0f0d0877d31e",
+        "4ee38005-41d4-4a17-a292-47f2b1d78200",
+        "61796c80-9ffc-4400-a44b-32ed25058f87"
+      ],
+      "settings": {
+        "section_title": "EXPLORE BIKE CATEGORIES"
+      }
+    },
+    "find-perfect": {
+      "type": "find-perfect",
+      "disabled": true,
+      "settings": {
+        "section_title": "Find your ride.",
+        "tagline": "Discover which e-bikes are right for you",
+        "image": "shopify:\/\/shop_images\/quiz_cta_background.png",
+        "cta_text": "Help Me Choose",
+        "cta_url": ""
+      }
+    },
+    "home-service": {
+      "type": "home-service",
+      "blocks": {
+        "dcd16182-392b-4cc7-9d59-c2bb7336f21a": {
+          "type": "block",
+          "settings": {
+            "icon_picker": "time-icon",
+            "item_title": "Ride Now, Pay Later",
+            "item_content": "Pay for your order over 6, 12, or 24 months at interest rates as low as 0% APR.  Get a real-time decision without it affecting your credit score, no prepayment penalties, and no deferred interest."
+          }
+        },
+        "0fc4b06b-2daf-493d-9211-d2d22bd9571a": {
+          "type": "block",
+          "settings": {
+            "icon_picker": "user-talk",
+            "item_title": "Expert Service & Support",
+            "item_content": "Our highly-trained staff are here for you, at every turn. We're always ready to assist, remotely from Magnum HQ or at one of hundreds of locations across the U.S."
+          }
+        },
+        "79b170d4-fc21-49a5-b13e-3708f6da6f06": {
+          "type": "block",
+          "settings": {
+            "icon_picker": "users",
+            "item_title": "Easy Assembly by You or Us",
+            "item_content": "You’ll get simple video instructions on how to assemble your new ride, or choose at-home assembly and a professional bike mechanic will come help (available in 150+ geographies across the U.S.)."
+          }
+        }
+      },
+      "block_order": [
+        "dcd16182-392b-4cc7-9d59-c2bb7336f21a",
+        "0fc4b06b-2daf-493d-9211-d2d22bd9571a",
+        "79b170d4-fc21-49a5-b13e-3708f6da6f06"
+      ],
+      "settings": {
+        "section_title": "",
+        "description": ""
+      }
+    },
+    "home-text-image": {
+      "type": "home-text-image",
+      "settings": {
+        "reverse": false,
+        "section_title": "Top Quality At An Affordable Price",
+        "description": "We believe customers deserve top-of-the-line performance at an affordable price. Our ongoing commitment to innovation and use of premium quality components helps Magnum stand out with some of the advanced electric bikes on the market—at prices that won't break the bank.",
+        "image_desktop": "shopify:\/\/shop_images\/Frame_7.png",
+        "image_mobile": "shopify:\/\/shop_images\/metro_mobile.png"
+      }
+    },
+    "16394945023f799128": {
+      "type": "home-text-image",
+      "settings": {
+        "reverse": true,
+        "section_title": "Nationwide Network of Sales, Rental and Service Locations",
+        "description": "Magnum Bikes can be found in over 250 locations across the U.S. and in a number of international markets. Between Magnum's network of local independent e-bike shops and Magnum’s company-owned stores, our educated and experienced retailers are within reach for sales, service, and rentals.",
+        "image_desktop": "shopify:\/\/shop_images\/magnum_m.png",
+        "image_mobile": "shopify:\/\/shop_images\/magnum_m_mobile.png"
+      }
+    },
+    "home-stories": {
+      "type": "home-stories",
+      "blocks": {
+        "1da484a8-36d3-404c-8568-004a1f74e400": {
+          "type": "block",
+          "settings": {
+            "story_image": "shopify:\/\/shop_images\/american_runner.png",
+            "article": "stories\/stories-4"
+          }
+        },
+        "7290b74e-94d1-45ed-866b-f0e24808a59f": {
+          "type": "block",
+          "settings": {
+            "story_image": "shopify:\/\/shop_images\/story_homepage_dault.png",
+            "article": "stories\/stories-3"
+          }
+        },
+        "f78a7ccf-4369-4de8-b4dd-d06a912e7e9c": {
+          "type": "block",
+          "settings": {
+            "story_image": "shopify:\/\/shop_images\/riding_again_after_20_years.png",
+            "article": "stories\/stories-2"
+          }
+        },
+        "3950a354-0c44-4930-ba3e-9cf0be5ec738": {
+          "type": "block",
+          "settings": {
+            "story_image": "shopify:\/\/shop_images\/story_homepage_myles.png",
+            "article": "stories\/stories-5"
+          }
+        },
+        "0cbf5e3d-7785-4761-a260-9c64c51e6380": {
+          "type": "block",
+          "settings": {
+            "story_image": "shopify:\/\/shop_images\/rider_story_brian_childs_image_homepage.png",
+            "article": "stories\/stories-1"
+          }
+        }
+      },
+      "block_order": [
+        "1da484a8-36d3-404c-8568-004a1f74e400",
+        "7290b74e-94d1-45ed-866b-f0e24808a59f",
+        "f78a7ccf-4369-4de8-b4dd-d06a912e7e9c",
+        "3950a354-0c44-4930-ba3e-9cf0be5ec738",
+        "0cbf5e3d-7785-4761-a260-9c64c51e6380"
+      ],
+      "settings": {
+        "section_title": "Rider Stories",
+        "cta_label": "View All Rider Stories",
+        "cta_url": ""
+      }
+    },
+    "testimonial": {
+      "type": "testimonial",
+      "blocks": {
+        "527fdace-069b-4720-b6e5-61691bfd073c": {
+          "type": "block",
+          "settings": {
+            "testimoanial": "\"I love Magnum bikes and the Magnum people. This spring I’ll be purchasing my third Magnum and a spare battery... and for my 76th birthday, I’m gonna bike all of New Zealand on my new Magnum. Wish me luck.\"",
+            "author_name": "- James T.",
+            "author_occupation": "Scottsdale, AZ"
+          }
+        },
+        "5d1add3f-31d3-4122-9b63-da808fb07079": {
+          "type": "block",
+          "settings": {
+            "testimoanial": "\"The Magnum Cruiser was easy to assemble, and the ride is very comfortable. Powerful motor and all of the controls were very smooth.\"",
+            "author_name": "- Larry P.",
+            "author_occupation": "Glendale, AZ"
+          }
+        },
+        "cf0c5360-ceec-4216-b559-9862f29a97e1": {
+          "type": "block",
+          "settings": {
+            "testimoanial": "\"Outstanding Customer Support… When folding my Magnum Premium I snagged and cut the controller cable -- no pedal assist, no throttle. Local shops showed no interest in the repair, but Magnum sent me a replacement cable which I installed myself... and twenty minutes later I was back on the trails... Thank you Magnum!",
+            "author_name": "- Paul R.",
+            "author_occupation": "United States"
+          }
+        },
+        "ee01f822-7c45-4f97-b6f6-759250e50e1b": {
+          "type": "block",
+          "settings": {
+            "testimoanial": "\"I’ve had my Scout for 2 weeks now, and I absolutely love it! I need it to get to and from work everyday. It’s made my life so much easier. Great on all terrain and fun to ride!\"",
+            "author_name": "- Candie C.",
+            "author_occupation": "South Jordan, UT"
+          }
+        },
+        "fc129e84-8a1f-4529-9bf1-c857e290b2b3": {
+          "type": "block",
+          "settings": {
+            "testimoanial": "\"What sold me on Magnum was the sturdy construction. It's been an amazing platform for a handlebar extension, aero bars, bikepacking bags, rear rack, and even trailer pulling attachments. I'm so glad I chose Magnum.\"",
+            "author_name": "- Myles M.",
+            "author_occupation": "Yukon Territory, Canada"
+          }
+        }
+      },
+      "block_order": [
+        "527fdace-069b-4720-b6e5-61691bfd073c",
+        "5d1add3f-31d3-4122-9b63-da808fb07079",
+        "cf0c5360-ceec-4216-b559-9862f29a97e1",
+        "ee01f822-7c45-4f97-b6f6-759250e50e1b",
+        "fc129e84-8a1f-4529-9bf1-c857e290b2b3"
+      ],
+      "settings": {
+        "section_title": "Feel The Love."
+      }
+    },
+    "home-shop": {
+      "type": "home-shop",
+      "disabled": true,
+      "blocks": {
+        "040d42e3-9156-400e-9a27-08deda60b931": {
+          "type": "block",
+          "settings": {
+            "item_image": "shopify:\/\/shop_images\/Frame_6.png",
+            "item_title": "SHOP E-BIKES",
+            "item_url": "shopify:\/\/collections\/e-bikes"
+          }
+        },
+        "38a96b24-deba-46f2-bd0c-8a8bde3ff1c9": {
+          "type": "block",
+          "settings": {
+            "item_image": "shopify:\/\/shop_images\/Frame_6.png",
+            "item_title": "SHOP PARTS & UPGRADES",
+            "item_url": "shopify:\/\/collections\/parts"
+          }
+        },
+        "8ed36c11-9d04-47d9-856d-6b2ca226b73f": {
+          "type": "block",
+          "settings": {
+            "item_image": "shopify:\/\/shop_images\/Frame_6.png",
+            "item_title": "SHOP GEAR & ACCESSORIES",
+            "item_url": "shopify:\/\/collections\/gear-accessories"
+          }
+        }
+      },
+      "block_order": [
+        "040d42e3-9156-400e-9a27-08deda60b931",
+        "38a96b24-deba-46f2-bd0c-8a8bde3ff1c9",
+        "8ed36c11-9d04-47d9-856d-6b2ca226b73f"
+      ],
+      "settings": {
+      }
+    },
+    "introducing": {
+      "type": "introducing",
+      "settings": {
+        "title": "E-Bikes 101",
+        "description": "Whether you’re just discovering Magnum E-Bikes or counting your 10,000th mile, the Magnum Academy is here to help... discover our e-bike tips, tricks, and guides and tools.",
+        "cta_label": "Visit The Magnum Academy",
+        "cta_url": "shopify:\/\/blogs\/learning-hub",
+        "image": "shopify:\/\/shop_images\/academy_cta.png"
+      }
+    }
+  },
+  "order": [
+    "home-hero",
+    "home-carousel",
+    "home-mission",
+    "home-gallery",
+    "find-perfect",
+    "home-service",
+    "home-text-image",
+    "16394945023f799128",
+    "home-stories",
+    "testimonial",
+    "home-shop",
+    "introducing"
+  ]
+}

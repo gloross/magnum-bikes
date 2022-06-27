@@ -1,0 +1,52 @@
+.service {
+  padding: rem(60) 0;
+  background-color: $off-white;
+
+  @include media-breakpoint-down(sm) {
+    padding: rem(40) 0 0;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+
+    @include media-breakpoint-down(sm) {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+  }
+
+  &__col {
+    text-align: center;
+    max-width: rem(350);
+    width: 100%;
+
+    @include media-breakpoint-down(sm) {
+      margin-bottom: rem(40);
+      text-align: left;
+      width: 50%;
+    }
+
+    .icon--box {
+      margin-bottom: rem(20);
+    }
+    a {
+      display: inline-block;
+    }
+
+    p {
+      text-align: center;
+      font-size: rem(17);
+      line-height: line-height(17, 26);
+      font-weight: 700;
+      color: $magnum-black;
+
+      @include media-breakpoint-down(sm) {
+        max-width: rem(120);
+        text-align: left;
+      }
+    }
+  }
+}

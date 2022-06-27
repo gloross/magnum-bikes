@@ -1,0 +1,114 @@
+<!-- Checkout Accessories "STEP - 1" -->
+<section class="accessories">
+    <div class="container">
+        <div class="accessories__nav">
+            <div class="accessories__logo">
+                {% render 'icon', icon: 'logo' %}
+            </div>
+            <ul class="accessories__list">
+                <li class="active">1 Accessories</li>
+                <li>2 Shipping</li>
+                <li>3 Details & Payment</li>
+            </ul>
+        </div>
+    </div>
+    <div class="accessories__inner">
+        <div class="accessories__col-left">
+            <!-- //TODO kada je dodat item dodati klasu hidden -->
+            <div class="accessories__product-name hidden">
+                <h3>Magnum Nomad</h3>
+                <span>Black, 17.2 Ah</span>
+            </div>
+            <!-- //TODO Kad je dodat item skloniti klasu hidden na div ispod -->
+            <div class="accessories__order-btn ">
+                <a class="accessories__order-btn-trigger u-d-flex u-align-center u-justify-center js-order-item-trigger " href="">
+                    {% render 'icon', icon: 'plus' %}
+                    {% render 'icon', icon: 'minus' %}
+                </a>
+                <h3>Order Summary</h3>
+                <span>{{ cart.item_count }}</span>
+            </div>
+            <div class="accessories__order-dropdown js-order-item-dropdown">
+                {% for line_item in cart.items %}
+                    <div class="accessories__order-dropdown-item">
+                        <div class="u-d-flex u-align-center">
+                            <div class="input-increment input-increment--accessories  js-input-increment disable-decrease">
+                                <button type="button" class="input-increment__cta js-number-decrease">{% render 'icon', icon: 'minus' %}</button>
+                                <input class="input-increment__number js-input-number" type="number" id="Quantity-{{ section.id }}"
+                                name="quantity" value="1" min="1" pattern="[0-9]*" />
+                                <button type="button" class="input-increment__cta js-number-increase">{% render 'icon', icon: 'plus' %}</button>
+                            </div>
+                            <div class="media-wrapper">
+                                <img height="" loading="lazy" src="https://via.placeholder.com/580x527.jpg?text=Pleaceholder" width=""/>
+                            </div>
+                            <span><strong>{{ line_item.title }}</strong>{{ line_item.variant.title }}</span>
+                            <span class="price"><strong>{{ line_item.price | money }}</strong></span>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <!-- //TODO Kada je aktivan dropdown dodati klasu hidden-->
+            <div class="media-wrapper js-order-img">
+                <img height="" loading="lazy" src="https://via.placeholder.com/580x527.jpg?text=Pleaceholder" width=""/>
+            </div>
+        </div>
+        <div class="accessories__col-right">
+            <div class="accessories__col-right-title">
+                <h2>Complete your riding experience.</h2>
+                <p>Add some additional equipment.</p>
+                <span class="u-uppercase">SAFETY</span>
+            </div>
+            <div class="accessories__col-right-inner">
+                <div class="accessories__col-right-inner-item">
+                    <div class="accessories__col-right-img">
+                        <div class="media-wrapper">
+                            <img height="" loading="lazy" src="https://via.placeholder.com/580x527.jpg?text=Pleaceholder" width=""/>
+                        </div>
+                    </div>
+                    <div class="accessories__col-right-content">
+                        <h3>Helmet – Livall
+                        </h3>
+                        <ul class="accessories__col-right-list">
+                            <li>Lightweight (300 gr)</li>
+                            <li>Surround Sound Bluetooth speakers</li>
+                            <li>Built-in microphone with noise reduction</li>
+                            <li>Control your phone directly from your helmets control panel</li>
+                        </ul>
+                        <h4>Select Color</h4>
+                        <div class="u-d-flex">
+                        {% render 'radio-checkbox',
+                              id: '',
+                              name: '',
+                              text: '',
+                            %}
+                            {% render 'radio-checkbox',
+                                id: '',
+                                name: '',
+                                text: '',
+                              %}
+                        </div>
+                       <div class="accessories__col-right-cta u-d-flex u-align-center u-justify-between">
+                         <span>$79.00</span>
+                          <div class="input-increment input-increment--accessories  js-input-increment disable-decrease">
+                              <button type="button" class="input-increment__cta js-number-decrease">{% render 'icon', icon: 'minus' %}</button>
+                              <input class="input-increment__number js-input-number" type="number" id="Quantity-{{ section.id }}"
+                                name="quantity" value="1" min="1" pattern="[0-9]*" />
+                              <button type="button" class="input-increment__cta js-number-increase">{% render 'icon', icon: 'plus' %}</button>
+                            </div>
+                         <a href="" class="btn btn--outline">ADDED</a>
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="accessories__cta">
+      <div class="container">
+           <div class="u-d-flex u-align-center u-justify-between">
+             <a href="" class="btn btn--outline-grey-light">CONTINUE SHOPPING</a>
+             <a href="" class="btn btn--blue-fill">NEXT</a>
+           </div>
+      </div>
+    </div>
+</section>
+

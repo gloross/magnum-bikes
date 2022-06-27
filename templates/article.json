@@ -1,0 +1,40 @@
+{
+  "sections": {
+    "article": {
+      "type": "article",
+      "blocks": {
+        "62cbea44-e6ba-49e1-9f42-823381f7d53b": {
+          "type": "author",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/heart_logo_1e5099e5-82eb-4083-97c2-e23571d92404.png",
+            "name": "Team Magnum",
+            "description": "",
+            "email": "",
+            "facebook": "",
+            "twitter": "",
+            "tiktok": "",
+            "linkedin": ""
+          }
+        }
+      },
+      "block_order": [
+        "62cbea44-e6ba-49e1-9f42-823381f7d53b"
+      ],
+      "settings": {
+      }
+    },
+    "article-gallery": {
+      "type": "article-gallery",
+      "settings": {
+        "section_title": "Featured in this Article",
+        "top_cta_text": "View the magnum lineup",
+        "top_cta_url": "",
+        "bottom_cta_text": "VIEW BUYING OPTIONS"
+      }
+    }
+  },
+  "order": [
+    "article",
+    "article-gallery"
+  ]
+}

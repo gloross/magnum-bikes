@@ -1,0 +1,187 @@
+.account {
+  padding: rem(67) 0 rem(90);
+  background-color: $off-white;
+  overflow: hidden;
+
+  @include media-breakpoint-down(sm) {
+    padding: rem(30) 0 rem(130);
+  }
+
+  &__inner {
+    display: flex;
+    margin: 0 rem(-118);
+    position: relative;
+
+    @include media-breakpoint-down(lgxl) {
+      margin: 0 rem(-40);
+    }
+
+    @include media-breakpoint-down(sm) {
+      margin: 0;
+      flex-direction: column;
+
+      > :first-child {
+        margin-bottom: rem(60);
+        &::after {
+          content: '';
+          width: 100%;
+          height: 1px;
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          bottom: rem(-30);
+          background-color: #d1d1d1;
+        }
+      }
+    }
+
+    &::after {
+      content: '';
+      width: 1px;
+      height: 100%;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 0;
+      background-color: #d1d1d1;
+
+      @include media-breakpoint-down(sm) {
+        content: none;
+      }
+    }
+  }
+
+  &__col {
+    width: 50%;
+    padding: 0 rem(118);
+    position: relative;
+    @include media-breakpoint-down(lgxl) {
+      padding: 0 rem(40);
+    }
+
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+    }
+
+    @include media-breakpoint-down(xs) {
+      padding: 0;
+    }
+
+    h2 {
+      font-size: rem(30);
+      line-height: rem(54);
+      color: $machine-grey;
+      font-weight: 700;
+      padding-bottom: rem(27);
+      @include media-breakpoint-down(sm) {
+        font-size: rem(30);
+        line-height: rem(44);
+        padding-bottom: rem(10);
+      }
+    }
+
+    .input-wrapper input {
+      padding: rem(19) rem(28) rem(19) rem(15) !important;
+      &::placeholder {
+        color: #626262 !important;
+      }
+    }
+  }
+
+  &__create,
+  &__login {
+    width: 100%;
+
+    @include media-breakpoint-down(xsm) {
+      max-width: rem(412);
+    }
+    @include media-breakpoint-down(sm) {
+      max-width: 100%;
+    }
+  }
+
+  &__create {
+    .checkbox {
+      margin: rem(26) 0 rem(36);
+      @include media-breakpoint-down(sm) {
+        margin: rem(20) 0 rem(32);
+      }
+      label,
+      a {
+        font-size: rem(14);
+        line-height: rem(22);
+        color: $grey-light;
+      }
+
+      a {
+        color: $black;
+        margin-left: rem(3);
+        text-decoration: underline;
+        transition: $t-hover;
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+    }
+
+    .btn {
+      width: 100%;
+      font-weight: 700;
+      text-transform: uppercase;
+      @include media-breakpoint-down(sm) {
+        font-size: rem(13);
+      }
+    }
+  }
+
+  &__login {
+    .btn {
+      display: block;
+      min-width: rem(190);
+      max-width: rem(190);
+      font-weight: 700;
+      text-transform: uppercase;
+
+      @include media-breakpoint-down(sm) {
+        max-width: rem(320);
+      }
+      @include media-breakpoint-down(xs) {
+        max-width: 100%;
+        min-width: 100%;
+      }
+    }
+  }
+
+  &__forgot-pw {
+    display: inline-block;
+    color: $cyan;
+    font-size: rem(14);
+    line-height: rem(24);
+    font-weight: 700;
+    text-align: right;
+    text-transform: capitalize;
+    display: flex;
+    justify-content: flex-end;
+    margin: rem(-10) 0 rem(20);
+    transition: $t-hover;
+    @include media-breakpoint-down(sm) {
+      margin: 0 0 rem(20);
+    }
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  .select-field {
+    position: relative;
+
+    .label {
+      font-size: rem(14);
+      line-height: rem(12);
+      color: #626262;
+      position: absolute;
+      top: rem(10);
+      left: rem(19);
+    }
+  }
+}

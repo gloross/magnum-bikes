@@ -1,0 +1,47 @@
+{%- assign mod_class = mod_class | default: false -%}
+{%- assign mod_image = mod_image | default: false -%}
+{%- assign mod_image_file_url = mod_image_file_url | default: false -%}
+{%- assign mod_color_background = mod_color_background | default: false -%}
+{%- assign mod_title = mod_title | default: false -%}
+{%- assign mod_text = mod_text | default: false -%}
+{%- assign mod_button_text = mod_button_text | default: false -%}
+{%- assign mod_button_url = mod_button_url | default: false -%}
+
+{%- if mod_title or mod_text -%}
+  <div class="featured-block{% if mod_class %} {{ mod_class }}{% endif %}">
+    <div class="featured-block__inner" style="background-color: {{ mod_color_background }};">
+      {%- if mod_image or mod_image_file_url -%}
+        <div class="featured-block__image media-wrapper">
+          {%- if mod_image_file_url -%}
+              <img src="{{- mod_image_file_url -}}" alt="{{- mod_image.alt | escape -}}" loading="lazy" />
+          {%- else -%}
+            {%- render 'img' with img: mod_image -%}
+          {%- endif -%}
+        </div><!-- /.featured-block__image -->
+      {%- endif -%}
+
+      <div class="featured-block__content">
+        <div class="featured-block__content-inner">
+          {%- if mod_title -%}
+            <h3 class="featured-block__title">
+              {{- mod_title -}}
+            </h3><!-- /.featured-block__title -->
+          {%- endif -%}
+
+          {%- if mod_text -%}
+            <div class="featured-block__entry">
+              {{- mod_text -}}
+            </div><!-- /.featured-block__entry -->
+          {%- endif -%}
+
+          {%- if mod_button_text and mod_button_url -%}
+            {%- render 'button' with
+              mod_href: mod_button_url,
+              mod_value: mod_button_text,
+              mod_class: 'btn--blue-fill featured-block__btn' -%}
+          {%- endif -%}
+        </div><!-- /.featured-block__content-inner -->
+      </div><!-- /.featured-block__content -->
+    </div><!-- /.featured-block__inner -->
+  </div><!-- /.featured-block -->
+{%- endif -%}

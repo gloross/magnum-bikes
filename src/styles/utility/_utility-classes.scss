@@ -1,0 +1,40 @@
+.u-disabled {
+  pointer-events: none !important;
+}
+
+.u-overflow-hidden {
+  overflow: hidden !important;
+}
+
+.u-no-select {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+}
+
+.u-c-primary {
+  color: $primary-color;
+}
+
+.u-d-flex {
+  display: flex;
+}
+
+.u-align-center {
+  align-items: center;
+}
+
+.u-justify-between {
+  justify-content: space-between;
+}
+
+.u-justify-center {
+  justify-content: center;
+}
+
+.u-flex-wrap {
+  flex-wrap: wrap;
+}

@@ -1,0 +1,209 @@
+.cta {
+  background-color: $white;
+  padding: rem(15) rem(63);
+  position: fixed;
+  bottom: 0;
+  z-index: 5;
+  width: 100%;
+  opacity: 1;
+  visibility: visible;
+  transition: $t-hover;
+
+  &.enabled {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  @include media-breakpoint-down(xsm) {
+    padding: rem(15) rem(20);
+  }
+  @include media-breakpoint-down(xs) {
+    padding: rem(16) rem(16) rem(16) rem(40);
+  }
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__col-left,
+  &__col-right {
+    display: flex;
+    align-items: center;
+  }
+
+  &__col-left {
+    justify-content: space-between;
+    width: 50%;
+
+    @include media-breakpoint-down(lgxl) {
+      width: 50%;
+      justify-content: flex-start;
+    }
+
+    @include media-breakpoint-up(xmd) {
+      justify-content: flex-start;
+    }
+
+    @include media-breakpoint-down(lg) {
+      width: 30%;
+
+      > :last-child {
+        display: none;
+      }
+    }
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
+    .cta__item {
+      a {
+        margin-right: rem(32);
+
+        @include media-breakpoint-down(xsm) {
+          margin-right: rem(16);
+        }
+      }
+    }
+  }
+
+  &__col-right {
+    width: 50%;
+    justify-content: flex-end;
+    @include media-breakpoint-down(lgxl) {
+      width: 50%;
+    }
+    @include media-breakpoint-down(lg) {
+      width: 70%;
+    }
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+      max-width: rem(400);
+      justify-content: space-between;
+    }
+
+    ul {
+      display: flex;
+      align-items: center;
+      margin-right: rem(18);
+
+      li {
+        &:first-child {
+          margin-right: rem(62);
+
+          @include media-breakpoint-down(lgxl) {
+            margin-right: rem(30);
+          }
+          @include media-breakpoint-down(sm) {
+            display: none;
+          }
+          ::after {
+            content: '';
+            width: 2px;
+            height: 100%;
+            background-color: $divider-grey;
+            position: absolute;
+            right: rem(-31);
+
+            @include media-breakpoint-down(lgxl) {
+              right: rem(-15);
+            }
+            @include media-breakpoint-down(sm) {
+              content: none;
+            }
+          }
+        }
+
+        a {
+          text-transform: uppercase;
+          line-height: rem(32);
+          font-size: rem(14);
+          display: flex;
+
+          .icon {
+            margin: rem(3) 0 0 rem(5);
+            width: 13px;
+            height: 16px;
+          }
+
+          &:not(:last-child)::after {
+            content: '';
+            width: 2px;
+            height: 100%;
+            background-color: $divider-grey;
+            position: absolute;
+            right: rem(-16);
+          }
+        }
+      }
+    }
+
+    .btn {
+      min-width: rem(180);
+      font-size: rem(13);
+      font-weight: 700;
+
+      @include media-breakpoint-down(xl) {
+        min-width: rem(120);
+      }
+      @include media-breakpoint-down(sm) {
+        min-width: rem(180);
+      }
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+
+    a {
+      font-size: rem(15);
+      line-height: rem(26);
+      font-weight: 700;
+      position: relative;
+      display: block;
+
+      &:not(:last-child)::after {
+        content: '';
+        width: 2px;
+        height: 100%;
+        background-color: $divider-grey;
+        position: absolute;
+        right: rem(-16);
+
+        @include media-breakpoint-down(xsm) {
+          right: rem(-8);
+        }
+      }
+    }
+
+    p {
+      font-size: rem(15);
+      line-height: rem(15);
+      font-weight: 700;
+
+      span {
+        display: inline-block;
+        color: $grey-light;
+        font-weight: 400;
+
+        &:first-child {
+          margin: 0 rem(15);
+        }
+      }
+    }
+  }
+
+  &__image {
+    width: rem(50);
+    height: rem(50);
+    border-radius: 50%;
+    margin-right: rem(24);
+
+    @include media-breakpoint-down(lgxl) {
+      margin-right: rem(14);
+      width: rem(40);
+      height: rem(40);
+      display: none;
+    }
+  }
+}

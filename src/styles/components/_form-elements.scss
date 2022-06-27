@@ -1,0 +1,98 @@
+/* ------------------------------------------------------------ *\
+  Field
+\* ------------------------------------------------------------ */
+
+.field {
+  padding: rem(13) rem(21);
+  border: rem(1) solid $grey-light;
+  border-radius: rem(7);
+  background: $white;
+  font-family: $regular-font;
+  font-size: rem(20);
+  line-height: line-height(16, 24);
+  font-weight: normal;
+  color: $magnum-black;
+  appearance: none;
+  transition: border $t-basic;
+  display: flex;
+  align-items: center;
+
+  &:focus {
+    border-color: $magnum-black;
+  }
+
+  &::placeholder {
+    color: $grey-light;
+  }
+}
+
+/* ------------------------------------------------------------ *\
+  Checkbox
+\* ------------------------------------------------------------ */
+
+.checkbox-alt {
+  position: relative;
+  font-size: rem(14);
+  line-height: line-height(14, 18);
+
+  input {
+    display: none;
+  }
+
+  label {
+    &::before {
+      content: '';
+    }
+  }
+}
+
+.checkbox-alt__icon {
+  position: relative;
+  transform: translateY(rem(-1));
+  display: inline-block;
+  margin-right: rem(6);
+  color: $white;
+  cursor: pointer;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: rem(21);
+    height: rem(21);
+    border: rem(1) solid $grey-light;
+    border-radius: rem(3);
+    background: transparent;
+    font-size: rem(14);
+    line-height: line-height(14, 15);
+    transition: border $t-basic, background $t-basic;
+
+    input:checked + label & {
+      border-color: $cyan;
+      background: $cyan;
+    }
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: rem(5);
+    height: rem(11);
+    border-right: rem(2) solid currentColor;
+    border-bottom: rem(2) solid currentColor;
+    margin-top: rem(-1);
+    opacity: 0;
+    transition: opacity $t-basic;
+
+    input:checked + label & {
+      opacity: 1;
+    }
+  }
+
+  span {
+    vertical-align: middle;
+  }
+}

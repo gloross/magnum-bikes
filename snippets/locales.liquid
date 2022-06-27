@@ -1,0 +1,10 @@
+{% assign keys = 'products.buttons.add_to_cart' %}
+{% assign keys = keys | append: ',products.buttons.sold_out' %}
+{% assign keys = keys | append: ',products.buttons.back_in_stock' %}
+{% assign keys = keys | split: ","  %}
+<script>
+  const langIndex = {};
+  {% for key in keys %}
+  langIndex["{{ key }}"] = "{{ key | t }}";{% endfor %}
+  Shopify.theme.locales = langIndex
+</script>

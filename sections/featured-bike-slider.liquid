@@ -1,0 +1,31 @@
+<section class="featured-slider js-carousel-slider-mouse-follow collection-grid">
+  <div class="featured-slider__inner">
+    <h2 class="featured-slider__title">Featured E-Bikes</h2>
+    <div class="swiper-container js-featured-slider">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          {% render 'collection-product-card.liquid' %}
+        </div>
+        <div class="swiper-slide">
+          {% render 'collection-product-card.liquid' %}
+        </div>
+        <div class="swiper-slide">
+          {% render 'collection-product-card.liquid' %}
+        </div>
+        <div class="swiper-slide">
+          {% render 'collection-product-card.liquid' %}
+        </div>
+        <div class="swiper-slide">
+          {% render 'collection-product-card.liquid' %}
+        </div>
+        <div class="swiper-slide">
+          {% render 'collection-product-card.liquid' %}
+        </div>
+      </div>
+      <div class="swiper-pagination js-featured-pagination-progress"></div>
+    </div>
+    <div class="cursor js-cursor">
+      {% render 'icon', icon: 'icon-cursor' %}
+    </div>
+  </div>
+</section>

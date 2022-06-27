@@ -1,0 +1,255 @@
+{% liquid
+  assign object       = section.settings
+  assign facebook_ac  = settings.social_facebook_link
+  assign instagram_ac = settings.social_instagram_link
+  assign twitter_ac   = settings.social_twitter_link
+  assign tiktok_ac   = settings.social_tiktok_link
+  assign yt_ac        = settings.social_youtube_link
+  assign ln_ac        = settings.social_linkedin_link
+%}
+<footer class="footer js-off-cta">
+  <div class="footer__announcement">
+    <div class="container container--small">
+      <div class="footer__announcement-inner">
+        <div class="footer__announcement-grid">
+
+            <div class="footer__announcement-grid-item">
+              <a href="tel:{{ object.call_us_phone }}">
+                {% if object.icon_1 == blank %}
+                      {% render 'icon', icon: 'box' %}
+                      {% else %}
+                      {{ object.icon_1 }}
+                      {% endif %}
+              <div class="footer__announcement-grid-info">
+                <h5>{{ object.call_us_text }}</h5>
+              {{ object.call_us_phone }}
+            </a>
+            </div>
+          </div>
+
+            <div class="footer__announcement-grid-item">
+              <a href="mailto:{{ object.chat_url }}">
+              {% if object.icon_2 == blank %}
+                      {% render 'icon', icon: 'box' %}
+                      {% else %}
+                      {{ object.icon_2 }}
+                      {% endif %}
+              <div class="footer__announcement-grid-info">
+                      <h5>{{ object.chat_text }}</h5>
+                      {{ object.chat_text_label }}
+             </a>
+            </div>
+          </div>
+          <div class="footer__announcement-grid-item">
+            <a href="{{ object.contact_url }}">
+             {% if object.icon_3 == blank %}
+                    {% render 'icon', icon: 'box' %}
+                    {% else %}
+                    {{ object.icon_3 }}
+                    {% endif %}
+            <div class="footer__announcement-grid-info">
+                 <h5>{{ object.contact_text }}</h5>
+                 {{ object.contact_text_label }}
+                </a>
+            </div>
+          </div>
+        </div>
+        <h3> {{ object.text_right }}</h3>
+      </div>
+    </div>
+  </div>
+  <div class="container container--small">
+    <div class="footer__inner">
+      <div class="footer__col js-accordion-footer">
+        <div class="footer__col-item">
+          <h6 class="h6 js-accordion-trigger-footer">{{ object.first_column_title }}</h6>
+          <ul>
+            {% for link in linklists[object.first_col_menu].links %}
+            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+          {% endfor %}
+          </ul>
+        </div>
+        <div class="footer__col-item">
+          <h6 class="h6 js-accordion-trigger-footer">{{ object.second_column_title }}</h6>
+          <ul>
+            {% for link in linklists[object.second_col_menu].links %}
+            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+          {% endfor %}
+          </ul>
+        </div>
+        <div class="footer__col-item">
+          <h6 class="h6 js-accordion-trigger-footer">{{ object.third_column_title }}</h6>
+          <ul>
+            {% for link in linklists[object.third_col_menu].links %}
+            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+          {% endfor %}
+          </ul>
+        </div>
+
+      </div>
+      <div class="footer__col">
+        <div class="footer__form-inner">
+          <a href="#" class="footer__logo">
+            {% render 'icon', icon: 'logo-white' %}
+          </a>
+          <p>{{ object.newsletter_description }}</p>
+
+          {%- render 'newsletter' with mod_class: 'footer__form' -%}
+        </div>
+      </div>
+    </div>
+    {% if object.show_social == true %}
+    <div class="footer__bottom">
+      <p>{{ object.social_text }}</p>
+      <ul class="footer__social">
+        {% if facebook_ac != blank %}
+        <li><a href="{{ facebook_ac }}"> {% render 'icon', icon: 'fb' %} </a></li>
+        {%endif%}
+        {% if twitter_ac != blank %}
+        <li><a href="{{ twitter_ac }}">{% render 'icon', icon: 'twitter' %} </a></li>
+        {%endif%}
+        {% if tiktok_ac != blank %}
+        <li><a href="{{ tiktok_ac }}">{% render 'icon', icon: 'tiktok' %} </a></li>
+        {%endif%}
+        {% if ln_ac != blank %}
+        <li><a href="{{ ln_ac }}">{% render 'icon', icon: 'linkedin' %} </a></li>
+        {%endif%}
+        {% if yt_ac != blank %}
+        <li><a href="{{ yt_ac }}">{% render 'icon', icon: 'youtube' %} </a></li>
+        {%endif%}
+        {% if instagram_ac != blank %}
+        <li><a href="{{ instagram_ac }}">{% render 'icon', icon: 'instagram' %} </a></li>
+        {%endif%}
+      </ul>
+    </div>
+    {%endif%}
+  </div>
+</footer>
+
+{% schema %}
+{
+"name": "Footer",
+"settings": [
+{     "type": "html",
+      "id": "icon_1",
+      "label": "Call Us icon SVG HTML",
+      "info": "If empty placeholder box icon will be used"
+},
+{
+  "type": "text",
+  "label": "Call Us Phone number",
+  "id": "call_us_phone",
+  "default": "111 - 555 - 678"
+},
+{
+  "type": "text",
+  "label": "Call Us TEXT",
+  "id": "call_us_text",
+  "default": "Call Us"
+},
+{
+    "type": "html",
+    "id": "icon_2",
+    "label": "Chat icon SVG HTML",
+    "info": "If empty placeholder box icon will be used"
+},
+{
+    "type": "text",
+    "label": "Chat with us top TEXT",
+    "id": "chat_text",
+    "default": "Chat With Us"
+  },
+{
+  "type": "url",
+  "label": "Chat URL",
+  "id": "chat_url"
+},
+{
+  "type": "text",
+  "label": "Chat CTA label TEXT",
+  "id": "chat_text_label",
+  "default": "Start Live Chat"
+},
+{
+    "type": "html",
+    "id": "icon_3",
+    "label": "Contact icon SVG HTML",
+    "info": "If empty placeholder box icon will be used"
+},
+{
+    "type": "text",
+    "label": "Contact form top TEXT",
+    "id": "contact_text",
+    "default": "Contact Form"
+  },
+{
+  "type": "url",
+  "label": "Contact URL",
+  "id": "contact_url"
+},
+{
+  "type": "text",
+  "label": "Contact CTA label TEXT",
+  "id": "contact_text_label",
+  "default": "We’ll Get Back to You"
+},
+{
+    "type": "html",
+    "label": "Text right",
+    "id": "text_right",
+    "default": "Looking for the perfect ride? We’re here to help."
+  },
+{
+"type": "text",
+"id": "first_column_title",
+"label": "First column title",
+"default": "Shop"
+},
+{
+"type": "link_list",
+"id": "first_col_menu",
+"label": "First column menu"
+},
+{
+"type": "text",
+"id": "second_column_title",
+"label": "Second column title",
+"default": "Learn"
+},
+{
+"type": "link_list",
+"id": "second_col_menu",
+"label": "Second column menu"
+},
+{
+"type": "text",
+"id": "third_column_title",
+"label": "Third column title",
+"default": "Help"
+},
+{
+  "type": "link_list",
+  "id": "third_col_menu",
+  "label": "Third column menu"
+},
+{
+"type": "textarea",
+"id": "newsletter_description",
+"label": "Newsletter text",
+"default": "Receive exclusive updates, offers, tips & guides from Magnum HQ."
+},
+{
+"type": "checkbox",
+"id": "show_social",
+"label": "Show social icons",
+"default": true
+},
+{
+  "type": "textarea",
+  "id": "social_text",
+  "label": "Footer bottom text",
+  "default": "Join an active community of 10.000+ Magnum Riders."
+  }
+  ]
+}
+{% endschema %}

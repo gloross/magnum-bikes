@@ -1,0 +1,122 @@
+{% comment %}
+  ##### USAGE #####
+  render 'img',
+  img: ,
+
+  ##### OPTIONAL #####
+  style: ''
+  class: ''
+  img_sm: ''
+  img_md: ''
+  img_lg: ''
+  show_attribute: false [ default: true ]
+  style: ''
+  lazyload: false [ default: true ]
+  media_wrapper: false
+{% endcomment %}
+{% liquid
+  assign shopify_img = true
+  if img contains 'cdn.shopify'
+  assign img_name = img | split: '/' | last | split: '?' | first
+  assign img = images[img_name]
+  else
+  assign img_name_array = img | split: '/'
+  if img_name_array.size > 2
+  assign shopify_img = false
+  endif
+  endif
+  assign img_url        = img | img_url: '1x1' | replace: '_1x1.', '_{width}x.'
+  assign has_different  = false
+
+
+  if img_sm != blank
+    assign has_different  = true
+    assign src_set_sm = img_sm | img_url: '540x' | append: ' 540w'
+  endif
+
+  if img_md != blank
+    assign has_different  = true
+    assign w_720  = img_md | img_url: '720x' | append: ' 720w,'
+    assign w_900  = img_md | img_url: '900x' | append: ' 900w,'
+    assign w_1080 = img_md | img_url: '1080x' | append: ' 1080w'
+
+    assign src_set_md = w_720 | append: w_900 | append: w_1080
+
+  endif
+
+  if img_lg != blank
+    assign has_different  = true
+    assign w_1296  = img_md | img_url: '1296x' | append: ' 1296w,'
+    assign w_1512  = img_md | img_url: '1512x' | append: ' 1512w,'
+
+    assign src_set_lg = w_1296 | append: w_1512
+  endif
+
+  if lazyload == false
+    assign img_url        = img | img_url: '1x1'
+
+  endif
+%}
+{% if shopify_img %}
+{% capture img_content %}
+{% if has_different  %}
+  <picture>
+    {%- if lazyload == false -%}
+      {%- if img_sm != blank -%}<source srcset="{{ src_set_sm }}" media="(max-width: 550px)" />{%- endif -%}
+      {%- if img_md != blank -%}<source srcset="{{src_set_md}}" media="(max-width: 1024px)" />{%- endif -%}
+      {%- if img_lg != blank -%}<source srcset="{{src_set_lg}}" media="(max-width: 1600px)" />{%- endif -%}
+      <source srcset="{% render 'bg_set', image: img %}">
+    {% else %}
+      {%- if img_sm != blank -%}<source data-srcset="{{ src_set_sm }}" media="(max-width: 550px)" />{%- endif -%}
+      {%- if img_md != blank -%}<source data-srcset="{{src_set_md}}" media="(max-width: 1024px)" />{%- endif -%}
+      {%- if img_lg != blank -%}<source data-srcset="{{src_set_lg}}" media="(max-width: 1600px)" />{%- endif -%}
+      <source data-srcset="{% render 'bg_set', image: img %}">
+    {% endif %}
+    <img class="{%- if lazyload != false -%}lazyload {%- endif -%}{{class}}"
+         {%- if lazyload == false -%}src="{{img_url}}"{%- endif -%}
+         data-src="{{ img_url }}"
+         data-widths="[540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2048]"
+         data-aspectratio="{{ img.aspect_ratio }}"
+         data-sizes="auto"
+        {%- if show_attribute != false -%}
+          height="{{ width }}px"
+          width="{{ height }}px"
+        {%- endif -%}
+        {%- if style -%}style="{{ style }}"{%- endif -%}
+         data-parent-fit="cover"
+         data-parent-container=".media-wrapper"
+         {%- if class -%}class="{{class}}"{%- endif -%}
+         alt="{{ img.alt | escape }}"
+         loading="lazy"
+    />
+  </picture>
+{% else %}
+  <img class="{%- if lazyload != false -%}lazyload {%- endif -%}{{class}}"
+      {%- if lazyload == false -%}
+        srcset="{% render 'bg_set', image: img %}"
+      {% else %}
+        data-srcset="{% render 'bg_set', image: img %}"
+      {% endif %}
+      {%- if lazyload == false -%}src="{{img_url}}"{%- endif -%}
+       data-src="{{ img_url }}"
+       data-widths="[540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2048]"
+       data-aspectratio="{{ img.aspect_ratio }}"
+       data-sizes="auto"
+       {%- if show_attribute != false -%}
+       height="{{ img.width }}px"
+       width="{{ img.height }}px"
+       {%- endif -%}
+        {%- if style -%}style="{{ style }}"{%- endif -%}
+       data-parent-fit="contain"
+       alt="{{ img.alt | escape }}"
+       loading="lazy"
+       />
+{% endif %}
+{% endcapture %}
+
+{% if img_wrapper %}<div class="media-wrapper">{% endif %}
+  {{ img_content }}
+{% if img_wrapper %}</div>>{% endif %}
+{% else %}
+<img class="lazyload" src="{{img}}" alt="">
+{% endif%}

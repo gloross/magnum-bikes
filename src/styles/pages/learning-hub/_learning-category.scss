@@ -1,0 +1,124 @@
+.learning-category {
+  padding: rem(80) 0;
+
+  @include media-breakpoint-down(sm) {
+    padding: rem(40) 0;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+
+    @include media-breakpoint-down(sm) {
+      display: block;
+    }
+  }
+
+  &__title {
+    margin-bottom: rem(50);
+    font-size: rem(30);
+    line-height: line-height(30, 44);
+    color: $machine-grey;
+
+    @include media-breakpoint-down(sm) {
+      margin-bottom: rem(40);
+      font-size: rem(24);
+      line-height: line-height(24, 32);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__image {
+    max-width: rem(496);
+    width: 50%;
+
+    @include media-breakpoint-down(sm) {
+      width: auto;
+      max-width: unset;
+      margin: 0 rem(-20);
+    }
+
+    .media-wrapper {
+      padding-bottom: 87%;
+
+      img {
+        height: 100%;
+      }
+    }
+  }
+
+  &__info {
+    flex: 1;
+    padding-left: rem(32);
+
+    @include media-breakpoint-down(sm) {
+      padding: rem(15) 0 0;
+    }
+
+    h3 {
+      padding: rem(14) 0;
+      color: $machine-grey;
+      font-size: rem(26);
+      line-height: line-height(26, 32);
+
+      @include media-breakpoint-down(sm) {
+        padding: rem(12) 0 rem(9);
+        font-size: rem(20);
+        line-height: line-height(20, 28);
+      }
+
+      > * {
+        font-size: inherit;
+        line-height: inherit;
+        color: inherit;
+      }
+    }
+
+    p {
+      max-width: rem(320);
+      width: 100%;
+      font-size: inherit;
+      line-height: inherit;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__entry {
+    margin-bottom: rem(16);
+    font-size: rem(14);
+    line-height: line-height(14, 22);
+    color: $grey-light;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__tags {
+    margin-top: rem(24);
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  &__meta {
+    font-family: $regular-font;
+    font-size: rem(14);
+    line-height: line-height(14, 24);
+    color: $grey-light;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    span {
+      display: block;
+      font-family: inherit;
+    }
+  }
+}

@@ -1,0 +1,82 @@
+{% liquid
+  assign object = section.settings
+  assign f1_name = product.metafields.nb_product_overview.f1_name
+  assign f1_value = product.metafields.nb_product_overview.f1_value
+  assign f2_name = product.metafields.nb_product_overview.f2_name
+  assign f2_value = product.metafields.nb_product_overview.f2_value
+  assign f3_name = product.metafields.nb_product_overview.f3_name
+  assign f3_value = product.metafields.nb_product_overview.f3_value
+  assign f4_name = product.metafields.nb_product_overview.f4_name
+  assign f4_value = product.metafields.nb_product_overview.f4_value
+  assign f5_name = product.metafields.nb_product_overview.f5_name
+  assign f5_value = product.metafields.nb_product_overview.f5_value
+  assign f6_name = product.metafields.nb_product_overview.f6_name
+  assign f6_value = product.metafields.nb_product_overview.f6_value
+%}
+<section class="product-overview">
+   <div class="container container--small">
+        <div class="product-overview__title">
+          <h2>{{ object.section_title }}</h2>
+        </div>
+        <div class="product-overview__inner">
+           <div class="product-overview__col">
+             <h3>{{ object.left_col_title }}</h3>
+             <p>{{product.description}}</p>
+           </div>
+            <div class="product-overview__col">
+             <h3>{{ object.right_col_title }}</h3>
+             <ul class="product-overview__list">
+               {% if f1_value != blank %}
+               <li class="u-d-flex u-align-center"><span>{{ f1_name }} </span><span><strong>{{ f1_value }}</strong></span></li>
+               {% endif %}
+               {% if f2_value != blank %}
+               <li class="u-d-flex u-align-center"><span>{{ f2_name }}</span><span><strong>{{ f2_value }}</strong></span></li>
+               {% endif %}
+               {% if f3_value != blank %}
+               <li class="u-d-flex u-align-center"><span>{{ f3_name }}</span><span><strong>{{ f3_value }}</strong></span></li>
+               {% endif %}
+               {% if f4_value != blank %}
+               <li class="u-d-flex u-align-center"><span>{{ f4_name }}</span><span><strong>{{ f4_value }}</strong></span></li>
+               {% endif %}
+               {% if f5_value != blank %}
+               <li class="u-d-flex u-align-center"><span>{{ f5_name }}</span><span><strong>{{ f5_value }}</strong></span></li>
+               {% endif %}
+               {% if f6_value != blank %}
+               <li class="u-d-flex u-align-center"><span>{{ f6_name }}</span><span><strong>{{ f6_value }}</strong></span></li>
+               {% endif %}
+             </ul>
+           </div>
+        </div>
+   </div>
+</section>
+
+{% schema %}
+{
+"name": "Product overview no bikes",
+"settings": [
+{
+  "type": "text",
+  "id": "section_title",
+  "label": "Section title",
+  "default": "Product Overview"
+},
+{
+  "type": "text",
+  "id": "left_col_title",
+  "label": "Left column title",
+  "default": "Description"
+},
+{
+  "type": "text",
+  "id": "right_col_title",
+  "label": "Right column title",
+  "default": "Details"
+}
+],
+"presets": [
+  {
+    "name": "Product overview no bikes"
+  }
+]
+}  
+{% endschema %}

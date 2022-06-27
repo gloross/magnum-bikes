@@ -1,0 +1,38 @@
+{% comment %}
+    Renders a product item card.
+
+    Accepts:
+    - mod_product: {Object} Product Object
+    - mod_class: {String} Optional. Add additional classes to the product item container
+
+    Usage:
+    {%- render 'product-item-simple'
+      mod_class: 'product-item-simple--secondary'
+      mod_product: product
+    -%}
+{% endcomment %}
+
+{%- assign mod_product = mod_product | default: false -%}
+{%- assign mod_class = mod_class | default: false -%}
+
+{%- if mod_product -%}
+  <div class="product-item-simple{% if mod_class %} {{ mod_class }}{% endif %}">
+    {%- if mod_product.featured_image -%}
+      <a href="{{- mod_product.url -}}" class="product-item-simple__link">
+        <div class="product-item-simple__image">
+          <div class="media-wrapper">
+            <img src="{{- mod_product.featured_image.src | image_url: width: 500 -}}" alt="{{- mod_product.featured_image.alt | escape -}}" loading="lazy" />
+          </div><!-- /.media-wrapper -->
+        </div><!-- /.product-item-simple__image -->
+      </a>
+    {%- endif -%}
+
+    <div class="product-item-simple__content">
+      <h4 class="product-item-simple__title">
+        <a href="{{- mod_product.url -}}">
+          {{- mod_product.title -}}
+        </a>
+      </h4><!-- /.product-item-simple__title -->
+    </div><!-- /.product-item-simple__content -->
+  </div><!-- /.product-item-simple -->
+{%- endif -%}

@@ -1,0 +1,114 @@
+.featured-slider {
+  &__inner {
+    position: relative;
+    padding: rem(88) 0 rem(55);
+
+    @include media-breakpoint-down(sm) {
+      padding: rem(40) 0;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: rem(170);
+      height: 100%;
+      background: linear-gradient(270deg, $white 0%, transparent 100%);
+      z-index: 101;
+      pointer-events: none;
+
+      @include media-breakpoint-down(sm) {
+        display: none;
+      }
+    }
+  }
+
+  &__title {
+    padding-bottom: rem(23);
+    text-align: center;
+    font-size: rem(40);
+    line-height: line-height(40, 56);
+    font-weight: 700;
+
+    @include media-breakpoint-down(sm) {
+      font-size: rem(28);
+      line-height: line-height(28, 36);
+      padding-bottom: rem(10);
+    }
+  }
+
+  .swiper-container {
+    padding-left: 11.127vw;
+
+    @include media-breakpoint-down(sm) {
+      padding: 0 rem(20);
+    }
+  }
+
+  .swiper-slide {
+    width: rem(420);
+
+    .collection-card {
+      @include media-breakpoint-down(sm) {
+        padding: rem(22) 0;
+      }
+      .collection-card__inner {
+        .collection-card__content {
+          h2 {
+            font-size: rem(24);
+            line-height: line-height(24, 40);
+          }
+        }
+      }
+    }
+  }
+  .swiper-pagination {
+    display: none;
+    bottom: 0;
+    top: auto !important;
+    left: rem(20) !important;
+    right: rem(20) !important;
+    width: calc(100% - #{rem(40)}) !important;
+    height: rem(2) !important;
+    background-color: #c4c4c4 !important;
+
+    span {
+      background-color: $grey-light;
+    }
+
+    @include media-breakpoint-down(sm) {
+      display: block;
+    }
+  }
+
+  .cursor {
+    transition: all 100ms ease-out;
+    position: fixed;
+    pointer-events: none;
+    left: 0;
+    top: 0;
+    z-index: 50;
+    opacity: 0;
+    visibility: hidden;
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    svg {
+      circle {
+        &:first-of-type {
+          stroke: $magnum-black;
+        }
+        &:nth-child(2) {
+          fill: $magnum-black;
+        }
+      }
+      path {
+        fill: $magnum-black;
+      }
+    }
+  }
+}

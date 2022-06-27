@@ -1,0 +1,1 @@
+!function(){window.onload=function(){const e=document.getElementById("triger");e&&e.click()};const e=document.getElementsByClassName("swiper-slide-next, swiper-slide-prev");if(e.length){const n=e.getElementsByClassName("link-carousel");n.length&&(n.disabled=!0)}}();

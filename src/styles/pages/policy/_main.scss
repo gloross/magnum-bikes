@@ -1,0 +1,37 @@
+.policy {
+  h1 {
+    padding-bottom: rem(45);
+  }
+
+  &__wrapper {
+    width: 100%;
+    max-width: rem(920);
+    margin: 0 auto;
+
+    p {
+      margin-bottom: rem(20);
+      font-size: rem(14);
+      color: $mine-shaft;
+    }
+  }
+}
+.shopify-policy__container {
+  width: 100% !important;
+  max-width: unset !important;
+  h1 {
+    padding-bottom: rem(45);
+  }
+
+  .shopify-policy__body {
+    font-family: $headline-font;
+    width: 100%;
+    max-width: rem(920);
+    margin: 0 auto;
+
+    p {
+      margin-bottom: rem(20);
+      font-size: rem(14);
+      color: $mine-shaft;
+    }
+  }
+}

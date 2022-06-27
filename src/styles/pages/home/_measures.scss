@@ -1,0 +1,232 @@
+.measures {
+  background-color: $machine-grey;
+
+  &.active {
+    .measures__col-left {
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+
+      img{
+        flex-shrink: 0;
+        min-width: 100%;
+        min-height: 100%
+      }
+
+      &::after {
+        display: block;
+        z-index: -1;
+      }
+    }
+  }
+
+  &__inner {
+    display: flex;
+    align-items: stretch;
+
+    @include media-breakpoint-down(md) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__col-left {
+    position: relative;
+    max-width: 51.17%;
+    width: 100%;
+    padding: 0;
+
+    @include media-breakpoint-down(lg) {
+      padding: rem(80) 4.199vw rem(80) 5.566vw;
+      max-width: 48.44%;
+    }
+
+    @include media-breakpoint-down(sm) {
+      padding: rem(40) rem(20) rem(35);
+      max-width: 100%;
+    }
+
+    &::after {
+      display: none;
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      background-color: #494647;
+    }
+
+    .media-wrapper {
+      padding-bottom: 138.88%;
+
+      @include media-breakpoint-down(sm) {
+        padding-bottom: 136.39%;
+      }
+      img {
+        z-index: 1;
+        object-fit: contain;
+      }
+
+      @include media-breakpoint-down(sm) {
+        max-width: 100%;
+        margin-right: 0;
+        padding-bottom: 135.96%;
+      }
+    }
+  }
+
+  &__col-right {
+    max-width: 48.83%;
+    width: 100%;
+    padding: rem(80) 12.372vw rem(81) 7.76vw;
+
+    @include media-breakpoint-down(lg) {
+      padding: rem(80) 6.641vw rem(81) 6.641vw;
+      max-width: 51.56%;
+    }
+
+    @include media-breakpoint-down(sm) {
+      padding: rem(32) rem(20) rem(40) rem(20);
+      max-width: 100%;
+    }
+
+    h2 {
+      margin-bottom: rem(10);
+      font-size: rem(40);
+      line-height: line-height(40, 56);
+      font-weight: 700;
+      color: $off-white;
+
+      @include media-breakpoint-down(md) {
+        font-size: rem(28);
+        line-height: line-height(28, 36);
+      }
+    }
+
+    p {
+      font-size: rem(15);
+      line-height: line-height(15, 25);
+      color: $off-white;
+      max-width: rem(328);
+      @include media-breakpoint-down(md) {
+        font-size: rem(14);
+        line-height: line-height(14, 22);
+      }
+    }
+  }
+
+  &__tab {
+    margin: rem(30) 0 rem(35);
+    margin-bottom: 0;
+    border-radius: rem(7);
+    background-color: $grey-light-1;
+    min-height: rem(255);
+
+    @include media-breakpoint-down(md) {
+      margin: rem(24) 0;
+    }
+  }
+
+  &__tab-nav {
+    li {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: rem(5.5) 0;
+      color: $grey-light;
+      font-size: rem(17);
+      line-height: line-height(17, 26);
+      font-weight: 700;
+      border: 2px solid transparent;
+      background-color: $grey-light-5;
+      cursor: pointer;
+
+      @include media-breakpoint-down(md) {
+        font-size: rem(14);
+        line-height: line-height(14, 26);
+      }
+
+      &:first-child {
+        border-top-left-radius: rem(7);
+      }
+      &:last-child {
+        border-top-right-radius: rem(7);
+      }
+
+      &.active {
+        color: $cyan;
+        border-color: $cyan;
+        background-color: $machine-grey;
+      }
+    }
+  }
+
+  &__tabs {
+    display: none;
+    flex-wrap: wrap;
+    padding: rem(24) rem(20) rem(20);
+
+    @include media-breakpoint-down(md) {
+      padding: rem(16) rem(20) rem(22);
+    }
+
+    .icon--warning {
+      margin: rem(5) rem(8) 0 0;
+    }
+
+    &.active {
+      display: flex;
+    }
+
+    p {
+      font-size: rem(14);
+      line-height: line-height(14, 24);
+      max-width: calc(100% - #{rem(24)});
+
+      @include media-breakpoint-down(md) {
+        line-height: line-height(14, 22);
+      }
+    }
+  }
+
+  &__results {
+    display: none;
+
+    .icon--correctly,
+    .icon--incorrectly {
+      margin-top: rem(1);
+      margin-right: rem(15);
+    }
+
+    h4 {
+      margin-bottom: rem(5);
+      font-size: rem(17);
+      line-height: line-height(17, 26);
+      font-weight: 700;
+      color: $white;
+    }
+    p {
+      color: $grey-light;
+
+      @include media-breakpoint-down(sm) {
+        max-width: calc(100% - #{rem(32)});
+      }
+
+      a {
+        font-weight: 700;
+        color: $white;
+        text-decoration: underline;
+      }
+    }
+  }
+  .is-active {
+    display: flex;
+  }
+
+  &__message {
+    max-width: calc(100% - #{rem(39)});
+  }
+}

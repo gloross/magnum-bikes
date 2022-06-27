@@ -1,0 +1,121 @@
+.journey-covered {
+  padding: rem(120) 0;
+
+  @include media-breakpoint-down(lgxl) {
+    padding: rem(60) 0;
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding: rem(10) 0 rem(40);
+  }
+
+  &__title {
+    max-width: rem(400);
+    margin: 0 auto;
+    padding-bottom: rem(60);
+    text-align: center;
+
+    @include media-breakpoint-down(lgxl) {
+      padding-bottom: rem(25);
+    }
+
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+      padding-bottom: rem(15);
+    }
+
+    @include media-breakpoint-down(xs) {
+      width: rem(265);
+    }
+
+    .h2 {
+      font-size: rem(40);
+      line-height: rem(54);
+
+      @include media-breakpoint-down(sm) {
+        font-size: rem(28);
+        line-height: rem(36);
+      }
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 rem(-16);
+    @include media-breakpoint-down(sm) {
+      margin: 0;
+    }
+  }
+
+  &__item {
+    flex: 0 0 50%;
+    padding: rem(16);
+
+    @include media-breakpoint-down(sm) {
+      padding: 0;
+      flex: 0 0 100%;
+      &:not(:last-child) {
+        padding-bottom: rem(20);
+      }
+    }
+  }
+
+  &__item-content {
+    position: relative;
+
+    .media-wrapper {
+      padding-bottom: 66.86%;
+
+      img {
+        height: 100%;
+      }
+    }
+  }
+
+  &__text {
+    max-width: rem(288);
+    width: 100%;
+    position: absolute;
+    bottom: rem(22);
+    left: rem(30);
+
+    @include media-breakpoint-down(sm) {
+      max-width: 100%;
+      bottom: rem(20);
+      left: rem(20);
+    }
+    @include media-breakpoint-down(xs) {
+      max-width: rem(283);
+    }
+    p {
+      font-size: rem(20);
+      line-height: rem(30);
+      font-weight: 700;
+      color: $white;
+      padding-bottom: rem(10);
+    }
+
+    a {
+      font-size: rem(14);
+      line-height: rem(32);
+      font-weight: 700;
+      color: $white;
+      display: flex;
+      align-items: center;
+      text-transform: uppercase;
+      transition: $t-hover;
+
+      &:hover {
+        opacity: 0.5;
+      }
+
+      .icon {
+        display: inline-block;
+        width: rem(16);
+        height: rem(13);
+        margin: rem(-8) 0 0 rem(3);
+      }
+    }
+  }
+}

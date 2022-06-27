@@ -1,0 +1,647 @@
+{{ 'component-headerScroll.css' | asset_url | stylesheet_tag }}
+<script type="module" src="{{- 'component-headerScroll.js' | asset_url -}}"></script>
+
+{% liquid
+    assign object = section.settings
+    assign blocks = section.blocks
+    assign mega_menus = settings.mega_menus | downcase
+
+%}
+<header class="header js-header">
+    {% if object.show_bar == true %}
+    {% render 'announcment-bar', object: object %}
+    {%endif%}
+    <div class="header__inner">
+        <div class="header__logo">
+            <a href="{{ routes.root_url }}">
+                {% render 'icon', icon: 'logo' %}
+            </a>
+        </div>
+        <div class="nav-bar js-nav-mobile">
+          <ul class="nav-bar__list">
+              {% for link in linklists[object.main_navigation].links %}
+              {% assign url = link.url %}
+               {% assign link_title = link.title | handleize %}
+               {% assign goBackLink = link.title %}
+              <li>
+                  <a class="nav-bar__link line-link line-link--grow u-uppercase js-nav-bar" href="{{url}}">{{link.title}} {%if mega_menus contains link_title%} {% render 'icon', icon: 'arrow-left-small' %}{%endif%}</a>
+                  {% if mega_menus contains link_title %}
+                  <div class="header__nav-dropdown">
+                      {% for block in blocks %}
+                      {% assign b = block.settings %}
+                      {% if b.menu_handle == link_title and block.type == 'type-1' %}
+                      {% render 'nav-dropdown-v1', b:b, goBackLink: goBackLink%}
+                      {% elsif b.menu_handle == link_title and block.type == 'type-2' %}
+                      {% render 'nav-dropdown-v2', b:b, goBackLink: goBackLink%}
+                      {% elsif b.menu_handle == link_title and block.type == 'type-3' %}
+                      {% render 'nav-dropdown-v3', b:b, goBackLink: goBackLink%}
+                      {% elsif b.menu_handle == link_title and block.type == 'type-4' %}
+                      {% render 'nav-dropdown-v4', b:b, goBackLink: goBackLink%}
+                      {% elsif b.menu_handle == link_title and block.type == 'type-5' %}
+                      {% render 'nav-dropdown-v5', b:b, goBackLink: goBackLink%}
+                      {%endif%}
+                      {% endfor%}
+                  </div>
+                  {%endif%}
+                </li>
+              {% endfor %}
+            <!-- ! out of softlnch<li>
+             <a class="btn btn--outline mob-show" href="{{object.mob_cta_url}}">{{object.mob_cta_text}}</a>
+              </li> -->
+          </ul>
+        </div>
+        <ul class="header__right-list">
+            <!-- <li>
+                <a href="{{routes.account_url}}">
+                    {% render 'icon', icon: 'account' %}
+                </a>
+            </li> -->
+            <li>
+                <a href="{{ routes.search_url }}">
+                    {% render 'icon', icon: 'search' %}
+                </a>
+            </li>
+            <li>
+                <a href="{{ routes.cart_url }}" class="">
+                    {% render 'icon', icon: 'cart' %}
+                </a>
+            </li>
+        </ul>
+         <div class="header__hamburger">
+             <button type="button" aria-label="Menu" class="hamburger js-hamburger">
+                <div class="hamburger__inner">
+                  <span class="line line--1"></span>
+                  <span class="line line--2"></span>
+                  <span class="line line--3"></span>
+                </div>
+              </button>
+         </div>
+    </div>
+</header>
+
+{% schema %}
+  {
+  "name": "Header",
+  "settings": [
+  {
+  "type": "header",
+  "content": "Desktop navigation"
+  },
+  {
+  "type": "link_list",
+  "id": "main_navigation",
+  "label": "Main navigation (desktop)"
+  },
+  {
+      "type": "header",
+      "content": "Announcement bar"
+  },
+  {
+      "type": "checkbox",
+      "id": "show_bar",
+      "label": "Show annoucement bar",
+      "default": true
+  },
+  {
+      "type": "url",
+      "id": "link_1_url",
+      "label": "Link 1 URL"
+  },
+  {
+    "type": "text",
+    "id": "link_1_text",
+    "label": "Link 1 TEXT",
+    "default": "Become a Dealer"
+  },
+  {
+    "type": "url",
+    "id": "link_2_url",
+    "label": "Link 2 URL"
+},
+{
+  "type": "text",
+  "id": "link_2_text",
+  "label": "Link 2 TEXT",
+  "default": "Financing"
+},
+{
+    "type": "url",
+    "id": "link_3_url",
+    "label": "Link 3 URL"
+},
+{
+  "type": "text",
+  "id": "link_3_text",
+  "label": "Link 3 TEXT",
+  "default": "Register Warranty"
+},
+{
+    "type": "url",
+    "id": "link_4_url",
+    "label": "Where to try URL"
+},
+{
+  "type": "text",
+  "id": "link_4_text",
+  "label": "Where to try TEXT",
+  "default": "Where to Try"
+},
+{
+  "type": "header",
+  "content": "Mobile"
+},
+{
+    "type": "url",
+    "id": "mob_cta_url",
+    "label": "Help me choose URL"
+},
+{
+  "type": "text",
+  "id": "mob_cta_text",
+  "label": "Help me choose text",
+  "default": "Help Me Choose"
+}
+  ],
+  "blocks": [
+  {
+    "type": "type-1",
+    "name": "E Bikes mega menu",
+    "settings": [
+    {
+        "type": "text",
+        "id": "menu_handle",
+        "label": "Handle for mega menu",
+        "info": "Match nav item title to use with this type of mega menu block"
+    },
+    {
+        "type": "image_picker",
+        "id": "bg_image",
+        "label": "Background image"
+    },
+    {
+        "type": "text",
+        "id": "by_category_text",
+        "label": "By category label",
+        "default": "By Category"
+    },
+    {
+        "type": "text",
+        "id": "by_use_text",
+        "label": "By Use label",
+        "default": "By Use"
+    },
+    {
+        "type": "link_list",
+        "id": "menu_by_category",
+        "label": "Menu by category"
+    },
+    {
+        "type": "textarea",
+        "id": "new_tag",
+        "label": "Mark link with \"NEW\" tag",
+        "info": "Enter titles of links which you want to mark wit NEW tag, separate titles with pipe symbol '|'. Example link1|link2|"
+    },
+    {
+        "type": "textarea",
+        "id": "sale_tag",
+        "label": "Mark link with \"Sale\" tag",
+        "info": "Enter titles of links which you want to mark wit NEW tag, separate titles with pipe symbol '|'. Example link1|link2|"
+    },
+    {
+        "type": "link_list",
+        "id": "menu_by_use",
+        "label": "Menu by use"
+    },
+    {
+        "type": "url",
+        "id": "view_all_url",
+        "label": "View all URL"
+    },
+    {
+        "type": "text",
+        "id": "view_all_text",
+        "label": "View all text label",
+        "default": "view all"
+    },
+    {
+        "type": "text",
+        "id": "right_heading",
+        "label": "Heading right",
+        "default": "Everyone has a perfect Magnum match."
+    },
+    {
+        "type": "text",
+        "id": "right_description",
+        "label": "Description right",
+        "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    {
+        "type": "text",
+        "id": "right_cta_label",
+        "label": "CTA button label",
+        "default": "Help Me Choose"
+    },
+    {
+        "type": "url",
+        "id": "right_cta_url",
+        "label": "CTA button URL"
+    }
+    ]
+  },
+  {
+    "type": "type-2",
+    "name": "Shop mega menu",
+    "settings": [
+    {
+        "type": "text",
+        "id": "menu_handle",
+        "label": "Handle for mega menu",
+        "info": "Match nav item title to use with this type of mega menu block"
+    },
+    {
+        "type": "image_picker",
+        "id": "bg_image",
+        "label": "Background image"
+    },
+    {
+        "type": "text",
+        "id": "title",
+        "label": "Dropdown title",
+        "default": "Make Your Ride Complete"
+    },
+    {
+        "type": "url",
+        "id": "view_all_url",
+        "label": "View all URL"
+    },
+    {
+        "type": "text",
+        "id": "view_all_text",
+        "label": "View all text label",
+        "default": "view all"
+    },
+    {
+        "type": "text",
+        "id": "tab_1_title",
+        "label": "First tab title",
+        "default": "Parts & Upgrades"
+    },
+    {
+        "type": "link_list",
+        "id": "tab_1_menu",
+        "label": "Tab 1 Menu"
+    },
+    {
+        "type": "url",
+        "id": "tab_1_url",
+        "label": "Tab 1 URL"
+    },
+    {
+        "type": "text",
+        "id": "tab_2_title",
+        "label": "Second tab title",
+        "default": "Gear & Accessories"
+    },
+    {
+        "type": "url",
+        "id": "tab_2_url",
+        "label": "Tab 2 URL"
+    },
+    {
+        "type": "link_list",
+        "id": "tab_2_menu",
+        "label": "Tab 2 Menu"
+    },
+    {
+        "type": "url",
+        "id": "view_all_url2",
+        "label": "View all URL"
+    },
+    {
+        "type": "text",
+        "id": "view_all_text2",
+        "label": "View all text label",
+        "default": "view all"
+    },
+    {
+        "type": "url",
+        "id": "view_all_url3",
+        "label": "View all URL"
+    },
+    {
+        "type": "text",
+        "id": "view_all_text3",
+        "label": "View all text label",
+        "default": "view all"
+    },
+    {
+        "type": "text",
+        "id": "tab_3_title",
+        "label": "Third tab title",
+        "default": "Swag"
+    },
+    {
+        "type": "url",
+        "id": "tab_3_url",
+        "label": "Tab 3 URL"
+    },
+    {
+        "type": "link_list",
+        "id": "tab_3_menu",
+        "label": "Tab 3 Menu"
+    }
+    ]
+  },
+  {
+    "type": "type-3",
+    "name": "Learn mega menu - images",
+    "settings": [
+    {
+        "type": "text",
+        "id": "menu_handle",
+        "label": "Handle for mega menu",
+        "info": "Match nav item title to use with this type of mega menu block"
+    },
+    {
+        "type": "text",
+        "id": "title",
+        "label": "Dropdown title",
+        "default": "The Magnum Academy"
+    },
+    {
+        "type": "url",
+        "id": "cta_url",
+        "label": "CTA URL"
+    },
+    {
+        "type": "text",
+        "id": "cta_text",
+        "label": "CTA text label",
+        "default": "Go To academy hub"
+    },
+    {
+        "type": "image_picker",
+        "id": "slide_1_img",
+        "label": "Slide 1 image"
+    },
+    {
+        "type": "url",
+        "id": "slide_1_url",
+        "label": "Slide 1 URL"
+    },
+    {
+        "type": "text",
+        "id": "slide_1_text",
+        "label": "Slide 1 TEXT"
+    },
+    {
+        "type": "image_picker",
+        "id": "slide_2_img",
+        "label": "Slide 2 image"
+    },
+    {
+        "type": "url",
+        "id": "slide_2_url",
+        "label": "Slide 2 URL"
+    },
+    {
+        "type": "text",
+        "id": "slide_2_text",
+        "label": "Slide 2 TEXT"
+    },
+    {
+        "type": "image_picker",
+        "id": "slide_3_img",
+        "label": "Slide 3 image"
+    },
+    {
+        "type": "url",
+        "id": "slide_3_url",
+        "label": "Slide 3 URL"
+    },
+    {
+        "type": "text",
+        "id": "slide_3_text",
+        "label": "Slide 3 TEXT"
+    },
+    {
+        "type": "image_picker",
+        "id": "slide_4_img",
+        "label": "Slide 4 image"
+    },
+    {
+        "type": "url",
+        "id": "slide_4_url",
+        "label": "Slide 4 URL"
+    },
+    {
+        "type": "text",
+        "id": "slide_4_text",
+        "label": "Slide 4 TEXT"
+    },
+    {
+        "type": "image_picker",
+        "id": "slide_5_img",
+        "label": "Slide 5 image"
+    },
+    {
+        "type": "url",
+        "id": "slide_5_url",
+        "label": "Slide 5 URL"
+    },
+    {
+        "type": "text",
+        "id": "slide_5_text",
+        "label": "Slide 5 TEXT"
+    },
+    {
+        "type": "image_picker",
+        "id": "slide_6_img",
+        "label": "Slide 6 image"
+    },
+    {
+        "type": "url",
+        "id": "slide_6_url",
+        "label": "Slide 6 URL"
+    },
+    {
+        "type": "text",
+        "id": "slide_6_text",
+        "label": "Slide 6 TEXT"
+    }
+    ]
+  },
+  {
+    "type": "type-4",
+    "name": "Why Magnum mega menu",
+    "settings": [
+    {
+        "type": "text",
+        "id": "menu_handle",
+        "label": "Handle for mega menu",
+        "info": "Match nav item title to use with this type of mega menu block"
+    },
+    {
+        "type": "image_picker",
+        "id": "bg_image",
+        "label": "Background image"
+    },
+    {
+        "type": "link_list",
+        "id": "why_magnum_menu",
+        "label": "Why Magnum menu"
+    },
+    {
+        "type": "text",
+        "id": "right_heading",
+        "label": "Heading right",
+        "default": "Ride Faster. Ride Stronger. Ride Further."
+    },
+    {
+        "type": "html",
+        "id": "icon_1",
+        "label": "Icon in SVG format",
+        "info": "If blank, default box icon will be used."
+    },
+    {
+        "type": "html",
+        "id": "description_1",
+        "label": "Description 1 HTML",
+        "default": "<span>250+</span>Authorized dealers and service points across the U.S."
+    },
+    {
+        "type": "html",
+        "id": "icon_2",
+        "label": "Icon in SVG format",
+        "info": "If blank, default box icon will be used."
+    },
+    {
+        "type": "html",
+        "id": "description_2",
+        "label": "Description 2 HTML",
+        "default": "<span>10,000+</span>Community of Magnum Riders"
+    }
+    ]
+  },
+  {
+    "type": "type-5",
+    "name": "Learn mega menu - images2",
+    "settings": [
+    {
+        "type": "text",
+        "id": "menu_handle",
+        "label": "Handle for mega menu",
+        "info": "Match nav item title to use with this type of mega menu block"
+    },
+    {
+        "type": "text",
+        "id": "title",
+        "label": "Dropdown title",
+        "default": "The Magnum Academy"
+    },
+    {
+        "type": "url",
+        "id": "cta_url",
+        "label": "CTA URL"
+    },
+    {
+        "type": "text",
+        "id": "cta_text",
+        "label": "CTA text label",
+        "default": "Go To academy hub"
+    },
+    {
+        "type": "image_picker",
+        "id": "slide_1_img",
+        "label": "Slide 1 image"
+    },
+    {
+        "type": "url",
+        "id": "slide_1_url",
+        "label": "Slide 1 URL"
+    },
+    {
+        "type": "text",
+        "id": "slide_1_text",
+        "label": "Slide 1 TEXT"
+    },
+    {
+        "type": "image_picker",
+        "id": "slide_2_img",
+        "label": "Slide 2 image"
+    },
+    {
+        "type": "url",
+        "id": "slide_2_url",
+        "label": "Slide 2 URL"
+    },
+    {
+        "type": "text",
+        "id": "slide_2_text",
+        "label": "Slide 2 TEXT"
+    },
+    {
+        "type": "image_picker",
+        "id": "slide_3_img",
+        "label": "Slide 3 image"
+    },
+    {
+        "type": "url",
+        "id": "slide_3_url",
+        "label": "Slide 3 URL"
+    },
+    {
+        "type": "text",
+        "id": "slide_3_text",
+        "label": "Slide 3 TEXT"
+    },
+    {
+        "type": "image_picker",
+        "id": "slide_4_img",
+        "label": "Slide 4 image"
+    },
+    {
+        "type": "url",
+        "id": "slide_4_url",
+        "label": "Slide 4 URL"
+    },
+    {
+        "type": "text",
+        "id": "slide_4_text",
+        "label": "Slide 4 TEXT"
+    },
+    {
+        "type": "image_picker",
+        "id": "slide_5_img",
+        "label": "Slide 5 image"
+    },
+    {
+        "type": "url",
+        "id": "slide_5_url",
+        "label": "Slide 5 URL"
+    },
+    {
+        "type": "text",
+        "id": "slide_5_text",
+        "label": "Slide 5 TEXT"
+    },
+    {
+        "type": "image_picker",
+        "id": "slide_6_img",
+        "label": "Slide 6 image"
+    },
+    {
+        "type": "url",
+        "id": "slide_6_url",
+        "label": "Slide 6 URL"
+    },
+    {
+        "type": "text",
+        "id": "slide_6_text",
+        "label": "Slide 6 TEXT"
+    }
+    ]
+  }
+  ]
+  }
+{% endschema %}

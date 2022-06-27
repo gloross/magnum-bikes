@@ -1,0 +1,24 @@
+{
+  "sections": {
+    "account": {
+      "type": "account",
+      "settings": {
+      }
+    },
+    "another-cta": {
+      "type": "another-cta",
+      "settings": {
+      }
+    },
+    "fat-bikes": {
+      "type": "fat-bikes",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "account",
+    "another-cta",
+    "fat-bikes"
+  ]
+}

@@ -1,0 +1,32 @@
+{% assign object = section.settings %}
+<section class="stories-magnum"
+  style="background-image: url({{ object.image | img_url: 'master' }});background-repeat: no-repeat;">
+  <div class="container container--small">
+    <div class="stories-magnum__text">
+      <p> {{ object.description }}</p>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+  "name": "Stories magnum",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": "Section text",
+      "default": "\“We can have a nice motivational quote here claiming how great it is to be an e-bike rider and how humans are magic, amazing, great... \”"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Stories magnum"
+    }
+  ]
+}  
+{% endschema %}

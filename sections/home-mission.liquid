@@ -1,0 +1,40 @@
+{% assign object = section.settings %}
+<section class="home-mission"
+  style="background-image:linear-gradient(0deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url({{object.image | img_url: 'master'}}); background-position: center center; background-size: cover; background-repeat:no-repeat; ">
+  <div class="container">
+    <div class="home-mission__inner">
+      <h5> {{object.title}}</h5>
+      <p>{{object.content}}</p>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+  "name": "Home mission",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Background Image"
+    },
+    {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "our mission"
+      },
+      {
+        "type": "textarea",
+        "id": "content",
+        "label": "Text content",
+        "default": "Magnum E-Bikes are designed, engineered and built by us from the ground up. We conceptualize and create our own molds and carefully choose each component that best suit our products."
+      }
+  ],
+  "presets": [
+    {
+      "name": "Home mission"
+    }
+  ]
+}  
+{% endschema %}

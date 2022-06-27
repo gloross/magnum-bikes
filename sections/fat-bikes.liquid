@@ -1,0 +1,49 @@
+{% assign object = section.settings %}
+<section class="fat-bikes">
+    <div class="container container--small">
+        <div class="fat-bikes__title">
+           <h2>{{ object.section_title }}</h2>
+            <a class="fat-bikes__btn "href="{{object.cta_url}}">{{ object.cta_text }} {% render 'icon', icon: 'arrow-up-right' %} </a>
+        </div>
+        <div class="fat-bikes__image">
+            {%render 'img',
+            img: object.image,
+           %}
+        </div>
+    </div>
+</section>
+
+{% schema %}
+  {
+  "name": "Fat bikes",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Hero Image"
+    },
+    {
+        "type": "text",
+        "id": "section_title",
+        "label": "Section title",
+        "default": "Have you seen our Fat Tire Bikes?"
+    },
+    {
+        "type": "text",
+        "id": "cta_text",
+        "label": "CTA text",
+        "default": "CHECK OUT FAT TIRE BIKES"
+    },
+    {
+        "type": "url",
+        "id": "cta_url",
+        "label": "CTA URL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fat bikes"
+    }
+  ]
+}  
+{% endschema %}

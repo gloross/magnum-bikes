@@ -1,0 +1,96 @@
+{% assign object = section.settings %}
+{%comment%}TO DO search functionality{%endcomment%}
+<section class="support-hero">
+    <div class="container container--small">
+        <div class="support-hero__inner">
+            <div class="support-hero__content">
+                <h1>{{ object.title }}</h1>
+                <p>{{ object.description }}</p>
+                <div class="search">
+                    <form action="" method="get" role="search">
+                        <input name="options[prefix]" type="hidden" value="last">
+                        <input name="type" type="hidden" value="product"/>
+                        <input autocomplete="off" class="search__input-field-bottom" id="searchField" name="q" placeholder=" " type="text" value="">
+                        <button class="search__btn btn btn--blue-fill" type="">Search</button>
+                        <label for="searchField">
+                            {% render 'icon', icon: 'search' %}
+                           Type to search....
+                        </label>
+                    </form>
+                    <ul class="search__list">
+                      <li>
+                        <a href="">
+                          <h4>Magnum Bike Voyager</h4>
+                          <span>Magnum Support > Categories > Touring > Models</span>
+                        </a>
+                      </li>
+                        <li>
+                        <a href="">
+                          <h4>Magnum Bike Voyager</h4>
+                          <span>Magnum Support > Categories > Touring > Models</span>
+                        </a>
+                      </li>
+                        <li>
+                        <a href="">
+                          <h4>Magnum Bike Voyager</h4>
+                          <span>Magnum Support > Categories > Touring > Models</span>
+                        </a>
+                      </li>
+                        <li>
+                        <a href="">
+                          <h4>Magnum Bike Voyager</h4>
+                          <span>Magnum Support > Categories > Touring > Models</span>
+                        </a>
+                      </li>
+                        <li>
+                        <a href="">
+                          <h4>Magnum Bike Voyager</h4>
+                          <span>Magnum Support > Categories > Touring > Models</span>
+                        </a>
+                      </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="support-hero__image">
+                <div class="media-wrapper">
+                  {%- render 'img',
+                  img: object.image,
+                  img_sm: '',
+                  img_md: '',
+                  img_lg: '',
+                  m_width: '500'
+                -%}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% schema %}
+  {
+  "name": "Support Hero",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Hero Image"
+    },
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Title",
+      "default": "How Can We Help?"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description text",
+      "default": "Use the super powerful search bar you see below."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Support Hero"
+    }
+  ]
+}  
+{% endschema %}

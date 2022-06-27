@@ -1,0 +1,97 @@
+
+/* ------------------------------------------------------------ *\
+  Featured Block
+\* ------------------------------------------------------------ */
+
+.featured-block {
+  &__inner {
+    position: relative;
+  }
+
+  &__image {
+    padding-bottom: 100%;
+
+    @include media-breakpoint-down(sm) {
+      height: rem(410);
+      padding-bottom: 0;
+    }
+
+    img {
+      top: auto;
+      bottom: 0;
+    }
+  }
+
+  &__content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    padding: rem(44);
+    color: $grey-light;
+    overflow-y: auto;
+
+    @include media-breakpoint-down(md) {
+      padding: rem(36);
+    }
+
+    @include media-breakpoint-down(sm) {
+      padding: rem(24);
+    }
+
+    &-inner {
+      max-width: rem(360);
+      flex: 0 1 rem(360);
+
+      @include media-breakpoint-down(sm) {
+        max-width: rem(298);
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: rem(13);
+    font-size: rem(30);
+    line-height: rem(44);
+    color: $white;
+
+    @include media-breakpoint-down(md) {
+      margin-bottom: rem(15);
+      font-size: rem(26);
+      line-height: rem(38);
+    }
+
+    @include media-breakpoint-down(sm) {
+      font-size: rem(30);
+      line-height: rem(36);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__entry {
+    max-width: rem(322);
+    margin-bottom: rem(24);
+    font-size: rem(14);
+    line-height: rem(22);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    p {
+      font-size: inherit;
+      line-height: inherit;
+    }
+  }
+
+  &__btn {
+    min-width: rem(206);
+  }
+}

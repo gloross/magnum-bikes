@@ -1,0 +1,106 @@
+@import '../../utility/variables/colors';
+
+.pswp {
+  &__top-bar {
+    background-color: transparent !important;
+    opacity: 1 !important;
+    right: 40px;
+    top: 40px !important;
+    width: auto !important;
+
+    .pswp__counter {
+      overflow: hidden;
+      opacity: 0;
+    }
+  }
+  &__bottom-bar {
+    position: absolute;
+    bottom: 28px;
+    width: 100%;
+    padding: 0 40px;
+
+    .pswp__counter {
+      display: inline-block;
+      padding-left: 0;
+      left: 0;
+      position: relative;
+    }
+  }
+}
+
+.pswp__button--arrow--left,
+.pswp__button--arrow--right {
+  background-color: $grey-light;
+
+  &:before {
+    background-color: transparent;
+  }
+}
+
+.pswp__item,
+.pswp__bg {
+  background-color: $white;
+}
+
+.pswp__counter {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  color: $grey-light;
+  font-size: 14px;
+}
+
+.pswp__button {
+  background-color: transparent;
+
+  &--zoom {
+    display: block;
+  }
+
+  &.pswp__button--arrow--right,
+  &.pswp__button--arrow--left,
+  &.pswp__button--zoom {
+    &::before {
+      width: 50px;
+      height: 50px;
+      background-position: center;
+      background-size: cover;
+    }
+  }
+
+  &.pswp__button--arrow--right {
+    right: 30px;
+    &::before {
+      background-image: url('icon-right.png');
+    }
+  }
+
+  &.pswp__button--arrow--left {
+    left: 30px;
+    &::before {
+      background-image: url('icon-left.png');
+    }
+  }
+
+  &--close,
+  &--zoom-in,
+  &--zoom-out {
+    background-position: center;
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+  }
+
+  &--close {
+    background-image: url('icon-close.png');
+  }
+
+  &--zoom-in {
+    background-image: url('zoom-in.png');
+  }
+
+  &--zoom-out {
+    background-image: url('zoom-out.png');
+    margin-right: 10px;
+  }
+}

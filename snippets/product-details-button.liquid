@@ -1,0 +1,42 @@
+{% liquid
+  assign mod_variant = mod_variant | default: product.selected_or_first_available_variant
+  assign mod_button_try = mod_button_try | default: false
+  assign show_bis_button = false
+
+  if mod_variant.inventory_management and mod_variant.inventory_quantity <= 0 and mod_variant.available
+    assign show_bis_button = true
+  endif
+%}
+
+<div class="product-details__btn-wrapper">
+  <button
+    type="submit"
+    name="add"
+    data-add-to-cart
+    class="btn btn--blue-fill u-uppercase js-go-cart-add-to-cart{% if show_bis_button %} is-hidden{% else %} is-visible{% endif %}"
+    {%- unless mod_variant.available %} disabled="disabled"{%- endunless -%}>
+    <span data-add-to-cart-text>
+      {%- if mod_variant.available -%}
+        {{- 'products.buttons.add_to_cart' | t -}}
+      {%- else -%}
+        {{- 'products.buttons.sold_out' | t -}}
+      {%- endif -%}
+    </span>
+  </button>
+
+  <a
+    href="#popup-bis"
+    data-popup-button="open"
+    class="btn btn--blue-fill u-uppercase js-button-bis sub_for_updates{% if show_bis_button %} is-visible{% else %} is-hidden{% endif %}">
+    <span>
+      {{- 'products.buttons.back_in_stock' | t -}}
+    </span>
+  </a>
+
+  {%- if mod_button_try -%}
+    {% comment %} <button class="btn btn--outline">
+      <span>Where to Try</span>
+    </button> {% endcomment %}
+    <a href="/pages/store-locator" class="btn btn--outline">Find A Store</a>
+  {%- endif -%}
+</div>

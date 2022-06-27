@@ -1,0 +1,99 @@
+{{ 'component-productSlider.css' | asset_url | stylesheet_tag }}
+{{ 'component-productPhotoGallery.css' | asset_url | stylesheet_tag }}
+<script type="module" src="{{- 'component-productSlider.js' | asset_url -}}"></script>
+<script type="module" src="{{- 'component-productPhotoGallery.js' | asset_url -}}"></script>
+
+<section class="product-details js-product">
+  <div class="product-details__inner">
+    {%comment%}TO DO breadcrumbs!!!{%endcomment%}
+    <div class="breadcrumbs">
+      <a href="{{ product.collections[0].url }}">{{ product.collections[0].title }}</a>/<span>{{ product.title }}</span>
+    </div>
+    <div class="product-details__gallery">
+      {% render 'product-gallery' %}
+    </div>
+    <div class="product-details__col-right">
+      <div class="pswp" role="dialog" aria-hidden="true">
+        <!-- Background of PhotoSwipe.
+              It's a separate element, as animating opacity is faster than rgba(). -->
+        <div class="pswp__bg"></div>
+        <!-- Slides wrapper with overflow:hidden. -->
+        <div class="pswp__scroll-wrap">
+          <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
+          <!-- don't modify these 3 pswp__item elements, data is added later on. -->
+          <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+          </div>
+          <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+          <div class="pswp__ui pswp__ui--fit pswp__ui--over-close">
+            <div class="pswp__top-bar">
+              <div class="pswp__counter"></div>
+              <button class="pswp__button pswp__button--close js-custom-close" title="Close (Esc)">{% render 'icon', icon: 'gallery-close' %}</button>
+              <div class="pswp__preloader">
+                <div class="pswp__preloader__icn">
+                  <div class="pswp__preloader__cut">
+                    <div class="pswp__preloader__donut"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="pswp__bottom-bar">
+              <div class="pswp__counter"></div>
+              <button class="js-zoom-in pswp__button pswp__button--zoom-in" title="Zoom in">
+                {% render 'icon', icon: 'zoom-in' %}
+              </button>
+              <button class="js-zoom-out pswp__button pswp__button--zoom-out" title="Zoom out">
+                {% render 'icon', icon: 'zoom-out' %}
+              </button>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+              <div class="pswp__share-tooltip"></div>
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+            <div class="pswp__caption">
+              <div class="pswp__caption__center"></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="product-details__tags">
+        {% for tag in product.tags %}
+          {% assign tagD = tag | downcase %}
+          {% if 'new' == tagD %}
+            <span>{{ tagD | upcase }}</span>
+          {% endif %}
+          {% if 'sale' == tagD %}
+            <span>{{ tagD | upcase }}</span>
+          {% endif %}
+        {% endfor %}
+      </div>
+      <h1>{{ product.title }}</h1>
+      {% render 'product-form' %}
+
+{%- comment -%}
+<div class="vt-service-promo-content vt-service-promo-default" style="margin: 15px;">At Home Assembly from $135.45 with <img alt="Velotooler" height="12px" class="vt-logo-small" src="https://apps.velotooler.com/p/service-promotional-widget/app/img/dark-logo.png" style="width: auto;display: inline;" >. <a class="vt-learn-more" data-vt-base-path="https://apps.velotooler.com/p/service-promotional-widget" data-vt-learn-more="VSPW_eee127e5-c756-45f5-8734-40f3c529b36e" href="#">Check availability</a></div> <script>var ids='vt-service-promo-scr';if(!document.getElementById(ids)){var s=document.createElement('script'); s.setAttribute('src','https://apps.velotooler.com/p/service-promotional-widget/app/js/vt-app-service-promotional.js?v=1654764913897');s.setAttribute('id', ids);document.body.appendChild(s);}</script>
+{%- endcomment -%}
+      
+      {% comment %} BREAD Button {% endcomment %}
+      {% comment %} <a href="#" class="product-details__link bread-promo bread-modal-button" data-custom=true data-button-location="financing">
+        <div>Get My Rate</div>
+      </a> {% endcomment %}
+      {% if product.available %}
+        <div id="bread-checkout-btn-product" style="width:100%; height:50px; margin:20px 0px; border:none"></div>
+      {% endif %}
+    </div>
+  </div>
+
+</section>
+
+{% schema %}
+{
+  "name": "t:sections.product.name",
+  "tag": "section",
+  "settings": []
+}
+{% endschema %}

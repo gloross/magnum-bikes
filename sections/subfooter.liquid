@@ -1,0 +1,71 @@
+{% assign object = section.settings%}
+<div class="subfooter" style="background: url({{ object.bg_image | img_url: 'master' }}) no-repeat; background-size:cover;background-position:center center;">
+  <div class="subfooter__inner container container--small">
+    <a class="back-to-top" href="#">{% render 'icon', icon: 'arrow-up' %} </a>
+        <ul class="subfooter__list">
+          <li><a href="{{object.link_1_url}}"> {{object.link_1_label}}</a></li>
+          <li><a href="{{object.link_2_url}}">{{object.link_2_label}}</a></li>
+          <li><a href="{{object.link_3_url}}">{{object.link_3_label}}</a></li>
+        </ul>
+        <p class="subfooter__text">{{object.copyright}}</p>
+      </div>
+    </div>
+</div>
+
+{% schema %}
+  {
+  "name": "Subfooter",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Background image"
+    },
+    {
+      "type": "url",
+      "label": "Link 1 URL",
+      "id": "link_1_url"
+    },
+    {
+      "type": "text",
+      "label": "Link 1 label",
+      "id": "link_1_label",
+      "default": "Privacy Policy"
+    },
+    {
+      "type": "url",
+      "label": "Link 2 URL",
+      "id": "link_2_url"
+    },
+    {
+      "type": "text",
+      "label": "Link 2 label",
+      "id": "link_2_label",
+      "default": "Terms of Service"
+    },
+    {
+      "type": "url",
+      "label": "Link 3 URL",
+      "id": "link_3_url"
+    },
+    {
+      "type": "text",
+      "label": "Link 3 label",
+      "id": "link_3_label",
+      "default": "Cookie Policy"
+    },
+    {
+      "type": "text",
+      "label": "Copyright text",
+      "id": "copyright",
+      "default": "© Magnum Electric Bikes 2021. All Rights Reserved."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Subfooter"
+    }
+  ]
+}
+{% endschema %}
+

@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="{{ 'section-main-login.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'section-main-login.css' | asset_url | stylesheet_tag }}</noscript>
+
+<div class="login o-container --medium"></div>
+
+{% schema %}
+
+{
+    "name": "t:sections.login.name",
+    "tag": "section",
+    "settings": []
+}
+
+{% endschema %}
+
+<section class="dashboard-hero">
+    <div class="container container--small">
+        <div class="dashboard-hero__inner js-tabs-user-dashboard">
+            <ul class="dashboard-hero__list">
+                <li>
+                    <a class="dashboard-hero__links " href="">My Bike
+                    </a>
+                </li>
+                <li>
+                    <a class="dashboard-hero__links active" href="">Personal Information
+                    </a>
+                </li>
+                <li>
+                    <a class="dashboard-hero__links" href="">My Orders
+                    </a>
+                </li>
+                <li>
+                    <a class="dashboard-hero__links" href="">Loyalty
+                    </a>
+                </li>
+            </ul>
+
+            <div class="dashboard-hero__tabs active">
+
+            </div>
+        </div>
+    </div>
+</section>

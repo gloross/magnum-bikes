@@ -1,0 +1,15 @@
+{
+  "sections": {
+    "warranty": {
+      "type": "warranty",
+      "settings": {
+        "page_title": "Test Form Page",
+        "page_paragraph": "<p>Fill out the following agreement to register your warranty. For the best service and support please complete all fields as accurately as possible.<\/p>",
+        "page_form": "<iframe class=\"airtable-embed\" src=\"https:\/\/airtable.com\/embed\/shrcXxGmrAOVkok84?backgroundColor=gray\" frameborder=\"0\" onmousewheel=\"\" width=\"100%\" height=\"1630\" style=\"background: transparent; \"><\/iframe>"
+      }
+    }
+  },
+  "order": [
+    "warranty"
+  ]
+}

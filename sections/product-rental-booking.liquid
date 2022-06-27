@@ -1,0 +1,135 @@
+{{ 'component-productSlider.css' | asset_url | stylesheet_tag }}
+{{ 'component-productPhotoGallery.css' | asset_url | stylesheet_tag }}
+<script type="module" src="{{- 'component-productSlider.js' | asset_url -}}"></script>
+<script type="module" src="{{- 'component-productPhotoGallery.js' | asset_url -}}"></script>
+
+{%- assign description = product.metafields.main_section.description -%}
+{%- assign link_text = product.metafields.main_section.link_text -%}
+{%- assign link_url = product.metafields.main_section.link_url -%}
+
+<section class="product-details product-details--rental-booking js-product">
+  <div class="product-details__inner">
+    <div class="product-details__gallery">
+      {%- if product.media.size > 0 -%}
+        <div class="product-details__resize js-product-resize">
+          {% render 'icon', icon: 'resize' %}
+        </div>
+
+        <div class="product-slider swiper-container js-product-slider" itemscope itemtype="http://schema.org/ImageGallery">
+          <div class="swiper-wrapper js-gallery" >
+            {% for media in product.media %}
+              {%- if media.media_type == 'image' -%}
+                <div class="swiper-slide">
+                  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                    {% if product.metafields.nb_product.feature_image %}
+                      <a href="{{ metafields.nb_product.feature_image | img_url: 'master' }}" itemprop="contentUrl" data-size="1024x768">
+                        <div class="media-wrapper">
+                          <img src="{{ product.metafields.nb_product.feature_image | image_url: '450x' }}" alt="" loading="lazy" height="" width="">
+                        </div>
+                      </a>
+                    {% else %}
+                      <a href="{{ media.src | img_url: '1024x' }}" itemprop="contentUrl" data-size="1024x768">
+                        <div class="media-wrapper">
+                          <img src="{{ media.src | image_url: width: 1024 }}" alt="{{- media.alt -}}" loading="lazy">
+                        </div>
+                      </a>
+                    {% endif %}
+                  </figure>
+                </div>
+              {%- endif -%}
+            {% endfor %}
+          </div>
+
+          <div class="product-slider__btn-wrapper">
+            <div class="swiper-button-prev js-swiper-button-prev">
+              {% render 'icon', icon: 'arrow-left' %}
+            </div>
+
+            <div class="swiper-button-next js-swiper-button-next">
+              {% render 'icon', icon: 'arrow-right' %}
+            </div>
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
+
+    <div class="product-details__col-right">
+      <div class="pswp" role="dialog" aria-hidden="true">
+        <!-- Background of PhotoSwipe.
+              It's a separate element, as animating opacity is faster than rgba(). -->
+        <div class="pswp__bg"></div>
+        <!-- Slides wrapper with overflow:hidden. -->
+        <div class="pswp__scroll-wrap">
+          <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
+          <!-- don't modify these 3 pswp__item elements, data is added later on. -->
+          <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+          </div>
+          <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+          <div class="pswp__ui pswp__ui--fit pswp__ui--over-close">
+            <div class="pswp__top-bar">
+              <div class="pswp__counter"></div>
+              <button class="pswp__button pswp__button--close js-custom-close" title="Close (Esc)">{% render 'icon', icon: 'gallery-close' %}</button>
+              <div class="pswp__preloader">
+                <div class="pswp__preloader__icn">
+                  <div class="pswp__preloader__cut">
+                    <div class="pswp__preloader__donut"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="pswp__bottom-bar">
+              <div class="pswp__counter"></div>
+              <button class="js-zoom-in pswp__button pswp__button--zoom-in" title="Zoom in">
+                {% render 'icon', icon: 'zoom-in' %}
+              </button>
+              <button class="js-zoom-out pswp__button pswp__button--zoom-out" title="Zoom out">
+                {% render 'icon', icon: 'zoom-out' %}
+              </button>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+              <div class="pswp__share-tooltip"></div>
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+            <div class="pswp__caption">
+              <div class="pswp__caption__center"></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="product-details__tags">
+        {% for tag in product.tags %}
+          {% assign tagD = tag | downcase %}
+          {% if 'new' == tagD %}
+            <span>{{ tagD | upcase }}</span>
+          {% endif %}
+          {% if 'sale' == tagD %}
+            <span>{{ tagD | upcase }}</span>
+          {% endif %}
+        {% endfor %}
+      </div>
+      <h1>{{product.title}}</h1>
+
+      {%- if description -%}
+        <div class="product-details__entry">
+          {{- description -}}
+        </div><!-- /.product-details__entry -->
+      {%- endif -%}
+
+      {%- if link_text and product.metafields.featured_products.title and product.metafields.featured_products.products -%}
+        <a href="#featured-products" class="product-details__link-alt">
+          {{- link_text -}}
+
+          {%- render 'icon' with 'arrow-up-right' -%}
+        </a><!-- /.product-details__link-alt -->
+      {%- endif -%}
+
+      {% render 'product-form-no-bike' %}
+    </div>
+  </div>
+</section>
+

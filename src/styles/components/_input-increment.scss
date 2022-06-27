@@ -1,0 +1,54 @@
+.input-increment {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &.disable-decrease {
+    .input-increment__cta.js-number-decrease {
+      opacity: 0.3;
+      pointer-events: none;
+    }
+  }
+
+  &__cta {
+    width: rem(24);
+    min-width: rem(24);
+    height: rem(24);
+    border-radius: 50%;
+    border: 1px solid rgba(28, 29, 33, 0.1);
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: rem(14);
+    transition: $t-hover;
+
+    &:hover {
+      color: rgba(0, 0, 0, 0.8);
+    }
+  }
+
+  &__number {
+    width: rem(24);
+    height: rem(24);
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    color: $black;
+    font-size: rem(14);
+    padding: 0;
+    pointer-events: none;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+}

@@ -1,0 +1,23 @@
+.cg-hero {
+  min-height: rem(610);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  @include media-breakpoint-down(sm) {
+    min-height: rem(409);
+  }
+  &__title {
+    color: $white;
+    font-size: rem(64);
+    line-height: rem(64);
+    text-transform: capitalize;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    @include media-breakpoint-down(sm) {
+      font-size: rem(36);
+      line-height: rem(38);
+    }
+  }
+}

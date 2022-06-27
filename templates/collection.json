@@ -1,0 +1,53 @@
+{
+  "sections": {
+    "collection-hero": {
+      "type": "collection-hero",
+      "settings": {
+      }
+    },
+    "collection-filter": {
+      "type": "collection-filter",
+      "settings": {
+        "page_size": 11,
+        "show_more": 4,
+        "show_menu": false,
+        "show_info_card": true,
+        "ic_text": "Everyone has a perfect Magnum match.",
+        "ic_btn_text": "HELP ME CHOOSE",
+        "ic_btn_url": ""
+      }
+    },
+    "find-perfect": {
+      "type": "find-perfect",
+      "disabled": true,
+      "settings": {
+        "section_title": "Let’s find you a perfect match. Or two.",
+        "tagline": "Not sure this one is right for You?",
+        "cta_text": "Help Me Choose",
+        "cta_url": ""
+      }
+    },
+    "featured-bike-slider": {
+      "type": "featured-bike-slider",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "fat-tire-banner": {
+      "type": "fat-tire-banner",
+      "disabled": true,
+      "settings": {
+        "section_title": "Have you seen our Fat Tire Bikes?",
+        "cta_text": "CHECK OUT FAT TIRE BIKES",
+        "cta_url": "shopify:\/\/collections\/fat-tire"
+      }
+    }
+  },
+  "order": [
+    "collection-hero",
+    "collection-filter",
+    "find-perfect",
+    "featured-bike-slider",
+    "fat-tire-banner"
+  ]
+}

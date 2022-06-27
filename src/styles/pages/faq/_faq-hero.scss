@@ -1,0 +1,32 @@
+.faq-hero {
+  padding: rem(118) 0;
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+
+  @include media-breakpoint-down(sm) {
+    padding: rem(104) 0 rem(114);
+  }
+
+  &__inner {
+    .h1 {
+      max-width: rem(430);
+      font-size: rem(56);
+      line-height: line-height(56, 64);
+      font-weight: 700;
+      padding-bottom: rem(30);
+      color: $white;
+
+      @include media-breakpoint-down(sm) {
+        max-width: rem(214);
+        padding-bottom: rem(32);
+        font-size: rem(28);
+        line-height: line-height(28, 36);
+      }
+    }
+
+    .search {
+      max-width: rem(392);
+    }
+  }
+}

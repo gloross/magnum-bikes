@@ -1,0 +1,81 @@
+/* ------------------------------------------------------------ *
+  Articles with Block
+* ------------------------------------------------------------ */
+
+.articles-with-block {
+  padding-bottom: rem(60);
+
+  @include media-breakpoint-down(xs) {
+    padding: rem(40) 0 rem(30);
+  }
+
+  &__inner {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0 rem(-16);
+
+    @include media-breakpoint-down(sm) {
+      margin: 0 rem(-20);
+    }
+  }
+
+  &__item {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 0 rem(16);
+    margin-bottom: 0;
+
+    @include media-breakpoint-down(sm) {
+      flex: 0 0 100%;
+      max-width: 100%;
+      padding: 0;
+      margin-bottom: rem(36);
+    }
+
+    &:nth-child(n+3) {
+      margin-top: rem(106);
+
+      @include media-breakpoint-down(sm) {
+        margin-top: 0;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__head {
+    margin-bottom: rem(50);
+
+    @include media-breakpoint-down(xs) {
+      margin-bottom: rem(40);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__title {
+    font-size: rem(30);
+    line-height: rem(44);
+    color: $machine-grey;
+
+    @include media-breakpoint-down(xs) {
+      font-size: rem(24);
+      line-height: rem(32);
+    }
+  }
+
+  &__foot {
+    padding-top: rem(45);
+    border-top: 2px solid $grey-light-10;
+    margin-top: rem(90);
+
+    @include media-breakpoint-down(sm) {
+      padding-top: rem(32);
+      margin-top: rem(54);
+    }
+  }
+}

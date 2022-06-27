@@ -1,0 +1,27 @@
+.grid-image {
+  display: none;
+  grid-template-columns: repeat(3, minmax(auto, 1fr));
+  grid-column-gap: rem(30);
+  padding-top: rem(20);
+
+  @include media-breakpoint-up(xl) {
+    display: grid;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      width: auto;
+    }
+
+    p {
+      padding-left: rem(18);
+      font-family: $font-light;
+      font-size: rem(18);
+      line-height: line-height(18, 20);
+    }
+  }
+}

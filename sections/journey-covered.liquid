@@ -1,0 +1,85 @@
+{% liquid
+  assign object = section.settings
+  assign blocks = section.blocks
+%}
+<section class="journey-covered">
+  <div class="contianer container--small">
+    <div class="journey-covered__title">
+      <h2 class="h2">{{ object.section_title }} </h2>
+    </div>
+    <div class="journey-covered__inner">
+      {% for block in blocks %}
+      {% assign b = block.settings %}
+      <div class="journey-covered__item">
+        <div class="journey-covered__item-content">
+          <div class="media-wrapper">
+            {%- render 'img',
+            img: b.item_image,
+            img_sm: '',
+            img_md: '',
+            img_lg: '',
+            m_width: '500'
+          -%}
+          </div>
+          <div class="journey-covered__text">
+            <p>{{ b.item_title }}</p>
+            <a href="{{b.item_url}}">{{b.item_cta_label}}{% render 'icon', icon: 'arrow-up-right' %} </a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+
+{% schema %}
+{
+"name": "Journey Covered",
+"max_blocks": 4,
+"settings": [
+{
+  "type": "text",
+  "id": "section_title",
+  "label": "Section title",
+  "default": "We’ve got your entire journey covered."
+}
+],
+"blocks": [
+{
+  "name": "Item",
+  "type": "block",
+  "settings": [
+  {
+    "type": "image_picker",
+    "id": "item_image",
+    "label": "Item image"
+  },
+  {
+    "type": "text",
+    "id": "item_title",
+    "label": "Item title",
+    "default": "Learn everthing you need to know about e-bikes"
+  },
+  {
+    "type": "url",
+    "id": "item_url",
+    "label": "Item CTA URL"
+  },
+  {
+    "type": "text",
+    "id": "item_cta_label",
+    "label": "Item CTA text label",
+    "default": "Go to"
+  }
+  ]
+}
+],
+"presets": [
+  {
+    "name": "Journey Covered"
+  }
+]
+}  
+{% endschema %}
+

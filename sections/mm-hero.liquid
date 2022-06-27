@@ -1,0 +1,41 @@
+{% assign object = section.settings %}
+<section class="mm-hero"
+  style="background-image:linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url({{object.image | img_url: 'master'}}); background-position: center">
+  <div class="container container--small">
+    <div class="mm-hero__inner">
+      <h1 class="h1">
+        {{object.section_title}}
+      </h1>
+      <p>{{object.description}} </p>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+  "name": "MM Hero",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Hero Image"
+    },
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section title",
+      "default": "Magnum Manuals & Assembly Videos"
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": "Section description",
+      "default": "Choose your model below, or search."
+    }
+  ],
+  "presets": [
+    {
+      "name": "MM Hero"
+    }
+  ]
+}  
+{% endschema %}

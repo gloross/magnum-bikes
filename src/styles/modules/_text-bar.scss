@@ -1,0 +1,15 @@
+.text-bar {
+  padding: rem(50) 0 rem(30);
+
+  @include media-breakpoint-up(xl) {
+    padding: rem(140) 0 rem(80);
+  }
+
+  li {
+    margin-right: rem(30);
+    text-transform: uppercase;
+    font-size: rem(25);
+    line-height: line-height(25, 30);
+    font-family: $font-bold;
+  }
+}

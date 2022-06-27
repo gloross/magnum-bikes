@@ -1,0 +1,14 @@
+<div class="accordion js-accordion">
+    {% for block in blocks%}
+    {% assign b = block.settings %}
+    <div class="accordion__item">
+      <button type="button" class="accordion__item-button js-accordion-trigger">{{b.accordion_title}}</button>
+      <div class="accordion__item-info">
+        <div class="accordion__item-info-content js-accordion-content">
+         {{b.accordion_content}}
+        </div>
+    </div>
+    </div>
+    {%endfor%}
+</div>
+

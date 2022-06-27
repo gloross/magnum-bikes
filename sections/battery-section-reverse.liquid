@@ -1,0 +1,55 @@
+{% liquid
+  assign object = section.settings 
+  assign tooltip_content = product.metafields.feel_the_power.tooltip
+  
+  %}
+<div class="battery-section {% if object.reverse == true %}battery-section--reverse{% endif %}">
+    <div class="battery-section__inner">
+        <div class="battery-section__image">
+            <div class="media-wrapper">
+                <img src="{{ product.metafields.second_features.image }}" alt="" loading="lazy" width="" height="">
+            </div>
+        </div>
+        <div class="battery-section__text">
+            <div class="battery-section__text-wrapper">
+                <div class="battery-section__text-top">
+                    <h2 class="h2">{{ product.metafields.second_features.heading }}</h2>
+                    <h5 class="h5">{{ product.metafields.second_features.subheading }}</h5>
+                    <p>{{ product.metafields.second_features.detail }} </p>
+                </div>
+                {% if tooltip_content != blank%}
+                <a class="battery-section__link js-tooltip" data-tippy-content="{{tooltip_content}}" href="{{ object.cta_url }}"> {% render 'icon', icon: 'warning-2' %} {{ object.cta_text }}</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% schema %}
+  {
+  "name": "Feel the power",
+  "settings": [
+  {
+      "type": "checkbox",
+      "id": "reverse",
+      "label": "Reverse img/text position",
+      "default": true
+  },
+    {
+        "type": "url",
+        "label": "CTA URL",
+        "id": "cta_url"
+      },
+      {
+        "type": "text",
+        "label": "CTA TEXT",
+        "id": "cta_text",
+        "default": "How does this affect my ride?"
+      }
+  ],
+  "presets": [
+    {
+      "name": "Feel the power"
+    }
+  ]
+}  
+{% endschema %}

@@ -1,0 +1,40 @@
+<div class="header__nav-dropdown-inner is-active">
+              <a href="" class="header__go-back-mob js-go-back white">
+              {% render 'icon', icon: 'arrow-left-small' %}
+              <span >{{ goBackLink }}</span>
+            </a>
+        <div class="header__nav-dropdown-col-left" style="background: url({{b.bg_image | img_url: 'master'}}) no-repeat; background-size:cover;background-position:center center;">
+            <ul class="header__nav-dropdown-inner-list header__nav-dropdown-inner-list--white">
+                {% for link in linklists[b.why_magnum_menu].links %}
+                <li>
+                    <a href="{{link.url}}">{{link.title}}</a>
+                </li>
+                {%endfor%}
+            </ul>
+        </div>
+        <div class="header__nav-dropdown-col-right">
+            <div class="header__nav-dropdown-col-right-magnum-item">
+                <h2>
+                {{b.right_heading}}
+                </h2>
+                <ul>
+                    <li>
+                        {% if b.icon_1 == blank%}
+                        {% render 'icon', icon: 'box' %}
+                        {%else%}
+                        {{b.icon_1}}
+                        {%endif%}
+                        {{b.description_1}}
+                    </li>
+                    <li>
+                        {% if b.icon_2 == blank%}
+                        {% render 'icon', icon: 'box' %}
+                        {%else%}
+                        {{b.icon_2}}
+                        {%endif%}
+                        {{b.description_2}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>

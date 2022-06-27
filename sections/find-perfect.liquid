@@ -1,0 +1,51 @@
+{% assign object = section.settings %}
+<section class="find-perfect" style="background:linear-gradient(89.95deg, rgba(0, 0, 0, 0.7) 39.63%, rgba(0, 0, 0, 0) 100.28%), url({{object.image | img_url: 'master'}}) no-repeat; background-size:cover;background-position:center center;">
+  <div class="container container--middle">
+    <p>{{object.tagline}}</p>
+    <h2>{{object.section_title}}</h2>
+   <div class="find-perfect__cta">
+      <a href="{{object.cta_url}}" class="btn btn--blue-fill">{{object.cta_text}}</a>
+   </div>
+  </div>
+</section>
+
+{% schema %}
+{
+"name": "Find Perfect",
+"settings": [
+{
+  "type": "text",
+  "id": "section_title",
+  "label": "Section title",
+  "default": "Let’s find you a perfect match. Or two."
+},
+{
+  "type": "text",
+  "id": "tagline",
+  "label": "Tagline",
+  "default": "Not sure this one is right for You?"
+},
+{
+  "type": "image_picker",
+  "id": "image",
+  "label": "Image"
+},
+{
+  "type": "text",
+  "id": "cta_text",
+  "label": "CTA text",
+  "default": "Help Me Choose"
+},
+{
+  "type": "text",
+  "id": "cta_url",
+  "label": "CTA URL"
+}
+],
+"presets": [
+  {
+    "name": "Find Perfect"
+  }
+]
+}  
+{% endschema %}

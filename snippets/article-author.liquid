@@ -1,0 +1,28 @@
+{%- assign mod_name = mod_name | default: false -%}
+{%- assign mod_image = mod_image | default: false -%}
+{%- assign mod_description = mod_description | default: false -%}
+{%- assign mod_class = mod_class | default: false -%}
+
+{%- if mod_name -%}
+  <div class="article-author {% if mod_class %} {{ mod_class }}{% endif %}">
+    {%- if mod_image -%}
+      <div class="article-author__image media-wrapper">
+        {%- render 'img' with img: mod_image -%}
+      </div><!-- /.article-author__image -->
+    {%- endif -%}
+
+    <div class="article-author__content">
+      <p>
+        <span>{{- 'blogs.article_by' | t -}}</span>
+      </p>
+
+      <p>
+        <strong>{{- mod_name -}}</strong>
+      </p>
+    </div><!-- /.article-author__content -->
+
+    {%- if mod_description -%}
+      <div class="article-author__entry">{{- mod_description -}}</div><!-- /.article-author__entry -->
+    {%- endif -%}
+  </div><!-- /.article-author -->
+{%- endif -%}

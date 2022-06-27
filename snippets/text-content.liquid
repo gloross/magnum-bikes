@@ -1,0 +1,8 @@
+{%- assign mod_content = mod_content | default: false -%}
+{%- assign mod_class = mod_class | default: false -%}
+
+{%- if mod_content -%}
+  <div class="text-content{% if mod_class %} {{ mod_class }}{% endif %}">
+    {{- mod_content -}}
+  </div><!-- /.text-content -->
+{%- endif -%}

@@ -1,0 +1,97 @@
+{% liquid
+  assign object = section.settings
+  assign blocks = section.blocks
+%}
+<section class="about-journey">
+  <div class="container container--small">
+    <div class="about-journey__inner">
+      <div class="about-journey__col-left">
+        <div class="about-journey__text-img">
+          {% render 'icon', icon: 'map-big' %}
+          <h2 class="h2">{{ object.section_title }}</h2>
+          <p>{{ object.description}}</p>
+        </div>
+      </div>
+      <div class="about-journey__col-right">
+        <ul class="about-journey__list">
+        {% for block in blocks %}
+        {% assign b = block.settings %}
+        <li class="about-journey__item">
+          {% render 'icon', icon: b.icon_picker %}
+          <div class="about-journey__item-text">
+            <h4 class="h4">{{ b.item_title}}</h4>
+            {{ b.item_content }}
+          </div>
+        </li>
+        {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+"name": "About Journey",
+"max_blocks": 3,
+"settings": [
+{
+  "type": "text",
+  "id": "section_title",
+  "label": "Section title",
+  "default": "We got your entire journey covered."
+},
+{
+  "type": "textarea",
+  "id": "description",
+  "label": "Section description",
+  "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+}
+],
+"blocks": [
+{
+  "name": "Item",
+  "type": "block",
+  "settings": [
+  {
+    "type": "select",
+    "id": "icon_picker",
+    "label": "Select icon",
+    "options": [
+      {
+        "value": "time-icon",
+        "label": "Time Icon"
+      },
+      {
+        "value": "user-talk",
+        "label": "User talk"
+      },
+      {
+        "value": "users",
+        "label": "Users"
+      }
+    ],
+    "default": "time-icon"
+  },
+  {
+    "type": "text",
+    "id": "item_title",
+    "label": "Item title",
+    "default": "Ride Now, Pay Later"
+  },
+  {
+    "type": "richtext",
+    "id": "item_content",
+    "label": "Item text content",
+    "default": "<p>We offer payment in monthly installments. <br> Get and enjoy your ride now and pay later.</p>"
+  }
+  ]
+}
+],
+"presets": [
+  {
+    "name": "About Journey"
+  }
+]
+}  
+{% endschema %}

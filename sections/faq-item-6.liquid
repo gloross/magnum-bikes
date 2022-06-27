@@ -1,0 +1,65 @@
+{% liquid
+    assign object = section.settings
+    assign blocks = section.blocks
+  %}
+  {% for block in blocks %}
+  {% assign b = block.settings %}
+  {% case block.type %}
+  {% when 'Accordion'%}
+  <div class="accordion__item">
+    <button type="button" class="accordion__item-button js-accordion-trigger">
+      <span>{{b.question}}</span>
+      {% if forloop.first %}
+      <span class="accordion__small-info">{{forloop.length}} Questions</span>
+      {% endif %}
+    </button>
+    <div class="accordion__item-info">
+      <div class="accordion__item-info-content js-accordion-content">
+      {{b.answer}}
+    </div>
+    </div>
+  </div>
+  {% when 'HTML'%}
+  {{b.html_content}}
+  {% endcase %}
+  {% endfor %}
+  
+  {% schema %}
+  {
+  "name": "FAQ tab 6",
+  "class": "accordion accordion--top-question js-accordion",
+  "settings": [
+  ],
+  "blocks": [
+  {
+    "name": "QA item accordion",
+    "type": "Accordion",
+    "settings": [
+    {
+      "type": "text",
+      "id": "question",
+      "label": "Question",
+      "default": "Question goes here"
+    },
+    {
+      "type": "html",
+      "id": "answer",
+      "label": "Answer",
+      "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>"    
+    }
+    ]
+  },
+  {
+    "name": "QA item HTML",
+    "type": "HTML",
+    "settings": [
+    {
+      "type": "html",
+      "id": "html_content",
+      "label": "HTML content"
+    }
+    ]
+  }
+  ]
+  }  
+  {% endschema %}

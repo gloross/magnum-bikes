@@ -1,0 +1,23 @@
+{% liquid
+assign b = block.settings
+assign video_id = b.v_cta_url | split: '?v=' | last 
+%}
+<div class="mm-item-card">
+  <div class="mm-item-card__content">
+    <div class="mm-item-card__image">
+      {%
+        render 'img',
+        img: b.image
+        %}
+      <div class="mm-item-card__cta">
+        <a class="btn btn--black-fill" href="{{b.m_cta_url}} " target="_blank"> {{b.m_cta_text}}</a>
+        {% if  b.v_cta_url != blank %}
+          <a class="btn btn--blue-fill js-video-btn" data-video-id="{{video_id}}" href="{{b.v_cta_url}}">{{b.v_cta_text}}</a>
+        {% endif %}
+      </div>
+    </div>
+    <div class="mm-item-card__text">
+      <h4 class="h4">{{ b.title }}</h4>
+    </div>
+</div>
+</div>

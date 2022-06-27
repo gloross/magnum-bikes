@@ -1,0 +1,185 @@
+{% liquid
+  assign image_1 = product.metafields.main_gallery.url_image_1
+  assign alt_1 = product.metafields.main_gallery.image_1_alt_text
+  assign image_2 = product.metafields.main_gallery.url_image_2
+  assign alt_2 = product.metafields.main_gallery.image_2_alt_text
+  assign image_3 = product.metafields.main_gallery.url_image_3
+  assign alt_3 = product.metafields.main_gallery.image_3_alt_text
+  assign image_4 = product.metafields.main_gallery.url_image_4
+  assign alt_4 = product.metafields.main_gallery.image_4_alt_text
+  assign image_5 = product.metafields.main_gallery.url_image_5
+  assign alt_5 = product.metafields.main_gallery.image_5_alt_text
+  assign image_6 = product.metafields.main_gallery.url_image_6
+  assign alt_6 = product.metafields.main_gallery.image_6_alt_text
+%}
+
+{% capture variant_gallery %}
+  {% for variant in product.variants %}
+
+    {% capture variant_1 %}
+      {% if variant.metafields.variant.image_1 != blank %}
+        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+          <a href="{{ variant.metafields.variant.image_1 }}" itemprop="contentUrl" data-size="1024x768">
+            <img src="{{ variant.metafields.variant.image_1 }}" alt="{{alt_1}}"/>
+          </a>
+        </figure>
+      {% endif %}
+    {% endcapture %}
+
+    {% capture variant_2 %}
+      {% if variant.metafields.variant.image_2 != blank %}
+        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+          <a href="{{ variant.metafields.variant.image_2 }}" itemprop="contentUrl" data-size="1024x768">
+              <img loading="lazy" src="{{ variant.metafields.variant.image_2 }}" alt="{{alt_1}}"/>
+          </a>
+        </figure>
+      {% endif %}
+    {% endcapture %}
+
+    {% capture variant_3 %}
+      {% if variant.metafields.variant.image_3 != blank %}
+        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+          <a href="{{ variant.metafields.variant.image_3 }}" itemprop="contentUrl" data-size="1024x768">
+            <img loading="lazy" src="{{ variant.metafields.variant.image_3 }}" alt="{{alt_1}}"/>
+          </a>
+        </figure>
+      {% endif %}
+    {% endcapture %}
+
+    {% if forloop.first  %}
+      {% capture variant_4 %}
+        {% if variant.metafields.variant.image_4 != blank %}
+          <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <a href="{{ variant.metafields.variant.image_4 }}" itemprop="contentUrl" data-size="1024x768">
+              <img src="{{ variant.metafields.variant.image_4 }}" alt="{{alt_4}}"/>
+            </a>
+          </figure>
+        {% endif %}
+      {% endcapture %}
+
+      {% capture variant_5 %}
+        {% if variant.metafields.variant.image_5 != blank %}
+          <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <a href="{{ variant.metafields.variant.image_5 }}" itemprop="contentUrl" data-size="1024x768">
+              <img loading="lazy" src="{{ variant.metafields.variant.image_5 }}" alt="{{alt_5}}"/>
+            </a>
+          </figure>
+        {% endif %}
+      {% endcapture %}
+
+      {% capture variant_6 %}
+        {% if variant.metafields.variant.image_6 != blank %}
+          <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <a href="{{ variant.metafields.variant.image_6 }}" itemprop="contentUrl" data-size="1024x768">
+              <img loading="lazy" src="{{ variant.metafields.variant.image_6 }}" alt="{{alt_6}}"/>
+            </a>
+          </figure>
+        {% endif %}
+      {% endcapture %}
+
+      {% capture variant_7 %}
+        {% if variant.metafields.variant.image_7 != blank %}
+          <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <a href="{{ variant.metafields.variant.image_7 }}" itemprop="contentUrl" data-size="1024x768">
+              <img src="{{ variant.metafields.variant.image_7 }}" alt="{{alt_7}}"/>
+            </a>
+          </figure>
+        {% endif %}
+      {% endcapture %}
+
+      {% capture variant_8 %}
+        {% if variant.metafields.variant.image_8 != blank %}
+          <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <a href="{{ variant.metafields.variant.image_8 }}" itemprop="contentUrl" data-size="1024x768">
+              <img loading="lazy" src="{{ variant.metafields.variant.image_8 }}" alt="{{alt_8}}"/>
+            </a>
+          </figure>
+        {% endif %}
+      {% endcapture %}
+
+      {% capture variant_9 %}
+        {% if variant.metafields.variant.image_9 != blank %}
+          <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <a href="{{ variant.metafields.variant.image_9 }}" itemprop="contentUrl" data-size="1024x768">
+              <img loading="lazy" src="{{ variant.metafields.variant.image_9 }}" alt="{{alt_9}}"/>
+            </a>
+          </figure>
+        {% endif %}
+      {% endcapture %}
+
+      {% capture variant_10 %}
+        {% if variant.metafields.variant.image_10 != blank %}
+          <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <a href="{{ variant.metafields.variant.image_10 }}" itemprop="contentUrl" data-size="1024x768">
+              <img loading="lazy" src="{{ variant.metafields.variant.image_10 }}" alt="{{alt_10}}"/>
+            </a>
+          </figure>
+        {% endif %}
+      {% endcapture %}
+    {% endif %}
+
+    {% if variant_1 != blank or variant_2 != blank or variant_3 != blank %}
+      <li class="swiper-slide" data-variant="{{ variant.id }}" style="display:none">
+        {{ variant_1 }}
+        {{ variant_2 }}
+        {{ variant_3 }}
+      </li>
+    {% endif %}
+    {% if variant_1 != blank or variant_2 != blank or variant_3 != blank %}
+      <li class="swiper-slide" data-variant="{{ variant.id }}" style="display:none">
+        {{ variant_2 }}
+        {{ variant_3 }}
+        {{ variant_1 }}
+      </li>
+    {% endif %}
+    {% if variant_1 != blank or variant_2 != blank or variant_3 != blank %}
+      <li class="swiper-slide" data-variant="{{ variant.id }}" style="display:none">
+        {{ variant_3 }}
+        {{ variant_2 }}
+        {{ variant_1 }}
+      </li>
+    {% endif %}
+
+  {% endfor %}
+{% endcapture %}
+<div class="product-details__resize js-product-resize">
+  {% render 'icon', icon: 'resize' %}
+</div>
+<div class="product-slider swiper-container js-product-slider">
+  <ul class="swiper-wrapper js-gallery">
+    {{ variant_gallery }}
+    {% for image in product.images %}
+      <li class="swiper-slide">
+        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+          <a href="{{ image | img_url: '1024x' }}" itemprop="contentUrl" data-size="1024x768">
+            <div class="media-wrapper">
+              <img height="" loading="lazy" src="{{ image | img_url: '1024x' }}" width="" alt="{{alt_1}}"/>
+            </div>
+          </a>
+        </figure>
+        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+          <a href="https://via.placeholder.com/1024x768" itemprop="contentUrl" data-size="1024x768">
+            <div class="media-wrapper">
+              <img height="" loading="lazy" src="https://via.placeholder.com/1024x768" width="" alt="{{alt_1}}"/>
+            </div>
+          </a>
+        </figure>
+        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+          <a href="https://via.placeholder.com/1024x768" itemprop="contentUrl" data-size="1024x768">
+            <div class="media-wrapper">
+              <img height="" loading="lazy" src="https://via.placeholder.com/1024x768" width="" alt="{{alt_1}}"/>
+            </div>
+          </a>
+        </figure>
+      </li>
+    {% endfor %}
+  </ul>
+  <div class="product-slider__btn-wrapper">
+    <div class="swiper-button-prev js-swiper-button-prev">
+      {% render 'icon', icon: 'arrow-left' %}
+    </div>
+    <div class="swiper-button-next js-swiper-button-next">
+      {% render 'icon', icon: 'arrow-right' %}
+    </div>
+  </div>
+</div>

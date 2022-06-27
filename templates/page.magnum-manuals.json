@@ -1,0 +1,533 @@
+{
+  "sections": {
+    "hero": {
+      "type": "mm-hero",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Hero_FAQ.png",
+        "section_title": "Magnum Manuals & Assembly Videos",
+        "description": "Choose your Magnum Bike model below."
+      }
+    },
+    "search-item": {
+      "type": "mm-search",
+      "blocks": {
+        "f2a5b7e7-0ac7-4a62-9d4b-a15920689609": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Magnum_Cosmo.jpg",
+            "title": "Magnum Cosmo",
+            "m_cta_text": "DOWNLOAD MANUAL",
+            "m_cta_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0608\/6072\/7509\/files\/Magnum-Cosmopolitan-Manual.pdf?v=1646041416",
+            "v_cta_text": "View Assembly Video",
+            "v_cta_url": "https:\/\/www.youtube.com\/watch?v=uARsWUtstGI"
+          }
+        },
+        "528b1f71-c620-4dc0-be42-c2f517dbaf92": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/CosmoS-Green-Black-Drive.jpg",
+            "title": "Magnum Cosmo S",
+            "m_cta_text": "DOWNLOAD MANUAL",
+            "m_cta_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0608\/6072\/7509\/files\/2021-12-13-CosmoS-Manual.pdf?v=1646041566",
+            "v_cta_text": "View Assembly Video",
+            "v_cta_url": "https:\/\/www.youtube.com\/watch?v=uARsWUtstGI"
+          }
+        },
+        "02739d3b-db0f-40a2-b3c6-d60cfbc34c84": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/CosmoX-Black-Gray-Drive.jpg",
+            "title": "Magnum Cosmo X",
+            "m_cta_text": "DOWNLOAD MANUAL",
+            "m_cta_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0608\/6072\/7509\/files\/2021-12-13-CosmoX-Manual.pdf?v=1646041567",
+            "v_cta_text": "View Assembly Video",
+            "v_cta_url": "https:\/\/www.youtube.com\/watch?v=uARsWUtstGI"
+          }
+        },
+        "bcf13a68-e4cf-4c45-ae79-fe80e1bffd43": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/CosmoPlus-Blue-Black-Drive_cdf39c03-3f67-4cb2-b7f2-343f97bf5f0f.jpg",
+            "title": "Magnum Cosmo+",
+            "m_cta_text": "DOWNLOAD MANUAL",
+            "m_cta_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0608\/6072\/7509\/files\/2021-12-13-CosmoPlus-Manual.pdf?v=1646041567",
+            "v_cta_text": "View Assembly Video",
+            "v_cta_url": "https:\/\/www.youtube.com\/watch?v=uARsWUtstGI"
+          }
+        },
+        "ab6ec40f-3fdd-41dc-b936-a768e6475683": {
+          "type": "block",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Magnum_Cruiser.jpg",
+            "title": "Magnum Cruiser NEW",
+            "m_cta_text": "DOWNLOAD MANUAL",
+            "m_cta_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0608\/6072\/7509\/files\/Magnum-Low-rider-Cruiser-Manual-compressed.pdf?v=1646041955",
+            "v_cta_text": "",
+            "v_cta_url": ""
+          }
+        },
+        "9a26d999-0e3e-4337-8436-e57f50db2f82": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Vector.jpg",
+            "title": "Magnum Cruiser",
+            "m_cta_text": "DOWNLOAD MANUAL",
+            "m_cta_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0608\/6072\/7509\/files\/Magnum-Low-rider-Cruiser-Manual-compressed.pdf?v=1646041955",
+            "v_cta_text": "",
+            "v_cta_url": ""
+          }
+        },
+        "5c6047cd-24b5-4b0e-81fb-47020d7390e9": {
+          "type": "block",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/LowRider-Black-Copper-Drive-Discontinued.jpg",
+            "title": "Magnum Low rider NEW",
+            "m_cta_text": "DOWNLOAD MANUAL",
+            "m_cta_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0608\/6072\/7509\/files\/Magnum-Low-rider-Cruiser-Manual-compressed.pdf?v=1646041955",
+            "v_cta_text": "",
+            "v_cta_url": ""
+          }
+        },
+        "374b6110-215c-46d1-a373-792d567572e8": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Vector.jpg",
+            "title": "Magnum Low rider",
+            "m_cta_text": "DOWNLOAD MANUAL",
+            "m_cta_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0608\/6072\/7509\/files\/Magnum-Low-rider-Cruiser-Manual-compressed.pdf?v=1646041955",
+            "v_cta_text": "",
+            "v_cta_url": ""
+          }
+        },
+        "cb584dd3-cab5-468b-b624-9c2a198bad17": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Vector.jpg",
+            "title": "Magnum Classic High Step",
+            "m_cta_text": "DOWNLOAD MANUAL",
+            "m_cta_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0608\/6072\/7509\/files\/Magnum-Classic-36-english-manual.pdf?v=1651648507",
+            "v_cta_text": "",
+            "v_cta_url": ""
+          }
+        },
+        "2a599227-092c-49d6-b114-13338289c5e7": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Vector.jpg",
+            "title": "Magnum Classic II High Step",
+            "m_cta_text": "DOWNLOAD MANUAL",
+            "m_cta_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0608\/6072\/7509\/files\/Magnum-Classic-36-english-manual.pdf?v=1651648507",
+            "v_cta_text": "",
+            "v_cta_url": ""
+          }
+        },
+        "165e390f-7ae5-48b7-a705-1eb4aee3efba": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Vector.jpg",
+            "title": "Magnum Classic II Low Step",
+            "m_cta_text": "DOWNLOAD MANUAL",
+            "m_cta_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0608\/6072\/7509\/files\/Magnum-Classic-36-english-manual.pdf?v=1651648507",
+            "v_cta_text": "",
+            "v_cta_url": ""
+          }
+        },
+        "2c03b20f-c095-447f-82ae-84330b7f135f": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Vector.jpg",
+            "title": "Magnum Classic Low Step",
+            "m_cta_text": "DOWNLOAD MANUAL",
+            "m_cta_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0608\/6072\/7509\/files\/Magnum-Classic-36-english-manual.pdf?v=1651648507",
+            "v_cta_text": "",
+            "v_cta_url": ""
+          }
+        },
+        "71d9a340-db13-4ac1-838c-eb4024c25b75": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Vector.jpg",
+            "title": "Magnum Mi5 27.5\"",
+            "m_cta_text": "DOWNLOAD MANUAL",
+            "m_cta_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0608\/6072\/7509\/files\/Mi51.pdf?v=1651648421",
+            "v_cta_text": "",
+            "v_cta_url": ""
+          }
+        },
+        "436d4b53-1ff8-4d87-b65b-41c9f4a865aa": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Vector.jpg",
+            "title": "Magnum Mi5 29\"",
+            "m_cta_text": "DOWNLOAD MANUAL",
+            "m_cta_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0608\/6072\/7509\/files\/Mi51.pdf?v=1651648421",
+            "v_cta_text": "",
+            "v_cta_url": ""
+          }
+        },
+        "214702fb-bf55-4470-a2e7-4523a3400764": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Vector.jpg",
+            "title": "Magnum Premium High Step",
+            "m_cta_text": "DOWNLOAD MANUAL",
+            "m_cta_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0608\/6072\/7509\/files\/premium-manual_c860ca30-c0a9-453a-af47-5be281ce276a.pdf?v=1651648054",
+            "v_cta_text": "",
+            "v_cta_url": ""
+          }
+        },
+        "1f15b16e-61b3-425e-bc1b-476c035b66f5": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Vector.jpg",
+            "title": "Magnum Premium Low Step",
+            "m_cta_text": "DOWNLOAD MANUAL",
+            "m_cta_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0608\/6072\/7509\/files\/premium-manual_c860ca30-c0a9-453a-af47-5be281ce276a.pdf?v=1651648054",
+            "v_cta_text": "",
+            "v_cta_url": ""
+          }
+        },
+        "461a28a1-20a6-4684-84a7-d0fe7b19ab56": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Vector.jpg",
+            "title": "Magnum Ui5",
+            "m_cta_text": "DOWNLOAD MANUAL",
+            "m_cta_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0608\/6072\/7509\/files\/Ui5-Manual.pdf?v=1651647904",
+            "v_cta_text": "",
+            "v_cta_url": ""
+          }
+        },
+        "20a6161d-041b-4456-9a5b-44cc77d4ea5d": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Vector.jpg",
+            "title": "Magnum Ui6",
+            "m_cta_text": "DOWNLOAD MANUAL",
+            "m_cta_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0608\/6072\/7509\/files\/Ui6-Manual.pdf?v=1651647802",
+            "v_cta_text": "",
+            "v_cta_url": ""
+          }
+        },
+        "ac4029a2-a554-48db-8b2f-0590699d48b1": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Vector.jpg",
+            "title": "Magnum Ui6+",
+            "m_cta_text": "DOWNLOAD MANUAL",
+            "m_cta_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0608\/6072\/7509\/files\/Ui6-Manual.pdf?v=1651647802",
+            "v_cta_text": "",
+            "v_cta_url": ""
+          }
+        },
+        "6232b61f-22b9-4a6b-9eaa-f4320b5f399f": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Metro750-White-Blue-Drive.jpg",
+            "title": "Magnum Metro 750",
+            "m_cta_text": "DOWNLOAD MANUAL",
+            "m_cta_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0608\/6072\/7509\/files\/Metro-750-Manual-1.pdf?v=1646041644",
+            "v_cta_text": "View Assembly Video",
+            "v_cta_url": "https:\/\/www.youtube.com\/watch?v=1ia-cGpB81s"
+          }
+        },
+        "c7d7d454-8349-4b8d-8848-3298136caa66": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/MetroS-White-Silver-Drive.jpg",
+            "title": "Magnum Metro S",
+            "m_cta_text": "DOWNLOAD MANUAL",
+            "m_cta_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0608\/6072\/7509\/files\/Metro-S-Manual.pdf?v=1646041644",
+            "v_cta_text": "View Assembly Video",
+            "v_cta_url": "https:\/\/www.youtube.com\/watch?v=1ia-cGpB81s"
+          }
+        },
+        "d72b2f09-e667-4ab5-852f-a3ee588ef4e8": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Magnum_Metro_X.jpg",
+            "title": "Magnum Metro X",
+            "m_cta_text": "DOWNLOAD MANUAL",
+            "m_cta_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0608\/6072\/7509\/files\/Metro-X-Manual.pdf?v=1646047742",
+            "v_cta_text": "View Assembly Video",
+            "v_cta_url": "https:\/\/www.youtube.com\/watch?v=1ia-cGpB81s"
+          }
+        },
+        "6abc5ecd-71e0-4852-9b5a-c58ddd9733e9": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Vector.jpg",
+            "title": "Magnum Metro+ High Step",
+            "m_cta_text": "DOWNLOAD MANUAL",
+            "m_cta_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0608\/6072\/7509\/files\/FINAL-METRO-METRO-OWNERS-MANUAL.pdf?v=1646041924",
+            "v_cta_text": "View Assembly Video",
+            "v_cta_url": "https:\/\/www.youtube.com\/watch?v=QdaE-d3dodk"
+          }
+        },
+        "bb3a2c8b-507f-458d-bef3-7e68d0d85cac": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Vector.jpg",
+            "title": "Magnum Metro+ Low Step",
+            "m_cta_text": "DOWNLOAD MANUAL",
+            "m_cta_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0608\/6072\/7509\/files\/FINAL-METRO-METRO-OWNERS-MANUAL.pdf?v=1646041924",
+            "v_cta_text": "View Assembly Video",
+            "v_cta_url": "https:\/\/www.youtube.com\/watch?v=xAE7jn5EANw"
+          }
+        },
+        "4bd59e7e-5ba6-4857-b4d3-5c36b2178c8f": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Magnum_Navigator_S.jpg",
+            "title": "Magnum Navigator S",
+            "m_cta_text": "DOWNLOAD MANUAL",
+            "m_cta_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0608\/6072\/7509\/files\/Magnum-Navigator-Voyager-Manual.pdf?v=1646041925",
+            "v_cta_text": "View Assembly Video",
+            "v_cta_url": "https:\/\/www.youtube.com\/watch?v=so-MQ6GCJAw"
+          }
+        },
+        "a1bc40e9-7a57-436f-b601-65ea4a262783": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Magnum_Navigator_X.jpg",
+            "title": "Magnum Navigator X",
+            "m_cta_text": "DOWNLOAD MANUAL",
+            "m_cta_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0608\/6072\/7509\/files\/Magnum-Navigator-Voyager-Manual.pdf?v=1646041925",
+            "v_cta_text": "View Assembly Video",
+            "v_cta_url": "https:\/\/www.youtube.com\/watch?v=so-MQ6GCJAw"
+          }
+        },
+        "6fedaa09-ed1e-4fe3-8eee-ad53be8ad3cd": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Magnum_Nomad.jpg",
+            "title": "Magnum Nomad",
+            "m_cta_text": "DOWNLOAD MANUAL",
+            "m_cta_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0608\/6072\/7509\/files\/Magnum-Bikes-Nomad-Manual.pdf?v=1646041926",
+            "v_cta_text": "View Assembly Video",
+            "v_cta_url": "https:\/\/www.youtube.com\/watch?v=LugX9f3Qd1c"
+          }
+        },
+        "934a4486-2557-4daf-86ee-74f336e69802": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Vector.jpg",
+            "title": "Magnum Pathfinder 350",
+            "m_cta_text": "DOWNLOAD MANUAL",
+            "m_cta_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0608\/6072\/7509\/files\/2021-12-21-Pathfinder-350-Manual.pdf?v=1646041924",
+            "v_cta_text": "View Assembly Video",
+            "v_cta_url": "https:\/\/www.youtube.com\/watch?v=GZax7Sn0JMs"
+          }
+        },
+        "e2febd79-42eb-4052-bf68-828f7c479de3": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Magnum_Pathfinder_500W.jpg",
+            "title": "Magnum Pathfinder 500",
+            "m_cta_text": "DOWNLOAD MANUAL",
+            "m_cta_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0608\/6072\/7509\/files\/2022-06-14-Pathfinder-500-Manual.pdf?v=1655469409",
+            "v_cta_text": "View Assembly Video",
+            "v_cta_url": "https:\/\/www.youtube.com\/watch?v=GZax7Sn0JMs"
+          }
+        },
+        "a13e5090-006e-4396-9f75-12fd756fae20": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Magnum_Pathfinder_T.jpg",
+            "title": "Magnum Pathfinder T",
+            "m_cta_text": "DOWNLOAD MANUAL",
+            "m_cta_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0608\/6072\/7509\/files\/2021-12-21-Pathfinder-T-Manual.pdf?v=1646041924",
+            "v_cta_text": "View Assembly Video",
+            "v_cta_url": "https:\/\/www.youtube.com\/watch?v=GZax7Sn0JMs"
+          }
+        },
+        "85ba9bcc-6a30-4cb2-897b-acafcd95b8a1": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Magnum_Payload.jpg",
+            "title": "Magnum Payload",
+            "m_cta_text": "DOWNLOAD MANUAL",
+            "m_cta_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0608\/6072\/7509\/files\/Magnum-Payload-Manual.pdf?v=1646042843",
+            "v_cta_text": "",
+            "v_cta_url": ""
+          }
+        },
+        "09509961-4eff-4594-9794-03f514d12ac5": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Vector.jpg",
+            "title": "Magnum Peak 27.5\"",
+            "m_cta_text": "DOWNLOAD MANUAL",
+            "m_cta_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0608\/6072\/7509\/files\/FINAL-MAGNUM-PEAK-OWNERS-MANUAL.pdf?v=1646042843",
+            "v_cta_text": "",
+            "v_cta_url": ""
+          }
+        },
+        "20219f76-ce18-42b4-ae8c-39a2c07b8ee3": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Vector.jpg",
+            "title": "Magnum Peak 29\"",
+            "m_cta_text": "DOWNLOAD MANUAL",
+            "m_cta_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0608\/6072\/7509\/files\/FINAL-MAGNUM-PEAK-OWNERS-MANUAL.pdf?v=1646042843",
+            "v_cta_text": "",
+            "v_cta_url": ""
+          }
+        },
+        "eb010e60-63dc-475d-97ac-bb8a3d0193bb": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Magnum_Peak_T5.jpg",
+            "title": "Magnum Peak T5",
+            "m_cta_text": "DOWNLOAD MANUAL",
+            "m_cta_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0608\/6072\/7509\/files\/FINAL-MAGNUM-PEAK-OWNERS-MANUAL.pdf?v=1646042843",
+            "v_cta_text": "View Assembly Video",
+            "v_cta_url": "https:\/\/www.youtube.com\/watch?v=wVIJ-YuF4hM"
+          }
+        },
+        "ca83982b-bd23-4b94-af66-a08c919a83f6": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Vector.jpg",
+            "title": "Premium II HS",
+            "m_cta_text": "DOWNLOAD MANUAL",
+            "m_cta_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0608\/6072\/7509\/files\/premium-manual.pdf?v=1646042842",
+            "v_cta_text": "",
+            "v_cta_url": ""
+          }
+        },
+        "83eeb286-b051-4736-ac4d-8d1959321d09": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Vector.jpg",
+            "title": "Premium II LS",
+            "m_cta_text": "DOWNLOAD MANUAL",
+            "m_cta_url": "",
+            "v_cta_text": "",
+            "v_cta_url": ""
+          }
+        },
+        "b8e96bf7-50cc-40f5-8157-342f7eea8f45": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Magnum_Ranger.jpg",
+            "title": "Magnum Ranger",
+            "m_cta_text": "DOWNLOAD MANUAL",
+            "m_cta_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0608\/6072\/7509\/files\/Magnum-Ranger-Manual.pdf?v=1646042843",
+            "v_cta_text": "",
+            "v_cta_url": ""
+          }
+        },
+        "7aa72c90-1728-459e-9702-1b9c855e6716": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Magnum_Scout.jpg",
+            "title": "Magnum Scout",
+            "m_cta_text": "DOWNLOAD MANUAL",
+            "m_cta_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0608\/6072\/7509\/files\/Scout-Manual.pdf?v=1646042843",
+            "v_cta_text": "View Assembly Video",
+            "v_cta_url": "https:\/\/www.youtube.com\/watch?v=pY-OLeFqhok"
+          }
+        },
+        "4497436e-d5e5-4f5c-a1b3-343aa2266fdf": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Vector.jpg",
+            "title": "Magnum Summit 27.5\"",
+            "m_cta_text": "DOWNLOAD MANUAL",
+            "m_cta_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0608\/6072\/7509\/files\/Magnum-Summit-48V.pdf?v=1646042843",
+            "v_cta_text": "View Assembly Video",
+            "v_cta_url": "https:\/\/www.youtube.com\/watch?v=kRkPJiZZzM4"
+          }
+        },
+        "8b35bb57-a6f9-46b3-977c-5135f3475690": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Vector.jpg",
+            "title": "Magnum Summit 29\"",
+            "m_cta_text": "DOWNLOAD MANUAL",
+            "m_cta_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0608\/6072\/7509\/files\/Magnum-Summit-48V.pdf?v=1646042843",
+            "v_cta_text": "View Assembly Video",
+            "v_cta_url": "https:\/\/www.youtube.com\/watch?v=kRkPJiZZzM4"
+          }
+        },
+        "d4a037b5-aaea-42d6-ad31-2265d6980692": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Vector.jpg",
+            "title": "Magnum Voyager",
+            "m_cta_text": "DOWNLOAD MANUAL",
+            "m_cta_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0608\/6072\/7509\/files\/Magnum-Navigator-Voyager-Manual.pdf?v=1646041925",
+            "v_cta_text": "",
+            "v_cta_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "f2a5b7e7-0ac7-4a62-9d4b-a15920689609",
+        "528b1f71-c620-4dc0-be42-c2f517dbaf92",
+        "02739d3b-db0f-40a2-b3c6-d60cfbc34c84",
+        "bcf13a68-e4cf-4c45-ae79-fe80e1bffd43",
+        "ab6ec40f-3fdd-41dc-b936-a768e6475683",
+        "9a26d999-0e3e-4337-8436-e57f50db2f82",
+        "5c6047cd-24b5-4b0e-81fb-47020d7390e9",
+        "374b6110-215c-46d1-a373-792d567572e8",
+        "cb584dd3-cab5-468b-b624-9c2a198bad17",
+        "2a599227-092c-49d6-b114-13338289c5e7",
+        "165e390f-7ae5-48b7-a705-1eb4aee3efba",
+        "2c03b20f-c095-447f-82ae-84330b7f135f",
+        "71d9a340-db13-4ac1-838c-eb4024c25b75",
+        "436d4b53-1ff8-4d87-b65b-41c9f4a865aa",
+        "214702fb-bf55-4470-a2e7-4523a3400764",
+        "1f15b16e-61b3-425e-bc1b-476c035b66f5",
+        "461a28a1-20a6-4684-84a7-d0fe7b19ab56",
+        "20a6161d-041b-4456-9a5b-44cc77d4ea5d",
+        "ac4029a2-a554-48db-8b2f-0590699d48b1",
+        "6232b61f-22b9-4a6b-9eaa-f4320b5f399f",
+        "c7d7d454-8349-4b8d-8848-3298136caa66",
+        "d72b2f09-e667-4ab5-852f-a3ee588ef4e8",
+        "6abc5ecd-71e0-4852-9b5a-c58ddd9733e9",
+        "bb3a2c8b-507f-458d-bef3-7e68d0d85cac",
+        "4bd59e7e-5ba6-4857-b4d3-5c36b2178c8f",
+        "a1bc40e9-7a57-436f-b601-65ea4a262783",
+        "6fedaa09-ed1e-4fe3-8eee-ad53be8ad3cd",
+        "934a4486-2557-4daf-86ee-74f336e69802",
+        "e2febd79-42eb-4052-bf68-828f7c479de3",
+        "a13e5090-006e-4396-9f75-12fd756fae20",
+        "85ba9bcc-6a30-4cb2-897b-acafcd95b8a1",
+        "09509961-4eff-4594-9794-03f514d12ac5",
+        "20219f76-ce18-42b4-ae8c-39a2c07b8ee3",
+        "eb010e60-63dc-475d-97ac-bb8a3d0193bb",
+        "ca83982b-bd23-4b94-af66-a08c919a83f6",
+        "83eeb286-b051-4736-ac4d-8d1959321d09",
+        "b8e96bf7-50cc-40f5-8157-342f7eea8f45",
+        "7aa72c90-1728-459e-9702-1b9c855e6716",
+        "4497436e-d5e5-4f5c-a1b3-343aa2266fdf",
+        "8b35bb57-a6f9-46b3-977c-5135f3475690",
+        "d4a037b5-aaea-42d6-ad31-2265d6980692"
+      ],
+      "settings": {
+      }
+    },
+    "top-question": {
+      "type": "top-question",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "still-have-questions": {
+      "type": "still-have-questions",
+      "disabled": true,
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "search-item",
+    "top-question",
+    "still-have-questions"
+  ]
+}

@@ -1,0 +1,41 @@
+img[data-lazy],
+video[data-lazy],
+iframe[data-lazy],
+.swiper-lazy {
+  opacity: 0;
+  transition-delay: 0.15s;
+  transition: opacity 0.25s;
+  min-height: 5%;
+}
+
+div[data-lazy],
+section[data-lazy],
+header[data-lazy],
+footer[data-lazy],
+main[data-lazy] {
+  position: relative;
+  z-index: 1;
+
+  .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.25s, background 0.25s;
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+.lazy-loaded,
+.swiper-lazy-loaded {
+  opacity: 1 !important;
+
+  .bg {
+    opacity: 1 !important;
+  }
+}

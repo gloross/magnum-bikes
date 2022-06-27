@@ -1,0 +1,186 @@
+<section class="product-details product-details--no-bikes">
+  <div class="product-details__inner">
+    <div class="breadcrumbs">
+      <a href="#">Part Category</a>/<span>Part</span>
+    </div>
+      <div class="product-details__gallery">
+        <div class="product-details__resize js-product-resize">
+          {% render 'icon', icon: 'resize' %}
+        </div>
+        <div class="product-slider swiper-container js-product-slider">
+          <ul class="swiper-wrapper js-gallery">
+            <li class="swiper-slide">
+              <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                <a href="{{ 'bike.jpeg' | asset_img_url: 'master'}}" itemprop="contentUrl" data-size="1024x768">
+                     <div class="media-wrapper">
+                      <img height="" loading="lazy" src="{{ product.metafields.nb_product.feature_image | img_url: '600x' }}" width=""/>
+                     </div>
+                </a>
+              </figure>
+              <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                <a href="{{ 'bike.jpeg' | asset_img_url: 'master'}}" itemprop="contentUrl" data-size="1024x768">
+                 <div class="media-wrapper">
+                          <img height="" loading="lazy" src="https://via.placeholder.com/805x610.jpg?text=Pleaceholder" width=""/>
+                     </div>
+                </a>
+              </figure>
+              <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                <a href="{{ 'bike.jpeg' | asset_img_url: 'master'}}" itemprop="contentUrl" data-size="1024x768">
+                  <div class="media-wrapper">
+                          <img height="" loading="lazy" src="https://via.placeholder.com/805x610.jpg?text=Pleaceholder" width=""/>
+                     </div>
+                </a>
+              </figure>
+            </li>
+            <li class="swiper-slide">
+              <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                <a href="{{ 'bike.jpeg' | asset_img_url: 'master'}}" itemprop="contentUrl" data-size="1024x768">
+                  <div class="media-wrapper">
+                          <img height="" loading="lazy" src="https://via.placeholder.com/805x610.jpg?text=Pleaceholder" width=""/>
+                     </div>
+                </a>
+              </figure>
+              <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                <a href="{{ 'bike.jpeg' | asset_img_url: 'master'}}" itemprop="contentUrl" data-size="1024x768">
+                   <div class="media-wrapper">
+                          <img height="" loading="lazy" src="https://via.placeholder.com/805x610.jpg?text=Pleaceholder" width=""/>
+                     </div>
+                </a>
+              </figure>
+              <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                <a href="{{ 'bike.jpeg' | asset_img_url: 'master'}}" itemprop="contentUrl" data-size="1024x768">
+                    <div class="media-wrapper">
+                          <img height="" loading="lazy" src="https://via.placeholder.com/805x610.jpg?text=Pleaceholder" width=""/>
+                     </div>
+                </a>
+              </figure>
+            </li>
+            <li class="swiper-slide">
+              <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                <a href="{{ 'bike.jpeg' | asset_img_url: 'master'}}" itemprop="contentUrl" data-size="1024x768">
+                   <div class="media-wrapper">
+                          <img height="" loading="lazy" src="https://via.placeholder.com/805x610.jpg?text=Pleaceholder" width=""/>
+                     </div>
+                </a>
+              </figure>
+              <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                <a href="{{ 'bike.jpeg' | asset_img_url: 'master'}}" itemprop="contentUrl" data-size="1024x768">
+                    <div class="media-wrapper">
+                          <img height="" loading="lazy" src="https://via.placeholder.com/805x610.jpg?text=Pleaceholder" width=""/>
+                     </div>
+                </a>
+              </figure>
+              <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                <a href="{{ 'bike.jpeg' | asset_img_url: 'master'}}" itemprop="contentUrl" data-size="1024x768">
+                    <div class="media-wrapper">
+                          <img height="" loading="lazy" src="https://via.placeholder.com/805x610.jpg?text=Pleaceholder" width=""/>
+                     </div>
+                </a>
+              </figure>
+            </li>
+          </ul>
+          <div class="product-slider__btn-wrapper">
+            <div class="swiper-button-prev js-swiper-button-prev">
+              {% render 'icon', icon: 'arrow-left' %}
+            </div>
+            <div class="swiper-button-next js-swiper-button-next">
+              {% render 'icon', icon: 'arrow-right' %}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="product-details__col-right">
+        <div class="pswp" role="dialog" aria-hidden="true">
+          <!-- Background of PhotoSwipe.
+                It's a separate element, as animating opacity is faster than rgba(). -->
+          <div class="pswp__bg"></div>
+          <!-- Slides wrapper with overflow:hidden. -->
+          <div class="pswp__scroll-wrap">
+            <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
+            <!-- don't modify these 3 pswp__item elements, data is added later on. -->
+            <div class="pswp__container">
+              <div class="pswp__item"></div>
+              <div class="pswp__item"></div>
+              <div class="pswp__item"></div>
+            </div>
+            <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+            <div class="pswp__ui pswp__ui--fit pswp__ui--over-close">
+              <div class="pswp__top-bar">
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <div class="pswp__preloader">
+                  <div class="pswp__preloader__icn">
+                    <div class="pswp__preloader__cut">
+                      <div class="pswp__preloader__donut"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="pswp__bottom-bar">
+                <div class="pswp__counter"></div>
+                <button class="js-zoom-in pswp__button pswp__button--zoom-in" title="Zoom in"></button>
+                <button class="js-zoom-out pswp__button pswp__button--zoom-out" title="Zoom out"></button>
+              </div>
+              <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+              </div>
+              <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+              <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+              <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="product-details__tags">
+          <span>Sale</span>
+          <span>New</span>
+        </div>
+        <h1>Magnum i6 <br> Battery 48V 21Ah</h1>
+        <div class="product-details__color-variations">
+          <p>The Magnum i6 Battery uses the highest quality cells for a combined 48 volts and 21 amps providing extra range for your electric bicycle.</p>
+          <a href="" class="product-details__compatible-link">Compatible bikes{% render 'icon',icon: 'arrow-up-right' %}</a>
+          <span><strong>Color: </strong> Black</span>
+          <ul class="js-color-variation">
+            <li class="active">
+              {% render 'icon', icon: 'black' %}
+            </li>
+            <li>
+              {% render 'icon', icon: 'antiquewhite' %}
+            </li>
+            <li>
+              {% render 'icon', icon: 'black' %}
+            </li>
+            <li>
+              {% render 'icon', icon: 'antiquewhite' %}
+            </li>
+            <li>
+              {% render 'icon', icon: 'black' %}
+            </li>
+            <li>
+              {% render 'icon', icon: 'antiquewhite' %}
+            </li>
+            <li>
+              {% render 'icon', icon: 'black' %}
+            </li>
+            <li>
+              {% render 'icon', icon: 'antiquewhite' %}
+            </li>
+          </ul>
+        </div>
+        <div class="product-details__product-quantity u-d-flex u-align-center u-justify-between">
+               <span class="price">$ 849.99</span>
+               <div class="input-increment input-increment--accessories  js-input-increment disable-decrease">
+                  <button type="button" class="input-increment__cta js-number-decrease">{% render 'icon', icon: 'minus' %}</button>
+                  <input class="input-increment__number js-input-number" type="number" id="Quantity-{{ section.id }}"
+                    name="quantity" value="1" min="1" pattern="[0-9]*" />
+                  <button type="button" class="input-increment__cta js-number-increase">{% render 'icon', icon: 'plus' %}</button>
+                </div>
+        </div>
+        <div class="product-details__btn-wrapper">
+          <button class="btn btn--blue-fill u-uppercase">ADD TO CART</button>
+        </div>
+      </div>
+    </div>
+</section>

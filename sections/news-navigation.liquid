@@ -1,0 +1,30 @@
+{%- assign _section = section.settings -%}
+{%- assign menu = linklists[_section.menu] -%}
+
+{%- if menu.links.size > 0 -%}
+  <div class="news-navigation">
+    <ul>
+      {%- for link in menu.links -%}
+        <li{% if link.active %} class="is-active"{% endif %}>
+          <a href="{{- link.url -}}">
+            {{- link.title -}}
+          </a>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "News navigation",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu",
+      "info": "Only 1 level links will be displayed"
+    }
+  ]
+}
+{% endschema %}

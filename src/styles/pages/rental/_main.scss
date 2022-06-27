@@ -1,0 +1,267 @@
+@import '../../forms/input';
+@import '../../forms/checkbox';
+@import '../../forms/custom-select';
+
+.rental {
+  &__inner {
+    padding: rem(60) 0 rem(90);
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+
+    @include media-breakpoint-down(md) {
+      flex-direction: column;
+      padding: rem(40) 0 rem(80);
+    }
+
+    h1 {
+      width: 100%;
+      max-width: rem(315);
+      margin-bottom: rem(12);
+      font-size: rem(56);
+      line-height: line-height(56, 64);
+
+      @include media-breakpoint-down(md) {
+        margin-bottom: rem(12);
+        font-size: rem(28);
+        line-height: line-height(28, 36);
+      }
+    }
+
+    p {
+      color: $magnum-black;
+    }
+  }
+
+  &__col-left {
+    width: 100%;
+    max-width: rem(386);
+    position: sticky;
+    left: 0;
+    top: rem(60);
+
+    @include media-breakpoint-down(md) {
+      position: static;
+      padding-bottom: rem(12);
+    }
+
+    p {
+      font-size: rem(17);
+      line-height: line-height(17, 27);
+
+      @include media-breakpoint-down(md) {
+        font-size: rem(16);
+        line-height: line-height(16, 24);
+      }
+    }
+  }
+
+  form {
+    flex: 1;
+
+    @include media-breakpoint-down(md) {
+      width: 100%;
+    }
+  }
+
+  &__col-right {
+    padding-left: rem(138);
+
+    @include media-breakpoint-down(xl) {
+      padding-left: rem(60);
+    }
+
+    @include media-breakpoint-down(md) {
+      padding-left: 0;
+    }
+
+    .input-wrapper {
+      padding-top: rem(20);
+    }
+
+    &--step-three,
+    &--step-two {
+      display: none;
+    }
+
+    &.step {
+      display: none;
+
+      &.is-active {
+        display: block;
+      }
+    }
+  }
+
+  &__breadcrumbs {
+    display: flex;
+    align-items: center;
+    margin-bottom: rem(30);
+    padding-bottom: rem(17);
+    border-bottom: 2px solid $divider-grey;
+
+    @include media-breakpoint-down(md) {
+      padding-bottom: 0;
+      border: none;
+    }
+
+    span {
+      display: inline-block;
+      padding-right: rem(4);
+      color: $grey-light;
+      font-size: rem(14);
+      font-weight: 500;
+      line-height: line-height(14, 24);
+
+      &:first-of-type {
+        color: $cyan;
+      }
+    }
+
+    &--step-two {
+      margin-bottom: rem(14);
+      span {
+        color: $cyan;
+      }
+    }
+
+    &--step-three {
+      span {
+        color: $cyan;
+      }
+      svg {
+        g {
+          stroke: $cyan;
+        }
+      }
+    }
+  }
+
+  &__btn-wrapper {
+    padding: rem(30) 0 0 rem(138);
+    text-align: right;
+
+    .btn {
+      margin-top: rem(20);
+      min-width: rem(141);
+      font-size: rem(13);
+      line-height: line-height(13, 14);
+      font-weight: 700;
+
+      @include media-breakpoint-down(md) {
+        margin-top: rem(8);
+      }
+
+      &.btn-prev {
+        display: none;
+      }
+
+      &.submit-btn,
+      &.back-to-home {
+        margin-top: 0;
+      }
+    }
+
+    &--step-three {
+      text-align: left;
+
+      @include media-breakpoint-down(md) {
+        padding-left: 0;
+      }
+    }
+  }
+
+  &__initial-box {
+    margin-bottom: rem(57);
+
+    &.rental__initial-box--last {
+      margin-bottom: 0;
+    }
+
+    h3 {
+      margin-bottom: rem(10);
+      font-size: rem(22);
+      line-height: line-height(22, 32);
+      color: $machine-grey-1;
+
+      @include media-breakpoint-down(md) {
+        margin-bottom: rem(5);
+      }
+    }
+
+    p {
+      font-size: rem(16);
+      line-height: line-height(16, 24);
+      color: $grey-light;
+    }
+  }
+
+  &__form-input {
+    padding-bottom: rem(30);
+    border-bottom: 2px solid $divider-grey;
+
+    .input-wrapper {
+      padding-top: rem(16);
+    }
+
+    .checkbox {
+      padding-top: rem(10);
+
+      label {
+        font-size: rem(13);
+        line-height: line-height(13, 22);
+        color: $machine-grey;
+      }
+    }
+  }
+
+  &__form-more-info {
+    padding-bottom: rem(30);
+    border-bottom: 2px solid $divider-grey;
+
+    .select-field {
+      padding-top: rem(30);
+    }
+
+    .input-wrapper {
+      label {
+        display: block !important;
+      }
+    }
+  }
+
+  &__agreement {
+    .rental__agreement-image-text {
+      display: flex;
+      align-items: center;
+      margin-bottom: rem(28);
+
+      @include media-breakpoint-down(md) {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      svg {
+        width: 100%;
+        max-width: rem(157);
+      }
+
+      h2 {
+        font-size: rem(17);
+        line-height: line-height(17, 26);
+        padding-left: rem(56);
+        color: $machine-grey;
+
+        @include media-breakpoint-down(md) {
+          padding: rem(28) 0 0 0;
+        }
+      }
+    }
+
+    p {
+      font-size: rem(16);
+      line-height: line-height(16, 24);
+      color: $grey-light;
+    }
+  }
+}
