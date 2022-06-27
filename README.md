@@ -33,6 +33,10 @@ This will:
 - Open a browser window pointed to theme URL - If not, use http://127.0.0.1:9292/
 - Watch for changes and rebuild
 
+## Cannot start the server?
+
+If `yarn start` fails, create a "sections" folder in `/src/styles/`. This should  fix the error.
+
 ## Building
 
 You need to build the files before pushing to Git or uploading the files to Shopify(by using Shopify CLI):
