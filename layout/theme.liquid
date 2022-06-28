@@ -247,6 +247,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   {% comment %} <script src="https://checkout-sandbox.getbread.com/bread.js" data-api-key="535d68bf-dd16-48bd-8f11-ab32c463a0a9"></script> {% endcomment %}
 
   {% render 'gsf-conversion-pixels' %}
+
+	{{ shop.metafields.loox["global_html_head"] }}
 </head>
 <body class="layout-theme template-{{- template.name -}}{%- if template.suffix -%}-{{- template.suffix -}}{%- endif -%}">
 
@@ -443,5 +445,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 {%- endif -%}
 </script>
 <!-- PF EDT END -->
+
+	{{ shop.metafields.loox["global_html_body"] }}
 </body>
 </html>
