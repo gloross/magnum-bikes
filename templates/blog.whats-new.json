@@ -15,6 +15,7 @@
     },
     "stories-info": {
       "type": "stories-info",
+      "disabled": true,
       "settings": {
         "title": "Featured article",
         "featured_article": "stories\/stories-4",
@@ -24,6 +25,7 @@
     },
     "home-stories": {
       "type": "home-stories",
+      "disabled": true,
       "blocks": {
         "1da484a8-36d3-404c-8568-004a1f74e400": {
           "type": "block",
@@ -85,7 +87,7 @@
     "stories-blog": {
       "type": "stories-blog",
       "settings": {
-        "title": "Blog articles"
+        "title": "What's new with Magnum?"
       }
     }
   },
