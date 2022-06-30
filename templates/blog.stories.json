@@ -16,7 +16,7 @@
     "stories-info": {
       "type": "stories-info",
       "settings": {
-        "title": "Magnum Stories",
+        "title": "",
         "featured_article": "stories\/stories-4",
         "image_desktop": "shopify:\/\/shop_images\/ARunnerWeb_e5e79b10-0ce0-4192-a4d9-9039979eefb6.jpg",
         "image_mobile": "shopify:\/\/shop_images\/ARunnerWeb_e5e79b10-0ce0-4192-a4d9-9039979eefb6.jpg"

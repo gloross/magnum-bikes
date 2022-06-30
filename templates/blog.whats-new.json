@@ -15,6 +15,7 @@
     },
     "stories-info": {
       "type": "stories-info",
+      "disabled": true,
       "settings": {
         "title": "Featured article",
         "featured_article": "stories\/stories-4",
@@ -24,6 +25,7 @@
     },
     "home-stories": {
       "type": "home-stories",
+      "disabled": true,
       "blocks": {
         "1da484a8-36d3-404c-8568-004a1f74e400": {
           "type": "block",
@@ -76,6 +78,7 @@
     },
     "stories-magnum": {
       "type": "stories-magnum",
+      "disabled": true,
       "settings": {
         "image": "shopify:\/\/shop_images\/magnum.png",
         "description": "“We can have a nice motivational quote here claiming how great it is to be an e-bike rider and how humans are magic, amazing, great... ”"
@@ -84,7 +87,7 @@
     "stories-blog": {
       "type": "stories-blog",
       "settings": {
-        "title": "Blog articles"
+        "title": "What's new with Magnum?"
       }
     }
   },
