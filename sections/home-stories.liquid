@@ -65,7 +65,7 @@
                       <p>{{- category_tag | remove: 'category:' -}}</p>
                     {%- endif -%}
 
-                    <span>{{ _article.published_at | date: "%d.%m.%Y" }}</span>
+                    <span>{{ _article.published_at | date: "%m.%d.%Y" }}</span>
                   </div>
 
                   <h4>
@@ -119,7 +119,7 @@
                           <p>{{- category_tag | remove: 'category:' -}}</p>
                         {%- endif -%}
 
-                        <span>{{_article.published_at | date: "%d.%m.%Y" }}</span>
+                        <span>{{_article.published_at | date: "%m.%d.%Y" }}</span>
                       </div>
 
                       <h4>
@@ -170,7 +170,7 @@
                           <p>{{- category_tag | remove: 'category:' -}}</p>
                         {%- endif -%}
 
-                        <span>{{ _article.published_at | date: "%d.%m.%Y" }}</span>
+                        <span>{{ _article.published_at | date: "%m.%d.%Y" }}</span>
                       </div>
 
                       <h4>

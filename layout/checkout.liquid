@@ -35,14 +35,16 @@
           <main class="main__content" role="main">
             {% comment %} Custom Code {% endcomment %}
             {%- if page_title contains 'Information' -%}
+              {% assign order_notes = 'checkout.order_notes' | t | escape %}
+
               {%- capture order_note_html -%}
                 <div class="order-note">
                   <div class="fieldset">
                     <div class="field field--optional">
                       <div class="field__input-wrapper">
-                        <label class="field__label field__label--visible" for="delivery-note">{{- 'checkout.delivery_note' | t -}}</label>
+                        <label class="field__label field__label--visible" for="order-notes">{{- order_notes -}}</label>
 
-                        <textarea placeholder="Delivery note" name="checkout[attributes][{{- 'checkout.delivery_note' | t | escape -}}]" autocorrect="off" class="field__input" id="delivery-note"></textarea>
+                        <textarea placeholder="{{- order_notes -}}" name="checkout[attributes][{{- order_notes -}}]" autocorrect="off" class="field__input" id="order-notes"></textarea>
                       </div>
                     </div>
                   </div><!-- /.fieldset -->

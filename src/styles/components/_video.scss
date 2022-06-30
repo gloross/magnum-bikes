@@ -75,6 +75,11 @@
 
     svg {
       display: block;
+      transition: stroke $t-hover, transform $t-hover;
+
+      circle {
+        transition: opacity $t-hover;
+      }
     }
 
     .is-active & {
@@ -84,6 +89,82 @@
     .hide-btn-play & {
       visibility: hidden;
     }
+
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: -1;
+      transform: scale(0.9);
+      width: 80px;
+      height: 80px;
+      margin: -40px 0 0 -40px;
+      padding: 0;
+      border-radius: 100%;
+      box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+      opacity: 0;
+      pointer-events: none;
+
+      @include media-breakpoint-down(md) {
+        display: none;
+      }
+    }
+
+    &:hover:not(.active) {
+      &:after {
+        animation: sonarEffect 1.3s ease-out 75ms;
+
+        @include media-breakpoint-down(md) {
+          animation: none;
+        }
+      }
+
+      svg {
+        transform: scale(0.93);
+
+        @include media-breakpoint-down(md) {
+          transform: none;
+        }
+
+        circle {
+          opacity: 0.7;
+
+          @include media-breakpoint-down(md) {
+            opacity: 1;
+          }
+        }
+      }
+    }
   }
 }
 
+@keyframes sonarEffect {
+  0% {
+    opacity: 0.3;
+  }
+  40% {
+    opacity: 0.3;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #fff, 0 0 0 10px rgba(255, 255, 255, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #fff, 0 0 0 10px rgba(255, 255, 255, 0.4);
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+@keyframes waves {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}

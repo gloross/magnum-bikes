@@ -48,6 +48,14 @@
         height: 100%;
       }
     }
+
+    > a {
+      transition: opacity $t-hover;
+
+      &:hover {
+        opacity: 0.9;
+      }
+    }
   }
 
   &__info {

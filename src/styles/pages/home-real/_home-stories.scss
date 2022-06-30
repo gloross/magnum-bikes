@@ -7,6 +7,11 @@
 
   &__link {
     display: block;
+    transition: opacity $t-hover;
+
+    &:hover {
+      opacity: 0.9;
+    }
   }
 
   .media-wrapper {

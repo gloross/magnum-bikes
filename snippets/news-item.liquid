@@ -30,7 +30,7 @@
         {%- endif -%}
 
         {%- unless mod_hide_date -%}
-          <span>{{ article.published_at | date: "%d.%m.%Y" }}</span>
+          <span>{{ article.published_at | date: "%m.%d.%Y" }}</span>
         {%- endunless -%}
       </div>
     {%- endif -%}

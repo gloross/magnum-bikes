@@ -62,7 +62,7 @@
 
           {% comment %} Date {% endcomment %}
           <div class="article-writer__date">
-            <p>{{ article.published_at | date: "%b %d" }}</p>
+            <p>{{ article.published_at | date: "%m.%d.%Y" }}</p>
 
             {%- if read_time -%}
               <span>{{ read_time }}</span>

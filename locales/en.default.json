@@ -69,6 +69,6 @@
     }
   },
   "checkout": {
-    "delivery_note": "Delivery note"
+    "order_notes": "Order notes"
   }
 }

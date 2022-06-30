@@ -96,10 +96,25 @@
   a {
     display: inline-block;
     font-size: inherit;
-    text-decoration: underline;
+    color: $cyan;
+    text-decoration: none;
 
     &:hover {
-      text-decoration: none;
+      text-decoration: underline;
+    }
+
+    strong {
+      font-weight: 600;
+    }
+
+    img {
+      transition: opacity $t-hover;
+    }
+
+    &:hover {
+      > img {
+        opacity: 0.9;
+      }
     }
   }
 

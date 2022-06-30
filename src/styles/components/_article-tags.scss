@@ -30,6 +30,11 @@
   a {
     min-width: rem(84);
     padding: rem(8) rem(21);
+    transition: opacity $t-hover;
+
+    &:hover {
+      opacity: 0.8;
+    }
   }
 
   span {
