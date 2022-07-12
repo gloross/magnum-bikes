@@ -1,6 +1,6 @@
 {% liquid
     assign object = section.settings
-    assign featured_article = object.featured_article
+    assign featured_article = articles[object.featured_article]
     if object.image_desktop == blank
     assign image_desktop = featured_article.image
     else
@@ -22,57 +22,49 @@
   {%- endif -%}
 {%- endfor -%}
 
-<section class="stories-info {% if template contains 'login' %} {% endif%}">
-  <div class="container container--small">
-    <header class="stories-info__head">
-      <h2 class="stories-info__title">{{ object.title }}</h2>
-    </header>
+{% if featured_article.url != '' %}
+  <section class="stories-info {% if template contains 'login' %} {% endif%}">
+    <div class="container container--small">
+      <div class="stories-info__body">
+        <a href="{{ featured_article.url }}" class="news-item__link">
+          <div class="media-wrapper">
+            {% render 'img',
+              img: image_desktop,
+              img_sm: image_mobile,
+              img_md: image_mobile %}
+          </div>
+        </a>
 
-    <div class="stories-info__body">
-      <a href="{{ featured_article.url }}" class="news-item__link">
-        <div class="media-wrapper">
-          {% render 'img',
-            img: image_desktop,
-            img_sm: image_mobile,
-            img_md: image_mobile %}
-        </div>
-      </a>
+        <div class="stories-info__content">
+          <div class="stories-info__content-inner">
+            {%- if category_tag != blank -%}
+              <div class="stories-info__meta">
+                {%- if category_tag != blank -%}
+                  <p>{{- category_tag | remove: 'category:' -}}</p>
+                {%- endif -%}
 
-      <div class="stories-info__content">
-        <div class="stories-info__content-inner">
-          {%- if category_tag != blank -%}
-            <div class="stories-info__meta">
-              {%- if category_tag != blank -%}
-                <p>{{- category_tag | remove: 'category:' -}}</p>
-              {%- endif -%}
+                <span>{{ featured_article.published_at | date: "%d.%m.%Y" }}</span>
+              </div>
+            {%- endif -%}
 
-              <span>{{ featured_article.published_at | date: "%d.%m.%Y" }}</span>
-            </div>
-          {%- endif -%}
+            <h3>
+              <a href="{{- featured_article.url -}}">{{ featured_article.title }}</a>
+            </h3>
 
-          <h3>
-            <a href="{{- featured_article.url -}}">{{ featured_article.title }}</a>
-          </h3>
-
-          <div class="stories-info__entry">
-            {{ featured_article.excerpt_or_content }}
-          </div><!-- /.stories-info__entry -->
+            <div class="stories-info__entry">
+              {{ featured_article.excerpt_or_content }}
+            </div><!-- /.stories-info__entry -->
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+{% endif %}
 
 {% schema %}
   {
   "name": "Stories info",
   "settings": [
-    {
-      "type": "text",
-      "id": "title",
-      "label": "Section title",
-      "default": "Magnum Stories"
-    },
     {
         "type": "article",
         "id": "featured_article",

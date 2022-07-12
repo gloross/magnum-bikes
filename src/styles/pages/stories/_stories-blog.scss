@@ -1,7 +1,8 @@
 .stories-blog {
-  margin: rem(146) 0 rem(90);
+  margin: rem(40) 0 rem(90);
+
   @include media-breakpoint-down(sm) {
-    margin: rem(40) 0 rem(64);
+    margin-bottom: rem(64);
   }
   &__title {
     padding-bottom: rem(50);
