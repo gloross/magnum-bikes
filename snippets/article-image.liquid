@@ -1,0 +1,25 @@
+{%- assign mod_class = mod_class | default: false -%}
+{%- assign mod_image = mod_image | default: false -%}
+{%- assign mod_text = mod_text | default: false -%}
+{%- assign mod_metafield_image = mod_metafield_image | default: false -%}
+{%- assign mod_class = mod_class | default: false -%}
+
+{%- if mod_image or mod_text -%}
+  <div class="article-image{% if mod_class %} {{ mod_class }}{% endif %}">
+    {%- if mod_image -%}
+      <div class="article-image__element">
+        {%- if mod_metafield_image -%}
+          <img src="{{- mod_image[0].cloudinary_src | append: 'x_600' -}}" alt="{{- mod_image[0].alt | escape -}}" loading="lazy" />
+        {%- else -%}
+          {%- render 'img' with img: mod_image -%}
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- if mod_text -%}
+      <div class="article-image__content">
+        {{- mod_text -}}
+      </div>
+    {%- endif -%}
+  </div>
+{%- endif -%}

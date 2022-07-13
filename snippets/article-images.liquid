@@ -11,15 +11,15 @@
     <div class="article-images__inner">
       {%- for i in (1..2) -%}
         {%- if forloop.first -%}
-          {%- assign _image = mod_image_left[0] -%}
+          {%- assign _image = mod_image_left -%}
         {%- else -%}
-          {%- assign _image = mod_image_right[0] -%}
+          {%- assign _image = mod_image_right -%}
         {%- endif -%}
 
         {%- if _image -%}
           <div class="article-images__col">
             {%- if mod_metafield_images -%}
-              <img src="{{- _image.cloudinary_src | append: 'x_600' -}}" alt="{{- _image.alt | escape -}}" loading="lazy" />
+              <img src="{{- _image[0].cloudinary_src | append: 'x_600' -}}" alt="{{- _image[0].alt | escape -}}" loading="lazy" />
             {%- else -%}
               {%- render 'img' with img: _image -%}
             {%- endif -%}
