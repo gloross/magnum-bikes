@@ -139,6 +139,15 @@
                     mod_metafield_images: true -%}
                 {%- endif -%}
 
+                {% comment %} Images {% endcomment %}
+                {%- if metafield_section.name == 'image' -%}
+                  {%- render 'article-image' with
+                    mod_class: 'article__image',
+                    mod_image: metafield.image[index],
+                    mod_text: metafield.text[index],
+                    mod_metafield_image: true -%}
+                {%- endif -%}
+
                 {% comment %} Video {% endcomment %}
                 {%- if metafield_section.name == 'video' -%}
                   {%- render 'video' with

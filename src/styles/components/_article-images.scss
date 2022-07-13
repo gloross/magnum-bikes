@@ -41,10 +41,6 @@
     }
   }
 
-  .media-wrapper {
-    padding-bottom: 127.35%;
-  }
-
   &__info {
     position: absolute;
     top: 0;
@@ -75,10 +71,6 @@
       font-size: inherit;
       line-height: inherit;
       color: $grey-light;
-
-      @include media-breakpoint-down(sm) {
-        margin-bottom: rem(25);
-      }
 
       &:last-child {
         margin-bottom: 0;

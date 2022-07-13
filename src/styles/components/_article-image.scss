@@ -1,0 +1,53 @@
+/* ------------------------------------------------------------ *\
+  Article Image
+\* ------------------------------------------------------------ */
+
+.article-image {
+  font-family: $regular-font;
+  font-size: rem(16);
+  line-height: line-height(16, 24);
+  color: $machine-grey;
+
+  @include media-breakpoint-down(sm) {
+    font-size: rem(14);
+    line-height: line-height(14, 24);
+  }
+
+  &__element {
+    margin-bottom: rem(50);
+
+    @include media-breakpoint-down(sm) {
+      margin-bottom: rem(38);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__content {
+    p {
+      margin-bottom: rem(24);
+      font-family: inherit;
+      font-size: inherit;
+      line-height: inherit;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    a {
+      color: $cyan;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      strong {
+        font-weight: 600;
+      }
+    }
+  }
+}
