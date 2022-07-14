@@ -14,11 +14,7 @@
   }
 
   &__element {
-    margin-bottom: rem(50);
-
-    @include media-breakpoint-down(sm) {
-      margin-bottom: rem(38);
-    }
+    margin-bottom: rem(5);
 
     &:last-child {
       margin-bottom: 0;
