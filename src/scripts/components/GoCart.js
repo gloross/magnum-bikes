@@ -29,6 +29,7 @@ export default class GoCart {
       itemQuantity: '.js-go-cart-quantity',
       itemQuantityPlus: '.js-go-cart-quantity-plus',
       itemQuantityMinus: '.js-go-cart-quantity-minus',
+      showGoCart: '.js-show-go-cart',
       cartMode: 'drawer',
       drawerDirection: 'right',
       displayModal: false,
@@ -83,6 +84,7 @@ export default class GoCart {
     this.drawerDirection = this.defaults.drawerDirection
     this.displayModal = this.defaults.displayModal
     this.moneyFormat = this.defaults.moneyFormat
+    this.showGoCart = document.querySelector(this.defaults.showGoCart)
 
     this.init()
   }
@@ -92,7 +94,6 @@ export default class GoCart {
   }
 
   init() {
-
     this.fetchCart()
 
     if (this.isDrawerMode) {
@@ -163,6 +164,17 @@ export default class GoCart {
       }
       this.closeCartOverlay()
     })
+
+    this.showGoCart.addEventListener('click', (event) => {
+      event.preventDefault();
+
+      if (this.isDrawerMode) {
+        this.openCartDrawer()
+      } else {
+        this.openMiniCart()
+      }
+      this.openCartOverlay()
+    });
   }
 
   fetchCart(callback) {
