@@ -448,8 +448,14 @@ $go-cart-side-spacing-mobile: 16px;
     justify-content: center;
     border-radius: 100%;
     background: $off-white;
+    color: $grey-light;
     cursor: pointer;
     user-select: none;
+    transition: $t-hover;
+
+    &:hover:not(.is-disabled) {
+      color: $machine-grey;
+    }
 
     &.quantity-minus {
       left: 1px;

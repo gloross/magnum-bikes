@@ -390,13 +390,13 @@ export default class GoCart {
                         <span class="go-cart-item__quantity-label">${locales['sections.cart.quantity']}</span>
                         <div class="go-cart-item__quantity-field">
                             <span class="go-cart-item__quantity-button quantity-minus js-go-cart-quantity-minus${disabledClass}">
-                                <svg width="10" height="2" viewBox="0 0 10 2" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#8A9093" d="M10 0v2H0V0z"/></svg>
+                                <svg width="10" height="2" viewBox="0 0 10 2" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M10 0v2H0V0z"/></svg>
                             </span>
                             <input class="go-cart-item__quantity-number js-go-cart-quantity" type="number" value="${
                               item.quantity
                             }" disabled>
                             <span class="go-cart-item__quantity-button quantity-plus js-go-cart-quantity-plus">
-                                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 4v2H0V4h10Z" fill="#8A9093"/><path d="M6 10H4V0h2v10Z" fill="#8A9093"/></svg>
+                                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 4v2H0V4h10Z" fill="currentColor"/><path d="M6 10H4V0h2v10Z" fill="currentColor"/></svg>
                             </span>
                         </div>
                     </div>
@@ -497,13 +497,13 @@ export default class GoCart {
                         <span class="go-cart-item__quantity-label">${locales['sections.cart.quantity']}</span>
                         <div class="go-cart-item__quantity-field">
                             <span class="go-cart-item__quantity-button quantity-minus js-go-cart-quantity-minus${disabledClass}">
-                                <svg width="10" height="2" viewBox="0 0 10 2" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#8A9093" d="M10 0v2H0V0z"/></svg>
+                                <svg width="10" height="2" viewBox="0 0 10 2" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M10 0v2H0V0z"/></svg>
                             </span>
                             <input class="go-cart-item__quantity-number js-go-cart-quantity" type="number" value="${
                               item.quantity
                             }" disabled>
                             <span class="go-cart-item__quantity-button quantity-plus js-go-cart-quantity-plus">
-                                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 4v2H0V4h10Z" fill="#8A9093"/><path d="M6 10H4V0h2v10Z" fill="#8A9093"/></svg>
+                                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 4v2H0V4h10Z" fill="currentColor"/><path d="M6 10H4V0h2v10Z" fill="currentColor"/></svg>
                             </span>
                         </div>
                     </div>
