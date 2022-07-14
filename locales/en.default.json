@@ -17,7 +17,11 @@
       "view_cart": "View cart",
       "cart_error": "There was an error while updating your cart. Please try again.",
       "cart_quantity_error": "You can only add [quantity] of this item to your cart.",
-      "something_went_wrong_error": "Something went wrong, please contact us!"
+      "something_went_wrong_error": "Something went wrong, please contact us!",
+      "page": {
+        "order_summary": "Order Summary",
+        "update_cart_text": "*If you change product quantity please make sure to click Update Cart button to view your order subtotal."
+      }
     }
   },
   "templates": {

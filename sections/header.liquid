@@ -62,11 +62,15 @@
                 </a>
             </li>
             <li>
-                <a href="{{ routes.cart_url }}" class="js-show-go-cart">
+                <a href="{{ routes.cart_url }}"{% unless template == 'cart' %} class="js-show-go-cart"{% endunless %}>
                     {% render 'icon', icon: 'cart' %}
                 </a>
             </li>
         </ul>
+
+        <script>
+            console.log({{ template | json }})
+        </script>
          <div class="header__hamburger">
              <button type="button" aria-label="Menu" class="hamburger js-hamburger">
                 <div class="hamburger__inner">
