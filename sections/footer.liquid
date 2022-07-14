@@ -12,46 +12,49 @@
     <div class="container container--small">
       <div class="footer__announcement-inner">
         <div class="footer__announcement-grid">
+          <div class="footer__announcement-grid-item">
+            <a href="tel:{{ object.call_us_phone }}">
+              {% if object.icon_1 == blank %}
+                {% render 'icon', icon: 'box' %}
+                {% else %}
+                {{ object.icon_1 }}
+              {% endif %}
 
-            <div class="footer__announcement-grid-item">
-              <a href="tel:{{ object.call_us_phone }}">
-                {% if object.icon_1 == blank %}
-                      {% render 'icon', icon: 'box' %}
-                      {% else %}
-                      {{ object.icon_1 }}
-                      {% endif %}
               <div class="footer__announcement-grid-info">
                 <h5>{{ object.call_us_text }}</h5>
-              {{ object.call_us_phone }}
+                {{ object.call_us_phone }}
+              </div>
             </a>
-            </div>
           </div>
 
-            <div class="footer__announcement-grid-item">
-              <a href="mailto:{{ object.chat_url }}">
+          <div class="footer__announcement-grid-item">
+            <a href="mailto:{{ object.chat_url }}">
               {% if object.icon_2 == blank %}
-                      {% render 'icon', icon: 'box' %}
-                      {% else %}
-                      {{ object.icon_2 }}
-                      {% endif %}
+                {% render 'icon', icon: 'box' %}
+                {% else %}
+                {{ object.icon_2 }}
+              {% endif %}
+
               <div class="footer__announcement-grid-info">
-                      <h5>{{ object.chat_text }}</h5>
-                      {{ object.chat_text_label }}
+                <h5>{{ object.chat_text }}</h5>
+                {{ object.chat_text_label }}
+              </div>
              </a>
-            </div>
           </div>
+
           <div class="footer__announcement-grid-item">
             <a href="{{ object.contact_url }}">
-             {% if object.icon_3 == blank %}
-                    {% render 'icon', icon: 'box' %}
-                    {% else %}
-                    {{ object.icon_3 }}
-                    {% endif %}
-            <div class="footer__announcement-grid-info">
+              {% if object.icon_3 == blank %}
+                {% render 'icon', icon: 'box' %}
+                {% else %}
+                {{ object.icon_3 }}
+              {% endif %}
+
+              <div class="footer__announcement-grid-info">
                  <h5>{{ object.contact_text }}</h5>
                  {{ object.contact_text_label }}
-                </a>
-            </div>
+              </div>
+            </a>
           </div>
         </div>
         <h3> {{ object.text_right }}</h3>
