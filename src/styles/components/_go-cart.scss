@@ -516,9 +516,10 @@ $go-cart-side-spacing-mobile: 16px;
     font-weight: 500;
     text-decoration: underline;
     cursor: pointer;
+    transition: $t-hover;
 
     &:hover {
-      text-decoration: none;
+      color: $machine-grey;
     }
   }
 }
