@@ -103,22 +103,22 @@
       <p>{{ object.social_text }}</p>
       <ul class="footer__social">
         {% if facebook_ac != blank %}
-        <li><a href="{{ facebook_ac }}"> {% render 'icon', icon: 'fb' %} </a></li>
+        <li><a href="{{ facebook_ac }}" target="_blank">{% render 'icon', icon: 'fb' %}</a></li>
         {%endif%}
         {% if twitter_ac != blank %}
-        <li><a href="{{ twitter_ac }}">{% render 'icon', icon: 'twitter' %} </a></li>
+        <li><a href="{{ twitter_ac }}" target="_blank">{% render 'icon', icon: 'twitter' %}</a></li>
         {%endif%}
         {% if tiktok_ac != blank %}
-        <li><a href="{{ tiktok_ac }}">{% render 'icon', icon: 'tiktok' %} </a></li>
+        <li><a href="{{ tiktok_ac }}" target="_blank">{% render 'icon', icon: 'tiktok' %}</a></li>
         {%endif%}
         {% if ln_ac != blank %}
-        <li><a href="{{ ln_ac }}">{% render 'icon', icon: 'linkedin' %} </a></li>
+        <li><a href="{{ ln_ac }}" target="_blank">{% render 'icon', icon: 'linkedin' %}</a></li>
         {%endif%}
         {% if yt_ac != blank %}
-        <li><a href="{{ yt_ac }}">{% render 'icon', icon: 'youtube' %} </a></li>
+        <li><a href="{{ yt_ac }}" target="_blank">{% render 'icon', icon: 'youtube' %}</a></li>
         {%endif%}
         {% if instagram_ac != blank %}
-        <li><a href="{{ instagram_ac }}">{% render 'icon', icon: 'instagram' %} </a></li>
+        <li><a href="{{ instagram_ac }}" target="_blank">{% render 'icon', icon: 'instagram' %}</a></li>
         {%endif%}
       </ul>
     </div>

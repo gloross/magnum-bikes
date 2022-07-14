@@ -303,9 +303,13 @@
 
     h3 {
       margin-right: rem(18);
-      font-size: rem(16);
-      line-height: line-height(16, 24);
+      font-size: rem(32);
+      line-height: line-height(32, 48);
       color: #404040;
+
+      @include media-breakpoint-down(xs) {
+        font-size: rem(24);
+      }
     }
     span {
       font-size: rem(16);
@@ -324,6 +328,10 @@
 
     @include media-breakpoint-down(md) {
       margin-top: 2rem;;
+    }
+
+    span {
+      display: none;
     }
   }
   &__order-btn-trigger {

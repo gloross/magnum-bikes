@@ -207,7 +207,7 @@
       "go-cart": {
         "type": "go-cart",
         "settings": {
-          "continue_shopping_url": "shopify:\/\/collections/touring"
+          "continue_shopping_url": "shopify:\/\/collections/e-bikes"
         }
       },
       "faq-hero": {

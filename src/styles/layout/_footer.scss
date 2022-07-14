@@ -308,19 +308,39 @@
         margin-right: rem(10);
       }
       a {
-        display: inline-block;
+        display: block;
         cursor: pointer;
+        color: $white;
+        border-radius: 100%;
+        overflow: hidden;
 
         .icon {
+          display: block;
           width: rem(40);
           height: rem(40);
+          fill: transparent;
+          transition: $t-hover;
 
           @include media-breakpoint-down(sm) {
             width: rem(53);
             height: rem(53);
           }
+
           circle {
             stroke: $grey-light;
+            transition: $t-hover;
+          }
+        }
+
+        &:hover {
+          color: $machine-grey;
+
+          .icon {
+            fill: $white;
+
+            circle {
+              stroke: $white;
+            }
           }
         }
       }
