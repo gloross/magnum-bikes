@@ -2,6 +2,7 @@ import { formatMoney } from '@shopify/theme-currency/currency'
 import 'whatwg-fetch'
 import serialize from 'form-serialize'
 import locales from '../utils/locales'
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 
 export default class GoCart {
   constructor(options) {
@@ -112,7 +113,7 @@ export default class GoCart {
       e.preventDefault()
       if (this.isDrawerMode) {
         this.openCartDrawer()
-        document.querySelector('html').style.overflow = 'hidden'
+        // document.querySelector('html').style.overflow = 'hidden'
       } else {
         this.openMiniCart()
       }
@@ -122,7 +123,7 @@ export default class GoCart {
     this.cartOverlay.addEventListener('click', () => {
       this.closeFailModal()
       this.closeCartModal()
-      document.querySelector('html').style.overflow = 'auto'
+      // document.querySelector('html').style.overflow = 'auto'
       if (this.isDrawerMode) {
         this.closeCartDrawer()
       } else {
@@ -135,7 +136,7 @@ export default class GoCart {
       this.cartDrawerClose.addEventListener('click', () => {
         this.closeCartDrawer()
         this.closeCartOverlay()
-        document.querySelector('html').style.overflow = 'auto'
+        // document.querySelector('html').style.overflow = 'auto'
       })
     }
 
@@ -594,18 +595,26 @@ export default class GoCart {
 
   openCartDrawer() {
     this.cartDrawer.classList.add('is-open')
+    disableBodyScroll('.js-go-cart-drawer-content', {
+      allowTouchMove: (el) => el.tagName === 'TEXTAREA',
+    });
   }
 
   closeCartDrawer() {
     this.cartDrawer.classList.remove('is-open')
+    clearAllBodyScrollLocks();
   }
 
   openMiniCart() {
     this.cartMiniCart.classList.add('is-open')
+    disableBodyScroll('.js-go-cart-drawer-content', {
+      allowTouchMove: (el) => el.tagName === 'TEXTAREA',
+    });
   }
 
   closeMiniCart() {
     this.cartMiniCart.classList.remove('is-open')
+    clearAllBodyScrollLocks();
   }
 
   openFailModal() {
