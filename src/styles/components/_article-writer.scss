@@ -87,28 +87,24 @@
     display: flex;
 
     li {
-      transition: $t-hover;
-      &:hover {
-        opacity: 0.5;
-      }
       &:not(:last-child) {
         margin-right: rem(7);
       }
 
       a {
         display: block;
+        border-radius: 100%;
+        color: $cyan;
+        overflow: hidden;
 
-        .icon {
-          circle {
-            stroke: $divider-grey;
-          }
+        .icon circle {
+          stroke: $divider-grey;
+          transition: $t-hover;
+        }
 
-          g {
-            fill: $cyan;
-          }
-
-          path {
-            fill: $cyan;
+        &:hover {
+          .icon circle {
+            stroke: $cyan;
           }
         }
       }

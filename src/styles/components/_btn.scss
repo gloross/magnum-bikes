@@ -15,6 +15,7 @@
   text-align: center;
   pointer-events: auto !important;
   transition: $t-hover;
+  cursor: pointer;
 
   &__bg {
     width: 100%;

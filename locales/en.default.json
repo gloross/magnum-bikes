@@ -6,9 +6,22 @@
   },
   "sections": {
     "cart": {
+      "title": "Your order",
       "empty": "Your cart is empty",
+      "subtotal": "Subtotal:",
+      "quantity": "Quantity",
+      "button_checkout": "GO TO CHECKOUT",
+      "button_cart": "GO TO CART",
+      "continue_shopping": "Continue shopping",
+      "go_to_checkout": "Proceed to checkout",
+      "view_cart": "View cart",
       "cart_error": "There was an error while updating your cart. Please try again.",
-      "cart_quantity_error": "You can only add [quantity] of this item to your cart."
+      "cart_quantity_error": "You can only add [quantity] of this item to your cart.",
+      "something_went_wrong_error": "Something went wrong, please contact us!",
+      "page": {
+        "order_summary": "Order Summary",
+        "update_cart_text": "*If you change product quantity please make sure to click Update Cart button to view your order subtotal."
+      }
     }
   },
   "templates": {

@@ -1,6 +1,8 @@
 import { formatMoney } from '@shopify/theme-currency/currency'
 import 'whatwg-fetch'
 import serialize from 'form-serialize'
+import locales from '../utils/locales'
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 
 export default class GoCart {
   constructor(options) {
@@ -28,6 +30,7 @@ export default class GoCart {
       itemQuantity: '.js-go-cart-quantity',
       itemQuantityPlus: '.js-go-cart-quantity-plus',
       itemQuantityMinus: '.js-go-cart-quantity-minus',
+      showGoCart: '.js-show-go-cart',
       cartMode: 'drawer',
       drawerDirection: 'right',
       displayModal: false,
@@ -82,6 +85,7 @@ export default class GoCart {
     this.drawerDirection = this.defaults.drawerDirection
     this.displayModal = this.defaults.displayModal
     this.moneyFormat = this.defaults.moneyFormat
+    this.showGoCart = document.querySelector(this.defaults.showGoCart)
 
     this.init()
   }
@@ -91,7 +95,6 @@ export default class GoCart {
   }
 
   init() {
-
     this.fetchCart()
 
     if (this.isDrawerMode) {
@@ -110,7 +113,7 @@ export default class GoCart {
       e.preventDefault()
       if (this.isDrawerMode) {
         this.openCartDrawer()
-        document.querySelector('html').style.overflow = 'hidden'
+        // document.querySelector('html').style.overflow = 'hidden'
       } else {
         this.openMiniCart()
       }
@@ -120,7 +123,7 @@ export default class GoCart {
     this.cartOverlay.addEventListener('click', () => {
       this.closeFailModal()
       this.closeCartModal()
-      document.querySelector('html').style.overflow = 'auto'
+      // document.querySelector('html').style.overflow = 'auto'
       if (this.isDrawerMode) {
         this.closeCartDrawer()
       } else {
@@ -133,7 +136,7 @@ export default class GoCart {
       this.cartDrawerClose.addEventListener('click', () => {
         this.closeCartDrawer()
         this.closeCartOverlay()
-        document.querySelector('html').style.overflow = 'auto'
+        // document.querySelector('html').style.overflow = 'auto'
       })
     }
 
@@ -162,6 +165,17 @@ export default class GoCart {
       }
       this.closeCartOverlay()
     })
+
+    this.showGoCart.addEventListener('click', (event) => {
+      event.preventDefault();
+
+      if (this.isDrawerMode) {
+        this.openCartDrawer()
+      } else {
+        this.openMiniCart()
+      }
+      this.openCartOverlay()
+    });
   }
 
   fetchCart(callback) {
@@ -321,30 +335,32 @@ export default class GoCart {
         itemVariant = ''
       }
 
+      let disabledClass = '';
+
+      if (item.quantity == 1) {
+        disabledClass = ' is-disabled';
+      }
+
       let options = item.options_with_values
       let options_content = ''
 
       if (options) {
         options.forEach((line) => {
-          let icon = ''
           let url = ''
 
           if (line.name.includes('olor')) {
             url =
               'https://cdn.shopify.com/s/files/1/0608/6072/7509/files/E_bike_Cart_page_Color_icon.svg'
-            icon = `<div class="go-cart-item__variant-icon" style="background-color: transparent;background-image: url(${url})"></div>`
           }
 
           if (line.name.includes('attery')) {
             url =
               'https://cdn.shopify.com/s/files/1/0608/6072/7509/files/E_bike_Cart_page_Battery_icon.svg'
-            icon = `<div class="go-cart-item__variant-icon" style="background-color: transparent;background-image: url(${url})"></div>`
           }
 
           if (line.value != 'Default Title') {
-            options_content += `<span class="u-d-flex u-align-center u-justify-between">
-              ${icon}
-              ${line.name}: <strong>${line.value}</strong></span>`
+            options_content += `<p>
+              ${line.name}: <strong>${line.value}</strong></p>`
           }
         })
       }
@@ -354,31 +370,42 @@ export default class GoCart {
       const cartSingleProduct = `
         <div class="go-cart-item__single" data-line="${Number(index + 1)}">
             <div class="go-cart-item__info-wrapper">
-                <div class="go-cart-item__image" style="background-size:contain; background-image: url(${
-                  item.image
-                });"></div>
-                <div class="go-cart-item__info">
+                <div class="go-cart-item__info-header">
                     <a href="${item.url}" class="go-cart-item__title">${
-        item.product_title
-      }</a>
-                    <div class="go-cart-item__quantity">
-                        <span class="go-cart-item__quantity-label"> </span>
-                        <span class="go-cart-item__quantity-button js-go-cart-quantity-minus">-</span>
-                        <input class="go-cart-item__quantity-number js-go-cart-quantity" type="number" value="${
-                          item.quantity
-                        }" disabled>
-                        <span class="go-cart-item__quantity-button js-go-cart-quantity-plus">+</span>
-                    </div>
+                      item.product_title
+                    }</a>
+
+                    <a href="#" class="go-cart-item__remove ${
+                      this.removeFromCartNoDot
+                    }">Remove</a>
+                </div>
+                <a href="${item.url}" class="go-cart-item__image">
+                    <div class="go-cart-item__image-inner" style="background-image: url(${
+                      item.image
+                    });"></div>
+                </a>
+                <div class="go-cart-item__info">
                     <div class="go-cart-item__variant">${variant_content}</div>
+                    <div class="go-cart-item__quantity">
+                        <span class="go-cart-item__quantity-label">${locales['sections.cart.quantity']}</span>
+                        <div class="go-cart-item__quantity-field">
+                            <span class="go-cart-item__quantity-button quantity-minus js-go-cart-quantity-minus${disabledClass}">
+                                <svg width="10" height="2" viewBox="0 0 10 2" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M10 0v2H0V0z"/></svg>
+                            </span>
+                            <input class="go-cart-item__quantity-number js-go-cart-quantity" type="number" value="${
+                              item.quantity
+                            }" disabled>
+                            <span class="go-cart-item__quantity-button quantity-plus js-go-cart-quantity-plus">
+                                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 4v2H0V4h10Z" fill="currentColor"/><path d="M6 10H4V0h2v10Z" fill="currentColor"/></svg>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="go-cart-item__price">${formatMoney(
+                      item.line_price,
+                      this.moneyFormat
+                    )}</div>
                 </div>
             </div>
-            <div class="go-cart-item__price">${formatMoney(
-              item.line_price,
-              this.moneyFormat
-            )}</div>
-            <a class="go-cart-item__remove ${
-              this.removeFromCartNoDot
-            }">Remove</a>
         </div>
       `
       this.cartDrawerContent.innerHTML += cartSingleProduct
@@ -390,17 +417,19 @@ export default class GoCart {
     this.cartDrawerSubTotal.parentNode.classList.remove('is-invisible')
     const removeFromCart = document.querySelectorAll(this.removeFromCart)
     removeFromCart.forEach((item) => {
-      item.addEventListener('click', () => {
-        GoCart.removeItemAnimation(item.parentNode)
-        const line = item.parentNode.getAttribute('data-line')
+      item.addEventListener('click', (event) => {
+        event.preventDefault();
+        GoCart.removeItemAnimation(item.closest('[data-line]'))
+        const line = item.closest('[data-line]').getAttribute('data-line')
         this.removeItem(line)
       })
     })
     const itemQuantityPlus = document.querySelectorAll(this.itemQuantityPlus)
     itemQuantityPlus.forEach((item) => {
       item.addEventListener('click', () => {
+        item.closest('[data-line]').classList.add('is-loading');
         const line =
-          item.parentNode.parentNode.parentNode.parentNode.getAttribute(
+          item.closest('[data-line]').getAttribute(
             'data-line'
           )
         const quantity =
@@ -411,8 +440,9 @@ export default class GoCart {
     const itemQuantityMinus = document.querySelectorAll(this.itemQuantityMinus)
     itemQuantityMinus.forEach((item) => {
       item.addEventListener('click', () => {
+        item.closest('[data-line]').classList.add('is-loading');
         const line =
-          item.parentNode.parentNode.parentNode.parentNode.getAttribute(
+          item.closest('[data-line]').getAttribute(
             'data-line'
           )
         const quantity =
@@ -423,7 +453,7 @@ export default class GoCart {
           0
         ) {
           GoCart.removeItemAnimation(
-            item.parentNode.parentNode.parentNode.parentNode
+            item.closest('[data-line]')
           )
         }
       })
@@ -437,34 +467,52 @@ export default class GoCart {
       if (itemVariant === null) {
         itemVariant = ''
       }
+
+      let disabledClass = '';
+
+      if (item.quantity == 1) {
+        disabledClass = ' is-disabled';
+      }
+
       const cartSingleProduct = `
         <div class="go-cart-item__single" data-line="${Number(index + 1)}">
             <div class="go-cart-item__info-wrapper">
-                <div class="go-cart-item__image" style="background-image: url(${
-                  item.image
-                });"></div>
-                <div class="go-cart-item__info">
+                <div class="go-cart-item__info-header">
                     <a href="${item.url}" class="go-cart-item__title">${
-        item.product_title
-      }</a>
+                      item.product_title
+                    }</a>
+
+                    <a href="#" class="go-cart-item__remove ${
+                      this.removeFromCartNoDot
+                    }">Remove</a>
+                </div>
+                <a href="${item.url}" class="go-cart-item__image">
+                    <div class="go-cart-item__image-inner" style="background-image: url(${
+                      item.image
+                    });"></div>
+                </a>
+                <div class="go-cart-item__info">
                     <div class="go-cart-item__variant">${itemVariant}</div>
                     <div class="go-cart-item__quantity">
-                        <span class="go-cart-item__quantity-label">Quantity: </span>
-                        <span class="go-cart-item__quantity-button js-go-cart-quantity-minus">-</span>
-                        <input class="go-cart-item__quantity-number js-go-cart-quantity" type="number" value="${
-                          item.quantity
-                        }" disabled>
-                        <span class="go-cart-item__quantity-button js-go-cart-quantity-plus">+</span>
+                        <span class="go-cart-item__quantity-label">${locales['sections.cart.quantity']}</span>
+                        <div class="go-cart-item__quantity-field">
+                            <span class="go-cart-item__quantity-button quantity-minus js-go-cart-quantity-minus${disabledClass}">
+                                <svg width="10" height="2" viewBox="0 0 10 2" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M10 0v2H0V0z"/></svg>
+                            </span>
+                            <input class="go-cart-item__quantity-number js-go-cart-quantity" type="number" value="${
+                              item.quantity
+                            }" disabled>
+                            <span class="go-cart-item__quantity-button quantity-plus js-go-cart-quantity-plus">
+                                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 4v2H0V4h10Z" fill="currentColor"/><path d="M6 10H4V0h2v10Z" fill="currentColor"/></svg>
+                            </span>
+                        </div>
                     </div>
+                    <div class="go-cart-item__price">${formatMoney(
+                      item.line_price,
+                      this.moneyFormat
+                    )}</div>
                 </div>
             </div>
-            <div class="go-cart-item__price">${formatMoney(
-              item.line_price,
-              this.moneyFormat
-            )}</div>
-            <a class="go-cart-item__remove ${
-              this.removeFromCartNoDot
-            }">Remove</a>
         </div>
       `
       this.cartMiniCartContent.innerHTML += cartSingleProduct
@@ -476,17 +524,19 @@ export default class GoCart {
     this.cartMiniCartSubTotal.parentNode.classList.remove('is-invisible')
     const removeFromCart = document.querySelectorAll(this.removeFromCart)
     removeFromCart.forEach((item) => {
-      item.addEventListener('click', () => {
-        GoCart.removeItemAnimation(item.parentNode)
-        const line = item.parentNode.getAttribute('data-line')
+      item.addEventListener('click', (event) => {
+        event.preventDefault();
+        GoCart.removeItemAnimation(item.closest('[data-line]'))
+        const line = item.closest('[data-line]').getAttribute('data-line')
         this.removeItem(line)
       })
     })
     const itemQuantityPlus = document.querySelectorAll(this.itemQuantityPlus)
     itemQuantityPlus.forEach((item) => {
       item.addEventListener('click', () => {
+        item.closest('[data-line]').classList.add('is-loading');
         const line =
-          item.parentNode.parentNode.parentNode.parentNode.getAttribute(
+          item.closest('[data-line]').getAttribute(
             'data-line'
           )
         const quantity =
@@ -497,8 +547,9 @@ export default class GoCart {
     const itemQuantityMinus = document.querySelectorAll(this.itemQuantityMinus)
     itemQuantityMinus.forEach((item) => {
       item.addEventListener('click', () => {
+        item.closest('[data-line]').classList.add('is-loading');
         const line =
-          item.parentNode.parentNode.parentNode.parentNode.getAttribute(
+          item.closest('[data-line]').getAttribute(
             'data-line'
           )
         const quantity =
@@ -509,7 +560,7 @@ export default class GoCart {
           0
         ) {
           GoCart.removeItemAnimation(
-            item.parentNode.parentNode.parentNode.parentNode
+            item.closest('[data-line]')
           )
         }
       })
@@ -544,18 +595,26 @@ export default class GoCart {
 
   openCartDrawer() {
     this.cartDrawer.classList.add('is-open')
+    disableBodyScroll('.js-go-cart-drawer-content', {
+      allowTouchMove: (el) => el.tagName === 'TEXTAREA',
+    });
   }
 
   closeCartDrawer() {
     this.cartDrawer.classList.remove('is-open')
+    clearAllBodyScrollLocks();
   }
 
   openMiniCart() {
     this.cartMiniCart.classList.add('is-open')
+    disableBodyScroll('.js-go-cart-drawer-content', {
+      allowTouchMove: (el) => el.tagName === 'TEXTAREA',
+    });
   }
 
   closeMiniCart() {
     this.cartMiniCart.classList.remove('is-open')
+    clearAllBodyScrollLocks();
   }
 
   openFailModal() {

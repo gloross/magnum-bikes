@@ -2,70 +2,76 @@
 
 <section class="custom cart">
     <form action="{{ routes.cart_url }}" method="post" class="accessories">
-
-        <div class="accessories__inner">
+      <div class="accessories__inner">
+          <div class="container">
             <div class="accessories__col-left">
+                {% if cart.item_count > 0 %}
+                    <h1 class="accessories__title">{{- 'sections.cart.page.order_summary' | t -}}</h1>
 
-                <div class="accessories__order-btn ">
-                    <h3>Order Summary</h3>
-                    <span>{{ cart.item_count }}</span>
-                </div>
+                    <div class="accessories__order-dropdown js-order-item-dropdown">
+                        {% for line_item in cart.items %}
+                            <div class="accessories__order-dropdown-item">
+                                <div class="u-d-flex u-align-center">
+                                    <div class="input-increment input-increment--accessories js-input-increment disable-decrease">
+                                        <button type="button" class="input-increment__cta js-number-decrease">{% render 'icon', icon: 'minus' %}</button>
+                                        <input type="text" name="updates[]" value="{{ line_item.quantity }}" class="input-increment__number js-input-number">
+                                        <button type="button" class="input-increment__cta js-number-increase">{% render 'icon', icon: 'plus' %}</button>
 
-                <div class="accessories__order-dropdown js-order-item-dropdown">
-                    {% for line_item in cart.items %}
-                        <div class="accessories__order-dropdown-item">
-                            <div class="u-d-flex u-align-center">
-                                <div class="input-increment input-increment--accessories  js-input-increment disable-decrease">
-                                    <button type="button" class="input-increment__cta js-number-decrease">{% render 'icon', icon: 'minus' %}</button>
-                                    <input type="text" name="updates[]" value="{{ line_item.quantity }}" class="input-increment__number js-input-number">
-                                    <button type="button" class="input-increment__cta js-number-increase">{% render 'icon', icon: 'plus' %}</button>
+                                    </div>
+                                    <div class="media-wrapper">
+                                        {% if line_item.variant.metafields.variant.image_1 %}
+                                        <img height="" loading="lazy" src="{{ line_item.variant.metafields.variant.image_1 }}" width=""/>
+                                        {% elsif line_item.product.metafields.nb_product.feature_image %}
+                                        <img height="" loading="lazy" src="{{ line_item.product.metafields.nb_product.feature_image | image_url: '600x' }}" width=""/>
+                                        {% else %}
+                                        <img height="" loading="lazy" src="{{ line_item.product.featured_image | img_url: '600x' }}" width=""/>
+                                        {% endif %}
+                                    </div>
+                                    <span class="item-name">
+                                        <strong>{{ line_item.product.title }}</strong>
+                                        {% if line_item.variant.title != 'Default Title' %}
+                                        - {{ line_item.variant.title }}
+                                        {% endif %}
+                                    </span>
 
+                                    <span class="price"><strong>{{ line_item.price | money }}</strong></span>
+                                    <a href="{{ line_item.url_to_remove }}" class="line-time-remove">{% render 'icon', icon: 'close' %}</a>
                                 </div>
-                                <div class="media-wrapper">
-                                    {% if line_item.variant.metafields.variant.image_1 %}
-                                    <img height="" loading="lazy" src="{{ line_item.variant.metafields.variant.image_1 }}" width=""/>
-                                    {% elsif line_item.product.metafields.nb_product.feature_image %}
-                                    <img height="" loading="lazy" src="{{ line_item.product.metafields.nb_product.feature_image | image_url: '600x' }}" width=""/>
-                                    {% else %}
-                                    <img height="" loading="lazy" src="{{ line_item.product.featured_image | img_url: '600x' }}" width=""/>
-                                    {% endif %}
-                                </div>
-                                <span class="item-name">
-                                    <strong>{{ line_item.product.title }}</strong>
-                                    {% if line_item.variant.title != 'Default Title' %}
-                                    - {{ line_item.variant.title }}
-                                    {% endif %}
-                                </span>
-
-                                <span class="price"><strong>{{ line_item.price | money }}</strong></span>
-                                <a href="{{ line_item.url_to_remove }}" class="line-time-remove">{% render 'icon', icon: 'close' %}</a>
                             </div>
+                        {% endfor %}
+                    </div>
+
+                    <div class="accessories__order-subtotal">
+                        <div class="order-info">
+                            {{- 'sections.cart.page.update_cart_text' | t -}}
                         </div>
-                    {% endfor %}
-                </div>
-
-                <div class="accessories__order-subtotal">
-                    <div class="order-info">
-                        *If you change product quantity please make sure to click Update Cart button to view your order subtotal.
+                        <div class="order-subtotal">
+                            <span>{{- 'sections.cart.subtotal' | t -}}</span> {{ cart.total_price | money }}
+                        </div>
                     </div>
-                    <div class="order-subtotal">
-                        <span>Subtotal:</span> {{ cart.total_price | money }}
-                    </div>
-                </div>
+                {% endif %}
 
+                {% if cart.item_count == 0 %}
+                    <h1 class="accessories__order-empty">
+                      {{- 'sections.cart.empty' | t -}}
+                    </h1>
+                {% endif %}
             </div>
-        </div>
-        <div class="accessories__cta">
+          </div>
+      </div>
+      <div class="accessories__cta">
           <div class="container">
                <div class="u-d-flex u-align-center u-justify-between cart-footer">
                     <a href="{{ object.continue_shopping_url }}" class="btn btn--outline-grey-light cart-footer__item cart-footer__item-shoping">CONTINUE SHOPPING</a>
 
-                    <input type="submit" value="UPDATE CART" class="btn btn--outline-grey-light cart-footer__item cart-footer__item-update">
+                    {% if cart.item_count > 0 %}
+                        <input type="submit" value="UPDATE CART" class="btn btn--outline-grey-light cart-footer__item cart-footer__item-update">
 
-                    <input type="submit" name="checkout" value="CHECKOUT" class="btn btn--blue-fill cart-footer__item cart-footer__item-checkout">
+                        <input type="submit" name="checkout" value="CHECKOUT" class="btn btn--blue-fill cart-footer__item cart-footer__item-checkout">
+                    {% endif %}
                </div>
           </div>
-        </div>
+      </div>
     </form>
 </section>
 

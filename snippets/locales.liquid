@@ -1,6 +1,7 @@
 {% assign keys = 'products.buttons.add_to_cart' %}
 {% assign keys = keys | append: ',products.buttons.sold_out' %}
 {% assign keys = keys | append: ',products.buttons.back_in_stock' %}
+{% assign keys = keys | append: ',sections.cart.quantity' %}
 {% assign keys = keys | split: ","  %}
 <script>
   const langIndex = {};

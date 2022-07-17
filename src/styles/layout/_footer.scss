@@ -14,7 +14,6 @@
   }
 
   &__announcement {
-    color: $white;
     background: linear-gradient(180deg, $machine-grey 0%, $darkslategrey 100%);
 
     h3,
@@ -55,6 +54,7 @@
 
       path {
         fill: $grey-light;
+        transition: $t-hover;
       }
     }
 
@@ -62,10 +62,19 @@
       color: $grey-light;
       font-size: rem(15);
       line-height: line-height(15, 25);
+      transition: $t-hover;
 
       @include media-breakpoint-down(md) {
         font-size: rem(16);
         line-height: line-height(16, 24);
+      }
+
+      &:hover {
+        color: $grey-light-2;
+
+        svg path {
+          fill: $grey-light-2;
+        }
       }
     }
   }
@@ -93,7 +102,7 @@
     }
   }
 
-  &__announcement-grid-item {
+  &__announcement-grid-item a {
     display: flex;
     align-items: center;
   }
@@ -308,19 +317,39 @@
         margin-right: rem(10);
       }
       a {
-        display: inline-block;
+        display: block;
         cursor: pointer;
+        color: $white;
+        border-radius: 100%;
+        overflow: hidden;
 
         .icon {
+          display: block;
           width: rem(40);
           height: rem(40);
+          fill: transparent;
+          transition: $t-hover;
 
           @include media-breakpoint-down(sm) {
             width: rem(53);
             height: rem(53);
           }
+
           circle {
             stroke: $grey-light;
+            transition: $t-hover;
+          }
+        }
+
+        &:hover {
+          color: $machine-grey;
+
+          .icon {
+            fill: $white;
+
+            circle {
+              stroke: $white;
+            }
           }
         }
       }
