@@ -66,7 +66,6 @@
   }
 
   &__title {
-    max-width: rem(622);
     margin-bottom: rem(44);
     font-size: rem(40);
     line-height: rem(56);
@@ -80,6 +79,10 @@
     &:last-child {
       margin-bottom: 0;
     }
+  }
+
+  .article__title--small {
+    max-width: rem(622);
   }
 
   &__text-content,

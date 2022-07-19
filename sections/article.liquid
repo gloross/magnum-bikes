@@ -111,7 +111,7 @@
         <div class="article__content">
           {% assign sections = shop.metafields.acf_settings.article_layouts | where: "id", article.id | first | map: "sections" | where: "visible" %}
 
-          <h1 class="article__title">{{- article_title -}}</h1>
+          <h1 class="article__title article__title--small">{{- article_title -}}</h1>
 
           {%- if sections.size > 0 -%}
             <div class="article__body">
@@ -123,7 +123,7 @@
                 {%- if metafield_section.name == 'text_content' -%}
                   {%- if metafield.text[index] -%}
                     {%- render 'text-content' with
-                      mod_class: 'article__text-content',
+                      mod_class: 'text-content--small article__text-content',
                       mod_content: metafield.text[index] -%}
                   {%- endif -%}
                 {%- endif -%}
