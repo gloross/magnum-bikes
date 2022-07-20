@@ -179,7 +179,7 @@ export default class productSliderGallery {
           zoomEl: true,
           arrowEl: true,
           preloaderEl: true,
-          clickToCloseNonZoomable: true,
+          clickToCloseNonZoomable: false,
           galleryUID: galleryElement.getAttribute('data-pswp-uid'),
           getThumbBoundsFn: function (index) {
             // See Options -> getThumbBoundsFn section of documentation for more info
@@ -234,31 +234,80 @@ export default class productSliderGallery {
           gallery.close()
         })
 
-        document
-          .querySelector('.js-zoom-out')
-          .addEventListener('click', (e) => {
-            e.preventDefault()
+        const zoomOutButton = document.querySelector('.js-zoom-out');
+        const zoomInButton = document.querySelector('.js-zoom-in');
 
+        // Zoom Out Click
+        zoomOutButton.addEventListener('click', (e) => {
+          e.preventDefault()
+
+          if (zoomOutButton.classList.contains('is-active')) return;
+
+          zoomInButton.classList.remove('is-active');
+          zoomOutButton.classList.add('is-active');
+          gallery.scrollWrap.classList.remove('is-draggable')
+
+          gallery.applyZoomPan(1, 0, 0);
+        })
+
+        // Zoom In Click
+        zoomInButton.addEventListener('click', (e) => {
+          e.preventDefault()
+
+          if (zoomInButton.classList.contains('is-active')) return;
+
+          zoomOutButton.classList.remove('is-active');
+          zoomInButton.classList.add('is-active')
+          gallery.scrollWrap.classList.add('is-draggable')
+
+          setTimeout(() => {
             gallery.zoomTo(
-              1,
+              2,
               { x: gallery.viewportSize.x / 2, y: gallery.viewportSize.y / 2 },
-              200,
+              0,
               false,
               function (now) {}
             )
           })
+        })
 
-        document.querySelector('.js-zoom-in').addEventListener('click', (e) => {
-          e.preventDefault()
+        gallery.listen('beforeChange', function() {
+          gallery.scrollWrap.classList.remove('show-items')
+        });
+
+        gallery.listen('afterChange', function() {
+          zoomOutButton.classList.add('is-active');
+          gallery.scrollWrap.classList.remove('is-draggable')
 
           gallery.zoomTo(
-            2,
-            { x: gallery.viewportSize.x / 2, y: gallery.viewportSize.y / 2 },
-            200,
+            1,
+            { x: 0, y: 0 },
+            0,
             false,
-            function (now) {}
+            function (now) {
+              if (now == 1) {
+                gallery.applyZoomPan(1, 0, 0)
+                setTimeout(() => {
+                  document.querySelectorAll('.pswp__zoom-wrap').forEach(element => element.setAttribute('style', 'transform: translate3d(0px, 0px, 0px) scale(1);'))
+                  gallery.scrollWrap.classList.add('show-items')
+                });
+              }
+            }
           )
-        })
+        });
+
+        gallery.listen('initialZoomInEnd', function() {
+          zoomInButton.classList.remove('is-active');
+          zoomOutButton.classList.add('is-active');
+          gallery.scrollWrap.classList.remove('is-draggable')
+
+          gallery.applyZoomPan(1, 0, 0);
+
+          setTimeout(() => {
+            document.querySelectorAll('.pswp__zoom-wrap').forEach(element => element.setAttribute('style', 'transform: translate3d(0px, 0px, 0px) scale(1);'))
+            gallery.scrollWrap.classList.add('show-items')
+          });
+        });
 
         gallery.listen('afterChange', function () {
           $galleryCounterBottom.textContent =
@@ -272,6 +321,7 @@ export default class productSliderGallery {
             `Image ` + $galleryCounter.textContent
         })
       }
+
 
       // loop through all gallery elements and bind events
       var galleryElements = document.querySelectorAll(gallerySelector)
