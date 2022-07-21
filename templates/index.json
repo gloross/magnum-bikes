@@ -7,14 +7,14 @@
           "type": "block",
           "settings": {
             "item_title": "Power",
-            "item_description": "500W Motor"
+            "item_description": "750W Motor"
           }
         },
         "183f0209-5bf6-48cd-a1c9-4246c68c99ce": {
           "type": "block",
           "settings": {
             "item_title": "Battery",
-            "item_description": "15Ah"
+            "item_description": "17.5Ah"
           }
         },
         "07cc40e3-01d3-4d76-b29a-2859a68a2121": {
@@ -31,12 +31,12 @@
         "07cc40e3-01d3-4d76-b29a-2859a68a2121"
       ],
       "settings": {
-        "section_title": "Flatten all hills.",
-        "image": "shopify:\/\/shop_images\/peak_t5_lifestyle_image_7.webp",
+        "section_title": "Explore new terrain.",
+        "image": "shopify:\/\/shop_images\/Magnum-Bikes-Nomad-Electric-Bike-Salt-Flats-Hero-Image_1.png",
         "video_url_mp4": "",
         "video_url_webm": "",
-        "cta_text": "DISCOVER THE PEAK T5",
-        "cta_url": "https:\/\/magnumebikes.myshopify.com\/products\/magnum-peak-t5"
+        "cta_text": "DISCOVER THE NOMAD",
+        "cta_url": "https:\/\/magnumbikes.com\/products\/magnum-nomad"
       }
     },
     "home-carousel": {
