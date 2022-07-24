@@ -15,6 +15,7 @@
     },
     "learning-filter": {
       "type": "learning-filter",
+      "disabled": true,
       "settings": {
       }
     },
