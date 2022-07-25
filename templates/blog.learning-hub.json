@@ -48,7 +48,7 @@
       ],
       "settings": {
         "title": "Featured Lessons",
-        "paginate_by": 3
+        "paginate_by": 6
       }
     },
     "perfect-match": {
@@ -81,7 +81,6 @@
         },
         "c403d385-b139-4200-9fd1-dcae6c921410": {
           "type": "block",
-          "disabled": true,
           "settings": {
             "slide_article": "news\/news-2"
           }

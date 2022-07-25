@@ -41,6 +41,13 @@
         "cta_text": "CHECK OUT FAT TIRE BIKES",
         "cta_url": "shopify:\/\/collections\/fat-tire"
       }
+    },
+    "1658319390c97381aa": {
+      "type": "apps",
+      "disabled": true,
+      "settings": {
+        "include_container": true
+      }
     }
   },
   "order": [
@@ -48,6 +55,7 @@
     "collection-filter",
     "find-perfect",
     "featured-bike-slider",
-    "fat-tire-banner"
+    "fat-tire-banner",
+    "1658319390c97381aa"
   ]
 }
