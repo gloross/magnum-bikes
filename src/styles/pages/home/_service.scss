@@ -10,7 +10,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    pointer-events: none;
 
     @include media-breakpoint-down(sm) {
       flex-wrap: wrap;
@@ -25,8 +24,9 @@
 
     @include media-breakpoint-down(sm) {
       margin-bottom: rem(40);
-      text-align: left;
-      width: 50%;
+      text-align: center;
+      width: 100%;
+      max-width: 100%;
     }
 
     .icon--box {
@@ -45,7 +45,7 @@
 
       @include media-breakpoint-down(sm) {
         max-width: rem(120);
-        text-align: left;
+        margin: 0 auto;
       }
     }
   }

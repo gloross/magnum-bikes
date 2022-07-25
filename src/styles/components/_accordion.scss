@@ -29,7 +29,6 @@
       &.active {
         opacity: 1;
         pointer-events: auto;
-        margin-top: rem(-50);
         margin-bottom: rem(30);
 
         @include media-breakpoint-down(sm) {

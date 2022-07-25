@@ -179,6 +179,11 @@ export default class productSliderGallery {
           zoomEl: true,
           arrowEl: true,
           preloaderEl: true,
+          allowPanToNext: false,
+          pinchToClose: false,
+          closeOnScroll: false,
+          closeOnVerticalDrag: false,
+          galleryPIDs: true,
           clickToCloseNonZoomable: false,
           galleryUID: galleryElement.getAttribute('data-pswp-uid'),
           getThumbBoundsFn: function (index) {
@@ -190,6 +195,7 @@ export default class productSliderGallery {
 
             return { x: rect.left, y: rect.top + pageYScroll, w: rect.width }
           },
+          getDoubleTapZoom: false,
         }
 
         // PhotoSwipe opened from URL

@@ -3,8 +3,8 @@ import '../../styles/plugins/photoswipe/_photoswipe.min.scss'
 import '../../styles/plugins/photoswipe/_photoswipe-default.scss'
 import '../../styles/plugins/photoswipe/_photoswipe-custom.scss'
 
-// import PhotoSwipe from 'photoswipe'
-// import PhotoSwipeUI_Default from 'photoswipe/dist/photoswipe-ui-default'
+import PhotoSwipe from 'photoswipe'
+import PhotoSwipeUI_Default from 'photoswipe/dist/photoswipe-ui-default'
 
 class productNoBikeGallery extends HTMLElement {
   constructor() {
