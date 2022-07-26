@@ -1,7 +1,7 @@
 .carousel-slider {
   padding: 0 0 rem(80) 0;
   background-color: #272526;
-  cursor: none;
+  cursor: grab;
   overflow: hidden;
 
   @include media-breakpoint-up(md) {
@@ -95,6 +95,10 @@
       transform: translateY(100%);
     }
 
+    @include media-breakpoint-down(sm) {
+      bottom: 0;
+    }
+
     strong,
     p {
       color: $white;
@@ -175,10 +179,6 @@
     opacity: 0;
     visibility: hidden;
     display: none;
-
-    @include media-breakpoint-up(md) {
-      display: block;
-    }
 
     &.active {
       opacity: 1;

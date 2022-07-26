@@ -142,14 +142,105 @@
 
   {% endfor %}
 {% endcapture %}
+
+{% capture main_image_gallery %}
+  {% unless variant_1 != blank or variant_2 != blank or variant_3 != blank %}
+    {%- for image in product.images -%}
+      <li class="swiper-slide dadada" data-variant="{{ product.selected_or_first_available_variant.id }}" style="display:none">
+        <figure itemprop="associatedMedia" itemscope data-pfpf itemtype="http://schema.org/ImageObject">
+          <a href="{{ image | img_url: 'master' }}" itemprop="contentUrl" data-size="1024x768">
+            <img src="{{ image | img_url: 'master' }}" alt="{{- image.alt | escape -}}"/>
+          </a>
+        </figure>
+
+        {% if forloop.index0 == 0 %}
+          {% for image in product.images %}
+            {% assign index = forloop.index0 %}
+            {% assign image = product.images[index] %}
+
+            {% if forloop.first %}
+              {% continue %}
+            {% endif %}
+
+            <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+              <a href="{{ image | img_url: 'master' }}" itemprop="contentUrl" data-size="1024x768">
+                <img src="{{ image | img_url: 'master' }}" alt="{{- image.alt | escape -}}"/>
+              </a>
+            </figure>
+          {% endfor %}
+        {% endif %}
+
+        {% if forloop.index0 == 1 %}
+          {% assign prev_index = forloop.index0 | minus: 1 %}
+          {% assign prev_image = product.images[prev_index] %}
+
+          {% for image in product.images %}
+            {% assign index = forloop.index0 %}
+            {% assign image = product.images[index] %}
+
+            {% if forloop.first or index == 1 %}
+              {% continue %}
+            {% endif %}
+
+            <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+              <a href="{{ image | img_url: 'master' }}" itemprop="contentUrl" data-size="1024x768">
+                <img src="{{ image | img_url: 'master' }}" alt="{{- image.alt | escape -}}"/>
+              </a>
+            </figure>
+          {% endfor %}
+
+          <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <a href="{{ prev_image | img_url: 'master' }}" itemprop="contentUrl" data-size="1024x768">
+              <img src="{{ prev_image | img_url: 'master' }}" alt="{{- prev_image.alt | escape -}}"/>
+            </a>
+          </figure>
+        {% endif %}
+
+        {% if forloop.index0 == 2 %}
+          {% assign prev_index = forloop.index0 | minus: 2 %}
+          {% assign prev_image = product.images[prev_index] %}
+
+          {% for image in product.images %}
+            {% assign index = forloop.index0 %}
+            {% assign image = product.images[index] %}
+
+            {% if forloop.first or index == 1 or index == 2 %}
+              {% continue %}
+            {% endif %}
+
+            <figure itemprop="associatedMedia" itemscope data-blabla itemtype="http://schema.org/ImageObject">
+              <a href="{{ image | img_url: 'master' }}" itemprop="contentUrl" data-size="1024x768">
+                <img src="{{ image | img_url: 'master' }}" alt="{{- image.alt | escape -}}"/>
+              </a>
+            </figure>
+          {% endfor %}
+
+          <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <a href="{{ prev_image | img_url: 'master' }}" itemprop="contentUrl" data-size="1024x768">
+              <img src="{{ prev_image | img_url: 'master' }}" alt="{{- prev_image.alt | escape -}}"/>
+            </a>
+          </figure>
+
+          <figure itemprop="associatedMedia" itemscope data-blablaaaa itemtype="http://schema.org/ImageObject">
+            <a href="{{ product.images[1] | img_url: 'master' }}" itemprop="contentUrl" data-size="1024x768">
+              <img src="{{ product.images[1] | img_url: 'master' }}" alt="{{- product.images[1].alt | escape -}}"/>
+            </a>
+          </figure>
+        {% endif %}
+      </li>
+    {%- endfor -%}
+  {% endunless %}
+{% endcapture %}
+
 <div class="product-details__resize js-product-resize">
   {% render 'icon', icon: 'resize' %}
 </div>
 <div class="product-slider swiper-container js-product-slider">
   <ul class="swiper-wrapper js-gallery">
     {{ variant_gallery }}
+    {{ main_image_gallery }}
     {% for image in product.images %}
-      <li class="swiper-slide">
+      <li class="swiper-slide opa-test">
         <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
           <a href="{{ image | img_url: '1024x' }}" itemprop="contentUrl" data-size="1024x768">
             <div class="media-wrapper">

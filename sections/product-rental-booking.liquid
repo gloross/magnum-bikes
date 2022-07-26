@@ -9,48 +9,13 @@
 
 <section class="product-details product-details--rental-booking js-product">
   <div class="product-details__inner">
+    {%comment%}TO DO breadcrumbs!!!{%endcomment%}
+    <div class="breadcrumbs">
+      <a href="{{ product.collections[0].url }}">{{ product.collections[0].title }}</a>/<span>{{ product.title }}</span>
+    </div>
+
     <div class="product-details__gallery">
-      {%- if product.media.size > 0 -%}
-        <div class="product-details__resize js-product-resize">
-          {% render 'icon', icon: 'resize' %}
-        </div>
-
-        <div class="product-slider swiper-container js-product-slider" itemscope itemtype="http://schema.org/ImageGallery">
-          <div class="swiper-wrapper js-gallery" >
-            {% for media in product.media %}
-              {%- if media.media_type == 'image' -%}
-                <div class="swiper-slide">
-                  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                    {% if product.metafields.nb_product.feature_image %}
-                      <a href="{{ metafields.nb_product.feature_image | img_url: 'master' }}" itemprop="contentUrl" data-size="1024x768">
-                        <div class="media-wrapper">
-                          <img src="{{ product.metafields.nb_product.feature_image | image_url: '450x' }}" alt="" loading="lazy" height="" width="">
-                        </div>
-                      </a>
-                    {% else %}
-                      <a href="{{ media.src | img_url: '1024x' }}" itemprop="contentUrl" data-size="1024x768">
-                        <div class="media-wrapper">
-                          <img src="{{ media.src | image_url: width: 1024 }}" alt="{{- media.alt -}}" loading="lazy">
-                        </div>
-                      </a>
-                    {% endif %}
-                  </figure>
-                </div>
-              {%- endif -%}
-            {% endfor %}
-          </div>
-
-          <div class="product-slider__btn-wrapper">
-            <div class="swiper-button-prev js-swiper-button-prev">
-              {% render 'icon', icon: 'arrow-left' %}
-            </div>
-
-            <div class="swiper-button-next js-swiper-button-next">
-              {% render 'icon', icon: 'arrow-right' %}
-            </div>
-          </div>
-        </div>
-      {%- endif -%}
+      {% render 'product-gallery' %}
     </div>
 
     <div class="product-details__col-right">

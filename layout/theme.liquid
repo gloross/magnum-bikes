@@ -234,7 +234,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   {{ 'base.css' | asset_url | stylesheet_tag: preload: true }}
 
   {{ 'component-productSlider.css' | asset_url | stylesheet_tag }}
+{% comment %}
   {{ 'component-productPhotoGallery.css' | asset_url | stylesheet_tag }}
+{% endcomment %}
 
   <!-- Header hook for plugins -->
   {{ content_for_header }}

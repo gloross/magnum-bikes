@@ -26,10 +26,18 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      padding: rem(60px);
+      padding: 0 rem(60) rem(60);
+
+      @include media-breakpoint-down(lg) {
+        padding: 0 rem(60) rem(60) 0;
+      }
+
+      @include media-breakpoint-down(md) {
+        padding: rem(20) 0 rem(60);
+      }
 
       @include media-breakpoint-down(xs) {
-        padding: rem(114) rem(20) rem(60);
+        padding: rem(20) rem(20) rem(60);
       }
     }
   }

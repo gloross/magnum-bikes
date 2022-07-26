@@ -1,77 +1,29 @@
 {{ 'component-productSlider.css' | asset_url | stylesheet_tag }}
 {{ 'component-productPhotoGallery.css' | asset_url | stylesheet_tag }}
 <script type="module" src="{{- 'component-productSlider.js' | asset_url -}}"></script>
-<script type="module" src="{{- 'component-productNoBikeGallery.js' | asset_url -}}"></script>
+<script type="module" src="{{- 'component-productPhotoGallery.js' | asset_url -}}"></script>
 
 <section class="product-details product-details--no-bikes js-product">
   <div class="product-details__inner">
     <div class="breadcrumbs">
       {% for collection in product.collections %}
-      <script>console.log('{{ product.collections | json }}')</script>
-
         {% if collection.url == "/collections/parts" or collection.url == "/collections/gear" %}
-        {% assign first_url = collection.url %}
-        {% assign first_titl = collection.title %}
-            {% else %}
-            {% if collection.url == "/collections/non-bike" %}
-                {% continue %}
-                <script>console.log('{{ product.collections | json }}')</script>
-
-              {% else %}
-              <script>console.log('{{ product.collections | json }}')</script>
-
-              {% assign second_url = collection.url %}
-              {% assign second_titl = collection.title %}
-            {% endif %}
+          {% assign first_url = collection.url %}
+          {% assign first_titl = collection.title %}
+        {% else %}
+          {% if collection.url == "/collections/non-bike" %}
+            {% continue %}
+          {% else %}
+            {% assign second_url = collection.url %}
+            {% assign second_titl = collection.title %}
+          {% endif %}
         {% endif %}
       {% endfor %}
       <a href="{{first_url}}">{{first_titl}}</a>/
       <a href="{{second_url}}">{{second_titl}}</a>
     </div>
       <div class="product-details__gallery">
-        <div class="product-details__resize js-product-resize">
-          {% render 'icon', icon: 'resize' %}
-        </div>
-        <product-gallery class="js-no-bike-gallery">
-          <div class="product-slider swiper-container js-product-slider" itemscope itemtype="http://schema.org/ImageGallery">
-              <div class="swiper-wrapper js-gallery" >
-                {% for collection in product.collections %}
-                <div class="swiper-slide">
-                  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                    <a href="{{ metafields.nb_product.feature_image | image_url: '600x' }}" itemprop="contentUrl" data-size="1024x768">
-                      <div class="media-wrapper">
-                        <!-- {% liquid
-                          for variant in all_products[product].variants
-                            if forloop.index == 1
-                              assign firstVariant = variant
-                            endif
-                          endfor
-                        %} -->
-                        <script>console.log('{{product.metafields.nb_product.feature_image}}')</script>
-                          {% if product.metafields.nb_product.feature_image%}
-                            <img src="{{ product.metafields.nb_product.feature_image |image_url: '450x450' }}" alt="" loading="lazy" height="" width="">
-                              {% elsif product.images[0]  %}
-                              {{ product.images[0]  | image_url: width: 700 | image_tag }}
-                              {% else %}
-                               <img src="https://via.placeholder.com/604x423.jpg?text=Pleaceholder" loading="lazy" height="" width="">
-                          {% endif %}
-                    </a>
-                  </figure>
-                </div>
-                {% endfor %}
-              </div>
-            <div class="product-slider__btn-wrapper">
-              <div class="swiper-button-prev js-swiper-button-prev">
-                {% render 'icon', icon: 'arrow-left' %}
-              </div>
-              <div class="swiper-button-next js-swiper-button-next">
-                {% render 'icon', icon: 'arrow-right' %}
-              </div>
-            </div>
-
-          </div>
-          </product-gallery>
-
+        {% render 'product-gallery' %}
       </div>
       <div class="product-details__col-right">
         <div class="pswp" role="dialog" aria-hidden="true">
