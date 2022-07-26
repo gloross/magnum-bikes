@@ -2,6 +2,17 @@
   "sections": {
     "product-gallery": {
       "type": "main-product",
+      "blocks": {
+        "3f3c62a7-e351-4eac-99ae-33dd7b9707b0": {
+          "type": "shopify:\/\/apps\/bread-pay-messaging\/blocks\/app-block-product\/17f8811a-68d5-4aab-a4c3-0c2b49a4e68b",
+          "settings": {
+            "shopId": "9abc8788-f4e7-4e22-93c1-b151499789f7"
+          }
+        }
+      },
+      "block_order": [
+        "3f3c62a7-e351-4eac-99ae-33dd7b9707b0"
+      ],
       "settings": {
       }
     },
@@ -103,17 +114,6 @@
     "1645612596f0cb8b3b": {
       "type": "apps",
       "disabled": true,
-      "blocks": {
-        "c545581a-f7c9-4d7f-8887-fa4fca9bc9da": {
-          "type": "shopify:\/\/apps\/yotpo-product-reviews-photos\/blocks\/reviews\/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
-          "settings": {
-            "product": "{{product}}"
-          }
-        }
-      },
-      "block_order": [
-        "c545581a-f7c9-4d7f-8887-fa4fca9bc9da"
-      ],
       "settings": {
         "include_container": true
       }
@@ -169,6 +169,7 @@
         "loox-product-reviews"
       ],
       "settings": {
+        "include_container": true
       }
     }
   },
