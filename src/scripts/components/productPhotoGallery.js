@@ -278,28 +278,28 @@ export default class productSliderGallery {
         })
 
         gallery.listen('beforeChange', function() {
-          gallery.scrollWrap.classList.remove('show-items')
+          // gallery.scrollWrap.classList.remove('show-items')
         });
 
         gallery.listen('afterChange', function() {
           zoomOutButton.classList.add('is-active');
           gallery.scrollWrap.classList.remove('is-draggable')
 
-          gallery.zoomTo(
-            1,
-            { x: 0, y: 0 },
-            0,
-            false,
-            function (now) {
-              if (now == 1) {
-                gallery.applyZoomPan(1, 0, 0)
-                setTimeout(() => {
-                  document.querySelectorAll('.pswp__zoom-wrap').forEach(element => element.setAttribute('style', 'transform: translate3d(0px, 0px, 0px) scale(1);'))
-                  gallery.scrollWrap.classList.add('show-items')
-                });
-              }
-            }
-          )
+          // gallery.zoomTo(
+          //   1,
+          //   { x: 0, y: 0 },
+          //   0,
+          //   false,
+          //   function (now) {
+          //     if (now == 1) {
+          //       gallery.applyZoomPan(1, 0, 0)
+          //       setTimeout(() => {
+          //         document.querySelectorAll('.pswp__zoom-wrap').forEach(element => element.setAttribute('style', 'transform: translate3d(0px, 0px, 0px) scale(1);'))
+          //         gallery.scrollWrap.classList.add('show-items')
+          //       });
+          //     }
+          //   }
+          // )
         });
 
         gallery.listen('initialZoomInEnd', function() {
