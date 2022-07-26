@@ -48,6 +48,7 @@
 
   .swiper-slide {
     width: rem(420);
+    cursor: grab;
 
     .collection-card {
       @include media-breakpoint-down(sm) {
@@ -83,7 +84,7 @@
   }
 
   .cursor {
-    transition: all 100ms ease-out;
+    transition: all 0ms ease-out;
     position: fixed;
     pointer-events: none;
     left: 0;

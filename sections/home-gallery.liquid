@@ -19,12 +19,15 @@
           {%assign b = block.settings %}
           <div class="swiper-slide">
             <div class="home-gallery__item">
-              {%- render 'img_new',
-              img: b.image,
-              m_width: '500',
-                show_attribute: false
-            -%}
-            <a href="{{b.item_url}}"> <span class="home-gallery__item-title">{{b.slide_title}} {% render 'icon', icon: 'arrow-up-right' %}</span></a>
+              <a href="{{- b.item_url -}}" class="home-gallery__image">
+                {%- render 'img_new',
+                img: b.image,
+                m_width: '500',
+                  show_attribute: false
+              -%}
+              </a>
+
+              <a href="{{b.item_url}}"> <span class="home-gallery__item-title">{{b.slide_title}} {% render 'icon', icon: 'arrow-up-right' %}</span></a>
             </div>
           </div>
           {%endfor%}

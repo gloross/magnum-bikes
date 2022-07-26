@@ -34,7 +34,11 @@
     }
 
     .icon {
-      margin-bottom: rem(26);
+      display: block;
+      margin-bottom: rem(20);
+      @include media-breakpoint-down(sm) {
+        margin-bottom: rem(15);
+      }
     }
   }
 
@@ -55,7 +59,7 @@
         padding-right: 0;
       }
       @include media-breakpoint-down(sm) {
-        padding-right: rem(36);
+        max-width: rem(300);
       }
     }
   }

@@ -224,6 +224,8 @@
       }
     }
     .swiper-slide {
+      cursor: grab;
+
       @include media-breakpoint-down(md) {
         margin-bottom: rem(14);
         height: auto;
@@ -242,7 +244,7 @@
   &__nav-dropdown-swiper-wrapper {
     cursor: none;
     .cursor {
-      transition: all 100ms ease-out;
+      transition: all 0ms ease-out;
       position: fixed;
       pointer-events: none;
       left: 0;

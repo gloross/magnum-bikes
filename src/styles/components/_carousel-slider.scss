@@ -1,7 +1,6 @@
 .carousel-slider {
   padding: 0 0 rem(80) 0;
   background-color: #272526;
-  cursor: grab;
   overflow: hidden;
 
   @include media-breakpoint-up(md) {
@@ -148,6 +147,10 @@
     }
   }
 
+  .swiper-slide {
+    cursor: grab;
+  }
+
   &__scrollbar {
     width: 100% !important;
     border-radius: rem(12);
@@ -170,7 +173,7 @@
   }
 
   .cursor {
-    transition: all 100ms ease-out;
+    transition: all 0ms ease-out;
     position: fixed;
     pointer-events: none;
     left: 0;
@@ -178,7 +181,6 @@
     z-index: 50;
     opacity: 0;
     visibility: hidden;
-    display: none;
 
     &.active {
       opacity: 1;

@@ -5,6 +5,16 @@
     padding: rem(40) rem(20);
   }
 
+  &__image {
+    display: block;
+    transition: opacity $t-basic;
+
+    &:hover {
+      text-decoration: none;
+      opacity: 0.8;
+    }
+  }
+
   &__title {
     padding: 0 12.372vw;
     display: flex;
