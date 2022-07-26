@@ -21,7 +21,11 @@
       padding-bottom: 86.82%;
 
       @include media-breakpoint-down(sm) {
-        padding-bottom: 111.11%;
+        padding-bottom: 111%;
+      }
+
+      img {
+        height: 100%;
       }
     }
   }
@@ -30,11 +34,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0 rem(20);
 
     @include media-breakpoint-down(sm) {
       align-items: flex-start;
-      margin: rem(32) 0 rem(40);
-      padding: 0 rem(20);
+      padding: rem(32) rem(20);
     }
   }
 
