@@ -10,14 +10,24 @@
     </video>
   {% endcapture %}
 {% endif %}
-<section class="home-hero lazyload"
-  {% unless object.video_url_mp4 %}
-    data-bgset="{% render 'bg_set', image: object.image %}"
-    data-sizes="auto"
-    style="background-position: center center; background-repeat: no-repeat; background-size: cover;"
-  {% endunless %}
->
+<section class="home-hero lazyload">
   <div class="container container--small">
+    {% unless object.video_url_mp4 %}
+      {% if object.image_mobile != blank %}
+        {% assign has_mobile_image = true %}
+      {% endif %}
+
+      <div class="home-hero__image media-wrapper{% if has_mobile_image %} home-hero__image--desktop{% endif %}">
+        {%- render 'img' with img: object.image -%}
+      </div>
+
+      {% if has_mobile_image %}
+        <div class="home-hero__image media-wrapper home-hero__image--mobile">
+          {%- render 'img' with img: object.image_mobile -%}
+        </div>
+      {% endif %}
+    {% endunless %}
+
     <div class="home-hero__inner">
       <div class="home-hero__title">
         <h1>{{object.section_title}}</h1>
@@ -66,6 +76,11 @@
   "type": "image_picker",
   "id": "image",
   "label": "Hero image"
+},
+{
+  "type": "image_picker",
+  "id": "image_mobile",
+  "label": "Hero image - Mobile"
 },
 {
 "type": "url",
