@@ -120,6 +120,10 @@
         @include media-breakpoint-down(sm) {
           margin-top: rem(32);
         }
+
+        &:first-child {
+          margin-top: 0;
+        }
       }
     }
   }
