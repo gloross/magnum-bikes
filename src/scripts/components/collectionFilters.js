@@ -16,17 +16,17 @@ export default component((node, ctx) => {
 
     // weight slider range elements
     const weightFilters = document.querySelector('.js-filter-weight')
-    const weight   = weightFilters.querySelector('.js-filter-max');
+    const weight   = weightFilters?.querySelector('.js-filter-max');
 
     // range slider range elements
 
     const rangeFilters = document.querySelector('.js-filter-range')
-    const range   = rangeFilters.querySelector('.js-filter-max');
+    const range   = rangeFilters?.querySelector('.js-filter-max');
 
     // height slider range elements
 
     const heightFilters = document.querySelector('.js-filter-height');
-    const height   = heightFilters.querySelector('.js-filter-max');
+    const height   = heightFilters?.querySelector('.js-filter-max');
 
     // magnum filters
     const categoryFilters       = document.querySelector('.js-category-filters');
@@ -63,8 +63,6 @@ export default component((node, ctx) => {
     const pageSize = node.dataset.pageSize;
     const showMoreProducts = node.dataset.showMore;
 
-    console.log(pageSize, "node page size")
-    console.log(showMoreProducts, "node show more")
     // get strings generated in theme liquid file
     // const strings = window.theme.strings.collections;
 
@@ -99,9 +97,8 @@ export default component((node, ctx) => {
         //     $(filterBtns).removeClass("btn--open");
         // }
 
-        console.log(`AJDE SADA: POCETAK, pocetka`);
-
-        if (!window.location.href.includes("sort=")) {
+        // if (!window.location.href.includes("sort=")) {
+        if (!window.location.href.includes("sort_by=")) {
             const collectionSortOrder = node.dataset.sortOrder;
             let sortingValue = undefined;
 
@@ -136,7 +133,8 @@ export default component((node, ctx) => {
             }
 
             if(sortingValue !== 'manual') {
-                window.history.pushState(null, null, `?sort=${sortingValue}`);
+                // window.history.pushState(null, null, `?sort=${sortingValue}`);
+                window.history.pushState(null, null, `?sort_by=${sortingValue}`);
             }
         }
 
@@ -187,8 +185,10 @@ export default component((node, ctx) => {
         }
 
         // Init sorting
-        if (queryString.includes("sort=")) {
-            const sort = queryString.split("sort=")[1].split("&")[0];
+        // if (queryString.includes("sort=")) {
+        if (queryString.includes("sort_by=")) {
+            // const sort = queryString.split("sort=")[1].split("&")[0];
+            const sort = queryString.split("sort_by=")[1].split("&")[0];
             if (sorting) {
                 sorting.querySelector("select").value = sort;
             }
@@ -258,13 +258,15 @@ export default component((node, ctx) => {
                 ) - 1;
             let productsToRender = [];
             for (let page = 0; page <= currentPage; page++) {
-                productsToRender = [...productsToRender, ...productPages[page]];
+                if (productPages[0]) {
+                    productsToRender = [...productsToRender, ...productPages[page]];
+                }
             }
-            renderProducts("all", productsToRender, filteredProducts);
+            // renderProducts("all", productsToRender, filteredProducts);
         } else if (productPages[0]) {
-            renderProducts("all", productPages[0], filteredProducts);
+            // renderProducts("all", productPages[0], filteredProducts);
         } else {
-            renderProducts("all", [], filteredProducts);
+            // renderProducts("all", [], filteredProducts);
         }
         addEventListeners();
     }
@@ -328,7 +330,9 @@ export default component((node, ctx) => {
 
                 }
             } else {
-                categoryFilters.parentNode.style.display = 'none'
+                if (categoryFilters) {
+                    categoryFilters.parentNode.style.display = 'none'
+                }
             }
 
         }
@@ -399,7 +403,9 @@ export default component((node, ctx) => {
                     //el.setAttribute("data-title", category.toLowerCase());
                 }
             } else {
-                shapeFilters.style.display = 'none'
+                if (shapeFilters) {
+                    shapeFilters.style.display = 'none'
+                }
             }
 
         }
@@ -465,7 +471,9 @@ export default component((node, ctx) => {
                     //el.setAttribute("data-title", category.toLowerCase());
                 }
             } else {
-                sitingPositionFilters.style.display = 'none'
+                if (sitingPositionFilters) {
+                    sitingPositionFilters.style.display = 'none'
+                }
             }
 
         }
@@ -519,7 +527,9 @@ export default component((node, ctx) => {
                     //el.setAttribute("data-title", category.toLowerCase());
                 }
             } else {
-                createTerrainFilters.style.display = 'none'
+                if (terrainFilters) {
+                    terrainFilters.style.display = 'none'
+                }
             }
 
         }
@@ -580,28 +590,30 @@ export default component((node, ctx) => {
 
         // if (inputWeight) inputWeight.setAttribute('data-max-weight', maxWeight)
 
-        console.log(`AJDE SADA: POCETAK`);
         let priceSliderRange = new filterRangeSlider('.js-filter-range-slider', '.js-filter-range-value', '.js-filter-range-min', '.js-filter-range-max', [minPrice, maxPrice]);
-        console.log(`AJDE SADA: ${priceSliderRange}`);
+
         if (weightCount > 0) {
-            let weightSlider = new filterRangeSlider('.js-filter-weight-slider', '.js-filter-weight-value', '', 
+            let weightSlider = new filterRangeSlider('.js-filter-weight-slider', '.js-filter-weight-value', '',
             '.js-filter-range-max', [maxWeight]);
         } else {
-            weightFilters.style.display = none;
+            if (weightFilters) {
+                weightFilters.style.display = none;
+            }
         }
 
         if (rangeCount > 0) {
             let rangeSlider = new filterRangeSlider('.js-filter-max-range-slider', '.js-filter-range-value', '', '.js-filter-range-max', [maxRange]);
         } else {
-            weightCount.style.display = 'none'
+            // weightCount.style.display = 'none'
         }
 
         if (heightCount > 0) {
-            let heightSlideer = new filterRangeSlider('.js-filter-height-slider', '.js-filter-height-value', '', '.js-filter-range-max', [maxHeight])
+            let heightSlider = new filterRangeSlider('.js-filter-height-slider', '.js-filter-height-value', '', '.js-filter-range-max', [maxHeight])
         } else {
-            heightFilters.style.display = 'none';
+            if (heightFilters) {
+                heightFilters.style.display = 'none';
+            }
         }
-
     }
 
     //============================================ INITIALIZE FILTERS =============================================//
@@ -690,16 +702,11 @@ export default component((node, ctx) => {
 
         //outputProducts = filterBirthstone(queryString, outputProducts);
 
-
-        return outputProducts;
+       // return outputProducts;
 
         function filterAvailable(inputProducts) {
 
             let outputProducts = inputProducts.filter((product) => {
-
-                product.variants.find((variant) => {
-                })
-
                 return product.variants.find((variant) => variant.available);
             });
 
@@ -872,8 +879,6 @@ export default component((node, ctx) => {
                     })
 
                     if (bool) {
-                        console.log(productHeight, 'prod height test')
-                        console.log(height, 'prod height')
                         if (productHeight <= height) {
                             outputProducts.push(product);
                         }
@@ -1024,10 +1029,15 @@ export default component((node, ctx) => {
             let outputProducts = [];
             let mode = "asc";
 
-            if (queryString.includes("sort=")) {
+            // if (queryString.includes("sort=")) {
+            if (queryString.includes("sort_by=")) {
+                // const sorting = queryString
+                //     .slice(queryString.indexOf("sort=") + 5, queryString.length)
+                //     .split("&")[0];
                 const sorting = queryString
-                    .slice(queryString.indexOf("sort=") + 5, queryString.length)
+                    .slice(queryString.indexOf("sort_by=") + 5, queryString.length)
                     .split("&")[0];
+
                 switch (sorting) {
                     case "price-ascending":
                         outputProducts = inputProducts.sort(comparePrice);
@@ -1122,8 +1132,10 @@ export default component((node, ctx) => {
     //============================================ PAGINATE PRODUCTS ==============================================//
     function paginateProducts(products, pageSize) {
         let productPages = [];
-        const clone = [...products];
+        let clone = [];
         let pageSizeNew = showMoreProducts;
+
+        if (products) clone = [...products];
 
         var i = 0;
         while (clone[0]) {
@@ -1151,14 +1163,16 @@ export default component((node, ctx) => {
             renderedProducts.innerHTML = productsToRender.length + offset;
         }
 
-        console.log(offset + productsToRender.length, 'calc test 1');
-        console.log(totalProducts.length, 'total length');
+        // console.log(offset + productsToRender.length, 'calc test 1');
+        // console.log(totalProducts.length, 'total length');
 
-        if (productsToRender.length > 0) {
-            if (offset + productsToRender.length === totalProducts.length) {
-                 showMoreBtn.style.display = "none";
-            } else {
-                 showMoreBtn.style.display = "";
+        if (showMoreBtn) {
+            if (productsToRender.length > 0) {
+                if (offset + productsToRender.length === totalProducts.length) {
+                     showMoreBtn.style.display = "none";
+                } else {
+                     showMoreBtn.style.display = "";
+                }
             }
         }
 
@@ -1334,7 +1348,7 @@ export default component((node, ctx) => {
         })
     }
 
-    function addActiveFiletrs(element) {
+    function addActiveFilters(element) {
         console.log('addActiveFilters()')
         let li   = document.createElement('li');
         let span = document.createElement('span');
@@ -1368,7 +1382,7 @@ export default component((node, ctx) => {
         }
     }
 
-    function cleaarAllSelectedFilters(filters) {
+    function clearAllSelectedFilters(filters) {
         filters.forEach((el) => {
             if (el.classList.contains('is-active')) {
                 el.click();
@@ -1379,12 +1393,16 @@ export default component((node, ctx) => {
     //============================================ ADD EVENT LISTENERS ============================================//
     function addEventListeners() {
         // magnum filters
-        const filterTriggers = [
-            ...categoryFilters.querySelectorAll('a'),
-            ...shapeFilters.querySelectorAll('a'),
-            ...sitingPositionFilters.querySelectorAll('a'),
-            ...terrainFilters.querySelectorAll('a'),
-        ]
+        let filterTriggers = [];
+
+        if (categoryFilters && shapeFilters && sitingPositionFilters && terrainFilters) {
+            filterTriggers = [
+                ...categoryFilters.querySelectorAll('a'),
+                ...shapeFilters.querySelectorAll('a'),
+                ...sitingPositionFilters.querySelectorAll('a'),
+                ...terrainFilters.querySelectorAll('a'),
+            ]
+        }
 
         const rangeFilters = [
             ...document.querySelectorAll('.js-range-filter'),
@@ -1393,7 +1411,7 @@ export default component((node, ctx) => {
         clearAllFilters.forEach((el) => {
             el.addEventListener('click', (e) => {
                 e.preventDefault();
-                cleaarAllSelectedFilters(filterTriggers);
+                clearAllSelectedFilters(filterTriggers);
             })
         })
 
@@ -1434,6 +1452,7 @@ export default component((node, ctx) => {
             sortingButton.addEventListener('change', (evt) => {
                 evt.preventDefault();
                 processChanges(allProducts);
+                window.location.reload()
             })
         }
 
@@ -1532,7 +1551,7 @@ export default component((node, ctx) => {
                         if (el.classList.contains('is-active')) {
                             removeActiveFilters(el);
                         } else {
-                            addActiveFiletrs(el);
+                            addActiveFilters(el);
                         }
                         el.classList.toggle('is-active')
                         processChanges(allProducts);
@@ -1552,7 +1571,7 @@ export default component((node, ctx) => {
 
         appliedFilters(allSelectedTags, inputs);
 
-        showMoreBtn.addEventListener("click", (e) => {
+        showMoreBtn?.addEventListener("click", (e) => {
             e.preventDefault();
             showMore(filteredProducts)
         });
@@ -1565,22 +1584,23 @@ export default component((node, ctx) => {
         window.history.pushState(null, null, queryString);
         filteredProducts = filterProducts(queryString, products);
         productPages = paginateProducts(filteredProducts, pageSize);
-        if (filteredProducts.length > 0  && noFilteredProducts) {
+
+        if (filteredProducts && filteredProducts.length > 0  && noFilteredProducts) {
             noFilteredProducts = false;
             noProducts.classList.add('is-hide');
             setTimeout(() => {
                 if (productPages[0]) {
-                    renderProducts("all", productPages[0], filteredProducts);
+                    // renderProducts("all", productPages[0], filteredProducts);
                 } else {
-                    renderProducts("all", [], filteredProducts);
+                    // renderProducts("all", [], filteredProducts);
                 }
             },180)
 
         } else {
             if (productPages[0]) {
-                renderProducts("all", productPages[0], filteredProducts);
+                // renderProducts("all", productPages[0], filteredProducts);
             } else {
-                renderProducts("all", [], filteredProducts);
+                // renderProducts("all", [], filteredProducts);
             }
         }
     }
@@ -1591,50 +1611,60 @@ export default component((node, ctx) => {
         const priceMinVal = priceMin.value;
         const priceMaxVal = priceMax.value;
 
-        const maxWeight   =  Number(weight.value);
-        const maxRange    = Number(range.value);
-        const maxHeight   = Number(height.value);
-
         let queryString = "";
-        
+
         queryString = queryPrice(
             queryString,
             priceMinVal,
             priceMaxVal
         );
 
-        queryString = queryWeight(queryString, maxWeight);
+        if (weight) {
+            const maxWeight   =  Number(weight.value);
+            queryString = queryWeight(queryString, maxWeight);
+        }
 
-        queryString = queryRange(queryString, maxRange);
+        if (range) {
+            const maxRange    = Number(range.value);
+            queryString = queryRange(queryString, maxRange);
+        }
 
-
-        queryString = queryHeight(queryString, maxHeight);
-
+        if (height) {
+            const maxHeight   = Number(height.value);
+            queryString = queryHeight(queryString, maxHeight);
+        }
 
         // magnum query string
-        queryString = queryProductCategory(
-            queryString,
-            categoryFilters.querySelectorAll("a")
-        );
+        if (categoryFilters) {
+            queryString = queryProductCategory(
+                queryString,
+                categoryFilters.querySelectorAll("a")
+            );
+        }
 
         //magnum
-        queryString = queryProductShape(
-            queryString,
-            shapeFilters.querySelectorAll("a")
-        );
+        if (shapeFilters) {
+            queryString = queryProductShape(
+                queryString,
+                shapeFilters.querySelectorAll("a")
+            );
+        }
 
         //magnum
-        queryString = querySittingPosition(
-            queryString,
-            sitingPositionFilters.querySelectorAll("a")
-        );
+        if (sitingPositionFilters) {
+            queryString = querySittingPosition(
+                queryString,
+                sitingPositionFilters.querySelectorAll("a")
+            );
+        }
 
         //magnum
-        queryString = queryTerrainCondition(
-            queryString,
-            terrainFilters.querySelectorAll("a")
-        );
-
+        if (terrainFilters) {
+            queryString = queryTerrainCondition(
+                queryString,
+                terrainFilters.querySelectorAll("a")
+            );
+        }
 
         queryString = querySorting(queryString, sortingButton);
 
@@ -1867,9 +1897,11 @@ export default component((node, ctx) => {
 
         function querySorting(queryString, select) {
             if (queryString === "") {
-                queryString = "?sort=";
+                // queryString = "?sort=";
+                queryString = "?sort_by=";
             } else {
-                queryString += "&sort=";
+                // queryString += "&sort=";
+                queryString += "&sort_by=";
             }
 
             queryString += select.value;
@@ -1882,7 +1914,7 @@ export default component((node, ctx) => {
 
         if (productPages.length - 1 > currentPage) {
             currentPage++;
-            renderProducts("page", productPages[currentPage], totalProducts);
+            // renderProducts("page", productPages[currentPage], totalProducts);
 
             const location = window.location.href;
             if (location.includes("page=")) {

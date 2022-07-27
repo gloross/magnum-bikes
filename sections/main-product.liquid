@@ -7,7 +7,13 @@
   <div class="product-details__inner">
     {%comment%}TO DO breadcrumbs!!!{%endcomment%}
     <div class="breadcrumbs">
-      <a href="{{ product.collections[0].url }}">{{ product.collections[0].title }}</a>/<span>{{ product.title }}</span>
+      {%- if collection -%}
+        <a href="{{ collection.url }}">{{ collection.title }}</a>
+      {%- else -%}
+        <a href="{{ product.collections[0].url }}">{{ product.collections[0].title }}</a>
+      {%- endif -%}
+
+      /<span>{{ product.title }}</span>
     </div>
     <div class="product-details__gallery">
       {% render 'product-gallery' %}

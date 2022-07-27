@@ -14,7 +14,7 @@
         {% endfor %}
       </ul>
 
-      <a href="{{ product.url }}" class="h3"><h3>{{ product.title }}</h3></a>
+      <a href="{{ product.url | within: collection }}" class="h3"><h3>{{ product.title }}</h3></a>
 
       {% for product_option in product.options_with_values %}
         {% if product_option.name == 'Color' %}
@@ -33,7 +33,7 @@
       {% endfor %}
 
        <div class="collection-card__cta">
-         <a href="{{ product.url }}" class="btn btn--fill-grey">
+         <a href="{{ product.url | within: collection }}" class="btn btn--fill-grey">
            VIEW DETAILS
          </a>
          {% comment %} <a href="" class="u-uppercase">
@@ -57,7 +57,7 @@
             endfor
           %}
 
-          <a href="{{product.url}}" class="link_wrapper">
+          <a href="{{product.url | within: collection }}" class="link_wrapper">
 
           {% if firstVariant.metafields.variant.image_1 %} 
 
@@ -76,13 +76,13 @@
           </a>
 
           {% else %}
-          <a href="{{ product.url }}" class="link_wrapper">
+          <a href="{{ product.url | within: collection }}" class="link_wrapper">
             <img src="{{ product.metafields.nb_product.feature_image }}" alt="{{ product.title }}" loading="lazy" height="" width="">
           </a>
            {% endif %}
           
           <div class="collection-card__grid-cta">
-            <a href="{{ product.url }}" class="btn btn--black-fill">VIEW DETAILS</a>
+            <a href="{{ product.url | within: collection }}" class="btn btn--black-fill">VIEW DETAILS</a>
             {% comment %} <a href="" class="btn btn--blue-fill">Compare</a> {% endcomment %}
           </div>
       </div>

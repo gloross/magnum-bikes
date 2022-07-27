@@ -1,7 +1,7 @@
 <script type="module" src="{{- 'component-CollectionFilter.js'| asset_url -}}"></script>
 {{ 'component-productPhotoGallery.css' | asset_url | stylesheet_tag }}
 
-{% assign object=  section.settings %}
+{% assign object = section.settings %}
 
 {% liquid
     assign filterCount = 0
@@ -24,9 +24,9 @@
         <div class="collection-filter__col">
             <a class="collection-filter__link js-filter-trigger" href="">All Filters</a>
             {% if collection.tags contains "Non-Bike" %}
-            <a href="" class="collection-filter__show-all">Showing {{ collection.products_count }} of <span class="js-total-products">{{ collection.all_products_count }}</span> Items</a>
+            <span class="collection-filter__show-all">Showing {{ collection.products_count }} of <span class="js-total-products">{{ collection.all_products_count }}</span> Items</span>
                 {% else %}
-                <a href="" class="collection-filter__show-all">Showing {{ collection.products_count }} of <span class="js-total-products">{{ collection.all_products_count }}</span> Bikes</a>    
+                <span class="collection-filter__show-all">Showing {{ collection.products_count }} of <span class="js-total-products">{{ collection.all_products_count }}</span> Bikes</span>
             {% endif %}
         </div>
         <div class="collection-filter__col">
